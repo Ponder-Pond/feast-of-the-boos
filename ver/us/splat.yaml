@@ -74,6 +74,7 @@ vram_classes:
   - [entity_model_anim, 0x00000000]
   - { name: dgb_01_smash_bridges, vram: 0x80200000, vram_symbol: D_80200000 }
 asset_stack:
+  - i_o_t_f_s
   - dx
   - us
 segments:
@@ -6863,6 +6864,15 @@ segments:
     - [auto, c, script/dig_03]
     - [auto, c, script/dig_04]
     - [auto, c, script/dig_05]
+  - dir: battle/area/tst # Invasion of the Flower Snatchers Battle Area
+    type: code
+    start: auto
+    vram_class: battle_area
+    subalign: 8
+    subsegments:
+    - [auto, c, area]
+    - [auto, c, actor/beehive]
+    - [auto, c, stage/flo_01]
 
 #######################
 ### Battle Partners ###

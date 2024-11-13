@@ -14,7 +14,8 @@
                 "${workspaceFolder}/include",
                 "${workspaceFolder}/ver/us/build/include",
                 "${workspaceFolder}/src",
-                "${workspaceFolder}/assets/us"
+                "${workspaceFolder}/assets/us",
+                "${workspaceFolder}/ver/us/build/include"
             ],
             "defines": [
                 "F3DEX_GBI_2",
