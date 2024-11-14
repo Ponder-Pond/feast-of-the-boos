@@ -53,17 +53,17 @@ void clear_player_data(void) {
     D_8010CD10 = FALSE;
     D_8010CD12 = FALSE;
 
-    playerData->curHP = 10;
-    playerData->curMaxHP = 10;
-    playerData->hardMaxHP = 10;
-    playerData->curFP = 5;
-    playerData->curMaxFP = 5;
-    playerData->hardMaxFP = 5;
-    playerData->maxBP = 3;
-    playerData->level = 1;
-    playerData->bootsLevel = 0;
-    playerData->hammerLevel = -1;
-    playerData->hasActionCommands = FALSE;
+    playerData->curHP = 50;
+    playerData->curMaxHP = 50;
+    playerData->hardMaxHP = 50;
+    playerData->curFP = 50;
+    playerData->curMaxFP = 50;
+    playerData->hardMaxFP = 50;
+    playerData->maxBP = 30;
+    playerData->level = 27;
+    playerData->bootsLevel = 2;
+    playerData->hammerLevel = 2;
+    playerData->hasActionCommands = TRUE;
     playerData->coins = 0;
     playerData->starPieces = 0;
     playerData->starPoints = 0;
@@ -78,7 +78,7 @@ void clear_player_data(void) {
     playerData->starPower = 0;
     playerData->starBeamLevel = 0;
 
-    playerData->curPartner = PARTNER_NONE;
+    playerData->curPartner = PARTNER_BOW;
 
     for (i = 0; i < ARRAY_COUNT(playerData->partners); i++) {
         playerData->partners[i].enabled = FALSE;
@@ -87,6 +87,8 @@ void clear_player_data(void) {
         playerData->partners[i].unk_02[1] = 0;
         playerData->partners[i].unk_02[2] = 0;
     }
+    playerData->partners[PARTNER_BOW].enabled = TRUE;
+    playerData->partners[PARTNER_BOW].level = PARTNER_RANK_ULTRA;
 
     for (i = 0; i < ARRAY_COUNT(playerData->keyItems); i++) {
         playerData->keyItems[i] = ITEM_NONE;
@@ -103,6 +105,9 @@ void clear_player_data(void) {
     for (i = 0; i < ARRAY_COUNT(playerData->equippedBadges); i++) {
         playerData->equippedBadges[i] = ITEM_NONE;
     }
+
+    playerData->equippedBadges[0] = ITEM_PEEKABOO;
+    playerData->equippedBadges[1] = ITEM_POWER_BOUNCE;
 
     for (i = 0; i < ARRAY_COUNT(playerData->storedItems); i++) {
         playerData->storedItems[i] = ITEM_NONE;

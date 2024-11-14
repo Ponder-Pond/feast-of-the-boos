@@ -8,6 +8,10 @@
 
 #define NAMESPACE battle_partner_bow
 
+extern s32 bActorTattles[];
+
+static EffectInstance* N(TattleWindowEffect);
+
 extern EvtScript N(EVS_HandleEvent);
 extern EvtScript N(EVS_Idle);
 extern EvtScript N(EVS_HandlePhase);
@@ -15,13 +19,14 @@ extern EvtScript N(EVS_TakeTurn);
 extern EvtScript N(EVS_Init);
 extern EvtScript N(EVS_ExecuteAction);
 extern EvtScript N(EVS_Celebrate);
-extern EvtScript N(runAway);
-extern EvtScript N(runAwayFail);
-extern EvtScript N(smack);
-extern EvtScript N(outtaSight);
-extern EvtScript N(spook);
-extern EvtScript N(fanSmack);
-extern EvtScript N(hidePlayer);
+extern EvtScript N(EVS_RunAway);
+extern EvtScript N(EVS_RunAwayFail);
+extern EvtScript N(EVS_Move_Smack);
+extern EvtScript N(EVS_Move_Tattle);
+extern EvtScript N(EVS_Move_OuttaSight);
+extern EvtScript N(EVS_Move_Spook);
+extern EvtScript N(EVS_Move_FanSmack);
+extern EvtScript N(EVS_HidePlayer);
 
 extern s32 bMarioHideAnims[];
 
@@ -29,6 +34,67 @@ enum N(ActorPartIDs) {
     PRT_MAIN            = 1,
     PRT_ZERO            = 0,
 };
+
+API_CALLABLE(N(GetTattleMessage)) {
+    BattleStatus* battleStatus = &gBattleStatus;
+    Actor* partner = battleStatus->partnerActor;
+    Actor* target = get_actor(partner->targetActorID);
+    s32* tattle = &bActorTattles[target->actorType];
+
+    script->varTable[0] = *tattle;
+
+    if (script->varTable[0] == NULL) {
+        script->varTable[0] = bActorTattles[0];
+    }
+
+    save_tattle_flags(target->actorType);
+
+    return ApiStatus_DONE2;
+}
+
+API_CALLABLE(N(GetTattleCamPos)) {
+    Actor* target = get_actor(gBattleStatus.partnerActor->targetActorID);
+    s32 xSize;
+
+    if (!(target->flags & ACTOR_FLAG_UPSIDE_DOWN)) {
+        script->varTable[1] = script->varTable[1] + (((target->size.y / 3) & 0xFF) * target->scalingFactor);
+        script->varTable[1] += ((target->size.y / 4) * target->scalingFactor);
+    } else {
+        script->varTable[1] = script->varTable[1] - (((target->size.y / 3) & 0xFF) * target->scalingFactor);
+        script->varTable[1] -= ((target->size.y / 4) * target->scalingFactor);
+    }
+
+    if (target->flags & ACTOR_FLAG_HALF_HEIGHT) {
+        script->varTable[1] -= (target->size.y / 2) * target->scalingFactor;
+    }
+
+    xSize = target->size.y * target->scalingFactor;
+    if (xSize < target->size.x) {
+        xSize = target->size.x;
+    }
+
+    script->varTable[3] = xSize + 76;
+    script->varTable[0] += bActorOffsets[target->actorType].tattleCam.x;
+    script->varTable[1] += bActorOffsets[target->actorType].tattleCam.y;
+    script->varTable[3] += bActorOffsets[target->actorType].tattleCam.z;
+
+    return ApiStatus_DONE2;
+}
+
+API_CALLABLE(N(OpenTattleWindow)) {
+    N(TattleWindowEffect) = fx_tattle_window(0, 206, 144, 0, 1.0f, 0);
+
+    return ApiStatus_DONE2;
+}
+
+API_CALLABLE(N(CloseTattleWindow)) {
+    EffectInstance* effect = N(TattleWindowEffect);
+
+    effect->data.tattleWindow->pos.y = 144.0f;
+    effect->flags |= FX_INSTANCE_FLAG_DISMISS;
+
+    return ApiStatus_DONE2;
+}
 
 API_CALLABLE(N(IsOuttaSightActive)) {
     BattleStatus* battleStatus = &gBattleStatus;
@@ -317,9 +383,9 @@ EvtScript N(EVS_TakeTurn) = {
         CaseEq(PHASE_CELEBRATE)
             ExecWait(N(EVS_Celebrate))
         CaseEq(PHASE_RUN_AWAY_START)
-            ExecWait(N(runAway))
+            ExecWait(N(EVS_RunAway))
         CaseEq(PHASE_RUN_AWAY_FAIL)
-            ExecWait(N(runAwayFail))
+            ExecWait(N(EVS_RunAwayFail))
     EndSwitch
     Return
     End
@@ -333,7 +399,7 @@ EvtScript N(EVS_Celebrate) = {
     End
 };
 
-EvtScript N(runAway) = {
+EvtScript N(EVS_RunAway) = {
     SetConst(LVar0, PRT_MAIN)
     SetConst(LVar1, ANIM_BattleBow_Run)
     ExecWait(EVS_Partner_RunAway)
@@ -341,7 +407,7 @@ EvtScript N(runAway) = {
     End
 };
 
-EvtScript N(runAwayFail) = {
+EvtScript N(EVS_RunAwayFail) = {
     Call(UseIdleAnimation, ACTOR_PARTNER, FALSE)
     Call(SetGoalToHome, ACTOR_PARTNER)
     Call(SetActorSpeed, ACTOR_PARTNER, Float(6.0))
@@ -360,7 +426,7 @@ EvtScript N(EVS_HandlePhase) = {
         CaseEq(PHASE_ENEMY_BEGIN)
             Call(N(IsOuttaSightActive))
             IfNe(LVar0, 0)
-                ExecWait(N(hidePlayer))
+                ExecWait(N(EVS_HidePlayer))
             EndIf
     EndSwitch
     Return
@@ -379,19 +445,22 @@ EvtScript N(EVS_ExecuteAction) = {
     Call(GetMenuSelection, LVar0, LVar1, LVar2)
     Switch(LVar2)
         CaseEq(MOVE_SMACK1)
-            ExecWait(N(smack))
+            ExecWait(N(EVS_Move_Smack))
         CaseEq(MOVE_SMACK2)
-            ExecWait(N(smack))
+            ExecWait(N(EVS_Move_Smack))
         CaseEq(MOVE_SMACK3)
-            ExecWait(N(smack))
+            ExecWait(N(EVS_Move_Smack))
+        CaseEq(MOVE_TATTLE2)
+            Call(SetBattleFlagBits, BS_FLAGS1_4000, FALSE)
+            ExecWait(N(EVS_Move_Tattle))
         CaseEq(MOVE_OUTTA_SIGHT)
             Call(SetBattleFlagBits, BS_FLAGS1_4000, FALSE)
-            ExecWait(N(outtaSight))
+            ExecWait(N(EVS_Move_OuttaSight))
         CaseEq(MOVE_SPOOK)
             Call(SetBattleFlagBits, BS_FLAGS1_4000, FALSE)
-            ExecWait(N(spook))
+            ExecWait(N(EVS_Move_Spook))
         CaseEq(MOVE_FAN_SMACK)
-            ExecWait(N(fanSmack))
+            ExecWait(N(EVS_Move_FanSmack))
     EndSwitch
     Return
     End
@@ -455,7 +524,7 @@ EvtScript N(EVS_ReturnHome_Miss) = {
     End
 };
 
-EvtScript N(80238EE0) = {
+EvtScript N(EVS_ReturnHome) = {
     Call(PartnerYieldTurn)
     Call(SetGoalToHome, ACTOR_PARTNER)
     Call(SetAnimation, ACTOR_PARTNER, -1, ANIM_BattleBow_Run)
@@ -465,7 +534,7 @@ EvtScript N(80238EE0) = {
     End
 };
 
-EvtScript N(smack) = {
+EvtScript N(EVS_Move_Smack) = {
     Call(LoadActionCommand, ACTION_COMMAND_SMACK)
     Call(action_command_smack_init)
     Call(SetActionHudPrepareTime, 0)
@@ -652,7 +721,54 @@ EvtScript N(smack) = {
     End
 };
 
-EvtScript N(outtaSight) = {
+EvtScript N(EVS_Move_Tattle) = {
+    Call(GetActorPos, ACTOR_PARTNER, LVar0, LVar1, LVar2)
+    Add(LVar0, 30)
+    Call(SetActorSpeed, ACTOR_PARTNER, Float(6.0))
+    Call(SetAnimation, ACTOR_PARTNER, -1, ANIM_BattleBow_Run)
+    Call(SetGoalPos, ACTOR_PARTNER, LVar0, LVar1, LVar2)
+    Call(RunToGoal, ACTOR_PARTNER, 0, FALSE)
+    Call(SetAnimation, ACTOR_PARTNER, -1, ANIM_BattleBow_Idle)
+    Call(InitTargetIterator)
+    Call(SetGoalToTarget, ACTOR_PARTNER)
+    Call(SetBattleFlagBits, BS_FLAGS1_TATTLE_OPEN, TRUE)
+    Call(N(OpenTattleWindow))
+    Wait(12)
+    Call(SetCamEnabled, CAM_TATTLE, TRUE)
+    Call(SetCamNoDraw, CAM_TATTLE, FALSE)
+    Call(SetCamPerspective, CAM_TATTLE, CAM_UPDATE_NO_INTERP, 25, 16, 1024)
+    Call(SetCamViewport, CAM_TATTLE, 137, 95, 138, 99)
+    Call(GetOwnerTarget, LVarA, LVarB)
+    Call(GetActorPos, LVarA, LVar0, LVar1, LVar2)
+    Call(SetGoalPos, ACTOR_PARTNER, LVar0, LVar1, LVar2)
+    Call(N(GetTattleCamPos))
+    Wait(1)
+    Call(SetCamLookTarget, CAM_TATTLE, LVar0, LVar1, LVar2)
+    Call(SetNoInterpCamParams, CAM_TATTLE, FALSE, LVar3, 100, 4)
+    Wait(2)
+    Call(PlaySoundAtActor, ACTOR_PARTNER, SOUND_TATTLE_WINDOW_OPEN)
+    Call(SetCamNoDraw, CAM_TATTLE, TRUE)
+    Wait(10)
+    Call(N(GetTattleMessage))
+    Call(ActorSpeak, LVar0, ACTOR_SELF, PRT_MAIN, ANIM_BattleBow_Talk, ANIM_BattleBow_Idle)
+    Call(N(CloseTattleWindow))
+    Wait(12)
+    Call(SetCamEnabled, CAM_TATTLE, FALSE)
+    Wait(32)
+    Call(UseBattleCamPreset, BTL_CAM_DEFAULT)
+    Call(SetBattleFlagBits, BS_FLAGS1_TATTLE_OPEN, FALSE)
+    // Call(PartnerYieldTurn)
+    Call(SetGoalToHome, ACTOR_PARTNER)
+    Call(SetActorSpeed, ACTOR_PARTNER, Float(4.0))
+    Call(SetActorJumpGravity, ACTOR_PARTNER, Float(1.8))
+    Call(SetAnimation, ACTOR_PARTNER, -1, ANIM_BattleBow_Run)
+    Call(RunToGoal, ACTOR_PARTNER, 0)
+    Call(SetAnimation, ACTOR_PARTNER, -1, ANIM_BattleBow_Idle)
+    Return
+    End
+};
+
+EvtScript N(EVS_Move_OuttaSight) = {
     Call(SetActorFlagBits, ACTOR_PLAYER, ACTOR_FLAG_NO_INACTIVE_ANIM, TRUE)
     Call(SetActorFlagBits, ACTOR_PLAYER, ACTOR_FLAG_USING_IDLE_ANIM, FALSE)
     Call(UseBattleCamPreset, BTL_CAM_REPOSITION)
@@ -719,7 +835,7 @@ EvtScript N(outtaSight) = {
     End
 };
 
-EvtScript N(hidePlayer) = {
+EvtScript N(EVS_HidePlayer) = {
     Call(UseBattleCamPreset, BTL_CAM_DEFAULT)
     Wait(20)
     Call(PlaySoundAtActor, ACTOR_PARTNER, SOUND_BOW_APPEAR)
@@ -751,7 +867,7 @@ EvtScript N(hidePlayer) = {
     End
 };
 
-EvtScript N(spook) = {
+EvtScript N(EVS_Move_Spook) = {
     Call(LoadActionCommand, ACTION_COMMAND_SPOOK)
     Call(action_command_spook_init)
     Call(SetupMashMeter, 1, 100, 0, 0, 0, 0)
@@ -984,12 +1100,12 @@ EvtScript N(spook) = {
     EndLoop
     Call(SetActorScale, ACTOR_PARTNER, Float(1.0), Float(1.0), Float(1.0))
     Call(SetAnimation, ACTOR_PARTNER, -1, ANIM_BattleBow_Idle)
-    ExecWait(N(80238EE0))
+    ExecWait(N(EVS_ReturnHome))
     Return
     End
 };
 
-EvtScript N(fanSmack) = {
+EvtScript N(EVS_Move_FanSmack) = {
     Call(LoadActionCommand, ACTION_COMMAND_SMACK)
     Call(action_command_smack_init)
     Call(SetActionHudPrepareTime, 0)
@@ -1225,4 +1341,3 @@ EvtScript N(fanSmack) = {
     Return
     End
 };
-

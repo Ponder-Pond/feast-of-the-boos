@@ -6,6 +6,62 @@
 #include "model.h"
 #include "sprite.h"
 
+typedef struct PartnerMoves {
+    u8 baseMoves[4];
+    u8 upgradeMoves[4];
+} PartnerMoves;
+
+PartnerMoves partnerMoves[] = {
+    [PARTNER_NONE] {
+        {0, 0, 0, 0},
+        {0, 0, 0, 0}
+    },
+    [PARTNER_GOOMBARIO] {
+        {MOVE_HEADBONK1, MOVE_HEADBONK2, MOVE_HEADBONK3, MOVE_HEADBONK3},
+        {MOVE_TATTLE, MOVE_CHARGE, MOVE_MULTIBONK, MOVE_MULTIBONK}
+    },
+    [PARTNER_KOOPER] {
+        {MOVE_SHELL_TOSS1, MOVE_SHELL_TOSS2, MOVE_SHELL_TOSS3, MOVE_SHELL_TOSS3},
+        {MOVE_POWER_SHELL, MOVE_DIZZY_SHELL, MOVE_FIRE_SHELL, MOVE_FIRE_SHELL}
+    },
+    [PARTNER_BOMBETTE] {
+        {MOVE_BODY_SLAM1, MOVE_BODY_SLAM2, MOVE_BODY_SLAM3, MOVE_BODY_SLAM3},
+        {MOVE_BOMB, MOVE_POWER_BOMB, MOVE_MEGA_BOMB, MOVE_MEGA_BOMB}
+    },
+    [PARTNER_PARAKARRY] {
+        {MOVE_SKY_DIVE1, MOVE_SKY_DIVE2, MOVE_SKY_DIVE3, MOVE_SKY_DIVE3},
+        {MOVE_SHELL_SHOT, MOVE_AIR_LIFT, MOVE_AIR_RAID, MOVE_AIR_RAID}
+    },
+    [PARTNER_GOOMPA] {
+        {0, 0, 0, 0},
+        {0, 0, 0, 0}
+    },
+    [PARTNER_WATT] {
+        {MOVE_ELECTRO_DASH1, MOVE_ELECTRO_DASH2, MOVE_ELECTRO_DASH3, MOVE_ELECTRO_DASH3},
+        {MOVE_POWER_SHOCK, MOVE_TURBO_CHARGE, MOVE_MEGA_SHOCK, MOVE_MEGA_SHOCK}
+    },
+    [PARTNER_SUSHIE] {
+        {MOVE_BELLY_FLOP1, MOVE_BELLY_FLOP2, MOVE_BELLY_FLOP3, MOVE_BELLY_FLOP3},
+        {MOVE_SQUIRT, MOVE_WATER_BLOCK, MOVE_TIDAL_WAVE, MOVE_TIDAL_WAVE}
+    },
+    [PARTNER_LAKILESTER] {
+        {MOVE_SPINY_FLIP1, MOVE_SPINY_FLIP2, MOVE_SPINY_FLIP3, MOVE_SPINY_FLIP3},
+        {MOVE_SPINY_SURGE, MOVE_CLOUD_NINE, MOVE_HURRICANE, MOVE_HURRICANE}
+    },
+    [PARTNER_BOW] {
+        {MOVE_SMACK1, MOVE_SMACK2, MOVE_SMACK3, MOVE_SMACK3},
+        {MOVE_TATTLE2, MOVE_OUTTA_SIGHT, MOVE_SPOOK, MOVE_FAN_SMACK}
+    },
+    [PARTNER_GOOMBARIA] {
+        {0, 0, 0, 0},
+        {0, 0, 0, 0}
+    },
+    [PARTNER_TWINK] {
+        {0, 0, 0, 0},
+        {0, 0, 0, 0}
+    },
+};
+
 f32 D_802938A4 = 0.0f;
 
 s16 D_802938A8 = 4;
@@ -691,7 +747,24 @@ void btl_init_menu_boots(void) {
     // Standard jump move
     moveCount = 1;
     battleStatus->submenuMoves[0] = playerData->bootsLevel + MOVE_JUMP1;
-    battleStatus->submenuIcons[0] = ITEM_PARTNER_ATTACK;
+    // battleStatus->submenuIcons[0] = ITEM_PARTNER_ATTACK; // Vanilla
+
+    // Set the correct icon based on bootsLevel
+    switch (playerData->bootsLevel) {
+        case 0:
+            battleStatus->submenuIcons[0] = ITEM_MENU_BOOTS1;
+            break;
+        case 1:
+            battleStatus->submenuIcons[0] = ITEM_MENU_BOOTS2;
+            break;
+        case 2:
+            battleStatus->submenuIcons[0] = ITEM_MENU_BOOTS3;
+            break;
+        default:
+            // Handle unexpected boots levels if necessary
+            battleStatus->submenuIcons[0] = ITEM_MENU_BOOTS1; // Default to MENU_BOOTS1
+            break;
+    }
 
     // Jump badges
     for (i = 0; i < ARRAY_COUNT(playerData->equippedBadges); i++) {
@@ -785,7 +858,24 @@ void btl_init_menu_hammer(void) {
     // Standard hammer move
     moveCount = 1;
     battleStatus->submenuMoves[0] = playerData->hammerLevel + MOVE_HAMMER1;
-    battleStatus->submenuIcons[0] = ITEM_PARTNER_ATTACK;
+    // battleStatus->submenuIcons[0] = ITEM_PARTNER_ATTACK; // Vanilla
+
+    // Set the correct icon based on hammerLevel
+    switch (playerData->hammerLevel) {
+        case 0:
+            battleStatus->submenuIcons[0] = ITEM_MENU_HAMMER1;
+            break;
+        case 1:
+            battleStatus->submenuIcons[0] = ITEM_MENU_HAMMER2;
+            break;
+        case 2:
+            battleStatus->submenuIcons[0] = ITEM_MENU_HAMMER3;
+            break;
+        default:
+            // Handle unexpected hammer levels if necessary
+            battleStatus->submenuIcons[0] = ITEM_MENU_HAMMER1; // Default to MENU_HAMMER1
+            break;
+    }
 
     // Hammer badges
     for (i = 0; i < ARRAY_COUNT(playerData->equippedBadges); i++) {
@@ -878,20 +968,26 @@ void btl_init_menu_partner(void) {
     //  4              | Unlocked after super | Charge
     //  5              | Unlocked after ultra | Multibonk
 
-    battleStatus->submenuMoveCount = partner->actorBlueprint->level + 2;
+    battleStatus->submenuMoveCount = partner->actorBlueprint->level + 3;
 
-    // Offsets 0,1,2
-    battleStatus->submenuMoves[0] =
-        playerData->curPartner * 6
-        + (MOVE_HEADBONK1 - 6)
-        + partner->actorBlueprint->level;
+    // // Offsets 0,1,2
+    // battleStatus->submenuMoves[0] =
+    //     playerData->curPartner * 6
+    //     + (MOVE_HEADBONK1 - 6)
+    //     + partner->actorBlueprint->level;
 
-    // Offsets 3,4,5
+    // // Offsets 3,4,5
+    // for (i = 1; i < battleStatus->submenuMoveCount; i++) {
+    //     battleStatus->submenuMoves[i] =
+    //         playerData->curPartner * 6
+    //         + (MOVE_TATTLE - 6)
+    //         + (i - 1);
+    // }
+
+    battleStatus->submenuMoves[0] = partnerMoves[playerData->curPartner].baseMoves[playerData->partners[playerData->curPartner].level];
+
     for (i = 1; i < battleStatus->submenuMoveCount; i++) {
-        battleStatus->submenuMoves[i] =
-            playerData->curPartner * 6
-            + (MOVE_TATTLE - 6)
-            + (i - 1);
+        battleStatus->submenuMoves[i] = partnerMoves[playerData->curPartner].upgradeMoves[i - 1];
     }
 
     hasAnyBadgeMoves = FALSE;

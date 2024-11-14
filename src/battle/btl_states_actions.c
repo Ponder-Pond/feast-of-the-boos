@@ -1057,9 +1057,17 @@ void btl_state_draw_begin_player_turn(void) {
 }
 
 void btl_state_update_switch_to_player(void) {
+    BattleStatus* battleStatus = &gBattleStatus;
     Actor* player = gBattleStatus.playerActor;
     Actor* partner = gBattleStatus.partnerActor;
     s32 i;
+
+    // Prevent switching to Mario if partner is using Tattle2
+    if (battleStatus->selectedMoveID == MOVE_TATTLE2) {
+        // Stay in the current partner turn, do not switch
+        gBattleState = BATTLE_STATE_BEGIN_PARTNER_TURN;
+        return;  // Exit early to prevent switching
+    }
 
     if (gBattleSubState == BTL_SUBSTATE_INIT) {
         gBattleStatus.flags1 &= ~BS_FLAGS1_PARTNER_ACTING;
@@ -1569,6 +1577,7 @@ void btl_state_update_end_turn(void) {
     if (gBattleSubState == BTL_SUBSTATE_END_TURN_INIT) {
         s32 cond = FALSE;
 
+        // Check if any enemy actor has a script associated with them
         for (i = 0; i < ARRAY_COUNT(battleStatus->enemyActors); i++) {
             actor = battleStatus->enemyActors[i];
             if (actor != NULL && actor->handleEventScript != NULL) {
@@ -1580,6 +1589,7 @@ void btl_state_update_end_turn(void) {
             }
         }
 
+        // Check for additional conditions if no active enemy scripts are found
         if (!cond) {
             for (i = 0; i < ARRAY_COUNT(battleStatus->enemyActors); i++) {
                 actor = battleStatus->enemyActors[i];
@@ -1599,10 +1609,13 @@ void btl_state_update_end_turn(void) {
         }
     }
 
+    // Now handle the case where the partner might swap back to Mario
     if (gBattleSubState == BTL_SUBSTATE_END_TURN_CHECK_FOR_SWAP) {
+        // If it's a Peach Battle, don't swap
         if (gBattleStatus.flags2 & BS_FLAGS2_PEACH_BATTLE) {
             gBattleSubState = BTL_SUBSTATE_END_TURN_START_SCRIPTS;
         } else if (!(gBattleStatus.flags1 & BS_FLAGS1_PLAYER_IN_BACK)) {
+            // If player is not in the back row, proceed to start scripts
             gBattleSubState = BTL_SUBSTATE_END_TURN_START_SCRIPTS;
         } else {
             player->flags &= ~ACTOR_FLAG_SHOW_STATUS_ICONS;
@@ -1619,6 +1632,7 @@ void btl_state_update_end_turn(void) {
         }
     }
 
+    // Swap movement and completion logic
     if (gBattleSubState == BTL_SUBSTATE_END_TURN_PERFORM_SWAP) {
         if (partner->state.moveTime != 0) {
             partner->curPos.x += (partner->state.goalPos.x - partner->curPos.x) / partner->state.moveTime;
@@ -1653,13 +1667,14 @@ void btl_state_update_end_turn(void) {
         }
     }
 
+    // Start scripts for the end of turn
     if (gBattleSubState == BTL_SUBSTATE_END_TURN_START_SCRIPTS) {
         gBattleStatus.flags2 &= ~BS_FLAGS2_HIDE_BUFF_COUNTERS;
         player->disableDismissTimer = 0;
         player->flags |= ACTOR_FLAG_SHOW_STATUS_ICONS | ACTOR_FLAG_USING_IDLE_ANIM;
         if (partner != NULL) {
-            player->flags |= ACTOR_FLAG_SHOW_STATUS_ICONS | ACTOR_FLAG_USING_IDLE_ANIM;
             partner->disableDismissTimer = 0;
+            partner->flags |= ACTOR_FLAG_SHOW_STATUS_ICONS | ACTOR_FLAG_USING_IDLE_ANIM;
         }
 
         btl_set_player_idle_anims();
@@ -1690,7 +1705,7 @@ void btl_state_update_end_turn(void) {
         gBattleSubState = BTL_SUBSTATE_END_TURN_AWAIT_SCRIPTS;
     }
 
-    // wait for all end turn scripts to finish executing
+    // Wait for all scripts to finish before moving on to the next turn
     if (gBattleSubState == BTL_SUBSTATE_END_TURN_AWAIT_SCRIPTS) {
         s32 cond = FALSE;
 
@@ -1711,7 +1726,7 @@ void btl_state_update_end_turn(void) {
         }
     }
 
-    // proceed to next turn
+    // Proceed to next turn
     switch (gBattleSubState) {
         case BTL_SUBSTATE_END_TURN_BEGIN_NEXT:
         case BTL_SUBSTATE_END_TURN_UNUSED_4:
@@ -3414,22 +3429,39 @@ void btl_state_draw_partner_move(void) {
 void btl_state_update_end_partner_turn(void) {
     BattleStatus* battleStatus = &gBattleStatus;
 
-    if (gBattleSubState == BTL_SUBSTATE_INIT) {
-        battleStatus->flags2 |= BS_FLAGS2_PARTNER_TURN_USED;
-        if (btl_check_enemies_defeated()) {
-            return;
-        }
-        battleStatus->flags1 &= ~BS_FLAGS1_PARTNER_ACTING;
-        battleStatus->flags2 &= ~BS_FLAGS2_OVERRIDE_INACTIVE_PARTNER;
-
-        if (battleStatus->unk_94 < 0) {
-            battleStatus->unk_94 = 0;
-            btl_set_state(BATTLE_STATE_END_TURN);
-        } else {
-            btl_set_state(BATTLE_STATE_9);
+    if (gBattleState == BTL_SUBSTATE_INIT) {
+        // Only set PARTNER_TURN_USED if the move is not Tattle2
+        if (battleStatus->selectedMoveID != MOVE_TATTLE2) {
+            battleStatus->flags2 |= BS_FLAGS2_PARTNER_TURN_USED;
         }
     }
+
+    // Check if enemies are defeated; if so, end the function early
+    if (btl_check_enemies_defeated()) {
+        return;
+    }
+
+    // Clear partner acting flags and any override settings for inactive partner
+    battleStatus->flags1 &= ~BS_FLAGS1_PARTNER_ACTING;
+    battleStatus->flags2 &= ~BS_FLAGS2_OVERRIDE_INACTIVE_PARTNER;
+
+    // Skip the swap to Mario if MOVE_TATTLE2 was used
+    // if (battleStatus->selectedMoveID == MOVE_TATTLE2) {
+    //     btl_set_state(BATTLE_STATE_BEGIN_PARTNER_TURN);
+    //     return;  // Exit early to avoid swap logic
+    // }
+
+    // Update battle state based on `unk_94`
+    if (battleStatus->unk_94 < 0) {
+        battleStatus->unk_94 = 0;
+        btl_set_state(BATTLE_STATE_END_TURN);
+    } else {
+        btl_set_state(BATTLE_STATE_9);
+    }
 }
+
+
+
 
 void btl_state_draw_end_partner_turn(void) {
 }

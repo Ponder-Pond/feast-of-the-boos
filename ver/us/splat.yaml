@@ -6871,8 +6871,10 @@ segments:
     subalign: 8
     subsegments:
     - [auto, c, area]
+    - [auto, c, actor/piranha_plant]
+    - [auto, c, actor/bzzap]
     - [auto, c, actor/beehive]
-    - [auto, c, stage/flo_01]
+    - [auto, c, stage/mim_01]
 
 #######################
 ### Battle Partners ###

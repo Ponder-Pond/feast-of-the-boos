@@ -1636,6 +1636,15 @@
     actionTip: BTL_MSG_ACTION_TIP_MASH_LEFT
     costFP: 0
     costBP: 0
+- Tattle2:
+    nameMsg: MSG_PartnerMoveName_Tattle
+    fullDescMsg: MSG_PartnerDesc_Goombario_Pause_Tattle
+    shortDescMsg: MSG_PartnerDesc_Goombario_Battle_Tattle
+    flags: [ TARGET_FLAG_SELECT_ONE, TARGET_FLAG_2, TARGET_FLAG_PRIMARY_ONLY, TARGET_FLAG_ALLOW_TARGET_ONLY, TARGET_FLAG_TATTLE ]
+    category: MOVE_TYPE_PARTNER
+    actionTip: NONE
+    costFP: 0
+    costBP: 0
 - OuttaSight:
     nameMsg: MSG_PartnerMoveName_OuttaSight
     fullDescMsg: MSG_PartnerDesc_Bow_Pause_OuttaSight

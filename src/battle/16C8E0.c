@@ -320,6 +320,14 @@ void btl_update(void) {
                 btl_state_update_end_turn();
                 break;
             case BATTLE_STATE_SWITCH_TO_PLAYER:
+                // Prevent switching to Mario if partner is using Tattle2
+                if (battleStatus->selectedMoveID == MOVE_TATTLE2) {
+                    // Stay in partner's turn; do not switch to Mario
+                    gBattleState = BATTLE_STATE_BEGIN_PARTNER_TURN;  // Go back to partner's turn
+                    return;  // Exit the function to prevent further processing
+                }
+
+                // Proceed with the usual switch to Mario if no Tattle2
                 btl_state_update_switch_to_player();
                 break;
             case BATTLE_STATE_SWITCH_TO_PARTNER:
