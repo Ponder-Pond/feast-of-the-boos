@@ -1062,13 +1062,6 @@ void btl_state_update_switch_to_player(void) {
     Actor* partner = gBattleStatus.partnerActor;
     s32 i;
 
-    // Prevent switching to Mario if partner is using Tattle2
-    if (battleStatus->selectedMoveID == MOVE_TATTLE2) {
-        // Stay in the current partner turn, do not switch
-        gBattleState = BATTLE_STATE_BEGIN_PARTNER_TURN;
-        return;  // Exit early to prevent switching
-    }
-
     if (gBattleSubState == BTL_SUBSTATE_INIT) {
         gBattleStatus.flags1 &= ~BS_FLAGS1_PARTNER_ACTING;
         reset_actor_turn_info();
@@ -1253,6 +1246,10 @@ void btl_state_update_9(void) {
     s32 oldKoDuration;
 
     if (gBattleSubState == BTL_SUBSTATE_9_INIT) {
+        if (battleStatus->selectedMoveID == MOVE_TATTLE2) {
+            btl_set_state(BATTLE_STATE_SWITCH_TO_PARTNER);
+            return;
+        }
         if (!(gBattleStatus.flags2 & BS_FLAGS2_PLAYER_TURN_USED)) {
             btl_set_state(BATTLE_STATE_SWITCH_TO_PLAYER);
             return;
@@ -1673,8 +1670,8 @@ void btl_state_update_end_turn(void) {
         player->disableDismissTimer = 0;
         player->flags |= ACTOR_FLAG_SHOW_STATUS_ICONS | ACTOR_FLAG_USING_IDLE_ANIM;
         if (partner != NULL) {
+            player->flags |= ACTOR_FLAG_SHOW_STATUS_ICONS | ACTOR_FLAG_USING_IDLE_ANIM;
             partner->disableDismissTimer = 0;
-            partner->flags |= ACTOR_FLAG_SHOW_STATUS_ICONS | ACTOR_FLAG_USING_IDLE_ANIM;
         }
 
         btl_set_player_idle_anims();
@@ -3429,8 +3426,7 @@ void btl_state_draw_partner_move(void) {
 void btl_state_update_end_partner_turn(void) {
     BattleStatus* battleStatus = &gBattleStatus;
 
-    if (gBattleState == BTL_SUBSTATE_INIT) {
-        // Only set PARTNER_TURN_USED if the move is not Tattle2
+    if (gBattleSubState == BTL_SUBSTATE_INIT) {
         if (battleStatus->selectedMoveID != MOVE_TATTLE2) {
             battleStatus->flags2 |= BS_FLAGS2_PARTNER_TURN_USED;
         }
@@ -3444,12 +3440,6 @@ void btl_state_update_end_partner_turn(void) {
     // Clear partner acting flags and any override settings for inactive partner
     battleStatus->flags1 &= ~BS_FLAGS1_PARTNER_ACTING;
     battleStatus->flags2 &= ~BS_FLAGS2_OVERRIDE_INACTIVE_PARTNER;
-
-    // Skip the swap to Mario if MOVE_TATTLE2 was used
-    // if (battleStatus->selectedMoveID == MOVE_TATTLE2) {
-    //     btl_set_state(BATTLE_STATE_BEGIN_PARTNER_TURN);
-    //     return;  // Exit early to avoid swap logic
-    // }
 
     // Update battle state based on `unk_94`
     if (battleStatus->unk_94 < 0) {
