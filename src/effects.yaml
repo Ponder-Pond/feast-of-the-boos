@@ -155,7 +155,7 @@
 - name: lightning
   args: s32, f32, f32, f32, f32, f32
 - name: fire_breath
-  args: s32, f32, f32, f32, f32, f32, f32, s32, s32, s32
+  args: s32, f32, f32, f32, f32, f32, f32, s32, s32, s32, s32
 - name: shimmer_burst
   args: s32, f32, f32, f32, f32, s32
   gfx: sparkles

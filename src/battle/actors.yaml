@@ -2345,3 +2345,14 @@
     stepDelay: [ 30, 30 ]
     tattleCamOffset: [ 0, 0, 0 ]
     shadowOffset: 0
+- MimicChest:
+    level: 10
+    nameMsg: MSG_EnemyName_MimicChest
+    tattleMsg: MSG_EnemyTattle_MimicChest
+    walkSound: [ SOUND_NONE, SOUND_NONE ]
+    flySound: [ SOUND_NONE, SOUND_NONE ]
+    jumpSound: SOUND_NONE
+    hurtSound: SOUND_ACTOR_HURT
+    stepDelay: [ 30, 30 ]
+    tattleCamOffset: [ 0, 0, 0 ]
+    shadowOffset: 0

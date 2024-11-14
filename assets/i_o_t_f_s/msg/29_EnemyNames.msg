@@ -525,3 +525,7 @@
 #message:29:(EnemyName_Beehive) {
 	Beehive[End]
 }
+
+#message:29:(EnemyName_MimicChest) {
+	Mimic Chest[End]
+}

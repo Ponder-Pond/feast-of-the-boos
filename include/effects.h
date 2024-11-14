@@ -895,7 +895,8 @@ typedef struct FireBreathFXData {
     /* 0x70 */ s32 envR;
     /* 0x74 */ s32 envG;
     /* 0x78 */ s32 envB;
-} FireBreathFXData; // size = 0x7C
+    /* 0x7C */ s32 color;
+} FireBreathFXData; // size = 0x80
 
 typedef struct ShimmerBurstFXData {
     /* 0x00 */ s32 unk_00;
@@ -2680,6 +2681,16 @@ enum FireBreathType {
     FIRE_BREATH_SMALL = 1,
     FIRE_BREATH_TINY  = 2,
 };
+
+typedef enum FireBreathColor {
+    FIRE_BREATH_ORANGE,
+    FIRE_BREATH_RED,
+    FIRE_BREATH_BLUE,
+    FIRE_BREATH_GREEN,
+    FIRE_BREATH_YELLOW,
+    FIRE_BREATH_PURPLE,
+    DAZE_BREATH,
+} FireBreathColor;
 
 EffectInstance* create_effect_instance(EffectBlueprint* effectBp);
 void remove_effect(EffectInstance*);

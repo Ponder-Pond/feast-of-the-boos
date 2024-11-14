@@ -705,7 +705,7 @@ API_CALLABLE(N(CamPushIn_BowserInhale)) {
             script->varTable[2],
             script->varTable[3] - 5,
             script->varTable[4] + temp_f4,
-            script->varTable[5] - 30, 0, 5, 20
+            script->varTable[5] - 30, 0, 5, 20, 0
         );
     }
 

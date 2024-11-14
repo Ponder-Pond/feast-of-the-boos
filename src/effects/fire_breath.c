@@ -1,5 +1,6 @@
 #include "common.h"
 #include "effects_internal.h"
+#include "dx/debug_menu.h"
 
 extern Gfx D_09000A00_373DE0[];
 extern Gfx D_09000B88_373F68[];
@@ -14,19 +15,64 @@ void fire_breath_update(EffectInstance* effect);
 void fire_breath_render(EffectInstance* effect);
 void fire_breath_appendGfx(void* effect);
 
+typedef struct FireBreathPreset {
+    Color_RGB8 primColor;
+    Color_RGB8 envColor;
+    s8 alpha;
+} FireBreathPreset;
+
+FireBreathPreset FireBreathPresets[] = {
+    [FIRE_BREATH_ORANGE] = {
+        .primColor = { 255, 170, 42 },
+        .envColor = { 243, 48, 0 },
+        .alpha = 255,
+    },
+    [FIRE_BREATH_RED] = {
+        .primColor = { 255, 50, 0 },
+        .envColor = { 200, 0, 0 },
+        .alpha = 255,
+    },
+    [FIRE_BREATH_BLUE] = {
+        .primColor = { 0, 0, 255 },
+        .envColor = { 0, 50, 200 },
+        .alpha = 255,
+    },
+    [FIRE_BREATH_GREEN] = {
+        .primColor = { 0, 255, 0 },
+        .envColor = { 0, 200, 50 },
+        .alpha = 255,
+    },
+    [FIRE_BREATH_YELLOW] = {
+        .primColor = { 255, 255, 0 },
+        .envColor = { 255, 220, 0 },
+        .alpha = 255,
+    },
+    [FIRE_BREATH_PURPLE] = {
+        .primColor = { 200, 0, 200 },
+        .envColor = { 100, 0, 150 },
+        .alpha = 255,
+    },
+    [DAZE_BREATH] = {
+        .primColor = { 200, 21, 212 },
+        .envColor = { 200, 21, 212 },
+        .alpha = 255,
+    }
+};
+
+
 EffectInstance* fire_breath_main(
     s32 type,
     f32 startX, f32 startY, f32 startZ,
     f32 endX, f32 endY, f32 endZ,
-    s32 numExtra, s32 spawnDelay, s32 duration
+    s32 numExtra, s32 spawnDelay, s32 duration,
+    s32 color // New color parameter
 ) {
     EffectBlueprint bp;
     FireBreathFXData* data;
     EffectInstance* effect;
     s32 numParts = 1;
-    s32* temp_a0;
-    f32 phi_f0;
 
+    // Initialize effect
     bp.unk_00 = 0;
     bp.init = fire_breath_init;
     bp.update = fire_breath_update;
@@ -51,18 +97,28 @@ EffectInstance* fire_breath_main(
     data->endPos.x = endX;
     data->endPos.y = endY;
     data->endPos.z = endZ;
+    data->color = color;
 
+    // Use the preset color values
+    FireBreathPreset* preset = &FireBreathPresets[color];
+    data->primR = preset->primColor.r;
+    data->primG = preset->primColor.g;
+    data->primB = preset->primColor.b;
+    data->envR = preset->envColor.r;
+    data->envG = preset->envColor.g;
+    data->envB = preset->envColor.b;
+    data->alpha = preset->alpha;
+
+    // Setting other properties
     if (type == FIRE_BREATH_LARGE) {
         data->scale = 0.05f;
     } else {
         data->scale = 0.04f;
     }
-
     data->initialScale = data->scale;
     data->duration = duration;
     data->timeLeft = duration;
     data->lifetime = 0;
-    data->alpha = 255;
     data->animTime = 0.0f;
     data->scaleChangeRate = 0.1f;
     data->targetScale = data->initialScale;
@@ -76,14 +132,6 @@ EffectInstance* fire_breath_main(
         data->offsetPos.y = (endY - startY) * 0.2 * (effect_simple_rand(10, spawnDelay + 4) - 5);
         data->offsetPos.z = (endZ - startZ) * 0.2 * (effect_simple_rand(10, spawnDelay + 5) - 5);
     }
-
-    data->primR = 255;
-    data->primG = 170;
-    data->primB = 42;
-    data->velY = 0.0f;
-    data->envR = 243;
-    data->envG = 48;
-    data->envB = 0;
 
     return effect;
 }
@@ -129,8 +177,9 @@ void fire_breath_update(EffectInstance* effect) {
         load_effect(EFFECT_FIRE_BREATH);
         spawned = fire_breath_main(
             data->type, data->initPos.x, data->initPos.y, data->initPos.z, data->endPos.x, data->endPos.y,
-            data->endPos.z, data->numChildren - 1, data->spawnDelay, duration
+            data->endPos.z, data->numChildren - 1, data->spawnDelay, duration, data->color
         );
+
 
         spawned->data.fireBreath->primR = data->primR;
         spawned->data.fireBreath->primG = data->primG;
@@ -187,6 +236,7 @@ void fire_breath_appendGfx(void* effect) {
     Gfx* dlist = D_E006EC00[type];
     Gfx* dlist2 = D_E006EC0C[type];
     s32 imgFrame = data->animTime;
+    FireBreathPreset* preset = &FireBreathPresets[data->color];
 
     gDPPipeSync(gMainGfxPos++);
     gSPSegment(gMainGfxPos++, 0x09, VIRTUAL_TO_PHYSICAL(((EffectInstance*)effect)->graphics->data));
@@ -205,8 +255,8 @@ void fire_breath_appendGfx(void* effect) {
     }
 
     gSPDisplayList(gMainGfxPos++, dlist2);
-    gDPSetPrimColor(gMainGfxPos++, 0, 0, data->primR, data->primG, data->primB, data->alpha);
-    gDPSetEnvColor(gMainGfxPos++, data->envR, data->envG, data->envB, envAlpha);
+    gDPSetPrimColor(gMainGfxPos++, 0, 0, preset->primColor.r, preset->primColor.g, preset->primColor.b, data->alpha);
+    gDPSetEnvColor(gMainGfxPos++, preset->envColor.r, preset->envColor.g, preset->envColor.b, 0);
     gDPSetTileSize(gMainGfxPos++, G_TX_RENDERTILE, ((imgFrame * 32) + 0)  * 4, 0, ((imgFrame * 32) + 32) * 4, 128);
     gDPSetTileSize(gMainGfxPos++, 1,               ((imgFrame * 32) + 32) * 4, 0, ((imgFrame * 32) + 64) * 4, 128);
 

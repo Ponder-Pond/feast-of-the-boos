@@ -7,6 +7,8 @@
 extern EvtScript N(EVS_Init);
 extern EvtScript N(EVS_Idle);
 extern EvtScript N(EVS_TakeTurn);
+extern EvtScript N(EVS_Attack_Bite);
+extern EvtScript N(EVS_Attack_DazeBreath);
 extern EvtScript N(EVS_HandleEvent);
 
 enum N(ActorPartIDs) {
@@ -14,7 +16,8 @@ enum N(ActorPartIDs) {
 };
 
 enum N(ActorParams) {
-    DMG_BITE        = 3,
+    DMG_BITE            = 3,
+    DMG_DAZE_BREATH     = 2,
 };
 
 s32 N(DefaultAnims)[] = {
@@ -264,6 +267,29 @@ EvtScript N(EVS_HandleEvent) = {
 EvtScript N(EVS_TakeTurn) = {
     Call(UseIdleAnimation, ACTOR_SELF, FALSE)
     Call(EnableIdleScript, ACTOR_SELF, IDLE_SCRIPT_DISABLE)
+    Call(RandInt, 100, LVar0)
+    Switch(LVar0)
+        CaseLt(50)
+            Set(LVar1, 0)
+        CaseDefault
+            Set(LVar1, 1)
+    EndSwitch
+    Set(LVar1, 0)
+    Switch(LVar1)
+        CaseEq(0)
+            ExecWait(N(EVS_Attack_Bite))
+        CaseEq(1)
+            ExecWait(N(EVS_Attack_DazeBreath))
+    EndSwitch
+    Call(EnableIdleScript, ACTOR_SELF, IDLE_SCRIPT_ENABLE)
+    Call(UseIdleAnimation, ACTOR_SELF, TRUE)
+    Return
+    End
+};
+
+EvtScript N(EVS_Attack_Bite) = {
+    Call(UseIdleAnimation, ACTOR_SELF, FALSE)
+    Call(EnableIdleScript, ACTOR_SELF, IDLE_SCRIPT_DISABLE)
     Call(SetTargetActor, ACTOR_SELF, ACTOR_PLAYER)
     Call(GetBattlePhase, LVar0)
     IfEq(LVar0, PHASE_FIRST_STRIKE)
@@ -281,6 +307,8 @@ EvtScript N(EVS_TakeTurn) = {
         Wait(15)
         Goto(123)
     EndIf
+    // Call(EnableActorGlow, ACTOR_SELF, TRUE)
+    Wait(30)
     Call(PlaySoundAtActor, ACTOR_SELF, SOUND_BURROW_DIG)
     Call(SetAnimation, ACTOR_SELF, PRT_MAIN, ANIM_SmallPiranha_Anim04)
     Call(SetActorFlagBits, ACTOR_SELF, ACTOR_FLAG_NO_SHADOW, TRUE)
@@ -359,6 +387,135 @@ EvtScript N(EVS_TakeTurn) = {
     Call(SetGoalToTarget, ACTOR_SELF)
     Call(EnemyDamageTarget, ACTOR_SELF, LVar0, 0, 0, 0, DMG_BITE, BS_FLAGS1_TRIGGER_EVENTS)
     Switch(LVar0)
+        CaseOrEq(HIT_RESULT_HIT)
+        CaseOrEq(HIT_RESULT_NO_DAMAGE)
+            Call(UseBattleCamPreset, BTL_CAM_DEFAULT)
+            Wait(2)
+            Call(SetAnimation, ACTOR_SELF, PRT_MAIN, ANIM_SmallPiranha_Anim08)
+            Wait(15)
+            Call(YieldTurn)
+            Call(SetActorSpeed, ACTOR_SELF, Float(6.0))
+            ExecWait(N(EVS_ReturnHome))
+            Wait(30)
+            // Call(EnableActorGlow, ACTOR_SELF, FALSE)
+        EndCaseGroup
+    EndSwitch
+    Call(EnableIdleScript, ACTOR_SELF, IDLE_SCRIPT_ENABLE)
+    Call(UseIdleAnimation, ACTOR_SELF, TRUE)
+    Return
+    End
+};
+
+#include "common/SetBowserFireBreathScales.inc.c"
+
+EvtScript N(EVS_Attack_DazeBreath) = {
+    Call(UseIdleAnimation, ACTOR_SELF, FALSE)
+    Call(EnableIdleScript, ACTOR_SELF, IDLE_SCRIPT_DISABLE)
+    Call(SetTargetActor, ACTOR_SELF, ACTOR_PLAYER)
+    Wait(15)
+    Call(PlaySoundAtActor, ACTOR_SELF, SOUND_BURROW_DIG)
+    Call(SetAnimation, ACTOR_SELF, PRT_MAIN, ANIM_SmallPiranha_Anim04)
+    Call(SetActorFlagBits, ACTOR_SELF, ACTOR_FLAG_NO_SHADOW, TRUE)
+    Wait(8)
+    Call(UseBattleCamPreset, BTL_CAM_REPOSITION)
+    Call(SetGoalToTarget, ACTOR_SELF)
+    Call(GetGoalPos, ACTOR_SELF, LVar0, LVar1, LVar2)
+    Add(LVar0, 20)
+    Set(LVar1, 0)
+    Call(SetBattleCamTarget, LVar0, LVar1, LVar2)
+    Call(SetBattleCamDist, 350)
+    Call(SetBattleCamOffsetY, 45)
+    Call(SetBattleCamTargetingModes, BTL_CAM_YADJ_TARGET, BTL_CAM_XADJ_AVG, FALSE)
+    Call(MoveBattleCamOver, 20)
+    Call(SetGoalToTarget, ACTOR_SELF)
+    Call(GetGoalPos, ACTOR_SELF, LVar0, LVar1, LVar2)
+    Call(GetStatusFlags, ACTOR_SELF, LVar5)
+    IfFlag(LVar5, STATUS_FLAG_SHRINK)
+        Add(LVar0, 8)
+        Add(LVar0, -3)
+    Else
+        Add(LVar0, 20)
+    EndIf
+    Set(LVar1, 0)
+    Call(SetActorSpeed, ACTOR_SELF, Float(6.0))
+    Call(SetActorJumpGravity, ACTOR_SELF, Float(1.0))
+    Call(SetActorSounds, ACTOR_SELF, ACTOR_SOUND_JUMP, SOUND_NONE, 0)
+    Call(GetGoalPos, ACTOR_SELF, LVar0, LVar1, LVar2)
+    Add(LVar0, 100)
+    Set(LVar1, 0)
+    Call(SetGoalPos, ACTOR_SELF, LVar0, LVar1, LVar2)
+    Call(JumpToGoal, ACTOR_SELF, 20, FALSE, FALSE, FALSE)
+    Label(123)
+    Call(PlaySoundAtActor, ACTOR_SELF, SOUND_BURROW_SURFACE)
+    Call(SetActorPos, ACTOR_SELF, LVar0, LVar1, LVar2)
+    Call(SetActorFlagBits, ACTOR_SELF, ACTOR_FLAG_NO_SHADOW, FALSE)
+    Call(SetAnimation, ACTOR_SELF, PRT_MAIN, ANIM_SmallPiranha_Anim03)
+    Wait(8)
+    Call(SetAnimation, ACTOR_SELF, PRT_MAIN, ANIM_SmallPiranha_Anim05)
+    Wait(2)
+    Call(SetAnimation, ACTOR_SELF, PRT_MAIN, ANIM_SmallPiranha_Anim07)
+    Wait(10)
+    Call(SetAnimation, ACTOR_SELF, PRT_MAIN, ANIM_SmallPiranha_Anim06) // breath start
+    Wait(27)
+    Call(SetBattleCamTarget, LVar0, LVar1, LVar2)
+    Call(SetBattleCamDist, 400)
+    Call(MoveBattleCamOver, 40)
+    Call(SetAnimation, ACTOR_SELF, PRT_MAIN, ANIM_SmallPiranha_Anim07) // breath
+    Call(UseBattleCamPreset, BTL_CAM_MIDPOINT_FAR)
+    Call(MoveBattleCamOver, 55)
+    Add(LVar2, 20)
+    Call(SetGoalToTarget, ACTOR_SELF)
+    Call(GetGoalPos, ACTOR_SELF, LVar3, LVar4, -100)
+    Wait(5)
+    Call(GetActorPos, ACTOR_SELF, LVar0, LVar1, LVar2)
+    Add(LVar1, 15)
+    Sub(LVar3, 40)
+    Sub(LVar4, 0)
+    Sub(LVar5, 5)
+    PlayEffect(EFFECT_FIRE_BREATH, FIRE_BREATH_TINY, LVar0, LVar1, LVar2, LVar3, LVar4, LVar5, 25, 1, 8, DAZE_BREATH)
+    Call(N(SetBowserFireBreathScales), LVarF)
+    Thread
+        // Call(N(StartRumbleWithParams), 50, 148)
+        Call(PlaySound, SOUND_BOWSER_FIRE_BREATH_LOOP)
+        Wait(70)
+        Call(PlaySound, SOUND_BOWSER_FIRE_BREATH_LOOP | SOUND_ID_TRIGGER_CHANGE_SOUND)
+    EndThread
+    Wait(10)
+    Call(SetGoalToTarget, ACTOR_SELF)
+    Call(EnemyTestTarget, ACTOR_SELF, LVar0, 0, 0, 1, BS_FLAGS1_INCLUDE_POWER_UPS)
+    Switch(LVar0)
+        CaseOrEq(HIT_RESULT_MISS)
+        CaseOrEq(HIT_RESULT_LUCKY)
+            Set(LVarA, LVar0)
+            Call(GetStatusFlags, ACTOR_SELF, LVar5)
+            IfNotFlag(LVar5, STATUS_FLAG_SHRINK)
+                Call(SetAnimation, ACTOR_SELF, PRT_MAIN, ANIM_SmallPiranha_Anim06)
+                Wait(2)
+            EndIf
+            Thread
+                Wait(6)
+                Call(PlaySoundAtActor, ACTOR_SELF, SOUND_PIRANHA_BITE)
+            EndThread
+            Call(SetAnimation, ACTOR_SELF, PRT_MAIN, ANIM_SmallPiranha_Anim08) // breath end
+            Wait(40)
+            Wait(2)
+            IfEq(LVarA, HIT_RESULT_LUCKY)
+                Call(EnemyTestTarget, ACTOR_SELF, LVar0, DAMAGE_TYPE_TRIGGER_LUCKY, 0, 0, 0)
+            EndIf
+            Wait(15)
+            Call(UseBattleCamPreset, BTL_CAM_DEFAULT)
+            Call(YieldTurn)
+            Call(SetActorSpeed, ACTOR_SELF, Float(4.0))
+            ExecWait(N(EVS_ReturnHome))
+            Call(EnableIdleScript, ACTOR_SELF, IDLE_SCRIPT_ENABLE)
+            Call(UseIdleAnimation, ACTOR_SELF, TRUE)
+            Return
+        EndCaseGroup
+    EndSwitch
+    Wait(2)
+    Call(SetGoalToTarget, ACTOR_SELF)
+    Call(EnemyDamageTarget, ACTOR_SELF, LVarF, DAMAGE_TYPE_NO_CONTACT, SUPPRESS_EVENT_ALL, DMG_STATUS_KEY(STATUS_FLAG_DIZZY, 2, 100), DMG_DAZE_BREATH, BS_FLAGS1_TRIGGER_EVENTS)
+        Switch(LVarF)
         CaseOrEq(HIT_RESULT_HIT)
         CaseOrEq(HIT_RESULT_NO_DAMAGE)
             Call(UseBattleCamPreset, BTL_CAM_DEFAULT)

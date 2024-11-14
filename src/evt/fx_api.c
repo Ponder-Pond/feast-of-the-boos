@@ -318,6 +318,7 @@ API_CALLABLE(PlayEffect_impl) {
 
     s32 iVar1, iVar2, iVar3, iVar4, iVar5;
     s32 iVar6, iVar7, iVar8, iVar9, iVar10;
+    s32 iVar11;
 
     f32 fVar1, fVar2, fVar3, fVar4, fVar5, fVar6;
     f32 fVar7, fVar8, fVar9, fVar10, fVar11;
@@ -342,7 +343,7 @@ API_CALLABLE(PlayEffect_impl) {
     iVar8 = evt_get_variable(script, *intArgs++);
     iVar9 = evt_get_variable(script, *intArgs++);
     iVar10 = evt_get_variable(script, *intArgs++);
-    evt_get_variable(script, *intArgs++);
+    iVar11 = evt_get_variable(script, *intArgs++);
     evt_get_variable(script, *intArgs++);
     evt_get_variable(script, *intArgs++);
 
@@ -532,7 +533,7 @@ API_CALLABLE(PlayEffect_impl) {
             effectRet = fx_lightning(iVar1, fVar2, fVar3, fVar4, fVar5, fVar6);
             break;
         case EFFECT_FIRE_BREATH:
-            effectRet = fx_fire_breath(iVar1, fVar2, fVar3, fVar4, fVar5, fVar6, fVar7, iVar8, iVar9, iVar10);
+            effectRet = fx_fire_breath(iVar1, fVar2, fVar3, fVar4, fVar5, fVar6, fVar7, iVar8, iVar9, iVar10, iVar11);
             break;
         case EFFECT_SHIMMER_BURST:
             fx_shimmer_burst(iVar1, fVar2, fVar3, fVar4, fVar5, iVar6);
