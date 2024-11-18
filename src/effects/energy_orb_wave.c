@@ -66,6 +66,9 @@ EffectInstance* energy_orb_wave_main(s32 arg0, f32 arg1, f32 arg2, f32 arg3, f32
         case 6:
             data->unk_1C = 9;
             break;
+        case 8:
+            data->unk_1C = 11;
+            break;
         default:
             data->unk_1C = 10;
             data->unk_34 = -(arg4 - 0.1) / arg5;
@@ -191,6 +194,13 @@ void energy_orb_wave_update(EffectInstance* effect) {
             data->unk_2C = (var_2 * var_4) / 255;
             data->scale *= 1.1;
             break;
+        case 11:
+            data->unk_20 = 180;
+            data->unk_24 = 40;
+            data->unk_28 = 50;
+            var_float = sin_deg(unk_14 * 2) * 10.0f + 190.0f;
+            data->unk_2C = ((s32) var_float * var_1) / 255;
+            break;
         default:
             var_4 = 160;
             data->unk_20 = 50;
@@ -212,7 +222,7 @@ void energy_orb_wave_render(EffectInstance* effect) {
     renderTask.dist = 10;
     renderTask.appendGfxArg = effect;
     renderTask.renderMode = RENDER_MODE_CLOUD_NO_ZCMP;
-    if (effect82->unk_00 >= 3) {
+    if (effect82->unk_00 >= 3 || effect82->unk_00 == 8) {
         queue_render_task(renderTaskPointer);
         return;
     }
@@ -247,7 +257,7 @@ void energy_orb_wave_appendGfx(void* effect) {
     gDPSetColorDither(gMainGfxPos++, G_CD_BAYER);
     gDPSetAlphaDither(gMainGfxPos++, G_AD_PATTERN);
 
-    if (unk_00 < 3) {
+    if (unk_00 < 3 || unk_00 == 8) {
         gSPDisplayList(gMainGfxPos++, D_09001000_3A5320);
 
         guRotateF(sp18, unk_14, 0.0f, 0.0f, 1.0f);

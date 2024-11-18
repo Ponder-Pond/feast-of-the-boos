@@ -234,5 +234,6 @@
         <Sprite name="ParadeTwink"/>
         <Sprite name="Leaf"/>
         <Sprite name="InsectsDK3"/>
+        <Sprite name="Panser"/>
     </Sprites>
 </Names>

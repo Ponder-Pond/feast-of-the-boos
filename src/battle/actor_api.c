@@ -3273,6 +3273,7 @@ API_CALLABLE(BoostAttack) {
         case 1:
             if (script->functionTemp[3] == 0) {
                 fx_radial_shimmer(2, x1, y1, z1, 1.0f, 30);
+                // fx_radial_shimmer(7, x1, y1, z1, 1.0f, 30);
                 btl_cam_use_preset_immediately(BTL_CAM_REPOSITION);
                 script->functionTemp[3] = 30;
                 script->functionTemp[0] = 2;
@@ -3397,6 +3398,7 @@ API_CALLABLE(BoostDefense) {
         case 1:
             if (script->functionTemp[3] == 0) {
                 fx_radial_shimmer(2, x1, y1, z1, 1.0f, 30);
+                // fx_radial_shimmer(15, x1, y1, z1, 1.0f, 30);
                 btl_cam_use_preset_immediately(BTL_CAM_REPOSITION);
                 script->functionTemp[3] = 30;
                 script->functionTemp[0] = 2;

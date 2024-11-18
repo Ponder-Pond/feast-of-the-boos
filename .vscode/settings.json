@@ -72,4 +72,5 @@
     "search.useIgnoreFiles": false,
     "nixEnvSelector.nixFile": "${workspaceFolder}/shell.nix",
     "workbench.editor.labelFormat": "short",
+    "C_Cpp.dimInactiveRegions": false,
 }

@@ -11,6 +11,7 @@ extern EvtScript N(EVS_HandleEvent);
 extern EvtScript N(EVS_Attack_Bite);
 extern EvtScript N(EVS_Attack_DazeBreath);
 extern EvtScript N(EVS_RiseFromPipe);
+extern EvtScript N(EVS_Move_BoostAttack);
 
 enum N(ActorPartIDs) {
     PRT_MAIN        = 1,
@@ -309,6 +310,7 @@ EvtScript N(EVS_TakeTurn) = {
         CaseEq(1)
             ExecWait(N(EVS_Attack_DazeBreath))
     EndSwitch
+    // ExecWait(N(EVS_Move_BoostAttack))
     Call(EnableIdleScript, ACTOR_SELF, IDLE_SCRIPT_ENABLE)
     Call(UseIdleAnimation, ACTOR_SELF, TRUE)
     Return
@@ -560,3 +562,30 @@ EvtScript N(EVS_Attack_DazeBreath) = {
     Return
     End
 };
+
+// EvtScript N(EVS_Move_BoostAttack) = {
+//     Call(UseIdleAnimation, ACTOR_SELF, FALSE)
+//     Call(EnableIdleScript, ACTOR_SELF, IDLE_SCRIPT_DISABLE)
+//     Call(SetTargetActor, ACTOR_SELF, ACTOR_PLAYER)
+//     Call(UseBattleCamPreset, BTL_CAM_ACTOR)
+//     Call(BattleCamTargetActor, ACTOR_SELF)
+//     Call(MoveBattleCamOver, 15)
+//     Wait(15)
+//     Thread
+//         Wait(10)
+//         Call(PlaySoundAtActor, LVar8, SOUND_MAGIKOOPA_POWER_UP)
+//     EndThread
+//     Thread
+//         Call(FreezeBattleState, TRUE)
+//         Call(BoostDefense, ACTOR_SELF, 1)
+//         Call(FreezeBattleState, FALSE)
+//     EndThread
+//     Call(WaitForBuffDone)
+//     Call(UseBattleCamPreset, BTL_CAM_DEFAULT)
+//     Wait(10)
+//     Call(YieldTurn)
+//     Call(EnableIdleScript, ACTOR_SELF, IDLE_SCRIPT_ENABLE)
+//     Call(UseIdleAnimation, ACTOR_SELF, TRUE)
+//     Return
+//     End
+// };

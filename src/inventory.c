@@ -88,11 +88,12 @@ void clear_player_data(void) {
         playerData->partners[i].unk_02[2] = 0;
     }
     playerData->partners[PARTNER_BOW].enabled = TRUE;
-    playerData->partners[PARTNER_BOW].level = PARTNER_RANK_ULTRA;
+    playerData->partners[PARTNER_BOW].level = PARTNER_RANK_NORMAL;
 
     for (i = 0; i < ARRAY_COUNT(playerData->keyItems); i++) {
         playerData->keyItems[i] = ITEM_NONE;
     }
+    // playerData->keyItems[0] = ITEM_ULTRA_STONE;
 
     for (i = 0; i < ARRAY_COUNT(playerData->badges); i++) {
         playerData->badges[i] = ITEM_NONE;
@@ -106,8 +107,8 @@ void clear_player_data(void) {
         playerData->equippedBadges[i] = ITEM_NONE;
     }
 
-    playerData->equippedBadges[0] = ITEM_PEEKABOO;
-    playerData->equippedBadges[1] = ITEM_POWER_BOUNCE;
+    // playerData->equippedBadges[0] = ITEM_PEEKABOO;
+    // playerData->equippedBadges[1] = ITEM_POWER_BOUNCE;
 
     for (i = 0; i < ARRAY_COUNT(playerData->storedItems); i++) {
         playerData->storedItems[i] = ITEM_NONE;

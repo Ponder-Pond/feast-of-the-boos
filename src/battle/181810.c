@@ -1,5 +1,6 @@
 #include "battle/battle.h"
 #include "vars_access.h"
+#include "dx/config.h"
 
 BSS char D_8029F660[0x400]; // unused?
 
@@ -504,6 +505,10 @@ s32 is_actor_health_bar_visible(Actor* actor) {
     BattleStatus* battleStatus = &gBattleStatus;
     s32 flags;
 
+    #ifdef DEBUG_ABILITY
+        return TRUE;
+    #endif
+
     if (is_ability_active(ABILITY_PEEKABOO)) {
         return TRUE;
     }
@@ -521,6 +526,11 @@ s32 is_actortype_health_bar_visible(s32 actorType) {
     s32 flags;
     s32 byteIdx;
     s32 flagIdx;
+
+
+    #ifdef DEBUG_ABILITY
+        return TRUE;
+    #endif
 
     if (is_ability_active(ABILITY_PEEKABOO)) {
         return TRUE;
