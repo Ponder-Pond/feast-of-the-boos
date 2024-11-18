@@ -6875,6 +6875,7 @@ segments:
     - [auto, c, actor/bzzap]
     - [auto, c, actor/beehive]
     - [auto, c, actor/panser]
+    - [auto, c, actor/boo_bully]
     - [auto, c, stage/mim_01]
 
 #######################

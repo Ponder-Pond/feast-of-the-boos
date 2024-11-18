@@ -17,7 +17,7 @@
 
 /// Quick launch into this battle.
 /// Comment out to disable,
-#define DX_QUICK_LAUNCH_BATTLE BTL_TST_FORMATION_00, BTL_TST_STAGE_00
+// #define DX_QUICK_LAUNCH_BATTLE BTL_TST_FORMATION_00, BTL_TST_STAGE_00
 
 /// Skips logos (Nintendo, Intelligent Systems, etc.).
 #define DX_SKIP_LOGOS 1
@@ -29,10 +29,10 @@
 #define DX_SKIP_DEMO 1
 
 /// Map to load when starting a new game.
-#define NEW_GAME_MAP_ID "mac_03"
+#define NEW_GAME_MAP_ID "mim_01"
 
 /// Entry to use when starting a new game.
-#define NEW_GAME_ENTRY_ID mac_03_ENTRY_0
+#define NEW_GAME_ENTRY_ID mim_01_ENTRY_0
 
 /// Story progress when starting a new game.
 #define NEW_GAME_STORY_PROGRESS STORY_CH1_MADE_FIRST_BRIDGE

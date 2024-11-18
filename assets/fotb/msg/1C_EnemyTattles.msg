@@ -2971,6 +2971,18 @@
 	[Wait][End]
 }
 
+#message:1C:(EnemyTattle_PurplePanser) {
+	[Style right]
+	Test[BR]
+	[Wait][End]
+}
+
+#message:1C:(EnemyTattle_BooBully) {
+	[Style right]
+	Test[BR]
+	[Wait][End]
+}
+
 #message:1C:(EnemyTattle_MimicChest) {
 	[Style right]
 	Test[BR]

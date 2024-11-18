@@ -2345,10 +2345,10 @@
     stepDelay: [ 30, 30 ]
     tattleCamOffset: [ 0, 0, 0 ]
     shadowOffset: 0
-- MimicChest:
+- PurplePanser:
     level: 10
-    nameMsg: MSG_EnemyName_MimicChest
-    tattleMsg: MSG_EnemyTattle_MimicChest
+    nameMsg: MSG_EnemyName_PurplePanser
+    tattleMsg: MSG_EnemyTattle_PurplePanser
     walkSound: [ SOUND_NONE, SOUND_NONE ]
     flySound: [ SOUND_NONE, SOUND_NONE ]
     jumpSound: SOUND_NONE
@@ -2356,3 +2356,25 @@
     stepDelay: [ 30, 30 ]
     tattleCamOffset: [ 0, 0, 0 ]
     shadowOffset: 0
+- BooBully:
+    level: 15
+    nameMsg: MSG_EnemyName_BooBully
+    tattleMsg: MSG_EnemyTattle_BooBully
+    walkSound: [ SOUND_NONE, SOUND_NONE ]
+    flySound: [ SOUND_NONE, SOUND_NONE ]
+    jumpSound: SOUND_NONE
+    hurtSound: SOUND_ACTOR_HURT
+    stepDelay: [ 30, 30 ]
+    tattleCamOffset: [ 0, 0, 0 ]
+    shadowOffset: 0
+# - MimicChest:
+#     level: 10
+#     nameMsg: MSG_EnemyName_MimicChest
+#     tattleMsg: MSG_EnemyTattle_MimicChest
+#     walkSound: [ SOUND_NONE, SOUND_NONE ]
+#     flySound: [ SOUND_NONE, SOUND_NONE ]
+#     jumpSound: SOUND_NONE
+#     hurtSound: SOUND_ACTOR_HURT
+#     stepDelay: [ 30, 30 ]
+#     tattleCamOffset: [ 0, 0, 0 ]
+#     shadowOffset: 0

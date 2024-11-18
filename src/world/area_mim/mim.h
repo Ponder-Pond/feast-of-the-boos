@@ -25,6 +25,8 @@ enum {
     AF_MIM03_Oaklie_DialogueToggle  = AreaFlag(2),
     AF_MIM04_Bubulb_DialogueToggle  = AreaFlag(4),
     AF_MIM12_BackgroundLitUp        = AreaFlag(3),
+    AF_MIM_Snowing                  = AreaFlag(5),
+    AF_MIM_LastSnowing              = AreaFlag(6),
 };
 
 extern MapSettings mim_01_settings;

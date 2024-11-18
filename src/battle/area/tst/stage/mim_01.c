@@ -7,20 +7,23 @@
 
 #define NAMESPACE A(mim_01)
 
+#include "battle/common/stage/lib/Snowflakes.inc.c"
+
 API_CALLABLE(N(SetupFog)) {
     enable_world_fog();
     set_world_fog_dist(950, 1000);
-    set_world_fog_color(16, 16, 16, 255);
-    gCameras[CAM_BATTLE].bgColor[0] = 20;
-    gCameras[CAM_BATTLE].bgColor[1] = 20;
-    gCameras[CAM_BATTLE].bgColor[2] = 28;
+    set_world_fog_color(50, 55, 70, 255);
+    gCameras[CAM_BATTLE].bgColor[0] = 60;
+    gCameras[CAM_BATTLE].bgColor[1] = 70;
+    gCameras[CAM_BATTLE].bgColor[2] = 90;
 
     return ApiStatus_DONE2;
 }
 
 EvtScript N(EVS_PreBattle) = {
-    Call(SetSpriteShading, SHADING_NONE)
+    Call(SetSpriteShading, SHADING_MIM_01)
     Call(N(SetupFog))
+    Exec(N(EVS_SpawnSnowfall))
     Call(TranslateModel, MODEL_Pipe0, 0, -40, 0)
     // Call(TranslateModel, MODEL_Pipe0, 0, -35, 0)
     // Wait(30)

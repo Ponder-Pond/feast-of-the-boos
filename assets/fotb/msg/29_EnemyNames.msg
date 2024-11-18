@@ -526,6 +526,14 @@
 	Beehive[End]
 }
 
+#message:29:(EnemyName_PurplePanser) {
+	PRPL Panser[End]
+}
+
+#message:29:(EnemyName_BooBully) {
+	Boo Bully[End]
+}
+
 #message:29:(EnemyName_MimicChest) {
 	Mimic Chest[End]
 }

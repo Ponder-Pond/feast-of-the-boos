@@ -2,6 +2,8 @@
 
 #include "../common/SetForeverForestFog.inc.c"
 
+#include "../common/ManageSnowfall.inc.c"
+
 EvtScript N(EVS_ExitWalk_n) = EVT_EXIT_WALK(60, mim_01_ENTRY_0, "mim_01", mim_01_ENTRY_1);
 EvtScript N(EVS_ExitWalk_w) = EVT_EXIT_WALK(60, mim_01_ENTRY_1, "mim_10", mim_10_ENTRY_1);
 EvtScript N(EVS_ExitWalk_s) = EVT_EXIT_WALK(60, mim_01_ENTRY_2, "mim_01", mim_01_ENTRY_1);
@@ -32,6 +34,7 @@ EvtScript N(EVS_Main) = {
     Wait(1)
     Call(N(SetForeverForestFog))
     Exec(N(EVS_SetupMusic))
+    Exec(N(EVS_ManageSnowfall))
     Call(SetCamSpeed, CAM_DEFAULT, Float(3.0))
     Return
     End
