@@ -74,7 +74,7 @@ vram_classes:
   - [entity_model_anim, 0x00000000]
   - { name: dgb_01_smash_bridges, vram: 0x80200000, vram_symbol: D_80200000 }
 asset_stack:
-  - i_o_t_f_s
+  - fotb
   - dx
   - us
 segments:
@@ -6874,6 +6874,7 @@ segments:
     - [auto, c, actor/piranha_plant]
     - [auto, c, actor/bzzap]
     - [auto, c, actor/beehive]
+    - [auto, c, actor/panser]
     - [auto, c, stage/mim_01]
 
 #######################
