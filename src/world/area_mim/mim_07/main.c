@@ -2,9 +2,11 @@
 
 #include "../common/SetForeverForestFog.inc.c"
 
-EvtScript N(EVS_ExitWalk_n) = EVT_EXIT_WALK(60, mim_07_ENTRY_0, "mim_09", mim_09_ENTRY_2);
+#include "../common/ManageSnowfall.inc.c"
+
+EvtScript N(EVS_ExitWalk_n) = EVT_EXIT_WALK(60, mim_07_ENTRY_0, "mim_01", mim_01_ENTRY_3);
 EvtScript N(EVS_ExitWalk_w) = EVT_EXIT_WALK(60, mim_07_ENTRY_1, "mim_01", mim_01_ENTRY_1);
-EvtScript N(EVS_ExitWalk_s) = EVT_EXIT_WALK(60, mim_07_ENTRY_2, "mim_06", mim_06_ENTRY_0);
+EvtScript N(EVS_ExitWalk_s) = EVT_EXIT_WALK(60, mim_07_ENTRY_2, "mim_08", mim_08_ENTRY_2);
 EvtScript N(EVS_ExitWalk_e) = EVT_EXIT_WALK(60, mim_07_ENTRY_3, "mim_11", mim_11_ENTRY_0);
 
 EvtScript N(EVS_BindExitTriggers) = {
@@ -31,6 +33,7 @@ EvtScript N(EVS_Main) = {
     Exec(N(EVS_PlayForestMusic))
     ExecWait(N(EVS_SetupExitHint))
     Call(N(SetForeverForestFog))
+    Exec(N(EVS_ManageSnowfall))
     Call(GetEntryID, LVar0)
     IfEq(LVar0, mim_07_ENTRY_3)
         Call(UseSettingsFrom, CAM_DEFAULT, 500, -100, 0)
