@@ -2,13 +2,15 @@
 
 #include "../common/SetForeverForestFog.inc.c"
 
+#include "../common/ManageSnowfall.inc.c"
+
 API_CALLABLE(N(GetPlayerDistFromMapCenter)) {
     script->varTable[0] = get_xz_dist_to_player(0.0f, 0.0f);
     return ApiStatus_DONE2;
 }
 
-EvtScript N(EVS_ExitWalk_n) = EVT_EXIT_WALK(60, mim_03_ENTRY_0, "mim_01", mim_01_ENTRY_1);
-EvtScript N(EVS_ExitWalk_w) = EVT_EXIT_WALK(60, mim_03_ENTRY_1, "mim_04", mim_04_ENTRY_3);
+EvtScript N(EVS_ExitWalk_n) = EVT_EXIT_WALK(60, mim_03_ENTRY_0, "mim_08", mim_08_ENTRY_3);
+EvtScript N(EVS_ExitWalk_w) = EVT_EXIT_WALK(60, mim_03_ENTRY_1, "mim_08", mim_08_ENTRY_0);
 EvtScript N(EVS_ExitWalk_s) = EVT_EXIT_WALK(60, mim_03_ENTRY_2, "mim_02", mim_02_ENTRY_0);
 EvtScript N(EVS_ExitWalk_e) = EVT_EXIT_WALK(60, mim_03_ENTRY_3, "mim_01", mim_01_ENTRY_1);
 
@@ -35,6 +37,7 @@ EvtScript N(EVS_Main) = {
     Exec(EnterWalk)
     Wait(1)
     Exec(N(EVS_SetupMusic))
+    Exec(N(EVS_ManageSnowfall))
     ExecWait(N(EVS_SetupExitHint))
     Call(N(SetForeverForestFog))
     Thread
