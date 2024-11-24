@@ -9,9 +9,9 @@ extern EvtScript N(EVS_Idle);
 extern EvtScript N(EVS_TakeTurn);
 extern EvtScript N(EVS_HandleEvent);
 extern EvtScript N(EVS_Attack_Bite);
-extern EvtScript N(EVS_Attack_DazeBreath);
-extern EvtScript N(EVS_RiseFromPipe);
-extern EvtScript N(EVS_Move_BoostAttack);
+// extern EvtScript N(EVS_Attack_DazeBreath);
+// extern EvtScript N(EVS_RiseFromPipe);
+// extern EvtScript N(EVS_Move_BoostAttack);
 
 enum N(ActorPartIDs) {
     PRT_MAIN        = 1,
@@ -19,7 +19,7 @@ enum N(ActorPartIDs) {
 
 enum N(ActorParams) {
     DMG_BITE            = 3,
-    DMG_DAZE_BREATH     = 2,
+    // DMG_DAZE_BREATH     = 2,
 };
 
 s32 N(DefaultAnims)[] = {
@@ -91,7 +91,7 @@ ActorPartBlueprint N(ActorParts)[] = {
 };
 
 ActorBlueprint NAMESPACE = {
-    .flags = ACTOR_FLAG_NO_SHADOW,
+    .flags = 0, // ACTOR_FLAG_NO_SHADOW,
     .type = ACTOR_TYPE_PIRANHA_PLANT,
     .level = ACTOR_LEVEL_PIRANHA_PLANT,
     .maxHP = 5,
@@ -117,7 +117,7 @@ EvtScript N(EVS_Init) = {
     Call(BindTakeTurn, ACTOR_SELF, Ref(N(EVS_TakeTurn)))
     Call(BindIdle, ACTOR_SELF, Ref(N(EVS_Idle)))
     Call(BindHandleEvent, ACTOR_SELF, Ref(N(EVS_HandleEvent)))
-    Exec(N(EVS_RiseFromPipe))
+    // Exec(N(EVS_RiseFromPipe))
     Return
     End
 };
@@ -296,6 +296,7 @@ EvtScript N(EVS_HandleEvent) = {
 EvtScript N(EVS_TakeTurn) = {
     Call(UseIdleAnimation, ACTOR_SELF, FALSE)
     Call(EnableIdleScript, ACTOR_SELF, IDLE_SCRIPT_DISABLE)
+    /*
     Call(RandInt, 100, LVar0)
     Switch(LVar0)
         CaseLt(50)
@@ -310,7 +311,9 @@ EvtScript N(EVS_TakeTurn) = {
         CaseEq(1)
             ExecWait(N(EVS_Attack_DazeBreath))
     EndSwitch
+    */
     // ExecWait(N(EVS_Move_BoostAttack))
+    ExecWait(N(EVS_Attack_Bite))
     Call(EnableIdleScript, ACTOR_SELF, IDLE_SCRIPT_ENABLE)
     Call(UseIdleAnimation, ACTOR_SELF, TRUE)
     Return
@@ -337,7 +340,6 @@ EvtScript N(EVS_Attack_Bite) = {
         Wait(15)
         Goto(123)
     EndIf
-    // Call(EnableActorGlow, ACTOR_SELF, TRUE)
     Wait(30)
     Call(PlaySoundAtActor, ACTOR_SELF, SOUND_BURROW_DIG)
     Call(SetAnimation, ACTOR_SELF, PRT_MAIN, ANIM_SmallPiranha_Anim04)
@@ -427,7 +429,6 @@ EvtScript N(EVS_Attack_Bite) = {
             Call(SetActorSpeed, ACTOR_SELF, Float(6.0))
             ExecWait(N(EVS_ReturnHome))
             Wait(30)
-            // Call(EnableActorGlow, ACTOR_SELF, FALSE)
         EndCaseGroup
     EndSwitch
     Call(EnableIdleScript, ACTOR_SELF, IDLE_SCRIPT_ENABLE)
@@ -436,6 +437,7 @@ EvtScript N(EVS_Attack_Bite) = {
     End
 };
 
+/*
 #include "common/SetBowserFireBreathScales.inc.c"
 
 EvtScript N(EVS_Attack_DazeBreath) = {
@@ -562,6 +564,7 @@ EvtScript N(EVS_Attack_DazeBreath) = {
     Return
     End
 };
+*/
 
 // EvtScript N(EVS_Move_BoostAttack) = {
 //     Call(UseIdleAnimation, ACTOR_SELF, FALSE)
