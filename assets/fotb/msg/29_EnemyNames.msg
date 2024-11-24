@@ -522,16 +522,40 @@
 	R Paragoomba[End]
 }
 
-#message:29:(EnemyName_Beehive) {
-	Beehive[End]
+#message:29:(EnemyName_FreezyFuzzy) {
+	Freezy Fuzzy[End]
+}
+
+#message:29:(EnemyName_PinkPanser) {
+	P Panser[End]
+}
+
+#message:29:(EnemyName_RedPanser) {
+	R Panser[End]
+}
+
+#message:29:(EnemyName_BooBully) {
+	Boo Bully[End]
+}
+
+#message:29:(EnemyName_CrystalCleft) {
+	Crystal Cleft[End]
 }
 
 #message:29:(EnemyName_PurplePanser) {
 	PRPL Panser[End]
 }
 
-#message:29:(EnemyName_BooBully) {
-	Boo Bully[End]
+#message:29:(EnemyName_SpiritBubble) {
+	Spirit Bubble[End]
+}
+
+#message:29:(EnemyName_Beehive) {
+	Beehive[End]
+}
+
+#message:29:(EnemyName_JrTroopaGang) {
+	Jr. Troopa Gang[End]
 }
 
 #message:29:(EnemyName_MimicChest) {
