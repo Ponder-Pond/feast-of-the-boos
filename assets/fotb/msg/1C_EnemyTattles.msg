@@ -2965,7 +2965,31 @@
 	peeved.[Wait][End]
 }
 
-#message:1C:(EnemyTattle_Beehive) {
+#message:1C:(EnemyTattle_FreezyFuzzy) {
+	[Style right]
+	Test[BR]
+	[Wait][End]
+}
+
+#message:1C:(EnemyTattle_PinkPanser) {
+	[Style right]
+	Test[BR]
+	[Wait][End]
+}
+
+#message:1C:(EnemyTattle_RedPanser) {
+	[Style right]
+	Test[BR]
+	[Wait][End]
+}
+
+#message:1C:(EnemyTattle_BooBully) {
+	[Style right]
+	Test[BR]
+	[Wait][End]
+}
+
+#message:1C:(EnemyTattle_CrystalCleft) {
 	[Style right]
 	Test[BR]
 	[Wait][End]
@@ -2977,7 +3001,19 @@
 	[Wait][End]
 }
 
-#message:1C:(EnemyTattle_BooBully) {
+#message:1C:(EnemyTattle_SpiritBubble) {
+	[Style right]
+	Test[BR]
+	[Wait][End]
+}
+
+#message:1C:(EnemyTattle_Beehive) {
+	[Style right]
+	Test[BR]
+	[Wait][End]
+}
+
+#message:1C:(EnemyTattle_JrTroopaGang) {
 	[Style right]
 	Test[BR]
 	[Wait][End]
