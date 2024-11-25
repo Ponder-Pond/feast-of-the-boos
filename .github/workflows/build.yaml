@@ -29,12 +29,12 @@ jobs:
       - name: Configure
         run: ./configure
       - name: Build
-        run: ninja ver/us/build/paper-mario-feast-of-the-boos.bps
+        run: ninja ver/us/build/papermario.bps
       - name: Upload patch as artifact
         uses: actions/upload-artifact@v4
         with:
           name: paper-mario-feast-of-the-boos.bps
-          path: ver/us/build/paper-mario-feast-of-the-boos.bps
+          path: ver/us/build/papermario.bps
   prerelease:
     name: Prerelease
     runs-on: ubuntu-latest
