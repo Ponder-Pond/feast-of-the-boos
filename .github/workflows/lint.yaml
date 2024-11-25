@@ -24,7 +24,7 @@ jobs:
         uses: cpp-linter/cpp-linter-action@v2
         id: linter
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.MY_PAT }}
         with:
           style: file
           lines-changed-only: diff
