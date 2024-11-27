@@ -1,3 +1,3 @@
 #include "../area.h"
 
-NAMESPACE A(jr_troopa_gang)
+#define NAMESPACE A(jr_troopa_gang)
