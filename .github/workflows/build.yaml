@@ -20,6 +20,12 @@ jobs:
         uses: cargo-bins/cargo-binstall@main
       - name: Install pigment64 and crunch64
         run: cargo binstall pigment64 crunch64-cli -y
+      - name: Setup Flips
+        run: |
+          curl -L https://dl.smwcentral.net/11474/floating.zip -o floating.zip
+          unzip floating.zip
+          rm floating.zip
+          chmod +x flips-linux
       - name: Download baserom
         run: curl -L $BASEROM_US_URL -o ver/us/baserom.z64
         env:
@@ -29,12 +35,15 @@ jobs:
       - name: Configure
         run: ./configure
       - name: Build
-        run: ninja ver/us/build/papermario.bps
+        run: ninja
+      - name: Create patch file
+        # flips works but returns a non-zero exit code if the rom shrunk
+        run: ./flips-linux ver/us/baserom.z64 ver/us/build/papermario.z64 paper-mario-feast-of-the-boos.bps || true
       - name: Upload patch as artifact
         uses: actions/upload-artifact@v4
         with:
           name: paper-mario-feast-of-the-boos.bps
-          path: ver/us/build/papermario.bps
+          path: paper-mario-feast-of-the-boos.bps
   prerelease:
     name: Prerelease
     runs-on: ubuntu-latest
