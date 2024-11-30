@@ -2433,17 +2433,17 @@
     stepDelay: [ 30, 30 ]
     tattleCamOffset: [ 0, 4, 0 ]
     shadowOffset: 0
-- JrTroopa_7:
-    level: 40
-    nameMsg: MSG_EnemyName_JrTroopa
-    tattleMsg: MSG_EnemyTattle_JrTroopa6
-    walkSound: [ SOUND_SMALL_NPC_STEP, SOUND_SMALL_NPC_STEP ]
-    flySound: [ SOUND_ACTOR_FLIGHT, SOUND_ACTOR_FLIGHT ]
-    jumpSound: SOUND_ACTOR_JUMP
-    hurtSound: SOUND_ACTOR_HURT
-    stepDelay: [ 30, 30 ]
-    tattleCamOffset: [ 0, 4, 0 ]
-    shadowOffset: 0
+# - JrTroopa_7:
+#     level: 40
+#     nameMsg: MSG_EnemyName_JrTroopa
+#     tattleMsg: MSG_EnemyTattle_JrTroopa6
+#     walkSound: [ SOUND_SMALL_NPC_STEP, SOUND_SMALL_NPC_STEP ]
+#     flySound: [ SOUND_ACTOR_FLIGHT, SOUND_ACTOR_FLIGHT ]
+#     jumpSound: SOUND_ACTOR_JUMP
+#     hurtSound: SOUND_ACTOR_HURT
+#     stepDelay: [ 30, 30 ]
+#     tattleCamOffset: [ 0, 4, 0 ]
+#     shadowOffset: 0
 # - MimicChest:
 #     level: 10
 #     nameMsg: MSG_EnemyName_MimicChest
