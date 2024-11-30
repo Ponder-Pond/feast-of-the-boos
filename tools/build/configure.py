@@ -1287,7 +1287,7 @@ class Configure:
                 str(self.rom_ok_path()),
                 "check_segment_sizes",
                 str(self.elf_path()),
-                variables={"data": json.dumps(json.dumps(self.get_segment_max_sizes(), separators=(',', ':')))},
+                variables={"data": json.dumps(json.dumps(self.get_segment_max_sizes(), separators=(",", ":")))},
                 implicit=[str(self.rom_path())],
             )
 
@@ -1301,8 +1301,6 @@ class Configure:
         ninja.build("generated_code_" + self.version, "phony", generated_code)
         ninja.build("inc_img_bins_" + self.version, "phony", inc_img_bins)
 
-
-
     def get_segment_max_sizes(self):
         assert self.linker_entries is not None
         segment_size_map = {}
@@ -1313,6 +1311,7 @@ class Configure:
                 visit(segment.parent)
             if hasattr(segment, "yaml") and isinstance(segment.yaml, dict) and "max_size" in segment.yaml:
                 segment_size_map[segment.name] = segment.yaml["max_size"]
+
         for entry in self.linker_entries:
             visit(entry.segment)
 
