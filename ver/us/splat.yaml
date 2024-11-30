@@ -6864,18 +6864,25 @@ segments:
     - [auto, c, script/dig_03]
     - [auto, c, script/dig_04]
     - [auto, c, script/dig_05]
-  - dir: battle/area/tst # Invasion of the Flower Snatchers Battle Area
+  - dir: battle/area/tst # Testing Battle Area
     type: code
     start: auto
     vram_class: battle_area
     subalign: 8
     subsegments:
     - [auto, c, area]
+    - [auto, c, actor/freezy_fuzzy]
+    - [auto, c, actor/pink_panser]
+    - [auto, c, actor/red_panser]
     - [auto, c, actor/piranha_plant]
-    - [auto, c, actor/bzzap]
-    - [auto, c, actor/beehive]
-    - [auto, c, actor/panser]
     - [auto, c, actor/boo_bully]
+    - [auto, c, actor/frost_piranha]
+    - [auto, c, actor/crystal_cleft]
+    - [auto, c, actor/purple_panser]
+    - [auto, c, actor/spirit_bubble]
+    - [auto, c, actor/duplighost]
+    - [auto, c, actor/beehive]
+    - [auto, c, actor/jr_troopa_gang]
     - [auto, c, stage/mim_01]
 
 #######################

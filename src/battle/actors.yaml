@@ -2334,10 +2334,21 @@
     stepDelay: [ 30, 30 ]
     tattleCamOffset: [ 0, 0, 0 ]
     shadowOffset: 0
-- Beehive:
-    level: 0
-    nameMsg: MSG_EnemyName_Beehive
-    tattleMsg: MSG_EnemyTattle_Beehive
+- FreezyFuzzy:
+    level: 11
+    nameMsg: MSG_EnemyName_FreezyFuzzy
+    tattleMsg: MSG_EnemyTattle_FreezyFuzzy
+    walkSound: [ SOUND_FUZZY_HOP_A, SOUND_FUZZY_HOP_A ]
+    flySound: [ SOUND_FUZZY_HOP_A, SOUND_FUZZY_HOP_A ]
+    jumpSound: SOUND_FUZZY_HOP_A
+    hurtSound: SOUND_ACTOR_HURT
+    stepDelay: [ 30, 30 ]
+    tattleCamOffset: [ 0, 5, 0 ]
+    shadowOffset: 0
+- PinkPanser:
+    level: 11
+    nameMsg: MSG_EnemyName_PinkPanser
+    tattleMsg: MSG_EnemyTattle_PinkPanser
     walkSound: [ SOUND_NONE, SOUND_NONE ]
     flySound: [ SOUND_NONE, SOUND_NONE ]
     jumpSound: SOUND_NONE
@@ -2345,10 +2356,10 @@
     stepDelay: [ 30, 30 ]
     tattleCamOffset: [ 0, 0, 0 ]
     shadowOffset: 0
-- PurplePanser:
-    level: 10
-    nameMsg: MSG_EnemyName_PurplePanser
-    tattleMsg: MSG_EnemyTattle_PurplePanser
+- RedPanser:
+    level: 11
+    nameMsg: MSG_EnemyName_RedPanser
+    tattleMsg: MSG_EnemyTattle_RedPanser
     walkSound: [ SOUND_NONE, SOUND_NONE ]
     flySound: [ SOUND_NONE, SOUND_NONE ]
     jumpSound: SOUND_NONE
@@ -2366,6 +2377,72 @@
     hurtSound: SOUND_ACTOR_HURT
     stepDelay: [ 30, 30 ]
     tattleCamOffset: [ 0, 0, 0 ]
+    shadowOffset: 0
+- CrystalCleft:
+    level: 15
+    nameMsg: MSG_EnemyName_CrystalCleft
+    tattleMsg: MSG_EnemyTattle_CrystalCleft
+    walkSound: [ SOUND_CLEFT_STEP, SOUND_CLEFT_STEP ]
+    flySound: [ SOUND_CLEFT_STEP, SOUND_CLEFT_STEP ]
+    jumpSound: SOUND_ACTOR_JUMP
+    hurtSound: SOUND_ACTOR_HURT
+    stepDelay: [ 30, 30 ]
+    tattleCamOffset: [ 0, 254, 241 ]
+    shadowOffset: 0
+- PurplePanser:
+    level: 11
+    nameMsg: MSG_EnemyName_PurplePanser
+    tattleMsg: MSG_EnemyTattle_PurplePanser
+    walkSound: [ SOUND_NONE, SOUND_NONE ]
+    flySound: [ SOUND_NONE, SOUND_NONE ]
+    jumpSound: SOUND_NONE
+    hurtSound: SOUND_ACTOR_HURT
+    stepDelay: [ 30, 30 ]
+    tattleCamOffset: [ 0, 0, 0 ]
+    shadowOffset: 0
+- SpiritBubble:
+    level: 15
+    nameMsg: MSG_EnemyName_SpiritBubble
+    tattleMsg: MSG_EnemyTattle_SpiritBubble
+    walkSound: [ SOUND_NONE, SOUND_NONE ]
+    flySound: [ SOUND_NONE, SOUND_NONE ]
+    jumpSound: SOUND_ACTOR_JUMP
+    hurtSound: SOUND_ACTOR_HURT
+    stepDelay: [ 30, 30 ]
+    tattleCamOffset: [ 0, 0, 0 ]
+    shadowOffset: 0
+- Beehive:
+    level: 20
+    nameMsg: MSG_EnemyName_Beehive
+    tattleMsg: MSG_EnemyTattle_Beehive
+    walkSound: [ SOUND_NONE, SOUND_NONE ]
+    flySound: [ SOUND_NONE, SOUND_NONE ]
+    jumpSound: SOUND_NONE
+    hurtSound: SOUND_ACTOR_HURT
+    stepDelay: [ 30, 30 ]
+    tattleCamOffset: [ 0, 0, 0 ]
+    shadowOffset: 0
+- JrTroopaGang:
+    level: 20
+    nameMsg: MSG_EnemyName_JrTroopaGang
+    tattleMsg: MSG_EnemyTattle_JrTroopaGang
+    walkSound: [ SOUND_SMALL_NPC_STEP, SOUND_SMALL_NPC_STEP ]
+    flySound: [ SOUND_ACTOR_FLIGHT, SOUND_ACTOR_FLIGHT ]
+    jumpSound: SOUND_ACTOR_JUMP
+    hurtSound: SOUND_ACTOR_HURT
+    stepDelay: [ 30, 30 ]
+    tattleCamOffset: [ 0, 4, 0 ]
+    shadowOffset: 0
+- JrTroopa_7:
+    level: 40
+    nameMsg: MSG_EnemyName_JrTroopa
+    tattleMsg: MSG_EnemyTattle_JrTroopa6
+    walkSound: [ SOUND_SMALL_NPC_STEP, SOUND_SMALL_NPC_STEP ]
+    flySound: [ SOUND_ACTOR_FLIGHT, SOUND_ACTOR_FLIGHT ]
+    jumpSound: SOUND_ACTOR_JUMP
+    hurtSound: SOUND_ACTOR_HURT
+    stepDelay: [ 30, 30 ]
+    tattleCamOffset: [ 0, 4, 0 ]
     shadowOffset: 0
 # - MimicChest:
 #     level: 10

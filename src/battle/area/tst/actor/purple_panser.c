@@ -1,7 +1,7 @@
 #include "../area.h"
 #include "sprite/npc/Panser.h"
 
-#define NAMESPACE A(panser)
+#define NAMESPACE A(purple_panser)
 
 extern EvtScript N(EVS_Init);
 extern s32 N(DefaultAnims)[];
@@ -13,7 +13,7 @@ extern EvtScript N(EVS_Attack_Bit);
 
 enum N(ActorPartIDs) {
     PRT_MAIN        = 1,
-    PRT_BIT        = 2,
+    PRT_BIT         = 2,
 };
 
 enum N(ActorVars) {
@@ -21,7 +21,7 @@ enum N(ActorVars) {
 };
 
 enum N(ActorParams) {
-    DMG_BIT       = 2,
+    DMG_BIT       = 4,
 };
 
 s32 N(DefaultAnims)[] = {
@@ -44,6 +44,8 @@ s32 N(BitAnims)[] = {
 
 s32 N(DefenseTable)[] = {
     ELEMENT_NORMAL,   0,
+    ELEMENT_FIRE,    -1,
+    ELEMENT_ICE,     99,
     ELEMENT_END,
 };
 
@@ -103,7 +105,7 @@ ActorBlueprint NAMESPACE = {
     .flags = 0,
     .type = ACTOR_TYPE_PURPLE_PANSER,
     .level = ACTOR_LEVEL_PURPLE_PANSER,
-    .maxHP = 2,
+    .maxHP = 4,
     .partCount = ARRAY_COUNT(N(ActorParts)),
     .partsData = N(ActorParts),
     .initScript = &N(EVS_Init),

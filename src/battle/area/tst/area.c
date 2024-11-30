@@ -1,10 +1,17 @@
 #include "area.h"
 
+extern ActorBlueprint A(freezy_fuzzy);
+extern ActorBlueprint A(pink_panser);
+extern ActorBlueprint A(red_panser);
 extern ActorBlueprint A(piranha_plant);
-extern ActorBlueprint A(bzzap);
-extern ActorBlueprint A(beehive);
-extern ActorBlueprint A(panser);
 extern ActorBlueprint A(boo_bully);
+extern ActorBlueprint A(frost_piranha);
+extern ActorBlueprint A(crystal_cleft);
+extern ActorBlueprint A(purple_panser);
+extern ActorBlueprint A(spirit_bubble);
+extern ActorBlueprint A(beehive);
+extern ActorBlueprint A(duplighost);
+extern ActorBlueprint A(jr_troopa_gang);
 
 extern Stage A(mim_01);
 
@@ -18,9 +25,9 @@ Vec3i A(PiranhaPlantPos) = { 42, 25, 0 };
 
 Formation A(Formation_00) = {
     ACTOR_BY_IDX(A(boo_bully), BTL_POS_GROUND_B, 10),
-    // ACTOR_BY_IDX(A(panser), BTL_POS_GROUND_B, 10),
+    // ACTOR_BY_IDX(A(purple_panser), BTL_POS_GROUND_B, 10),
     // ACTOR_BY_POS(A(piranha_plant), A(PiranhaPlantPos), 10),
-    // ACTOR_BY_IDX(A(bzzap), BTL_POS_AIR_B, 10),
+    // ACTOR_BY_IDX(A(boo_bully), BTL_POS_AIR_B, 10),
     // ACTOR_BY_POS(A(beehive), A(BeehivePos), 10),
 };
 

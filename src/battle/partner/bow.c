@@ -3,6 +3,7 @@
 #include "effects.h"
 #include "battle/action_cmd/smack.h"
 #include "battle/action_cmd/spook.h"
+#include "fio.h"
 #include "sprite/npc/BattleBow.h"
 #include "sprite/player.h"
 
@@ -92,6 +93,7 @@ API_CALLABLE(N(CloseTattleWindow)) {
 
     effect->data.tattleWindow->pos.y = 144.0f;
     effect->flags |= FX_INSTANCE_FLAG_DISMISS;
+    fio_save_game(gGameStatusPtr->saveSlot);
 
     return ApiStatus_DONE2;
 }
@@ -752,6 +754,7 @@ EvtScript N(EVS_Move_Tattle) = {
     Call(N(GetTattleMessage))
     Call(ActorSpeak, LVar0, ACTOR_SELF, PRT_MAIN, ANIM_BattleBow_Talk, ANIM_BattleBow_Idle)
     Call(N(CloseTattleWindow))
+    Wait(1)
     Wait(12)
     Call(SetCamEnabled, CAM_TATTLE, FALSE)
     Wait(32)

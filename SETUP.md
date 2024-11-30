@@ -13,8 +13,8 @@ If you encounter any issues setting up the repo, please feel free to [reach out 
 
 Clone the repository:
 ```sh
-git clone https://github.com/nanaian/papermario-dx
-cd papermario
+git clone https://github.com/Ponder-Pond/feast-of-the-boos.git
+cd feast-of-the-boos
 ```
 
 Install pigment64 (our image-processing tool)
@@ -49,7 +49,7 @@ Continue onto [building](#building)
 
 1. Install or upgrade to **WSL 2** following [these instructions](https://aka.ms/wsl2-install) (Ubuntu is recommended)
 2. Open a WSL terminal
-3. Run the following command: `sudo apt update && sudo apt upgrade && cd ~`
+3. Run the following command: `sudo apt update && sudo apt upgrade`
 4. Install build dependencies:
 ```sh
 ./install_deps.sh
