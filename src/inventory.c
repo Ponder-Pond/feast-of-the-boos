@@ -53,14 +53,14 @@ void clear_player_data(void) {
     D_8010CD10 = FALSE;
     D_8010CD12 = FALSE;
 
-    playerData->curHP = 50;
-    playerData->curMaxHP = 50;
-    playerData->hardMaxHP = 50;
-    playerData->curFP = 50;
-    playerData->curMaxFP = 50;
-    playerData->hardMaxFP = 50;
-    playerData->maxBP = 30;
-    playerData->level = 27;
+    playerData->curHP = 20;
+    playerData->curMaxHP = 20;
+    playerData->hardMaxHP = 20;
+    playerData->curFP = 15;
+    playerData->curMaxFP = 15;
+    playerData->hardMaxFP = 15;
+    playerData->maxBP = 6;
+    playerData->level = 5;
     playerData->bootsLevel = 2;
     playerData->hammerLevel = 2;
     playerData->hasActionCommands = TRUE;
