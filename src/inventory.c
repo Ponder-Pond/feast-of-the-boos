@@ -988,7 +988,7 @@ void update_status_bar(void) {
         status_bar_draw_stat(statusBar->fpTimesHID, x, y, statusBar->displayFP, playerData->curMaxFP);
     }
 
-    if (playerData->level >= 27) {
+    if (playerData->level >= 7) {
         playerData->starPoints = 0;
     }
 
