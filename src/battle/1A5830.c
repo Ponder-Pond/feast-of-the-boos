@@ -2741,7 +2741,7 @@ API_CALLABLE(DropStarPoints) {
     }
     numToDrop = ntd;
 
-    if (playerData->level < 27) {
+    if (playerData->level < 7) {
         s32 spawnMode;
         s32 i;
 
