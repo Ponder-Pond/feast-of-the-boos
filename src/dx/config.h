@@ -35,7 +35,7 @@
 #define NEW_GAME_ENTRY_ID mim_01_ENTRY_0
 
 /// Story progress when starting a new game.
-#define NEW_GAME_STORY_PROGRESS STORY_CH1_MADE_FIRST_BRIDGE
+#define NEW_GAME_STORY_PROGRESS     STORY_CH8_REACHED_PEACHS_CASTLE
 
 /// Enables the profiler, which shows lots of performance info on screen.
 /// Press L + D-Pad Up to show/hide the profiler.
