@@ -52,7 +52,7 @@ jobs:
           automatic_release_tag: "latest"
           prerelease: true
           title: Development build
-          files: papermario.bps
+          files: paper-mario-feast-of-the-boos.bps
   release:
     name: Release
     runs-on: ubuntu-latest
@@ -68,4 +68,4 @@ jobs:
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
           automatic_release_tag: "latest"
-          files: papermario.bps
+          files: paper-mario-feast-of-the-boos.bps
