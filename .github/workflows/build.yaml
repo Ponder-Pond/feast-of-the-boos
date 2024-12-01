@@ -33,7 +33,7 @@ jobs:
       - name: Upload patch as artifact
         uses: actions/upload-artifact@v4
         with:
-          name: papermario.bps
+          name: paper-mario-feast-of-the-boos.bps
           path: ver/us/build/papermario.bps
   prerelease:
     name: Prerelease
@@ -44,11 +44,11 @@ jobs:
       - name: Download artifact
         uses: actions/download-artifact@v4
         with:
-          name: papermario.bps
-          path: papermario.bps
+          name: paper-mario-feast-of-the-boos.bps
+          path: paper-mario-feast-of-the-boos.bps
       - uses: marvinpinto/action-automatic-releases@latest
         with:
-          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          repo_token: "${{ secrets.MY_PAT }}"
           automatic_release_tag: "latest"
           prerelease: true
           title: Development build
@@ -62,10 +62,10 @@ jobs:
       - name: Download artifact
         uses: actions/download-artifact@v4
         with:
-          name: papermario.bps
-          path: papermario.bps
+          name: paper-mario-feast-of-the-boos.bps
+          path: paper-mario-feast-of-the-boos.bps
       - uses: marvinpinto/action-automatic-releases@latest
         with:
-          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          repo_token: "${{ secrets.MY_PAT }}"
           automatic_release_tag: "latest"
           files: paper-mario-feast-of-the-boos.bps
