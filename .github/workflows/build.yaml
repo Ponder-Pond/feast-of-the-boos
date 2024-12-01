@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
       - name: Install dependencies
@@ -30,11 +30,13 @@ jobs:
         run: ./configure
       - name: Build
         run: ninja ver/us/build/papermario.bps
+      - name: Rename artifact
+        run: mv ver/us/build/papermario.bps ver/us/build/paper-mario-feast-of-the-boos.bps
       - name: Upload patch as artifact
         uses: actions/upload-artifact@v4
         with:
           name: paper-mario-feast-of-the-boos.bps
-          path: ver/us/build/papermario.bps
+          path: ver/us/build/paper-mario-feast-of-the-boos.bps
   prerelease:
     name: Prerelease
     runs-on: ubuntu-latest
