@@ -573,14 +573,14 @@ void btl_state_update_celebration(void) {
                         playerData->starPoints++;
                     }
                 }
-                if (playerData->level >= 27) {
+                if (playerData->level >= 7) {
                     playerData->starPoints = 0;
                 }
                 if (playerData->starPoints >= 100) {
                     pendingLevelUps = 1;
                     playerData->starPoints -= 100;
                 }
-                if (playerData->level + pendingLevelUps == 27) {
+                if (playerData->level + pendingLevelUps == 7) {
                     playerData->starPoints = 0;
                 }
                 if (battleStatus->totalStarPoints == 0) {
