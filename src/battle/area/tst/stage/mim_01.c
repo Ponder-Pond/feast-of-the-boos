@@ -21,7 +21,7 @@ API_CALLABLE(N(SetupFog)) {
 }
 
 EvtScript N(EVS_PreBattle) = {
-    Call(SetSpriteShading, SHADING_MIM_01)
+    Call(SetSpriteShading, SHADING_NONE)
     Call(N(SetupFog))
     Exec(N(EVS_SpawnSnowfall))
     Call(TranslateModel, MODEL_Pipe0, 0, -40, 0)
