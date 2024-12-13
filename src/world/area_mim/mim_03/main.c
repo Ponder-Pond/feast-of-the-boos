@@ -31,7 +31,7 @@ EvtScript N(EVS_Main) = {
     Call(GetMapID, GB_MIM_CurrentMapID)
     Set(AF_MIM03_Oaklie_DialogueToggle, FALSE)
     ExecWait(N(EVS_SetupGates))
-    Call(MakeNpcs, TRUE, Ref(N(DefaultNPCs)))
+    // Call(MakeNpcs, TRUE, Ref(N(DefaultNPCs)))
     ExecWait(N(EVS_MakeEntities))
     Set(LVar0, Ref(N(EVS_BindExitTriggers)))
     Exec(EnterWalk)

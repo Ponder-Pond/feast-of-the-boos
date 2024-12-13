@@ -6,7 +6,7 @@
 
 EvtScript N(EVS_ExitWalk_n) = EVT_EXIT_WALK(60, mim_01_ENTRY_0, "mim_08", mim_08_ENTRY_2);
 EvtScript N(EVS_ExitWalk_w) = EVT_EXIT_WALK(60, mim_01_ENTRY_1, "mim_10", mim_10_ENTRY_1);
-EvtScript N(EVS_ExitWalk_s) = EVT_EXIT_WALK(60, mim_01_ENTRY_2, "mim_01", mim_01_ENTRY_1);
+EvtScript N(EVS_ExitWalk_s) = EVT_EXIT_WALK(60, mim_01_ENTRY_2, "mim_07", mim_07_ENTRY_1);
 EvtScript N(EVS_ExitWalk_e) = EVT_EXIT_WALK(60, mim_01_ENTRY_3, "mim_07", mim_07_ENTRY_0);
 
 EvtScript N(EVS_BindExitTriggers) = {
@@ -26,7 +26,7 @@ EvtScript N(EVS_Main) = {
     Set(AB_MIM_2, GB_MIM_CurrentMapID)
     Call(GetMapID, GB_MIM_CurrentMapID)
     ExecWait(N(EVS_SetupGates))
-    Call(MakeNpcs, TRUE, Ref(N(DefaultNPCs)))
+    // Call(MakeNpcs, TRUE, Ref(N(DefaultNPCs)))
     ExecWait(N(EVS_MakeEntities))
     ExecWait(N(EVS_SetupExitHint))
     Set(LVar0, Ref(N(EVS_BindExitTriggers)))

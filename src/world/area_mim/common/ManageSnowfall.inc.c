@@ -10,7 +10,7 @@ EvtScript N(EVS_ManageSnowfall) = {
             IfEq(AF_MIM_Snowing, FALSE)
                 Call(RemoveEffect, LVarF)
             Else
-                PlayEffect(EFFECT_SNOWFALL, 0, 10)
+                PlayEffect(EFFECT_SNOWFALL, 0, 50)
             EndIf
             Set(AF_MIM_LastSnowing, AF_MIM_Snowing)
         EndIf
