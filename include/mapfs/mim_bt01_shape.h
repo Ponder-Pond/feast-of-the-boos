@@ -33,4 +33,3 @@
 #define MODEL_ki4               0x2
 #define MODEL_yuka2             0x1
 #define MODEL_waku              0x0
-

@@ -3356,56 +3356,6 @@ void part_glow_off(b32 isNpcSprite, ActorPart* part, s32 yaw, b32 isReflection) 
     }
 }
 
-// // Static rainbow color buffers for more distinct vertical bands
-// u8 rainbow_rbuf[20] = {255, 0, 0, 255, 0, 0, 255, 0, 0, 255, 0, 0, 255, 0, 0, 255, 0, 0, 255, 0};
-// u8 rainbow_gbuf[20] = {0, 255, 0, 0, 255, 0, 0, 255, 0, 0, 255, 0, 0, 255, 0, 0, 255, 0, 0, 255};
-// u8 rainbow_bbuf[20] = {0, 0, 255, 0, 0, 255, 0, 0, 255, 0, 0, 255, 0, 0, 255, 0, 0, 255, 0, 0};
-
-// void part_glow_on(b32 isNpcSprite, ActorPart* part, s32 yaw, b32 isReflection) {
-//     DecorationTable* decorations = part->decorationTable;
-//     s32 color;
-//     s32 alpha = (part->opacity < 255) ? part->opacity : 255;
-//     int verticalShift;
-
-//     // Reduce transparency if necessary
-//     if (part->flags & ACTOR_PART_FLAG_TRANSPARENT) {
-//         alpha = (alpha * 120) / 255;
-//     }
-
-//     // Initialize color buffer if the glow state changed
-//     if (decorations->glowStateChanged) {
-//         decorations->glowStateChanged = FALSE;
-//         decorations->glowPhase = 0;
-//         if (isNpcSprite == SPRITE_MODE_PLAYER) {
-//             set_player_imgfx_all(PLAYER_SPRITE_MAIN, IMGFX_ALLOC_COLOR_BUF, 20, 0, 0, 255, 0);
-//         } else {
-//             set_npc_imgfx_all(part->spriteInstanceID, IMGFX_ALLOC_COLOR_BUF, 20, 0, 0, 255, 0);
-//         }
-//     }
-
-//     // Increment glow phase for gradual upward movement
-//     decorations->glowPhase += 2;  // Control the speed of upward movement
-//     verticalShift = decorations->glowPhase % ARRAY_COUNT(rainbow_rbuf);
-
-//     // Apply hard step color bands for vertical line effect
-//     for (int i = 0; i < 20; i++) {
-//         int colorIndex = (i + verticalShift) % 20;  // Adjust band shifting with the calculated phase
-//         color = (rainbow_rbuf[colorIndex] << 24) | (rainbow_gbuf[colorIndex] << 16) | (rainbow_bbuf[colorIndex] << 8) | alpha;
-
-//         // Apply the color to the buffer
-//         if (isNpcSprite == SPRITE_MODE_PLAYER) {
-//             set_player_imgfx_all(PLAYER_SPRITE_MAIN, IMGFX_COLOR_BUF_SET_MODULATE, i, color, 0, 255, 0);
-//         } else {
-//             set_npc_imgfx_all(part->spriteInstanceID, IMGFX_COLOR_BUF_SET_MODULATE, i, color, 0, 255, 0);
-//         }
-//     }
-
-//     // Handle reflection phase
-//     if (!isReflection) {
-//         decorations->glowUnk3 -= 1;
-//     }
-// }
-
 void part_glow_on(b32 isNpcSprite, ActorPart* part, s32 yaw, b32 isReflection) {
     DecorationTable* decorations = part->decorationTable;
     u8 rbuf[20];
