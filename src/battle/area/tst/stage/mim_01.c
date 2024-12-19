@@ -24,22 +24,6 @@ EvtScript N(EVS_PreBattle) = {
     Call(SetSpriteShading, SHADING_NONE)
     Call(N(SetupFog))
     Exec(N(EVS_SpawnSnowfall))
-    Call(TranslateModel, MODEL_Pipe0, 0, -40, 0)
-    // Call(TranslateModel, MODEL_Pipe0, 0, -35, 0)
-    // Wait(30)
-    // Call(MakeLerp, -35, 0, 30, EASING_LINEAR)
-    // Loop(0)
-    //     Call(UpdateLerp)
-    //     IfEq(LVarE, 8)
-    //         Call(PlaySoundWithVolume, SOUND_GROW, 0)
-    //     EndIf
-    //     Call(TranslateModel, MODEL_Pipe0, 0, LVar0, 0)
-    //     Wait(1)
-    //     IfEq(LVar1, 0)
-    //         BreakLoop
-    //     EndIf
-    // EndLoop
-    // Call(TranslateModel, MODEL_Pipe0, 0, 0, 0)
     Return
     End
 };

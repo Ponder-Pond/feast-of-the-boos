@@ -1,5 +1,4 @@
-#define MODEL_Root              0x22
-#define MODEL_Pipe0             0x21
+#define MODEL_Root              0x21
 #define MODEL_dai               0x20
 #define MODEL_waku1             0x1F
 #define MODEL_y                 0x1E
@@ -33,3 +32,4 @@
 #define MODEL_ki4               0x2
 #define MODEL_yuka2             0x1
 #define MODEL_waku              0x0
+

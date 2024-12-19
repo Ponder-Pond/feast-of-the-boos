@@ -1,4 +1,6 @@
-#define MODEL_Root              0xA6
+#define MODEL_Root              0xA8
+#define MODEL_o300              0xA7
+#define MODEL_o300              0xA6
 #define MODEL_mon               0xA5
 #define MODEL_monw              0xA4
 #define MODEL_w2                0xA3

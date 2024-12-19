@@ -1,6 +1,6 @@
 [
     {
-        "name": "mim_bedtif",
+        "name": "bed",
         "main": {
             "format": "CI8",
             "hwrap": "Mirror",
@@ -10,7 +10,7 @@
         "combine": "Multiply"
     },
     {
-        "name": "mim_berosaidetif",
+        "name": "berosaide",
         "main": {
             "format": "CI4",
             "hwrap": "Mirror",
@@ -20,7 +20,7 @@
         "combine": "Multiply"
     },
     {
-        "name": "mim_danrotif",
+        "name": "danro",
         "main": {
             "format": "CI4",
             "hwrap": "Repeat",
@@ -30,7 +30,7 @@
         "combine": "Multiply"
     },
     {
-        "name": "mim_dark_berotif",
+        "name": "dark_bero",
         "main": {
             "format": "CI8",
             "hwrap": "Repeat",
@@ -40,7 +40,7 @@
         "combine": "Multiply"
     },
     {
-        "name": "mim_dark_bushtif",
+        "name": "dark_bush",
         "main": {
             "format": "CI4",
             "hwrap": "Repeat",
@@ -50,7 +50,7 @@
         "combine": "Multiply"
     },
     {
-        "name": "mim_dark_eye444tif",
+        "name": "dark_eye444",
         "main": {
             "format": "CI4",
             "hwrap": "Repeat",
@@ -60,7 +60,7 @@
         "combine": "Multiply"
     },
     {
-        "name": "mim_dark_hana1tif",
+        "name": "dark_hana1",
         "main": {
             "format": "CI4",
             "hwrap": "Mirror",
@@ -70,7 +70,7 @@
         "combine": "Multiply"
     },
     {
-        "name": "mim_dark_hana3tif",
+        "name": "dark_hana3",
         "main": {
             "format": "CI4",
             "hwrap": "Mirror",
@@ -80,7 +80,7 @@
         "combine": "Multiply"
     },
     {
-        "name": "mim_dark_kinoko2tif",
+        "name": "dark_kinoko2",
         "main": {
             "format": "CI8",
             "hwrap": "Repeat",
@@ -90,7 +90,7 @@
         "combine": "Multiply"
     },
     {
-        "name": "mim_dark_kinokotif",
+        "name": "dark_kinoko",
         "main": {
             "format": "CI4",
             "hwrap": "Clamp",
@@ -100,7 +100,7 @@
         "combine": "Multiply"
     },
     {
-        "name": "mim_dark_mitikusatif",
+        "name": "dark_mitikusa",
         "main": {
             "format": "CI4",
             "hwrap": "Repeat",
@@ -110,7 +110,7 @@
         "combine": "Multiply"
     },
     {
-        "name": "mim_dark_mouse2tif",
+        "name": "dark_mouse2",
         "main": {
             "format": "CI4",
             "hwrap": "Repeat",
@@ -120,7 +120,7 @@
         "combine": "Multiply"
     },
     {
-        "name": "mim_dark_mouse3tif",
+        "name": "dark_mouse3",
         "main": {
             "format": "CI4",
             "hwrap": "Repeat",
@@ -130,7 +130,7 @@
         "combine": "Multiply"
     },
     {
-        "name": "mim_dark_redeyetif",
+        "name": "dark_redeye",
         "main": {
             "format": "CI4",
             "hwrap": "Mirror",
@@ -140,7 +140,7 @@
         "combine": "Multiply"
     },
     {
-        "name": "mim_dark_reeftif",
+        "name": "dark_reef",
         "main": {
             "format": "CI4",
             "hwrap": "Repeat",
@@ -150,7 +150,7 @@
         "combine": "Multiply"
     },
     {
-        "name": "mim_dark_roadtif",
+        "name": "dark_road",
         "main": {
             "format": "CI8",
             "hwrap": "Repeat",
@@ -160,7 +160,7 @@
         "combine": "Multiply"
     },
     {
-        "name": "mim_dark_rocktif",
+        "name": "dark_rock",
         "main": {
             "format": "CI4",
             "hwrap": "Mirror",
@@ -170,7 +170,7 @@
         "combine": "Multiply"
     },
     {
-        "name": "mim_darkgreen2tif",
+        "name": "darkgreen2",
         "main": {
             "format": "CI4",
             "hwrap": "Repeat",
@@ -185,7 +185,7 @@
         "combine": "Multiply"
     },
     {
-        "name": "mim_darkwoodtif",
+        "name": "darkwood",
         "main": {
             "format": "I4",
             "hwrap": "Repeat",
@@ -195,7 +195,7 @@
         "combine": "Multiply"
     },
     {
-        "name": "mim_doortif",
+        "name": "door",
         "main": {
             "format": "IA4",
             "hwrap": "Mirror",
@@ -205,7 +205,7 @@
         "combine": "Multiply"
     },
     {
-        "name": "mim_grayframetif",
+        "name": "grayframe",
         "main": {
             "format": "I4",
             "hwrap": "Mirror",
@@ -215,7 +215,7 @@
         "combine": "Multiply"
     },
     {
-        "name": "mim_h_greentif",
+        "name": "h_green",
         "main": {
             "format": "CI4",
             "hwrap": "Repeat",
@@ -225,7 +225,7 @@
         "combine": "Multiply"
     },
     {
-        "name": "mim_h_kabe2tif",
+        "name": "h_kabe2",
         "main": {
             "format": "CI8",
             "hwrap": "Repeat",
@@ -235,7 +235,7 @@
         "combine": "Multiply"
     },
     {
-        "name": "mim_h_kabetif",
+        "name": "h_kabe",
         "main": {
             "format": "CI8",
             "hwrap": "Repeat",
@@ -245,7 +245,7 @@
         "combine": "Multiply"
     },
     {
-        "name": "mim_h_kazaritif",
+        "name": "h_kazari",
         "main": {
             "format": "CI8",
             "hwrap": "Repeat",
@@ -255,7 +255,7 @@
         "combine": "Multiply"
     },
     {
-        "name": "mim_h_sakutif",
+        "name": "h_saku",
         "main": {
             "format": "CI8",
             "hwrap": "Repeat",
@@ -265,7 +265,7 @@
         "combine": "Multiply"
     },
     {
-        "name": "mim_h_yane1tif",
+        "name": "h_yane1",
         "main": {
             "format": "CI8",
             "hwrap": "Repeat",
@@ -275,7 +275,7 @@
         "combine": "Multiply"
     },
     {
-        "name": "mim_hachinosutif",
+        "name": "hachinosu",
         "main": {
             "format": "CI4",
             "hwrap": "Repeat",
@@ -285,7 +285,7 @@
         "combine": "Multiply"
     },
     {
-        "name": "mim_hanatif",
+        "name": "hana",
         "main": {
             "format": "CI4",
             "hwrap": "Mirror",
@@ -295,7 +295,7 @@
         "combine": "Multiply"
     },
     {
-        "name": "mim_hashira_atif",
+        "name": "hashira_a",
         "main": {
             "format": "I4",
             "hwrap": "Mirror",
@@ -305,7 +305,7 @@
         "combine": "Multiply"
     },
     {
-        "name": "mim_hashiratif",
+        "name": "hashira",
         "main": {
             "format": "CI4",
             "hwrap": "Mirror",
@@ -315,7 +315,7 @@
         "combine": "Multiply"
     },
     {
-        "name": "mim_hilltif",
+        "name": "hill",
         "main": {
             "format": "CI4",
             "hwrap": "Repeat",
@@ -325,7 +325,7 @@
         "combine": "Multiply"
     },
     {
-        "name": "mim_iwa_2tif",
+        "name": "iwa_2",
         "main": {
             "format": "CI4",
             "hwrap": "Repeat",
@@ -335,7 +335,7 @@
         "combine": "Multiply"
     },
     {
-        "name": "mim_kabebe_mtif",
+        "name": "kabebe_m",
         "main": {
             "format": "RGBA16",
             "hwrap": "Repeat",
@@ -346,7 +346,7 @@
         "combine": "Multiply"
     },
     {
-        "name": "mim_kaidan_5tif",
+        "name": "kaidan_5",
         "main": {
             "format": "CI4",
             "hwrap": "Repeat",
@@ -356,7 +356,7 @@
         "combine": "Multiply"
     },
     {
-        "name": "mim_kare_edatif",
+        "name": "kare_eda",
         "main": {
             "format": "I4",
             "hwrap": "Mirror",
@@ -366,7 +366,7 @@
         "combine": "Multiply"
     },
     {
-        "name": "mim_kusa1tif",
+        "name": "kusa1",
         "main": {
             "format": "CI4",
             "hwrap": "Mirror",
@@ -376,7 +376,7 @@
         "combine": "Multiply"
     },
     {
-        "name": "mim_kusaritif",
+        "name": "kusari",
         "main": {
             "format": "CI4",
             "hwrap": "Repeat",
@@ -386,7 +386,7 @@
         "combine": "Multiply"
     },
     {
-        "name": "mim_kusatif",
+        "name": "kusa",
         "main": {
             "format": "CI4",
             "hwrap": "Mirror",
@@ -396,7 +396,7 @@
         "combine": "Multiply"
     },
     {
-        "name": "mim_mac_britshcuttif",
+        "name": "mac_britshcut",
         "main": {
             "format": "CI4",
             "hwrap": "Clamp",
@@ -406,7 +406,7 @@
         "combine": "Multiply"
     },
     {
-        "name": "mim_mac_britshtreetif",
+        "name": "mac_britshtree",
         "main": {
             "format": "CI4",
             "hwrap": "Clamp",
@@ -416,7 +416,7 @@
         "combine": "Multiply"
     },
     {
-        "name": "mim_mac_edgetif",
+        "name": "mac_edge",
         "main": {
             "format": "CI4",
             "hwrap": "Repeat",
@@ -427,7 +427,7 @@
         "combine": "Multiply"
     },
     {
-        "name": "mim_mac_sakutif",
+        "name": "mac_saku",
         "main": {
             "format": "CI4",
             "hwrap": "Mirror",
@@ -437,7 +437,7 @@
         "combine": "Multiply"
     },
     {
-        "name": "mim_mado_2tif",
+        "name": "mado_2",
         "main": {
             "format": "CI4",
             "hwrap": "Mirror",
@@ -447,7 +447,7 @@
         "combine": "Multiply"
     },
     {
-        "name": "mim_wood_floor_ctif",
+        "name": "wood_floor_c",
         "main": {
             "format": "CI4",
             "hwrap": "Mirror",
@@ -457,7 +457,7 @@
         "combine": "Multiply"
     },
     {
-        "name": "mim_yuka_t1tif",
+        "name": "yuka_t1",
         "main": {
             "format": "CI4",
             "hwrap": "Mirror",
@@ -468,7 +468,7 @@
         "combine": "Multiply"
     },
     {
-        "name": "mim_yuka_tairu3tif",
+        "name": "yuka_tairu3",
         "main": {
             "format": "CI4",
             "hwrap": "Repeat",
@@ -478,17 +478,7 @@
         "combine": "Multiply"
     },
     {
-        "name": "mim_zimen2tif",
-        "main": {
-            "format": "CI4",
-            "hwrap": "Repeat",
-            "vwrap": "Repeat"
-        },
-        "filter": true,
-        "combine": "Multiply"
-    },
-    {
-        "name": "green_pipe",
+        "name": "zimen2",
         "main": {
             "format": "CI4",
             "hwrap": "Repeat",

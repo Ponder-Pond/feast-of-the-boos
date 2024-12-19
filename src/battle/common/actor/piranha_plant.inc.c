@@ -10,8 +10,6 @@ extern EvtScript N(EVS_TakeTurn);
 extern EvtScript N(EVS_HandleEvent);
 extern EvtScript N(EVS_Attack_Bite);
 // extern EvtScript N(EVS_Attack_DazeBreath);
-// extern EvtScript N(EVS_RiseFromPipe);
-// extern EvtScript N(EVS_Move_BoostAttack);
 
 enum N(ActorPartIDs) {
     PRT_MAIN        = 1,
@@ -91,7 +89,7 @@ ActorPartBlueprint N(ActorParts)[] = {
 };
 
 ActorBlueprint NAMESPACE = {
-    .flags = 0, // ACTOR_FLAG_NO_SHADOW,
+    .flags = 0,
     .type = ACTOR_TYPE_PIRANHA_PLANT,
     .level = ACTOR_LEVEL_PIRANHA_PLANT,
     .maxHP = 5,
@@ -117,36 +115,9 @@ EvtScript N(EVS_Init) = {
     Call(BindTakeTurn, ACTOR_SELF, Ref(N(EVS_TakeTurn)))
     Call(BindIdle, ACTOR_SELF, Ref(N(EVS_Idle)))
     Call(BindHandleEvent, ACTOR_SELF, Ref(N(EVS_HandleEvent)))
-    // Exec(N(EVS_RiseFromPipe))
     Return
     End
 };
-
-EvtScript N(EVS_RiseFromPipe) = {
-    Call(UseIdleAnimation, ACTOR_SELF, FALSE)
-    Call(EnableIdleScript, ACTOR_SELF, IDLE_SCRIPT_DISABLE)
-    Call(SetActorPos, ACTOR_SELF, 42, -45, 0)
-    Call(SetActorFlagBits, ACTOR_SELF, ACTOR_FLAG_NO_HEALTH_BAR, TRUE)
-    Wait(60)
-    Call(MakeLerp, -45, 25, 35, EASING_LINEAR)
-    Loop(0)
-        Call(UpdateLerp)
-        IfEq(LVarE, 25)
-            Call(SetAnimation, ACTOR_SELF, PRT_MAIN, ANIM_SmallPiranha_Anim01)
-        EndIf
-        Call(SetActorPos, ACTOR_SELF, 42, LVar0, 0)
-        Wait(1)
-        IfEq(LVar1, 0)
-            BreakLoop
-        EndIf
-    EndLoop
-    Call(SetActorFlagBits, ACTOR_SELF, ACTOR_FLAG_NO_HEALTH_BAR, FALSE)
-    Call(UseIdleAnimation, ACTOR_SELF, TRUE)
-    Call(EnableIdleScript, ACTOR_SELF, IDLE_SCRIPT_ENABLE)
-    Return
-    End
-};
-
 
 EvtScript N(EVS_Idle) = {
     Return
@@ -312,7 +283,6 @@ EvtScript N(EVS_TakeTurn) = {
             ExecWait(N(EVS_Attack_DazeBreath))
     EndSwitch
     */
-    // ExecWait(N(EVS_Move_BoostAttack))
     ExecWait(N(EVS_Attack_Bite))
     Call(EnableIdleScript, ACTOR_SELF, IDLE_SCRIPT_ENABLE)
     Call(UseIdleAnimation, ACTOR_SELF, TRUE)
@@ -565,30 +535,3 @@ EvtScript N(EVS_Attack_DazeBreath) = {
     End
 };
 */
-
-// EvtScript N(EVS_Move_BoostAttack) = {
-//     Call(UseIdleAnimation, ACTOR_SELF, FALSE)
-//     Call(EnableIdleScript, ACTOR_SELF, IDLE_SCRIPT_DISABLE)
-//     Call(SetTargetActor, ACTOR_SELF, ACTOR_PLAYER)
-//     Call(UseBattleCamPreset, BTL_CAM_ACTOR)
-//     Call(BattleCamTargetActor, ACTOR_SELF)
-//     Call(MoveBattleCamOver, 15)
-//     Wait(15)
-//     Thread
-//         Wait(10)
-//         Call(PlaySoundAtActor, LVar8, SOUND_MAGIKOOPA_POWER_UP)
-//     EndThread
-//     Thread
-//         Call(FreezeBattleState, TRUE)
-//         Call(BoostDefense, ACTOR_SELF, 1)
-//         Call(FreezeBattleState, FALSE)
-//     EndThread
-//     Call(WaitForBuffDone)
-//     Call(UseBattleCamPreset, BTL_CAM_DEFAULT)
-//     Wait(10)
-//     Call(YieldTurn)
-//     Call(EnableIdleScript, ACTOR_SELF, IDLE_SCRIPT_ENABLE)
-//     Call(UseIdleAnimation, ACTOR_SELF, TRUE)
-//     Return
-//     End
-// };
