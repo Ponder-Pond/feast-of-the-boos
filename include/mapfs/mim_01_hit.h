@@ -1,4 +1,8 @@
-#define COLLIDER_Root           0x22
+#define COLLIDER_Root           0x26
+#define COLLIDER_RightRockGroup 0x25
+#define COLLIDER_RightRockCol   0x24
+#define COLLIDER_LeftRockGroup  0x23
+#define COLLIDER_LeftRockCol    0x22
 #define COLLIDER_g128           0x21
 #define COLLIDER_monw           0x20
 #define COLLIDER_g127           0x1F

@@ -42,4 +42,6 @@ extern MapSettings mim_10_settings;
 extern MapSettings mim_11_settings;
 extern MapSettings mim_12_settings;
 
+s32 mim_01_map_init(void);
+
 #endif
