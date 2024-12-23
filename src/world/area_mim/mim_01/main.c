@@ -20,6 +20,7 @@ EvtScript N(EVS_BindExitTriggers) = {
 
 EvtScript N(EVS_Main) = {
     Set(GB_WorldLocation, LOCATION_FOREVER_FOREST)
+    // Call(SetSpriteShading, SHADING_MIM_01)
     Call(SetSpriteShading, SHADING_MIM_01)
     EVT_SETUP_CAMERA_MIM()
     Set(GF_MAP_ForeverForest, TRUE)
@@ -36,6 +37,13 @@ EvtScript N(EVS_Main) = {
     Exec(N(EVS_SetupMusic))
     Exec(N(EVS_ManageSnowfall))
     Call(SetCamSpeed, CAM_DEFAULT, Float(3.0))
+    Call(GetEntryID, LVar0)
+    IfEq(LVar0, mim_01_ENTRY_1)
+        IfLt(GB_StoryProgress, STORY_MOD_CUTSCENE_ONE)
+            Exec(N(EVS_Cutscene1))
+            Set(GB_StoryProgress, STORY_MOD_CUTSCENE_ONE)
+        EndIf
+    EndIf
     Return
     End
 };

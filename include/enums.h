@@ -231,8 +231,10 @@ enum StoryProgress {
     STORY_UNUSED_0000005D                       = 93,
     STORY_CH8_REACHED_BOWSERS_CASTLE            = 94,
     STORY_CH8_REACHED_PEACHS_CASTLE             = 95,
-    STORY_EPILOGUE                              = 96,
-    STORY_NEVER                                 = 97,
+    STORY_MOD_INTRO,
+    STORY_MOD_CUTSCENE_ONE,
+    STORY_EPILOGUE,
+    STORY_NEVER,
 };
 
 enum KoopaKootFavors {

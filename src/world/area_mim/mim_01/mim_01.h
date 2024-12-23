@@ -10,6 +10,7 @@
 #include "mapfs/mim_01_shape.h"
 #include "mapfs/mim_01_hit.h"
 
+#include "sprite/npc/WorldBow.h"
 #include "sprite/npc/SmallPiranha.h"
 
 enum {
@@ -26,3 +27,4 @@ extern EvtScript N(EVS_SetupExitHint);
 extern EvtScript N(EVS_SetupGates);
 extern EvtScript N(EVS_BindExitTriggers);
 extern NpcGroupList N(DefaultNPCs);
+extern EvtScript N(EVS_Cutscene1);

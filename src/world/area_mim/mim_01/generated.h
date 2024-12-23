@@ -21,12 +21,12 @@
 #define GEN_PIPE_BLUE_VEC 250,0,-245
 
 // type: Marker:Position
-// name: Formation1
-#define GEN_FORMATION1_X 174
-#define GEN_FORMATION1_Y 0
-#define GEN_FORMATION1_Z 300
-#define GEN_FORMATION1_DIR 0
-#define GEN_FORMATION1_VEC 174,0,300
+// name: FreezyFuzzy
+#define GEN_FREEZY_FUZZY_X 174
+#define GEN_FREEZY_FUZZY_Y 0
+#define GEN_FREEZY_FUZZY_Z 300
+#define GEN_FREEZY_FUZZY_DIR 0
+#define GEN_FREEZY_FUZZY_VEC 174,0,300
 
 // type: Marker:Position
 // name: Cutscene1
