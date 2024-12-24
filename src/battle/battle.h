@@ -55,7 +55,7 @@ enum BattleAreaIDs {
     BTL_AREA_OMO2_4        = 0x2C,
     BTL_AREA_OMO2_5        = 0x2D,
     BTL_AREA_OMO2_6        = 0x2E,
-    BTL_AREA_TST           = 0x2F,
+    BTL_AREA_FOB           = 0x2F,
 };
 
 enum BattlePositions {

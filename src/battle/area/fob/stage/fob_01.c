@@ -5,14 +5,14 @@
 // #include "battle/common/stage/area_mim/mim_01.inc.c"
 
 
-#define NAMESPACE A(mim_01)
+#define NAMESPACE A(fob_01)
 
 #include "battle/common/stage/lib/Snowflakes.inc.c"
 
 API_CALLABLE(N(SetupFog)) {
     enable_world_fog();
-    set_world_fog_dist(950, 1000);
-    set_world_fog_color(50, 55, 70, 255);
+    set_world_fog_dist(950, 1010);
+    set_world_fog_color(75, 120, 170, 255);
     gCameras[CAM_BATTLE].bgColor[0] = 60;
     gCameras[CAM_BATTLE].bgColor[1] = 70;
     gCameras[CAM_BATTLE].bgColor[2] = 90;

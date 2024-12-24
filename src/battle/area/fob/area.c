@@ -13,7 +13,7 @@ extern ActorBlueprint A(beehive);
 extern ActorBlueprint A(duplighost);
 extern ActorBlueprint A(jr_troopa_gang);
 
-extern Stage A(mim_01);
+extern Stage A(fob_01);
 
 Vec3i A(BeehivePos) = { 90, 125, -68 };
 Vec3i A(PiranhaPlantPos) = { 42, 25, 0 };
@@ -33,11 +33,11 @@ Formation A(Formation_00) = {
 };
 
 BattleList A(Formations) = {
-    BATTLE(A(Formation_00), A(mim_01), "Forever Forest"),
+    BATTLE(A(Formation_00), A(fob_01), "Forever Forest"),
     {},
 };
 
 StageList A(Stages) = {
-    STAGE("mim_01", A(mim_01)),
+    STAGE("fob_01", A(fob_01)),
     {},
 };

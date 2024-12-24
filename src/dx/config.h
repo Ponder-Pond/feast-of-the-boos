@@ -17,7 +17,7 @@
 
 /// Quick launch into this battle.
 /// Comment out to disable,
-// #define DX_QUICK_LAUNCH_BATTLE BTL_TST_FORMATION_00, BTL_TST_STAGE_00
+// #define DX_QUICK_LAUNCH_BATTLE BTL_FOB_FORMATION_00, BTL_FOB_STAGE_00
 
 /// Skips logos (Nintendo, Intelligent Systems, etc.).
 #define DX_SKIP_LOGOS 1
@@ -35,7 +35,7 @@
 #define NEW_GAME_ENTRY_ID mim_01_ENTRY_1
 
 /// Story progress when starting a new game.
-#define NEW_GAME_STORY_PROGRESS     STORY_MOD_CUTSCENE_ONE
+#define NEW_GAME_STORY_PROGRESS     STORY_MOD_INTRO
 
 /// Enables the profiler, which shows lots of performance info on screen.
 /// Press L + D-Pad Up to show/hide the profiler.

@@ -3,4 +3,4 @@
 #include "battle/battle.h"
 #include "script_api/battle.h"
 
-#define AREA b_area_tst
+#define AREA b_area_fob

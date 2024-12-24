@@ -31,4 +31,6 @@ extern EvtScript N(EVS_SetupExitHint);
 extern EvtScript N(EVS_SetupGates);
 extern EvtScript N(EVS_BindExitTriggers);
 extern NpcGroupList N(DefaultNPCs);
+extern EvtScript N(EVS_UseGate_West);
+extern EvtScript N(EVS_DisabledGate_West);
 extern EvtScript N(EVS_Cutscene1);

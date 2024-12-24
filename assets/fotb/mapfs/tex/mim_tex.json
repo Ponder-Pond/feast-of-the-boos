@@ -486,5 +486,26 @@
         },
         "filter": true,
         "combine": "Multiply"
+    },
+    {
+        "name": "mim_hikaritif",
+        "main": {
+            "format": "IA16",
+            "hwrap": "Repeat",
+            "vwrap": "Clamp"
+        },
+        "filter": true,
+        "combine": "Multiply"
+    },
+    {
+        "name": "mim_papertif",
+        "main": {
+            "format": "CI4",
+            "hwrap": "Mirror",
+            "vwrap": "Mirror"
+        },
+        "filter": true,
+        "combine": "Multiply"
     }
+
 ]

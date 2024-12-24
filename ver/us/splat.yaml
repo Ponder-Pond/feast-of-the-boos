@@ -6864,7 +6864,7 @@ segments:
     - [auto, c, script/dig_03]
     - [auto, c, script/dig_04]
     - [auto, c, script/dig_05]
-  - dir: battle/area/tst # Testing Battle Area
+  - dir: battle/area/fob # Feast of the Boos Battle Area
     type: code
     start: auto
     vram_class: battle_area
@@ -6883,7 +6883,7 @@ segments:
     - [auto, c, actor/duplighost]
     - [auto, c, actor/beehive]
     - [auto, c, actor/jr_troopa_gang]
-    - [auto, c, stage/mim_01]
+    - [auto, c, stage/fob_01]
 
 #######################
 ### Battle Partners ###
