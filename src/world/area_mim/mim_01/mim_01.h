@@ -13,9 +13,13 @@
 #include "sprite/npc/WorldBow.h"
 #include "sprite/npc/SmallPiranha.h"
 
+// enum {
+//     // NPC_PiranhaPlant            = 1,
+//     // NPC_PiranhaPlant_Hitbox     = 2,
+// };
+
 enum {
-    NPC_PiranhaPlant            = 1,
-    NPC_PiranhaPlant_Hitbox     = 2,
+    NPC_FreezyFuzzy                = 0,
 };
 
 #define NAMESPACE mim_01

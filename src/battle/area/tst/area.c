@@ -24,7 +24,8 @@ Vec3i A(PiranhaPlantPos) = { 42, 25, 0 };
 // [BTL_POS_GROUND_D] { 125, 0, 25 },
 
 Formation A(Formation_00) = {
-    ACTOR_BY_IDX(A(boo_bully), BTL_POS_GROUND_B, 10),
+    ACTOR_BY_IDX(A(freezy_fuzzy), BTL_POS_GROUND_B, 10),
+    // ACTOR_BY_IDX(A(boo_bully), BTL_POS_GROUND_B, 10),
     // ACTOR_BY_IDX(A(purple_panser), BTL_POS_GROUND_B, 10),
     // ACTOR_BY_POS(A(piranha_plant), A(PiranhaPlantPos), 10),
     // ACTOR_BY_IDX(A(boo_bully), BTL_POS_AIR_B, 10),

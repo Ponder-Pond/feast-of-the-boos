@@ -66,7 +66,7 @@ ActorPartBlueprint N(ActorParts)[] = {
     {
         .flags = ACTOR_PART_FLAG_PRIMARY_TARGET,
         .index = PRT_MAIN,
-        .posOffset = { 0, 10, 0 },
+        .posOffset = { 0, 20, 0 },
         .targetOffset = { 0, 24 },
         .opacity = 255,
         .idleAnimations = N(DefaultAnims),

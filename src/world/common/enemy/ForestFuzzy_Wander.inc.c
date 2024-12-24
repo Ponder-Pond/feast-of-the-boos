@@ -1,4 +1,5 @@
 #include "ForestFuzzy.h"
+#include "FreezyFuzzy.h"
 
 #include "world/common/enemy/ai/HoppingAI.inc.c"
 
@@ -26,6 +27,15 @@ NpcSettings N(NpcSettings_ForestFuzzy_Wander) = {
     .height = 20,
     .radius = 22,
     .level = ACTOR_LEVEL_FOREST_FUZZY,
+    .ai = &N(EVS_NpcAI_ForestFuzzy_Wander),
+    .onHit = &EnemyNpcHit,
+    .onDefeat = &EnemyNpcDefeat,
+};
+
+NpcSettings N(NpcSettings_FreezyFuzzy_Wander) = {
+    .height = 20,
+    .radius = 22,
+    .level = ACTOR_LEVEL_FREEZY_FUZZY,
     .ai = &N(EVS_NpcAI_ForestFuzzy_Wander),
     .onHit = &EnemyNpcHit,
     .onDefeat = &EnemyNpcDefeat,

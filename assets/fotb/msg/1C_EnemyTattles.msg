@@ -1,4 +1,5 @@
-#message:1C:(EnemyTattle_Goomba) {
+#message:1C:(EnemyTattle_Goomba)
+{
 	[Style right]
 	This is a Goomba.[BR]
 	[Wait][Next]
@@ -17,7 +18,9 @@
 	were in Super Mario Bros.![Wait][End]
 }
 
-#message:1C:(EnemyTattle_SpikedGoomba) {
+
+#message:1C:(EnemyTattle_SpikedGoomba)
+{
 	[Style right]
 	This is a Spiked Goomba.[BR]
 	[Pause 10]Spiked Goombas are Goombas[BR]
@@ -31,7 +34,9 @@
 	hurt or even paralyzed![Wait][End]
 }
 
-#message:1C:(EnemyTattle_Paragoomba) {
+
+#message:1C:(EnemyTattle_Paragoomba)
+{
 	[Style right]
 	This is a Paragoomba.[BR]
 	[Pause 10]Obviously, Paragoombas are[BR]
@@ -48,7 +53,9 @@
 	ordinary Goombas.[Wait][End]
 }
 
-#message:1C:(EnemyTattle_RedGoombaBoss) {
+
+#message:1C:(EnemyTattle_RedGoombaBoss)
+{
 	[Style right]
 	This is Red Goomba.[BR]
 	[Pause 10]He's the older of the two[BR]
@@ -65,7 +72,9 @@
 	than an ordinary Goomba.[Wait][End]
 }
 
-#message:1C:(EnemyTattle_BlueGoombaBoss) {
+
+#message:1C:(EnemyTattle_BlueGoombaBoss)
+{
 	[Style right]
 	This is Blue Goomba.[BR]
 	[Pause 10]He's the younger of the two[BR]
@@ -82,7 +91,9 @@
 	[Pause 5]He's weaker than his brother.[Wait][End]
 }
 
-#message:1C:(EnemyTattle_GoombaKing) {
+
+#message:1C:(EnemyTattle_GoombaKing)
+{
 	[Style right]
 	This is the Goomba King.[BR]
 	[Pause 10]He's really big. I mean, look[BR]
@@ -101,7 +112,9 @@
 	[Pause 10]I'd like to be a bit bigger, too.[Wait][End]
 }
 
-#message:1C:(EnemyTattle_GoomnutTree) {
+
+#message:1C:(EnemyTattle_GoomnutTree)
+{
 	[Style right]
 	This is a Goomnut Tree.[BR]
 	[Pause 10]Spiky Goomnuts will fall down[BR]
@@ -112,7 +125,9 @@
 	to use them against the enemy.[Wait][End]
 }
 
-#message:1C:(EnemyTattle_KoopaTroopa) {
+
+#message:1C:(EnemyTattle_KoopaTroopa)
+{
 	[Style right]
 	This is a Koopa Troopa.[BR]
 	[Pause 10]Everybody knows Koopa Troopas.[BR]
@@ -131,7 +146,9 @@
 	Block or a Jump attack. [Wait][End]
 }
 
-#message:1C:(EnemyTattle_Paratroopa) {
+
+#message:1C:(EnemyTattle_Paratroopa)
+{
 	[Style right]
 	This is a Paratroopa.[BR]
 	[Pause 10]No surprise here--Paratroopas[BR]
@@ -154,7 +171,9 @@
 	but they're not that tough.[Wait][End]
 }
 
-#message:1C:(EnemyTattle_Fuzzy) {
+
+#message:1C:(EnemyTattle_Fuzzy)
+{
 	[Style right]
 	This is a Fuzzy.[BR]
 	[Pause 10]Why do Fuzzies always jump[BR]
@@ -172,7 +191,9 @@
 	out! They'll absorb your HP.[Wait][End]
 }
 
-#message:1C:(EnemyTattle_BobOmb) {
+
+#message:1C:(EnemyTattle_BobOmb)
+{
 	[Style right]
 	This is a Bob-omb.[BR]
 	[Wait][Next]
@@ -200,7 +221,9 @@
 	them before they blow![Wait][End]
 }
 
-#message:1C:(EnemyTattle_BulletBill) {
+
+#message:1C:(EnemyTattle_BulletBill)
+{
 	[Style right]
 	This is a Bullet Bill, [BR]
 	a kamikaze attacker.[BR]
@@ -220,7 +243,9 @@
 	get the chance to strike us.[Wait][End]
 }
 
-#message:1C:(EnemyTattle_BillBlaster) {
+
+#message:1C:(EnemyTattle_BillBlaster)
+{
 	[Style right]
 	This is a Bill Blaster.[BR]
 	[Pause 10]Bill Blasters are the cannons[BR]
@@ -238,7 +263,9 @@
 	beat 'em one at a time.[Wait][End]
 }
 
-#message:1C:(EnemyTattle_FakeBowser) {
+
+#message:1C:(EnemyTattle_FakeBowser)
+{
 	[Style right]
 	Bowser...?[BR]
 	[Pause 10]But he looks kind of...lame. [BR]
@@ -252,7 +279,9 @@
 	well, a lot scarier.[Wait][End]
 }
 
-#message:1C:(EnemyTattle_RedNinjakoopa) {
+
+#message:1C:(EnemyTattle_RedNinjakoopa)
+{
 	[Style right]
 	This is Red Ninjakoopa.[BR]
 	[Pause 10]He's the Koopa Bros. leader.[BR]
@@ -275,7 +304,9 @@
 	spinning attack![Wait][End]
 }
 
-#message:1C:(EnemyTattle_BlackNinjakoopa) {
+
+#message:1C:(EnemyTattle_BlackNinjakoopa)
+{
 	[Style right]
 	This is Black Ninjakoopa.[BR]
 	[Pause 10]Black is pretty fashionable...[BR]
@@ -295,7 +326,9 @@
 	[Wait][End]
 }
 
-#message:1C:(EnemyTattle_YellowNinjakoopa) {
+
+#message:1C:(EnemyTattle_YellowNinjakoopa)
+{
 	[Style right]
 	This is Yellow Ninjakoopa.[BR]
 	[Wait][Next]
@@ -318,7 +351,9 @@
 	spinning attack![Wait][End]
 }
 
-#message:1C:(EnemyTattle_GreenNinjakoopa) {
+
+#message:1C:(EnemyTattle_GreenNinjakoopa)
+{
 	[Style right]
 	This is Green Ninjakoopa.[BR]
 	[Pause 10]He looks exactly the same as a[BR]
@@ -338,7 +373,9 @@
 	spinning attack![Wait][End]
 }
 
-#message:1C:(EnemyTattle_KoopaBros) {
+
+#message:1C:(EnemyTattle_KoopaBros)
+{
 	[Style right]
 	The Koopa Bros. have formed[BR]
 	a tall Koopa tower![BR]
@@ -364,7 +401,9 @@
 	[Pause 10]Beat 'em one by one![Wait][End]
 }
 
-#message:1C:(EnemyTattle_JrTroopa1) {
+
+#message:1C:(EnemyTattle_JrTroopa1)
+{
 	[Style right]
 	What was his name? Jr. Troopa?[BR]
 	I don't remember exactly...[BR]
@@ -381,7 +420,9 @@
 	[Pause 10]...I think.[Wait][End]
 }
 
-#message:1C:(EnemyTattle_MontyMole) {
+
+#message:1C:(EnemyTattle_MontyMole)
+{
 	[Style right]
 	This is a Monty Mole.[BR]
 	[Pause 10]Monty Moles are rock-throwing[BR]
@@ -400,7 +441,9 @@
 	[Pause 10]Or maybe they're just hip.[Wait][End]
 }
 
-#message:1C:(EnemyTattle_Cleft) {
+
+#message:1C:(EnemyTattle_Cleft)
+{
 	[Style right]
 	This is a Cleft.[BR]
 	[Pause 10]Clefts are pretty strong, so[BR]
@@ -420,7 +463,9 @@
 	running away sometimes...[Wait][End]
 }
 
-#message:1C:(EnemyTattle_Pokey) {
+
+#message:1C:(EnemyTattle_Pokey)
+{
 	[Style right]
 	This is Pokey, an evil cactus.[BR]
 	[Pause 10]Pokeys attack by throwing parts[BR]
@@ -439,7 +484,9 @@
 	[Pause 10]Let's beat 'em quickly![Wait][End]
 }
 
-#message:1C:(EnemyTattle_Bandit) {
+
+#message:1C:(EnemyTattle_Bandit)
+{
 	[Style right]
 	This is a Bandit.[BR]
 	[Pause 10]Bandits bump into you hard[BR]
@@ -460,7 +507,9 @@
 	can make off with our loot![Wait][End]
 }
 
-#message:1C:(EnemyTattle_PokeyMummy) {
+
+#message:1C:(EnemyTattle_PokeyMummy)
+{
 	[Style right]
 	This is a Pokey Mummy.[BR]
 	[Wait][Next]
@@ -486,7 +535,9 @@
 	before they can poison us?[Wait][End]
 }
 
-#message:1C:(EnemyTattle_BuzzyBeetle) {
+
+#message:1C:(EnemyTattle_BuzzyBeetle)
+{
 	[Style right]
 	This is a Buzzy Beetle.[BR]
 	[Pause 10]Buzzy Beetles are cute--[BR]
@@ -508,7 +559,9 @@
 	shadowy places.[Wait][End]
 }
 
-#message:1C:(EnemyTattle_Swooper) {
+
+#message:1C:(EnemyTattle_Swooper)
+{
 	[Style right]
 	This is a Swooper, a ghost bat.[BR]
 	[Pause 10]Swoopers got their name[BR]
@@ -531,7 +584,9 @@
 	hovering in the air.[Wait][End]
 }
 
-#message:1C:(EnemyTattle_Buzzar) {
+
+#message:1C:(EnemyTattle_Buzzar)
+{
 	[Style right]
 	This is Buzzar.[BR]
 	[Pause 10]He guards Mt. Rugged.[BR]
@@ -556,7 +611,9 @@
 	[Pause 10]I wonder...[Wait][End]
 }
 
-#message:1C:(EnemyTattle_Tutankoopa) {
+
+#message:1C:(EnemyTattle_Tutankoopa)
+{
 	[Style right]
 	This is Tutankoopa.[BR]
 	[Pause 10]He's one of Bowser's followers[BR]
@@ -585,7 +642,9 @@
 	first, Tutankoopa or Chomp.[Wait][End]
 }
 
-#message:1C:(EnemyTattle_Chomp) {
+
+#message:1C:(EnemyTattle_Chomp)
+{
 	[Style right]
 	It's a Chomp.[BR]
 	[Pause 10]You've heard about Chomps[BR]
@@ -604,7 +663,9 @@
 	them so hard.[Wait][End]
 }
 
-#message:1C:(EnemyTattle_StoneChomp) {
+
+#message:1C:(EnemyTattle_StoneChomp)
+{
 	[Style right]
 	This is a Stone Chomp, who[BR]
 	guards the treasure in this[BR]
@@ -620,7 +681,9 @@
 	don't want to become a snack.[Wait][End]
 }
 
-#message:1C:(EnemyTattle_PiranhaPlant) {
+
+#message:1C:(EnemyTattle_PiranhaPlant)
+{
 	[Style right]
 	This is a Piranha Plant.[BR]
 	[Pause 10]Piranha Plants pop out of[BR]
@@ -643,7 +706,9 @@
 	hopping mad![Wait][End]
 }
 
-#message:1C:(EnemyTattle_ForestFuzzy) {
+
+#message:1C:(EnemyTattle_ForestFuzzy)
+{
 	[Style right]
 	This is a Forest Fuzzy.[BR]
 	[Pause 10]Forest Fuzzies are always green.[BR]
@@ -662,7 +727,9 @@
 	before they can split.[Wait][End]
 }
 
-#message:1C:(EnemyTattle_HyperGoomba) {
+
+#message:1C:(EnemyTattle_HyperGoomba)
+{
 	[Style right]
 	This is a Hyper Goomba.[BR]
 	[Pause 10]Hyper Goombas are crazy,[BR]
@@ -684,7 +751,9 @@
 	The attack will miss for sure.[Wait][End]
 }
 
-#message:1C:(EnemyTattle_HyperParagoomba) {
+
+#message:1C:(EnemyTattle_HyperParagoomba)
+{
 	[Style right]
 	This is a Hyper Paragoomba.[BR]
 	[Pause 10]Hyper Paragoombas are[BR]
@@ -709,7 +778,9 @@
 	attack to defeat 'em.[Wait][End]
 }
 
-#message:1C:(EnemyTattle_HyperCleft) {
+
+#message:1C:(EnemyTattle_HyperCleft)
+{
 	[Style right]
 	This is a Hyper Cleft.[BR]
 	[Pause 10]Hyper Clefts have more defense[BR]
@@ -737,7 +808,9 @@
 	[Pause 10]It'll hurt if you jump on 'em.[Wait][End]
 }
 
-#message:1C:(EnemyTattle_Clubba) {
+
+#message:1C:(EnemyTattle_Clubba)
+{
 	[Style right]
 	This is a Clubba.[BR]
 	[Pause 10]Clubbas are the main guards of[BR]
@@ -755,7 +828,9 @@
 	they're not so tough.[Wait][End]
 }
 
-#message:1C:(EnemyTattle_TubbaBlubbaInvincible) {
+
+#message:1C:(EnemyTattle_TubbaBlubbaInvincible)
+{
 	[Style right]
 	This is Tubba Blubba.[BR]
 	[Pause 10]He is one of Bowser's toughest[BR]
@@ -776,7 +851,9 @@
 	can hide you from him.[Wait][End]
 }
 
-#message:1C:(EnemyTattle_TubbaHeart) {
+
+#message:1C:(EnemyTattle_TubbaHeart)
+{
 	[Style right]
 	This is Tubba's Heart.[BR]
 	[Pause 10]You might say it's the "heart"[BR]
@@ -799,7 +876,9 @@
 	[Pause 10]This is Bow's turn to shine![Wait][End]
 }
 
-#message:1C:(EnemyTattle_TubbaBlubba) {
+
+#message:1C:(EnemyTattle_TubbaBlubba)
+{
 	[Style right]
 	This is Tubba Blubba, now[BR]
 	reunited with his heart.[BR]
@@ -820,7 +899,9 @@
 	than before...[Wait][End]
 }
 
-#message:1C:(EnemyTattle_JrTroopa2) {
+
+#message:1C:(EnemyTattle_JrTroopa2)
+{
 	[Style right]
 	It's Jr. Troopa.[BR]
 	I can't get enough of this guy![BR]
@@ -841,7 +922,9 @@
 	have to attack him.[Wait][End]
 }
 
-#message:1C:(EnemyTattle_ShyGuy) {
+
+#message:1C:(EnemyTattle_ShyGuy)
+{
 	[Style right]
 	This is a Shy Guy.[BR]
 	[Pause 10]They're ne'er-do-wells.[BR]
@@ -860,7 +943,9 @@
 	they're pretty small time.[Wait][End]
 }
 
-#message:1C:(EnemyTattle_GrooveGuy) {
+
+#message:1C:(EnemyTattle_GrooveGuy)
+{
 	[Style right]
 	This is a Groove Guy.[BR]
 	[Pause 10]Groove Guys wear weird clothes.[BR]
@@ -880,7 +965,9 @@
 	fast as we can.[Wait][End]
 }
 
-#message:1C:(EnemyTattle_SpyGuy) {
+
+#message:1C:(EnemyTattle_SpyGuy)
+{
 	[Style right]
 	This is a Spy Guy.[BR]
 	[Pause 10]Spy Guys look like they're[BR]
@@ -899,7 +986,9 @@
 	one of your commands![Wait][End]
 }
 
-#message:1C:(EnemyTattle_PyroGuy) {
+
+#message:1C:(EnemyTattle_PyroGuy)
+{
 	[Style right]
 	This is a Pyro Guy.[BR]
 	[Pause 10]Pyro Guys are on fire, so any[BR]
@@ -918,7 +1007,9 @@
 	because...well...you know.[Wait][End]
 }
 
-#message:1C:(EnemyTattle_SkyGuy) {
+
+#message:1C:(EnemyTattle_SkyGuy)
+{
 	[Style right]
 	This is a Sky Guy.[BR]
 	[Pause 10]Sky Guys are master balloonists.[BR]
@@ -934,7 +1025,9 @@
 	float... That looks awesome![Wait][End]
 }
 
-#message:1C:(EnemyTattle_MediGuy) {
+
+#message:1C:(EnemyTattle_MediGuy)
+{
 	[Style right]
 	This is a Medi Guy.[BR]
 	[Pause 10]Medi Guys are the emergency[BR]
@@ -953,7 +1046,9 @@
 	the damage we do.[Wait][End]
 }
 
-#message:1C:(EnemyTattle_AntiGuy) {
+
+#message:1C:(EnemyTattle_AntiGuy)
+{
 	[Style right]
 	This is an Anti Guy.[BR]
 	[Pause 10]His attacks are so intense that[BR]
@@ -970,7 +1065,9 @@
 	better take him seriously.[Wait][End]
 }
 
-#message:1C:(EnemyTattle_BigLanternGhost) {
+
+#message:1C:(EnemyTattle_BigLanternGhost)
+{
 	[Style right]
 	This is a Big Lantern Ghost.[BR]
 	[Pause 10]He avoids attacks by hiding[BR]
@@ -992,7 +1089,9 @@
 	him right in the head![Wait][End]
 }
 
-#message:1C:(EnemyTattle_GeneralGuy) {
+
+#message:1C:(EnemyTattle_GeneralGuy)
+{
 	[Style right]
 	This is General Guy in his tank.[BR]
 	[Pause 10]The tank seems to be dangerous[BR]
@@ -1019,7 +1118,9 @@
 	is well fortified.[Wait][End]
 }
 
-#message:1C:(EnemyTattle_ShySquad) {
+
+#message:1C:(EnemyTattle_ShySquad)
+{
 	[Style right]
 	This is the Shy Squad.[BR]
 	[Pause 10]It'll attack us with all [BR]
@@ -1042,7 +1143,9 @@
 	increase our chances![Wait][End]
 }
 
-#message:1C:(EnemyTattle_ShyStack) {
+
+#message:1C:(EnemyTattle_ShyStack)
+{
 	[Style right]
 	This is a Shy Stack.[BR]
 	[Pause 10]Whoa, this pile has an[BR]
@@ -1066,7 +1169,9 @@
 	of 'em in the stack.[Wait][End]
 }
 
-#message:1C:(EnemyTattle_StiltGuy) {
+
+#message:1C:(EnemyTattle_StiltGuy)
+{
 	[Style right]
 	This is Stilt Guy.[BR]
 	[Pause 10]Yes, as the name suggests, [BR]
@@ -1085,7 +1190,9 @@
 	normal Shy Guys.[Wait][End]
 }
 
-#message:1C:(EnemyTattle_HurtPlant) {
+
+#message:1C:(EnemyTattle_HurtPlant)
+{
 	[Style right]
 	This is a Hurt Plant.[BR]
 	[Pause 10]Hurt Plants pretend to be [BR]
@@ -1108,7 +1215,9 @@
 	yourself in trouble pretty fast.[Wait][End]
 }
 
-#message:1C:(EnemyTattle_MBush) {
+
+#message:1C:(EnemyTattle_MBush)
+{
 	[Style right]
 	This is an M. Bush.[BR]
 	[Pause 10]M. Bushes pretend to be bushes[BR]
@@ -1132,7 +1241,9 @@
 	attack, why don't you?[Wait][End]
 }
 
-#message:1C:(EnemyTattle_JungleFuzzy) {
+
+#message:1C:(EnemyTattle_JungleFuzzy)
+{
 	[Style right]
 	This is a Jungle Fuzzy.[BR]
 	[Wait][Next]
@@ -1157,7 +1268,9 @@
 	get the chance.[Wait][End]
 }
 
-#message:1C:(EnemyTattle_SpearGuy) {
+
+#message:1C:(EnemyTattle_SpearGuy)
+{
 	[Style right]
 	This is a Spear Guy.[BR]
 	[Pause 10]Spear Guys are relatives of[BR]
@@ -1184,7 +1297,9 @@
 	they become ordinary Shy Guys.[Wait][End]
 }
 
-#message:1C:(EnemyTattle_PutridPiranha) {
+
+#message:1C:(EnemyTattle_PutridPiranha)
+{
 	[Style right]
 	This is a Putrid Piranha.[BR]
 	[Pause 10][Wait][Next]
@@ -1204,7 +1319,9 @@
 	get poisoned.[Wait][End]
 }
 
-#message:1C:(EnemyTattle_LavaBubble) {
+
+#message:1C:(EnemyTattle_LavaBubble)
+{
 	[Style right]
 	This is a Lava Bubble, a fire[BR]
 	ball monster.[BR]
@@ -1225,7 +1342,9 @@
 	they fear snow and water.[Wait][End]
 }
 
-#message:1C:(EnemyTattle_SpikeTop) {
+
+#message:1C:(EnemyTattle_SpikeTop)
+{
 	[Style right]
 	This is Spike Top.[BR]
 	[Pause 10]Spike Tops have spikes on top.[BR]
@@ -1242,7 +1361,9 @@
 	if you can flip 'em over.[Wait][End]
 }
 
-#message:1C:(EnemyTattle_LavaPiranhaPhase1) {
+
+#message:1C:(EnemyTattle_LavaPiranhaPhase1)
+{
 	[Style right]
 	This is a Lava Piranha.[BR]
 	[Pause 10]Lava Piranhas are plants that[BR]
@@ -1257,7 +1378,9 @@
 	That is one big flower! Wow![Wait][End]
 }
 
-#message:1C:(EnemyTattle_LavaPiranhaPhase2) {
+
+#message:1C:(EnemyTattle_LavaPiranhaPhase2)
+{
 	[Style right]
 	This is a Lava Piranha.[BR]
 	[Pause 10]Lava Piranhas are plants that[BR]
@@ -1279,7 +1402,9 @@
 	extremely well against them.[Wait][End]
 }
 
-#message:1C:(EnemyTattle_LavaBudPhase1) {
+
+#message:1C:(EnemyTattle_LavaBudPhase1)
+{
 	[Style right]
 	This is a Lava Bud.[BR]
 	[Wait][Next]
@@ -1299,7 +1424,9 @@
 	attack power is 4.[Wait][End]
 }
 
-#message:1C:(EnemyTattle_LavaBudPhase2) {
+
+#message:1C:(EnemyTattle_LavaBudPhase2)
+{
 	[Style right]
 	This is a Lava Bud.[BR]
 	[Wait][Next]
@@ -1318,7 +1445,9 @@
 	themselves won't attack you.[Wait][End]
 }
 
-#message:1C:(EnemyTattle_PetitPiranha) {
+
+#message:1C:(EnemyTattle_PetitPiranha)
+{
 	[Style right]
 	This is a Petit Piranha.[BR]
 	[Pause 10]Petit Piranhas spew from[BR]
@@ -1331,7 +1460,9 @@
 	serious damage, so watch it![Wait][End]
 }
 
-#message:1C:(EnemyTattle_JrTroopa3) {
+
+#message:1C:(EnemyTattle_JrTroopa3)
+{
 	[Style right]
 	It's Jr. Troopa![BR]
 	[Pause 10]He swam all the way after us![BR]
@@ -1358,7 +1489,9 @@
 	attacking him directly.[Wait][End]
 }
 
-#message:1C:(EnemyTattle_Lakitu) {
+
+#message:1C:(EnemyTattle_Lakitu)
+{
 	[Style right]
 	This is a Lakitu.[BR]
 	[Pause 10]Lakitus are strange Koopas[BR]
@@ -1380,7 +1513,9 @@
 	your entire career, Mario.[Wait][End]
 }
 
-#message:1C:(EnemyTattle_Spiny) {
+
+#message:1C:(EnemyTattle_Spiny)
+{
 	[Style right]
 	This is a Spiny.[BR]
 	[Pause 10]Spinies have spikes on their[BR]
@@ -1397,7 +1532,9 @@
 	Their defense power falls to 0.[Wait][End]
 }
 
-#message:1C:(EnemyTattle_Bzzap) {
+
+#message:1C:(EnemyTattle_Bzzap)
+{
 	[Style right]
 	This is a Bzzap![BR]
 	[Pause 10]Bzzaps! are monstrous bees.[BR]
@@ -1421,7 +1558,9 @@
 	as you can.[Wait][End]
 }
 
-#message:1C:(EnemyTattle_CrazeeDayzee) {
+
+#message:1C:(EnemyTattle_CrazeeDayzee)
+{
 	[Style right]
 	This is a Crazee Dayzee.[BR]
 	[Pause 10]Crazee Dayzees look cute, but[BR]
@@ -1440,7 +1579,9 @@
 	'em quickly so they can't flee.[Wait][End]
 }
 
-#message:1C:(EnemyTattle_AmazyDayzee) {
+
+#message:1C:(EnemyTattle_AmazyDayzee)
+{
 	[Style right]
 	This is an Amazy Dayzee.[BR]
 	[Pause 10]Amazy Dayzees are so rare that[BR]
@@ -1458,7 +1599,9 @@
 	pack a powerful punch![Wait][End]
 }
 
-#message:1C:(EnemyTattle_MontyMoleBoss) {
+
+#message:1C:(EnemyTattle_MontyMoleBoss)
+{
 	[Style right]
 	This is a Monty Mole.[BR]
 	[Pause 10]You remember Monty Moles from[BR]
@@ -1472,7 +1615,9 @@
 	but they're not very strong.[Wait][End]
 }
 
-#message:1C:(EnemyTattle_Spike) {
+
+#message:1C:(EnemyTattle_Spike)
+{
 	[Style right]
 	He said his name is Spike.[BR]
 	[Pause 10]He seems to be a Lakitu, but[BR]
@@ -1490,7 +1635,9 @@
 	his real name is...[Wait][End]
 }
 
-#message:1C:(EnemyTattle_RuffPuff) {
+
+#message:1C:(EnemyTattle_RuffPuff)
+{
 	[Style right]
 	This is a Ruff Puff.[BR]
 	[Pause 10]Ruff Puffs are nasty little[BR]
@@ -1509,7 +1656,9 @@
 	It's your call, Mario.[Wait][End]
 }
 
-#message:1C:(EnemyTattle_HuffNPuff) {
+
+#message:1C:(EnemyTattle_HuffNPuff)
+{
 	[Style right]
 	This is Huff N. Puff.[BR]
 	[Pause 10]He's a giant cloud monster.[BR]
@@ -1534,7 +1683,9 @@
 	to beat this guy, Mario.[Wait][End]
 }
 
-#message:1C:(EnemyTattle_TuffPuff) {
+
+#message:1C:(EnemyTattle_TuffPuff)
+{
 	[Style right]
 	These are the Tuff Puffs that[BR]
 	break off when you damage[BR]
@@ -1559,7 +1710,9 @@
 	easily by attacking all enemies.[Wait][End]
 }
 
-#message:1C:(EnemyTattle_JrTroopa4) {
+
+#message:1C:(EnemyTattle_JrTroopa4)
+{
 	[Style right]
 	It's Jr. Troopa![BR]
 	[Pause 10]I'm stunned! Really![BR]
@@ -1574,7 +1727,9 @@
 	Sigh... Let's get this over with.[Wait][End]
 }
 
-#message:1C:(EnemyTattle_Gulpit) {
+
+#message:1C:(EnemyTattle_Gulpit)
+{
 	[Style right]
 	This is a Gulpit.[BR]
 	[Pause 10]Whoa! Gulpits look pretty [BR]
@@ -1598,7 +1753,9 @@
 	concentrate on the rocks first.[Wait][End]
 }
 
-#message:1C:(EnemyTattle_GulpitRocks) {
+
+#message:1C:(EnemyTattle_GulpitRocks)
+{
 	[Style right]
 	These are Gulpits' Rocks. Gulpits[BR]
 	gulp them and then spit 'em at[BR]
@@ -1610,7 +1767,9 @@
 	[Pause 10]...Big surprise, huh?[Wait][End]
 }
 
-#message:1C:(EnemyTattle_Monstar) {
+
+#message:1C:(EnemyTattle_Monstar)
+{
 	[Style right]
 	This monster... Even I don't[BR]
 	know what it is![BR]
@@ -1627,7 +1786,9 @@
 	judging by its looks.[Wait][End]
 }
 
-#message:1C:(EnemyTattle_FrostPiranha) {
+
+#message:1C:(EnemyTattle_FrostPiranha)
+{
 	[Style right]
 	This is a Frost Piranha.[BR]
 	[Pause 10]Frost Piranhas are frozen[BR]
@@ -1649,7 +1810,9 @@
 	[Pause 10]Fire attacks, though...[Wait][End]
 }
 
-#message:1C:(EnemyTattle_WhiteClubba) {
+
+#message:1C:(EnemyTattle_WhiteClubba)
+{
 	[Style right]
 	This is a White Clubba. They[BR]
 	live in cold climates.[BR]
@@ -1668,7 +1831,9 @@
 	so break out fire if you have it.[Wait][End]
 }
 
-#message:1C:(EnemyTattle_Duplighost) {
+
+#message:1C:(EnemyTattle_Duplighost)
+{
 	[Style right]
 	This is a Duplighost.[BR]
 	[Pause 10]Duplighosts disguise themselves[BR]
@@ -1684,7 +1849,9 @@
 	not disguised, though.[Wait][End]
 }
 
-#message:1C:(EnemyTattle_GhostWatt) {
+
+#message:1C:(EnemyTattle_GhostWatt)
+{
 	[Style right]
 	It's a Duplighost disguised[BR]
 	as Watt.[BR]
@@ -1699,7 +1866,9 @@
 	Same goes for this Duplighost.[Wait][End]
 }
 
-#message:1C:(EnemyTattle_GhostKooper) {
+
+#message:1C:(EnemyTattle_GhostKooper)
+{
 	[Style right]
 	It's a Duplighost disguised[BR]
 	as Kooper.[BR]
@@ -1725,7 +1894,9 @@
 	beating it if you flip it.[Wait][End]
 }
 
-#message:1C:(EnemyTattle_GhostGoombario) {
+
+#message:1C:(EnemyTattle_GhostGoombario)
+{
 	[Style right]
 	It's a Duplighost disguised[BR]
 	as me.[BR]
@@ -1743,7 +1914,9 @@
 	just no way I'm that pudgy![Wait][End]
 }
 
-#message:1C:(EnemyTattle_GhostSushie) {
+
+#message:1C:(EnemyTattle_GhostSushie)
+{
 	[Style right]
 	It's a Duplighost disguised[BR]
 	as Sushie.[BR]
@@ -1762,7 +1935,9 @@
 	meddlesome as well...[Wait][End]
 }
 
-#message:1C:(EnemyTattle_GhostLakilester) {
+
+#message:1C:(EnemyTattle_GhostLakilester)
+{
 	[Style right]
 	It's a Duplighost disguised[BR]
 	as Lakilester.[BR]
@@ -1778,7 +1953,9 @@
 	Spiny Flip, so pay attention.[Wait][End]
 }
 
-#message:1C:(EnemyTattle_GhostParakarry) {
+
+#message:1C:(EnemyTattle_GhostParakarry)
+{
 	[Style right]
 	It's a Duplighost disguised[BR]
 	as Parakarry.[BR]
@@ -1796,7 +1973,9 @@
 	He looks pretty serious.[Wait][End]
 }
 
-#message:1C:(EnemyTattle_GhostBombette) {
+
+#message:1C:(EnemyTattle_GhostBombette)
+{
 	[Style right]
 	It's a Duplighost disguised[BR]
 	as Bombette.[BR]
@@ -1811,7 +1990,9 @@
 	though she looks cute.[Wait][End]
 }
 
-#message:1C:(EnemyTattle_GhostBow) {
+
+#message:1C:(EnemyTattle_GhostBow)
+{
 	[Style right]
 	It's a Duplighost disguised[BR]
 	as Bow.[BR]
@@ -1826,7 +2007,9 @@
 	a Smack attack feels like?[Wait][End]
 }
 
-#message:1C:(EnemyTattle_AlbinoDino) {
+
+#message:1C:(EnemyTattle_AlbinoDino)
+{
 	[Style right]
 	This is an Albino Dino.[BR]
 	[Pause 10]Albino Dinos are the guards[BR]
@@ -1843,7 +2026,9 @@
 	damage-dealing attacks.[Wait][End]
 }
 
-#message:1C:(EnemyTattle_Swoopula) {
+
+#message:1C:(EnemyTattle_Swoopula)
+{
 	[Style right]
 	This is a Swoopula.[BR]
 	[Pause 10]Swoopulas attack from the air[BR]
@@ -1872,7 +2057,9 @@
 	jumping as well.[Wait][End]
 }
 
-#message:1C:(EnemyTattle_CrystalKing) {
+
+#message:1C:(EnemyTattle_CrystalKing)
+{
 	[Style right]
 	This is the Crystal King.[BR]
 	[Pause 10]He's one of Bowser's main guys.[BR]
@@ -1906,7 +2093,9 @@
 	[Pause 10]Pretty brilliant, eh?[Wait][End]
 }
 
-#message:1C:(EnemyTattle_CrystalClone) {
+
+#message:1C:(EnemyTattle_CrystalClone)
+{
 	[Style right]
 	I think this is a deceptive[BR]
 	duplicate of the Crystal King.[BR]
@@ -1922,7 +2111,9 @@
 	You must damage the real one.[Wait][End]
 }
 
-#message:1C:(EnemyTattle_CrystalBit) {
+
+#message:1C:(EnemyTattle_CrystalBit)
+{
 	[Style right]
 	This is a Crystal Bit.[BR]
 	[Pause 10]Basically, Crystal Bits are[BR]
@@ -1941,7 +2132,9 @@
 	the Crystal King.[Wait][End]
 }
 
-#message:1C:(EnemyTattle_Ember) {
+
+#message:1C:(EnemyTattle_Ember)
+{
 	[Style right]
 	This is an Ember.[BR]
 	[Pause 10]Embers are fiery monsters[BR]
@@ -1968,7 +2161,9 @@
 	get a chance to burn us.[Wait][End]
 }
 
-#message:1C:(EnemyTattle_DryBones) {
+
+#message:1C:(EnemyTattle_DryBones)
+{
 	[Style right]
 	This is a Dry Bones.[BR]
 	[Pause 10]Dry Bones are skeletal remains[BR]
@@ -1989,7 +2184,9 @@
 	no way they'll recover.[Wait][End]
 }
 
-#message:1C:(EnemyTattle_BonyBeetle) {
+
+#message:1C:(EnemyTattle_BonyBeetle)
+{
 	[Style right]
 	It's a Bony Beetle.[BR]
 	[Pause 10]They're bony Buzzy Beetles.[BR]
@@ -2008,7 +2205,9 @@
 	'em will be a breeze.[Wait][End]
 }
 
-#message:1C:(EnemyTattle_Magikoopa) {
+
+#message:1C:(EnemyTattle_Magikoopa)
+{
 	[Style right]
 	This is a Magikoopa.[BR]
 	[Pause 10]Magikoopas are the elite[BR]
@@ -2027,7 +2226,9 @@
 	they can do anything crazy.[Wait][End]
 }
 
-#message:1C:(EnemyTattle_Magiclone) {
+
+#message:1C:(EnemyTattle_Magiclone)
+{
 	[Style right]
 	This is a deceptive duplicate [BR]
 	of a Magikoopa.[BR]
@@ -2038,7 +2239,9 @@
 	Defense Power: 0[Wait][End]
 }
 
-#message:1C:(EnemyTattle_MagikoopaDup) {
+
+#message:1C:(EnemyTattle_MagikoopaDup)
+{
 	[Style right]
 	This is a Magikoopa.[BR]
 	[Pause 10]Magikoopas are the elite[BR]
@@ -2057,7 +2260,9 @@
 	they can do anything crazy.[Wait][End]
 }
 
-#message:1C:(EnemyTattle_MagicloneDup) {
+
+#message:1C:(EnemyTattle_MagicloneDup)
+{
 	[Style right]
 	This is a deceptive duplicate[BR]
 	of a Magikoopa.[BR]
@@ -2068,7 +2273,9 @@
 	Defense Power: 0[Wait][End]
 }
 
-#message:1C:(EnemyTattle_Koopatrol) {
+
+#message:1C:(EnemyTattle_Koopatrol)
+{
 	[Style right]
 	This is a Koopatrol.[BR]
 	They're elite Koopa soldiers. [BR]
@@ -2097,7 +2304,9 @@
 	nasty Koopas, Mario.[Wait][End]
 }
 
-#message:1C:(EnemyTattle_HammerBros) {
+
+#message:1C:(EnemyTattle_HammerBros)
+{
 	[Style right]
 	These are the Hammer Bros.[BR]
 	[Pause 10]You've seen these punks[BR]
@@ -2122,7 +2331,9 @@
 	underestimated.[Wait][End]
 }
 
-#message:1C:(EnemyTattle_BombshellBill) {
+
+#message:1C:(EnemyTattle_BombshellBill)
+{
 	[Style right]
 	This is a Bombshell Bill.[BR]
 	[Wait][Next]
@@ -2142,7 +2353,9 @@
 	they get near us![Wait][End]
 }
 
-#message:1C:(EnemyTattle_BombshellBlaster) {
+
+#message:1C:(EnemyTattle_BombshellBlaster)
+{
 	[Style right]
 	This is a B. Bill Blaster.[BR]
 	[Pause 10]B. Bill Blasters shoot a[BR]
@@ -2160,7 +2373,9 @@
 	And nobody wants that.[Wait][End]
 }
 
-#message:1C:(EnemyTattle_JrTroopa5) {
+
+#message:1C:(EnemyTattle_JrTroopa5)
+{
 	[Style right]
 	It's Jr. Troopa again! My man![BR]
 	[Pause 10]The little guy still has some[BR]
@@ -2181,7 +2396,9 @@
 	you think he got here, anyway?[Wait][End]
 }
 
-#message:1C:(EnemyTattle_HallwayBowser) {
+
+#message:1C:(EnemyTattle_HallwayBowser)
+{
 	[Style right]
 	It's the Evil King Bowser![BR]
 	[Pause 10]Finally, after all this time![BR]
@@ -2193,7 +2410,7 @@
 	of fire to jumping on us.[BR]
 	[Wait][Next]
 	Fire Attack: 8,[BR]
-	Stamp Attack/Nail Attack: 6[BR]
+	Stamp Attac
 	[Wait][Next]
 	I'm sure he has other attacks[BR]
 	that I don't know.[BR]
@@ -2208,7 +2425,9 @@
 	Let's take him, Mario![Wait][End]
 }
 
-#message:1C:(EnemyTattle_FinalBowser1) {
+
+#message:1C:(EnemyTattle_FinalBowser1)
+{
 	[Style right]
 	It's the Evil King Bowser![BR]
 	[Pause 10]Uh... I think he got bigger.[BR]
@@ -2221,7 +2440,7 @@
 	of fire to jumping on us.[BR]
 	[Wait][Next]
 	Fire Attack: 10,[BR]
-	Stamp Attack/Nail Attack: 8[BR]
+	Stamp Attac
 	[Wait][Next]
 	I'm sure he has other attacks[BR]
 	that I don't know.[BR]
@@ -2237,7 +2456,9 @@
 	Oh, you already knew that?[Wait][End]
 }
 
-#message:1C:(EnemyTattle_FinalBowser2) {
+
+#message:1C:(EnemyTattle_FinalBowser2)
+{
 	[Style right]
 	It's the Evil King Bowser![BR]
 	[Pause 10]No more messing around![BR]
@@ -2249,7 +2470,7 @@
 	of fire to jumping on us.[BR]
 	[Wait][Next]
 	Fire Attack: 10,[BR]
-	Stamp Attack/Nail Attack: 8[BR]
+	Stamp Attac
 	[Wait][Next]
 	I'm sure he has other attacks[BR]
 	that I don't know.[BR]
@@ -2268,7 +2489,9 @@
 	We're coming, Princess![Wait][End]
 }
 
-#message:1C:(EnemyTattle_KentCKoopa) {
+
+#message:1C:(EnemyTattle_KentCKoopa)
+{
 	[Style right]
 	This is Kent C. Koopa.[BR]
 	[Pause 10]He seems pretty greedy for[BR]
@@ -2299,7 +2522,9 @@
 	to live in Koopa Village...[Wait][End]
 }
 
-#message:1C:(EnemyTattle_Blooper) {
+
+#message:1C:(EnemyTattle_Blooper)
+{
 	[Style right]
 	This is a Blooper.[BR]
 	[Pause 10]Bloopers lurk in the dank[BR]
@@ -2315,7 +2540,9 @@
 	float in the air like that...[Wait][End]
 }
 
-#message:1C:(EnemyTattle_ElectroBlooper) {
+
+#message:1C:(EnemyTattle_ElectroBlooper)
+{
 	[Style right]
 	This is an Electro Blooper.[BR]
 	[Pause 10]Electro Bloopers are[BR]
@@ -2340,7 +2567,9 @@
 	what do you say?[Wait][End]
 }
 
-#message:1C:(EnemyTattle_SuperBlooper) {
+
+#message:1C:(EnemyTattle_SuperBlooper)
+{
 	[Style right]
 	This is a Super Blooper.[BR]
 	[Pause 10]Whoa! It's huge![BR]
@@ -2360,7 +2589,9 @@
 	We're in for a fight![Wait][End]
 }
 
-#message:1C:(EnemyTattle_BlooperBaby) {
+
+#message:1C:(EnemyTattle_BlooperBaby)
+{
 	[Style right]
 	This is a Blooper Baby.[BR]
 	[Pause 10]Super Blooper spits 'em out[BR]
@@ -2374,7 +2605,9 @@
 	[Pause 10]They're so cute, though! [Wait][End]
 }
 
-#message:1C:(EnemyTattle_TheMaster1) {
+
+#message:1C:(EnemyTattle_TheMaster1)
+{
 	[Style right]
 	This is The Master.[BR]
 	[Pause 10]He owns the Dojo--[BR]
@@ -2387,7 +2620,9 @@
 	he must be pretty tough![Wait][End]
 }
 
-#message:1C:(EnemyTattle_TheMaster2) {
+
+#message:1C:(EnemyTattle_TheMaster2)
+{
 	[Style right]
 	This is The Master.[BR]
 	[Pause 10]He owns the Dojo--[BR]
@@ -2404,7 +2639,9 @@
 	around at all![Wait][End]
 }
 
-#message:1C:(EnemyTattle_TheMaster3) {
+
+#message:1C:(EnemyTattle_TheMaster3)
+{
 	[Style right]
 	He is The Master.[BR]
 	[Pause 10]He owns the Dojo-- [BR]
@@ -2421,7 +2658,9 @@
 	fight to him.[Wait][End]
 }
 
-#message:1C:(EnemyTattle_Chan) {
+
+#message:1C:(EnemyTattle_Chan)
+{
 	[Style right]
 	This is Chan, of the Dojo.[BR]
 	[Pause 10]He's training under The Master[BR]
@@ -2438,7 +2677,9 @@
 	No mercy, Mario![Wait][End]
 }
 
-#message:1C:(EnemyTattle_Lee) {
+
+#message:1C:(EnemyTattle_Lee)
+{
 	[Style right]
 	This is Lee, of the Dojo.[BR]
 	[Pause 10]He's training under The Master[BR]
@@ -2460,7 +2701,9 @@
 	how many times he transforms.[Wait][End]
 }
 
-#message:1C:(EnemyTattle_Gloomba) {
+
+#message:1C:(EnemyTattle_Gloomba)
+{
 	[Style right]
 	This is a Gloomba.[BR]
 	[Pause 10]Gloombas are nasty Goombas who[BR]
@@ -2474,7 +2717,9 @@
 	[Wait][End]
 }
 
-#message:1C:(EnemyTattle_Paragloomba) {
+
+#message:1C:(EnemyTattle_Paragloomba)
+{
 	[Style right]
 	This is a Paragloomba.[BR]
 	[Pause 10]Paragloombas are nasty winged[BR]
@@ -2490,7 +2735,9 @@
 	and become Gloombas.  [Wait][End]
 }
 
-#message:1C:(EnemyTattle_SpikedGloomba) {
+
+#message:1C:(EnemyTattle_SpikedGloomba)
+{
 	[Style right]
 	This is a Spiked Gloomba.[BR]
 	[Pause 10]They're Spiked Goombas who live[BR]
@@ -2505,7 +2752,9 @@
 	jump on 'em.[Wait][End]
 }
 
-#message:1C:(EnemyTattle_DarkKoopa) {
+
+#message:1C:(EnemyTattle_DarkKoopa)
+{
 	[Style right]
 	This is a Dark Koopa.[BR]
 	[Wait][Next]
@@ -2527,7 +2776,9 @@
 	you should use Jump attacks.[Wait][End]
 }
 
-#message:1C:(EnemyTattle_DarkParatroopa) {
+
+#message:1C:(EnemyTattle_DarkParatroopa)
+{
 	[Style right]
 	This is a D. Paratroopa.[BR]
 	[Pause 10]D. Paratroopas are Para-[BR]
@@ -2549,7 +2800,9 @@
 	once they're grounded.[Wait][End]
 }
 
-#message:1C:(EnemyTattle_RedMagikoopa) {
+
+#message:1C:(EnemyTattle_RedMagikoopa)
+{
 	[Style right]
 	This is a Red Magikoopa.[BR]
 	[Pause 10]He's one of the magicians in[BR]
@@ -2565,7 +2818,9 @@
 	pump up his companions![Wait][End]
 }
 
-#message:1C:(EnemyTattle_FlyingRedMagikoopa) {
+
+#message:1C:(EnemyTattle_FlyingRedMagikoopa)
+{
 	[Style right]
 	This is a Red Magikoopa.[BR]
 	[Pause 10]He's one of the magicians in[BR]
@@ -2581,7 +2836,9 @@
 	pump up his companions![Wait][End]
 }
 
-#message:1C:(EnemyTattle_GreenMagikoopa) {
+
+#message:1C:(EnemyTattle_GreenMagikoopa)
+{
 	[Style right]
 	This is a Green Magikoopa.[BR]
 	[Pause 10]He's one of the magicians in[BR]
@@ -2598,7 +2855,9 @@
 	[Pause 10]He looks pretty surly.[Wait][End]
 }
 
-#message:1C:(EnemyTattle_FlyingGreenMagikoopa) {
+
+#message:1C:(EnemyTattle_FlyingGreenMagikoopa)
+{
 	[Style right]
 	This is a Green Magikoopa.[BR]
 	[Pause 10]He's one of the magicians in[BR]
@@ -2615,7 +2874,9 @@
 	[Pause 10]He looks pretty surly.[Wait][End]
 }
 
-#message:1C:(EnemyTattle_YellowMagikoopa) {
+
+#message:1C:(EnemyTattle_YellowMagikoopa)
+{
 	[Style right]
 	This is a Yellow Magikoopa.[BR]
 	[Pause 10]He's one of the magicians in[BR]
@@ -2636,7 +2897,9 @@
 	for a shocking surprise.[Wait][End]
 }
 
-#message:1C:(EnemyTattle_FlyingYellowMagikoopa) {
+
+#message:1C:(EnemyTattle_FlyingYellowMagikoopa)
+{
 	[Style right]
 	This is a Yellow Magikoopa.[BR]
 	[Pause 10]He's one of the magicians in[BR]
@@ -2657,7 +2920,9 @@
 	for a shocking surprise.[Wait][End]
 }
 
-#message:1C:(EnemyTattle_GrayMagikoopa) {
+
+#message:1C:(EnemyTattle_GrayMagikoopa)
+{
 	[Style right]
 	This is a Gray Magikoopa.[BR]
 	[Pause 10]He's one of the magicians in[BR]
@@ -2680,7 +2945,9 @@
 	do you say?[Wait][End]
 }
 
-#message:1C:(EnemyTattle_FlyingGrayMagikoopa) {
+
+#message:1C:(EnemyTattle_FlyingGrayMagikoopa)
+{
 	[Style right]
 	This is a Gray Magikoopa.[BR]
 	[Pause 10]He's one of the magicians in[BR]
@@ -2703,7 +2970,9 @@
 	do you say?[Wait][End]
 }
 
-#message:1C:(EnemyTattle_FlyingWhiteMagikoopa) {
+
+#message:1C:(EnemyTattle_FlyingWhiteMagikoopa)
+{
 	[Style right]
 	This is a White Magikoopa.[BR]
 	[Pause 10]He's one of the magicians in[BR]
@@ -2727,7 +2996,9 @@
 	guy but fast.[Wait][End]
 }
 
-#message:1C:(EnemyTattle_WhiteMagikoopa) {
+
+#message:1C:(EnemyTattle_WhiteMagikoopa)
+{
 	[Style right]
 	This is a White Magikoopa.[BR]
 	[Pause 10]He's one of the magicians in[BR]
@@ -2751,7 +3022,9 @@
 	guy but fast.[Wait][End]
 }
 
-#message:1C:(EnemyTattle_MagikoopaBoss) {
+
+#message:1C:(EnemyTattle_MagikoopaBoss)
+{
 	[Style right]
 	This is a Magikoopa.[BR]
 	[Pause 10]Magikoopas use magical rods.[BR]
@@ -2764,7 +3037,9 @@
 	guys seriously.[Wait][End]
 }
 
-#message:1C:(EnemyTattle_MagikoopaBossDup) {
+
+#message:1C:(EnemyTattle_MagikoopaBossDup)
+{
 	[Style right]
 	This is a Magikoopa.[BR]
 	[Pause 10]Magikoopas use magical rods.[BR]
@@ -2777,7 +3052,9 @@
 	guys seriously.[Wait][End]
 }
 
-#message:1C:(EnemyTattle_LeeWatt) {
+
+#message:1C:(EnemyTattle_LeeWatt)
+{
 	[Style right]
 	This is Lee disguised as Watt.[BR]
 	[Pause 10]His Max HP is 20, so you should[BR]
@@ -2794,7 +3071,9 @@
 	charge if you do.[Wait][End]
 }
 
-#message:1C:(EnemyTattle_LeeKooper) {
+
+#message:1C:(EnemyTattle_LeeKooper)
+{
 	[Style right]
 	This is Lee disguised as Kooper.[BR]
 	[Pause 10]His Max HP is 20.[BR]
@@ -2817,7 +3096,9 @@
 	that, though.[Wait][End]
 }
 
-#message:1C:(EnemyTattle_LeeGoombario) {
+
+#message:1C:(EnemyTattle_LeeGoombario)
+{
 	[Style right]
 	It's Lee disguised as me.[BR]
 	[Pause 10]His Max HP is 20.[BR]
@@ -2833,7 +3114,9 @@
 	[Pause 10]And I hope that I'm stronger![Wait][End]
 }
 
-#message:1C:(EnemyTattle_LeeSushie) {
+
+#message:1C:(EnemyTattle_LeeSushie)
+{
 	[Style right]
 	This is Lee disguised as Sushie.[BR]
 	[Pause 10]His Max HP is 20.[BR]
@@ -2849,7 +3132,9 @@
 	fight Sushie. She's strong![Wait][End]
 }
 
-#message:1C:(EnemyTattle_LeeLakilester) {
+
+#message:1C:(EnemyTattle_LeeLakilester)
+{
 	[Style right]
 	This is Lee disguised as[BR]
 	Lakilester.[BR]
@@ -2868,7 +3153,9 @@
 	tough, so pay attention.[Wait][End]
 }
 
-#message:1C:(EnemyTattle_LeeParakarry) {
+
+#message:1C:(EnemyTattle_LeeParakarry)
+{
 	[Style right]
 	This is Lee disguised as[BR]
 	Parakarry.[BR]
@@ -2891,7 +3178,9 @@
 	one on our team![Wait][End]
 }
 
-#message:1C:(EnemyTattle_LeeBombette) {
+
+#message:1C:(EnemyTattle_LeeBombette)
+{
 	[Style right]
 	This is Lee disguised as [BR]
 	Bombette.[BR]
@@ -2906,7 +3195,9 @@
 	but he packs a punch![Wait][End]
 }
 
-#message:1C:(EnemyTattle_LeeBow) {
+
+#message:1C:(EnemyTattle_LeeBow)
+{
 	[Style right]
 	This is Lee disguised as Bow.[BR]
 	[Pause 10]His Max HP is 20.[BR]
@@ -2920,7 +3211,9 @@
 	So cruel![Wait][End]
 }
 
-#message:1C:(EnemyTattle_Mario) {
+
+#message:1C:(EnemyTattle_Mario)
+{
 	[Style right]
 	It's Mario, silly![BR]
 	[Pause 10]He's here to save Princess[BR]
@@ -2931,7 +3224,9 @@
 	no matter what enemies attack.[Wait][End]
 }
 
-#message:1C:(EnemyTattle_SlotMachineStart) {
+
+#message:1C:(EnemyTattle_SlotMachineStart)
+{
 	[Style right]
 	This is the Start Switch[BR]
 	for the Slot Machine.[BR]
@@ -2941,7 +3236,9 @@
 	Looks like fun...[Wait][End]
 }
 
-#message:1C:(EnemyTattle_SlotMachineStop) {
+
+#message:1C:(EnemyTattle_SlotMachineStop)
+{
 	[Style right]
 	This is the Stop Switch[BR]
 	for the Slot Machine.[BR]
@@ -2955,7 +3252,9 @@
 	[Pause 5]...I think...[Wait][End]
 }
 
-#message:1C:(EnemyTattle_Whacka) {
+
+#message:1C:(EnemyTattle_Whacka)
+{
 	[Style right]
 	This is a Whacka. That Bump on[BR]
 	his head looks like a donut hole.[BR]
@@ -2965,62 +3264,95 @@
 	peeved.[Wait][End]
 }
 
-#message:1C:(EnemyTattle_FreezyFuzzy) {
+
+#message:1C:(EnemyTattle_FreezyFuzzy)
+{
+	[Style right]
+	This is a Freezy Fuzzy.[BR]
+	They migrate here when the[BR]
+	season changes.[BR]
+	[Wait][Next]
+	Max HP: 4, Attack Power: 2,[BR]
+	Defense Power: 0[BR]
+	[Wait][Next]
+	These guys are always a pain,[BR]
+	they'll try to grab onto you and[BR]
+	suck the life straight out of you![BR]
+	[Wait][Next]
+	I've seen them multiply out of[BR]
+	nowhere too, bleugh...[BR]
+	[Wait][End]
+}
+
+
+#message:1C:(EnemyTattle_PinkPanser)
+{
 	[Style right]
 	Test[BR]
 	[Wait][End]
 }
 
-#message:1C:(EnemyTattle_PinkPanser) {
+
+#message:1C:(EnemyTattle_RedPanser)
+{
 	[Style right]
 	Test[BR]
 	[Wait][End]
 }
 
-#message:1C:(EnemyTattle_RedPanser) {
+
+#message:1C:(EnemyTattle_BooBully)
+{
 	[Style right]
 	Test[BR]
 	[Wait][End]
 }
 
-#message:1C:(EnemyTattle_BooBully) {
+
+#message:1C:(EnemyTattle_CrystalCleft)
+{
 	[Style right]
 	Test[BR]
 	[Wait][End]
 }
 
-#message:1C:(EnemyTattle_CrystalCleft) {
+
+#message:1C:(EnemyTattle_PurplePanser)
+{
 	[Style right]
 	Test[BR]
 	[Wait][End]
 }
 
-#message:1C:(EnemyTattle_PurplePanser) {
+
+#message:1C:(EnemyTattle_SpiritBubble)
+{
 	[Style right]
 	Test[BR]
 	[Wait][End]
 }
 
-#message:1C:(EnemyTattle_SpiritBubble) {
+
+#message:1C:(EnemyTattle_Beehive)
+{
 	[Style right]
 	Test[BR]
 	[Wait][End]
 }
 
-#message:1C:(EnemyTattle_Beehive) {
+
+#message:1C:(EnemyTattle_JrTroopaGang)
+{
 	[Style right]
 	Test[BR]
 	[Wait][End]
 }
 
-#message:1C:(EnemyTattle_JrTroopaGang) {
+
+#message:1C:(EnemyTattle_MimicChest)
+{
 	[Style right]
 	Test[BR]
 	[Wait][End]
 }
 
-#message:1C:(EnemyTattle_MimicChest) {
-	[Style right]
-	Test[BR]
-	[Wait][End]
-}
