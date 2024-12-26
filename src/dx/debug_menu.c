@@ -957,6 +957,20 @@ void dx_debug_update_select_battle() {
 // ----------------------------------------------------------------------------
 // set story byte
 
+#define STORY_PROGRESS_START(name, value) char* StoryProgressNames[] = { \
+    #name,
+#define STORY_PROGRESS_VALUE(name) #name,
+#define STORY_PROGRESS_END };
+#include "story_progress.h"
+
+char* dx_debug_get_story_progress_name(s32 input) {
+    if (input >= 0 && input < ARRAY_COUNT(StoryProgressNames)) {
+        return StoryProgressNames[input];
+    } else {
+        return "???";
+    }
+}
+
 DebugEditableNumber DebugStoryProgress = {
     .isHex = TRUE,
     .digits = { 0, 0 },
@@ -982,9 +996,10 @@ void dx_debug_update_edit_progress() {
     dx_debug_nav_editable_num(&DebugStoryProgress);
 
     // draw
-    dx_debug_draw_box(SubBoxPosX, SubBoxPosY + RowHeight, 104, 2 * RowHeight + 8, WINDOW_STYLE_20, 192);
+    dx_debug_draw_box(SubBoxPosX, SubBoxPosY + RowHeight, 150, 3 * RowHeight + 8, WINDOW_STYLE_20, 192);
     dx_debug_draw_ascii("Set Progress:", DefaultColor, SubmenuPosX, SubmenuPosY + RowHeight);
     dx_debug_draw_editable_num(&DebugStoryProgress, SubmenuPosX + 35, SubmenuPosY + 2 * RowHeight);
+    dx_debug_draw_ascii(dx_debug_get_story_progress_name(dx_debug_get_editable_num(&DebugStoryProgress)), DefaultColor, SubmenuPosX, SubmenuPosY + 3 * RowHeight);
 }
 
 // ----------------------------------------------------------------------------
@@ -1939,6 +1954,10 @@ void dx_debug_update_banner() {
         if (dx_debug_is_cheat_enabled(DEBUG_CHEAT_GOD_MODE)) {
             dx_debug_draw_ascii("(GOD MODE)", MSG_PAL_YELLOW, 151, BottomRowY);
         }
+
+        s32 storyProgress = evt_get_variable(NULL, GB_StoryProgress);
+        dx_debug_draw_ascii("Story: ", DefaultColor, 20, 3);
+        dx_debug_draw_ascii(dx_debug_get_story_progress_name(storyProgress), DefaultColor, 60, 3);
     } else if (gGameStatus.context == CONTEXT_BATTLE) {
         s32 areaID = (LastBattleID >> 24) & 0xFF;
         s32 battleID = (LastBattleID >> 16) & 0xFF;

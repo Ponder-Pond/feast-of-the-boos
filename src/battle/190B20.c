@@ -7,58 +7,58 @@
 #include "sprite.h"
 
 typedef struct PartnerMoves {
-    u8 baseMoves[4];
-    u8 upgradeMoves[4];
+    u8 baseMoves[3];
+    u8 upgradeMoves[3];
 } PartnerMoves;
 
 PartnerMoves partnerMoves[] = {
     [PARTNER_NONE] {
-        {0, 0, 0, 0},
-        {0, 0, 0, 0}
+        {0, 0, 0},
+        {0, 0, 0}
     },
     [PARTNER_GOOMBARIO] {
-        {MOVE_HEADBONK1, MOVE_HEADBONK2, MOVE_HEADBONK3, MOVE_HEADBONK3},
-        {MOVE_TATTLE, MOVE_CHARGE, MOVE_MULTIBONK, MOVE_MULTIBONK}
+        {MOVE_HEADBONK1, MOVE_HEADBONK2, MOVE_HEADBONK3},
+        {MOVE_TATTLE, MOVE_CHARGE, MOVE_MULTIBONK}
     },
     [PARTNER_KOOPER] {
-        {MOVE_SHELL_TOSS1, MOVE_SHELL_TOSS2, MOVE_SHELL_TOSS3, MOVE_SHELL_TOSS3},
-        {MOVE_POWER_SHELL, MOVE_DIZZY_SHELL, MOVE_FIRE_SHELL, MOVE_FIRE_SHELL}
+        {MOVE_SHELL_TOSS1, MOVE_SHELL_TOSS2, MOVE_SHELL_TOSS3},
+        {MOVE_POWER_SHELL, MOVE_DIZZY_SHELL, MOVE_FIRE_SHELL}
     },
     [PARTNER_BOMBETTE] {
-        {MOVE_BODY_SLAM1, MOVE_BODY_SLAM2, MOVE_BODY_SLAM3, MOVE_BODY_SLAM3},
-        {MOVE_BOMB, MOVE_POWER_BOMB, MOVE_MEGA_BOMB, MOVE_MEGA_BOMB}
+        {MOVE_BODY_SLAM1, MOVE_BODY_SLAM2, MOVE_BODY_SLAM3},
+        {MOVE_BOMB, MOVE_POWER_BOMB, MOVE_MEGA_BOMB}
     },
     [PARTNER_PARAKARRY] {
-        {MOVE_SKY_DIVE1, MOVE_SKY_DIVE2, MOVE_SKY_DIVE3, MOVE_SKY_DIVE3},
-        {MOVE_SHELL_SHOT, MOVE_AIR_LIFT, MOVE_AIR_RAID, MOVE_AIR_RAID}
+        {MOVE_SKY_DIVE1, MOVE_SKY_DIVE2, MOVE_SKY_DIVE3},
+        {MOVE_SHELL_SHOT, MOVE_AIR_LIFT, MOVE_AIR_RAID}
     },
     [PARTNER_GOOMPA] {
-        {0, 0, 0, 0},
-        {0, 0, 0, 0}
+        {0, 0, 0},
+        {0, 0, 0}
     },
     [PARTNER_WATT] {
-        {MOVE_ELECTRO_DASH1, MOVE_ELECTRO_DASH2, MOVE_ELECTRO_DASH3, MOVE_ELECTRO_DASH3},
-        {MOVE_POWER_SHOCK, MOVE_TURBO_CHARGE, MOVE_MEGA_SHOCK, MOVE_MEGA_SHOCK}
+        {MOVE_ELECTRO_DASH1, MOVE_ELECTRO_DASH2, MOVE_ELECTRO_DASH3},
+        {MOVE_POWER_SHOCK, MOVE_TURBO_CHARGE, MOVE_MEGA_SHOCK}
     },
     [PARTNER_SUSHIE] {
-        {MOVE_BELLY_FLOP1, MOVE_BELLY_FLOP2, MOVE_BELLY_FLOP3, MOVE_BELLY_FLOP3},
-        {MOVE_SQUIRT, MOVE_WATER_BLOCK, MOVE_TIDAL_WAVE, MOVE_TIDAL_WAVE}
+        {MOVE_BELLY_FLOP1, MOVE_BELLY_FLOP2, MOVE_BELLY_FLOP3},
+        {MOVE_SQUIRT, MOVE_WATER_BLOCK, MOVE_TIDAL_WAVE}
     },
     [PARTNER_LAKILESTER] {
-        {MOVE_SPINY_FLIP1, MOVE_SPINY_FLIP2, MOVE_SPINY_FLIP3, MOVE_SPINY_FLIP3},
-        {MOVE_SPINY_SURGE, MOVE_CLOUD_NINE, MOVE_HURRICANE, MOVE_HURRICANE}
+        {MOVE_SPINY_FLIP1, MOVE_SPINY_FLIP2, MOVE_SPINY_FLIP3},
+        {MOVE_SPINY_SURGE, MOVE_CLOUD_NINE, MOVE_HURRICANE}
     },
     [PARTNER_BOW] {
-        {MOVE_SMACK1, MOVE_SMACK2, MOVE_SMACK3, MOVE_SMACK3},
-        {MOVE_TATTLE2, MOVE_OUTTA_SIGHT, MOVE_SPOOK, MOVE_FAN_SMACK}
+        {MOVE_SMACK1, MOVE_SMACK2, MOVE_SMACK3},
+        {MOVE_TATTLE2, MOVE_OUTTA_SIGHT, MOVE_FAN_SMACK}
     },
     [PARTNER_GOOMBARIA] {
-        {0, 0, 0, 0},
-        {0, 0, 0, 0}
+        {0, 0, 0},
+        {0, 0, 0}
     },
     [PARTNER_TWINK] {
-        {0, 0, 0, 0},
-        {0, 0, 0, 0}
+        {0, 0, 0},
+        {0, 0, 0}
     },
 };
 
@@ -968,7 +968,7 @@ void btl_init_menu_partner(void) {
     //  4              | Unlocked after super | Charge
     //  5              | Unlocked after ultra | Multibonk
 
-    battleStatus->submenuMoveCount = partner->actorBlueprint->level + 3;
+    battleStatus->submenuMoveCount = partner->actorBlueprint->level + 2;
 
     // // Offsets 0,1,2
     // battleStatus->submenuMoves[0] =

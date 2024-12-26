@@ -1,9 +1,15 @@
-#define COLLIDER_Root           0x27
+#define COLLIDER_Root           0x2D
+#define COLLIDER_BluePipeGroup  0x2C
+#define COLLIDER_BluePipeTop    0x2B
+#define COLLIDER_BluePipeBody   0x2A
+#define COLLIDER_GreenPipeGroup 0x29
+#define COLLIDER_GreenPipeTop   0x28
+#define COLLIDER_GreenPipeBody  0x27
 #define COLLIDER_monw2          0x26
-#define COLLIDER_RightRockGroup 0x25
-#define COLLIDER_RightRockCol   0x24
-#define COLLIDER_LeftRockGroup  0x23
-#define COLLIDER_LeftRockCol    0x22
+#define COLLIDER_RockGroup2 0x25
+#define COLLIDER_Rock2Col       0x24
+#define COLLIDER_RockGroup1     0x23
+#define COLLIDER_Rock1Col       0x22
 #define COLLIDER_g128           0x21
 #define COLLIDER_monw           0x20
 #define COLLIDER_g127           0x1F
@@ -52,4 +58,3 @@
 #define ZONE_higashi            0x2
 #define ZONE_kaiten             0x1
 #define ZONE_stage              0x0
-

@@ -57,6 +57,7 @@ extern HudScript HES_MoveDiamond;
 extern HudScript HES_MoveBlueOrb;
 extern HudScript HES_MoveGreenOrb;
 extern HudScript HES_MoveRedOrb;
+extern HudScript HES_MovePurpleOrb;
 extern HudScript HES_MapWalk0;
 extern HudScript HES_StatusSPIncrement1;
 extern HudScript HES_StatusSPIncrement2;

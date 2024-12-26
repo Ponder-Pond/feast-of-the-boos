@@ -78,7 +78,7 @@ void clear_player_data(void) {
     playerData->starPower = 0;
     playerData->starBeamLevel = 0;
 
-    playerData->curPartner = PARTNER_BOW;
+    playerData->curPartner = PARTNER_NONE;
 
     for (i = 0; i < ARRAY_COUNT(playerData->partners); i++) {
         playerData->partners[i].enabled = FALSE;
@@ -87,8 +87,8 @@ void clear_player_data(void) {
         playerData->partners[i].unk_02[1] = 0;
         playerData->partners[i].unk_02[2] = 0;
     }
-    playerData->partners[PARTNER_BOW].enabled = TRUE;
-    playerData->partners[PARTNER_BOW].level = PARTNER_RANK_NORMAL;
+    // playerData->partners[PARTNER_BOW].enabled = TRUE;
+    // playerData->partners[PARTNER_BOW].level = PARTNER_RANK_ULTRA;
 
     for (i = 0; i < ARRAY_COUNT(playerData->keyItems); i++) {
         playerData->keyItems[i] = ITEM_NONE;

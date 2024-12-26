@@ -38,9 +38,9 @@
 
 // type: Marker:Position
 // name: MarioCutscene1
-#define GEN_MARIO_CUTSCENE1_X -435
+#define GEN_MARIO_CUTSCENE1_X -445
 #define GEN_MARIO_CUTSCENE1_Y 0
 #define GEN_MARIO_CUTSCENE1_Z 2
 #define GEN_MARIO_CUTSCENE1_DIR 0
-#define GEN_MARIO_CUTSCENE1_VEC -435,0,2
+#define GEN_MARIO_CUTSCENE1_VEC -445,0,2
 

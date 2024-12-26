@@ -1654,15 +1654,6 @@
     actionTip: NONE
     costFP: 2
     costBP: 0
-- Spook:
-    nameMsg: MSG_PartnerMoveName_Spook
-    fullDescMsg: MSG_PartnerDesc_Bow_Pause_Spook
-    shortDescMsg: MSG_PartnerDesc_Bow_Battle_Spook
-    flags: [ TARGET_FLAG_2, TARGET_FLAG_PRIMARY_ONLY ]
-    category: MOVE_TYPE_PARTNER
-    actionTip: BTL_MSG_ACTION_TIP_MASH_LEFT
-    costFP: 3
-    costBP: 0
 - FanSmack:
     nameMsg: MSG_PartnerMoveName_FanSmack
     fullDescMsg: MSG_PartnerDesc_Bow_Pause_FanSmack
@@ -1671,4 +1662,13 @@
     category: MOVE_TYPE_PARTNER
     actionTip: BTL_MSG_ACTION_TIP_MASH_LEFT
     costFP: 5
+    costBP: 0
+- Spook:
+    nameMsg: MSG_PartnerMoveName_Spook
+    fullDescMsg: MSG_PartnerDesc_Bow_Pause_Spook
+    shortDescMsg: MSG_PartnerDesc_Bow_Battle_Spook
+    flags: [ TARGET_FLAG_2, TARGET_FLAG_PRIMARY_ONLY ]
+    category: MOVE_TYPE_PARTNER
+    actionTip: BTL_MSG_ACTION_TIP_MASH_LEFT
+    costFP: 3
     costBP: 0

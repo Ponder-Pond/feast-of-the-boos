@@ -2,6 +2,25 @@
 
 #include "world/common/entity/Pipe.inc.c"
 
+API_CALLABLE(N(SetCurrentPartner)) {
+    gPlayerData.curPartner = evt_get_variable(script, *script->ptrReadPos);
+    return ApiStatus_DONE2;
+}
+
+API_CALLABLE(N(SetPartnerRank)) {
+    PlayerData* playerData = &gPlayerData;  // Pointer to the player's data.
+    Bytecode* args = script->ptrReadPos;   // Pointer to the script's read position.
+
+    // Read parameters from the script
+    s32 partnerIdx = evt_get_variable(script, *args++);  // Partner index (e.g., PARTNER_BOW)
+    s32 partnerRank = evt_get_variable(script, *args++); // Partner rank (e.g., PARTNER_RANK_ULTRA)
+
+    // Set the partner's rank
+    playerData->partners[partnerIdx].level = partnerRank;
+
+    return ApiStatus_DONE2; // Indicate the script is finished.
+}
+
 API_CALLABLE(N(func_80240310_8EC130)){
     set_map_transition_effect(TRANSITION_BEGIN_OR_END_GAME);
     return ApiStatus_DONE2;
@@ -81,6 +100,11 @@ EvtScript N(EVS_Main) = {
             Exec(N(EVS_BindExitTriggers))
             Exec(N(EVS_Scene_EpilogueGetLetter))
         CaseEq(kmr_20_ENTRY_4)
+            Call(EnablePartner, PARTNER_GOOMBARIA)
+            Call(N(SetCurrentPartner), PARTNER_BOW)
+            Call(N(SetPartnerRank), PARTNER_BOW, PARTNER_RANK_ULTRA)
+            Call(GotoMap, Ref("mim_01"), mim_01_ENTRY_0)
+            Wait(30)
             Set(GF_MAP_MariosHouse, TRUE)
             IfEq(MF_LuigiWaiting, TRUE)
                 Exec(N(EVS_Scene_LuigiWaitingAround))

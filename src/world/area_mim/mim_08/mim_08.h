@@ -2,6 +2,7 @@
 /// @brief Forever Forest - Laughing Rock
 
 #include "common.h"
+#include "generated.h"
 #include "message_ids.h"
 #include "map.h"
 
@@ -13,15 +14,16 @@
 #include "sprite/npc/SmallPiranha.h"
 
 enum {
-    NPC_Bzzap                   = 0,
-    NPC_PiranhaPlant_01         = 1,
-    NPC_PiranhaPlant_01_Hitbox  = 2,
-    NPC_PiranhaPlant_02         = 3,
-    NPC_PiranhaPlant_02_Hitbox  = 4,
+    NPC_FreezyFuzzy                   = 0,
+    NPC_PiranhaPlant                  = 1,
+    NPC_PiranhaPlant_Hitbox           = 2,
+    NPC_Beehive                       = 3,
+    NPC_BooBully                      = 4,
+    NPC_Oaklie                        = 5,
 };
 
 enum {
-    MV_Unk_00                   = MapVar(0),
+    MV_ShakedTree                   = MapVar(0),
 };
 
 #define NAMESPACE mim_08

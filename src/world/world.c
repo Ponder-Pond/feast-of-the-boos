@@ -513,59 +513,59 @@ MapConfig hos_maps[] = {
 };
 
 /// Bowser's Castle
-#include "area_kpa/kpa.h"
-MapConfig kpa_maps[] = {
-    { MAP(kpa_01), .songVariation = 1, .sfxReverb = 3 },
-    { MAP(kpa_03), .songVariation = 1, .sfxReverb = 3 },
-    { MAP(kpa_04), .songVariation = 1, .sfxReverb = 2 },
-    { MAP(kpa_08), .songVariation = 1, .sfxReverb = 2 },
-    { MAP(kpa_09), .songVariation = 1, .sfxReverb = 2 },
-    { MAP(kpa_10), .songVariation = 1, .sfxReverb = 3 },
-    { MAP(kpa_11), .songVariation = 1, .sfxReverb = 3 },
-    { MAP(kpa_12), .songVariation = 1, .sfxReverb = 3 },
-    { MAP(kpa_13), .songVariation = 1, .sfxReverb = 3 },
-    { MAP(kpa_14), .songVariation = 1, .sfxReverb = 3 },
-    { MAP(kpa_15), .songVariation = 1, .sfxReverb = 3 },
-    { MAP(kpa_16), .songVariation = 1, .sfxReverb = 3 },
-    { MAP(kpa_17), .songVariation = 1, .sfxReverb = 2 },
-    { MAP(kpa_32), .bgName = "kpa_bg", .songVariation = 1, .sfxReverb = 3 },
-    { MAP(kpa_33), .bgName = "kpa_bg", .songVariation = 1, .sfxReverb = 3 },
-    { MAP(kpa_40), .songVariation = 1, .sfxReverb = 2 },
-    { MAP(kpa_41), .songVariation = 1, .sfxReverb = 2 },
-    { MAP(kpa_50), .songVariation = 1, .sfxReverb = 2 },
-    { MAP_WITH_INIT(kpa_51), .songVariation = 1, .sfxReverb = 2 },
-    { MAP(kpa_52), .songVariation = 1, .sfxReverb = 2 },
-    { MAP_WITH_INIT(kpa_53), .songVariation = 1, .sfxReverb = 2 },
-    { MAP(kpa_60), .bgName = "kpa_bg" },
-    { MAP(kpa_61), .bgName = "kpa_bg" },
-    { MAP(kpa_62), .bgName = "kpa_bg" },
-    { MAP(kpa_63), .songVariation = 1, .sfxReverb = 2 },
-    { MAP(kpa_70), .songVariation = 1, .sfxReverb = 3 },
-    { MAP_WITH_INIT(kpa_81), .songVariation = 1, .sfxReverb = 2 },
-    { MAP_WITH_INIT(kpa_82), .songVariation = 1, .sfxReverb = 2 },
-    { MAP_WITH_INIT(kpa_83), .songVariation = 1, .sfxReverb = 2 },
-    { MAP(kpa_90), .songVariation = 1, .sfxReverb = 2 },
-    { MAP(kpa_91), .songVariation = 1, .sfxReverb = 2 },
-    { MAP(kpa_94), .songVariation = 1, .sfxReverb = 2 },
-    { MAP(kpa_95), .songVariation = 1, .sfxReverb = 2 },
-    { MAP(kpa_96), .songVariation = 1, .sfxReverb = 1 },
-    { MAP_WITH_INIT(kpa_100), .songVariation = 1, .sfxReverb = 1 },
-    { MAP_WITH_INIT(kpa_101), .songVariation = 1, .sfxReverb = 1 },
-    { MAP(kpa_102), .songVariation = 1, .sfxReverb = 3 },
-    { MAP(kpa_111), .songVariation = 1, .sfxReverb = 3 },
-    { MAP(kpa_112), .songVariation = 1, .sfxReverb = 2 },
-    { MAP(kpa_113), .songVariation = 1, .sfxReverb = 3 },
-    { MAP_WITH_INIT(kpa_114), .songVariation = 1, .sfxReverb = 2 },
-    { MAP(kpa_115), .songVariation = 1, .sfxReverb = 3 },
-    { MAP(kpa_116), .songVariation = 1, .sfxReverb = 2 },
-    { MAP(kpa_117), .songVariation = 1, .sfxReverb = 1 },
-    { MAP(kpa_118), .songVariation = 1, .sfxReverb = 2 },
-    { MAP(kpa_119), .songVariation = 1, .sfxReverb = 1 },
-    { MAP(kpa_121), .songVariation = 1, .sfxReverb = 2 },
-    { MAP(kpa_130), .songVariation = 1, .sfxReverb = 3 },
-    { MAP(kpa_133), .songVariation = 1, .sfxReverb = 3 },
-    { MAP(kpa_134), .songVariation = 1, .sfxReverb = 3 },
-};
+// #include "area_kpa/kpa.h"
+// MapConfig kpa_maps[] = {
+//     { MAP(kpa_01), .songVariation = 1, .sfxReverb = 3 },
+//     { MAP(kpa_03), .songVariation = 1, .sfxReverb = 3 },
+//     { MAP(kpa_04), .songVariation = 1, .sfxReverb = 2 },
+//     { MAP(kpa_08), .songVariation = 1, .sfxReverb = 2 },
+//     { MAP(kpa_09), .songVariation = 1, .sfxReverb = 2 },
+//     { MAP(kpa_10), .songVariation = 1, .sfxReverb = 3 },
+//     { MAP(kpa_11), .songVariation = 1, .sfxReverb = 3 },
+//     { MAP(kpa_12), .songVariation = 1, .sfxReverb = 3 },
+//     { MAP(kpa_13), .songVariation = 1, .sfxReverb = 3 },
+//     { MAP(kpa_14), .songVariation = 1, .sfxReverb = 3 },
+//     { MAP(kpa_15), .songVariation = 1, .sfxReverb = 3 },
+//     { MAP(kpa_16), .songVariation = 1, .sfxReverb = 3 },
+//     { MAP(kpa_17), .songVariation = 1, .sfxReverb = 2 },
+//     { MAP(kpa_32), .bgName = "kpa_bg", .songVariation = 1, .sfxReverb = 3 },
+//     { MAP(kpa_33), .bgName = "kpa_bg", .songVariation = 1, .sfxReverb = 3 },
+//     { MAP(kpa_40), .songVariation = 1, .sfxReverb = 2 },
+//     { MAP(kpa_41), .songVariation = 1, .sfxReverb = 2 },
+//     { MAP(kpa_50), .songVariation = 1, .sfxReverb = 2 },
+//     { MAP_WITH_INIT(kpa_51), .songVariation = 1, .sfxReverb = 2 },
+//     { MAP(kpa_52), .songVariation = 1, .sfxReverb = 2 },
+//     { MAP_WITH_INIT(kpa_53), .songVariation = 1, .sfxReverb = 2 },
+//     { MAP(kpa_60), .bgName = "kpa_bg" },
+//     { MAP(kpa_61), .bgName = "kpa_bg" },
+//     { MAP(kpa_62), .bgName = "kpa_bg" },
+//     { MAP(kpa_63), .songVariation = 1, .sfxReverb = 2 },
+//     { MAP(kpa_70), .songVariation = 1, .sfxReverb = 3 },
+//     { MAP_WITH_INIT(kpa_81), .songVariation = 1, .sfxReverb = 2 },
+//     { MAP_WITH_INIT(kpa_82), .songVariation = 1, .sfxReverb = 2 },
+//     { MAP_WITH_INIT(kpa_83), .songVariation = 1, .sfxReverb = 2 },
+//     { MAP(kpa_90), .songVariation = 1, .sfxReverb = 2 },
+//     { MAP(kpa_91), .songVariation = 1, .sfxReverb = 2 },
+//     { MAP(kpa_94), .songVariation = 1, .sfxReverb = 2 },
+//     { MAP(kpa_95), .songVariation = 1, .sfxReverb = 2 },
+//     { MAP(kpa_96), .songVariation = 1, .sfxReverb = 1 },
+//     { MAP_WITH_INIT(kpa_100), .songVariation = 1, .sfxReverb = 1 },
+//     { MAP_WITH_INIT(kpa_101), .songVariation = 1, .sfxReverb = 1 },
+//     { MAP(kpa_102), .songVariation = 1, .sfxReverb = 3 },
+//     { MAP(kpa_111), .songVariation = 1, .sfxReverb = 3 },
+//     { MAP(kpa_112), .songVariation = 1, .sfxReverb = 2 },
+//     { MAP(kpa_113), .songVariation = 1, .sfxReverb = 3 },
+//     { MAP_WITH_INIT(kpa_114), .songVariation = 1, .sfxReverb = 2 },
+//     { MAP(kpa_115), .songVariation = 1, .sfxReverb = 3 },
+//     { MAP(kpa_116), .songVariation = 1, .sfxReverb = 2 },
+//     { MAP(kpa_117), .songVariation = 1, .sfxReverb = 1 },
+//     { MAP(kpa_118), .songVariation = 1, .sfxReverb = 2 },
+//     { MAP(kpa_119), .songVariation = 1, .sfxReverb = 1 },
+//     { MAP(kpa_121), .songVariation = 1, .sfxReverb = 2 },
+//     { MAP(kpa_130), .songVariation = 1, .sfxReverb = 3 },
+//     { MAP(kpa_133), .songVariation = 1, .sfxReverb = 3 },
+//     { MAP(kpa_134), .songVariation = 1, .sfxReverb = 3 },
+// };
 
 /// Peach's Castle Grounds
 #include "area_osr/osr.h"
@@ -609,46 +609,46 @@ MapConfig kkj_maps[] = {
 };
 
 /// Jade Jungle
-#include "area_jan/jan.h"
-MapConfig jan_maps[] = {
-    { MAP(jan_00), .bgName = "yos_bg" },
-    { MAP(jan_01), .bgName = "yos_bg" },
-    { MAP(jan_02), .bgName = "yos_bg" },
-    { MAP(jan_03), .bgName = "yos_bg" },
-    { MAP(jan_04), .bgName = "yos_bg" },
-    { MAP(jan_05), .bgName = "yos_bg" },
-    { MAP(jan_06), .bgName = "jan_bg" },
-    { MAP(jan_07), .bgName = "yos_bg" },
-    { MAP(jan_08), .bgName = "yos_bg" },
-    { MAP(jan_09), .bgName = "yos_bg" },
-    { MAP(jan_10), .bgName = "yos_bg" },
-    { MAP(jan_11), .bgName = "jan_bg", .songVariation = 1, .sfxReverb = 2 },
-    { MAP(jan_12), .bgName = "jan_bg", .songVariation = 1, .sfxReverb = 1 },
-    { MAP(jan_13), .bgName = "jan_bg", .songVariation = 1, .sfxReverb = 1 },
-    { MAP(jan_14), .bgName = "jan_bg", .songVariation = 1, .sfxReverb = 1 },
-    { MAP(jan_15), .bgName = "jan_bg", .songVariation = 1, .sfxReverb = 1 },
-    { MAP(jan_16), .bgName = "jan_bg", .songVariation = 1, .sfxReverb = 1 },
-    { MAP(jan_17), .bgName = "jan_bg", .songVariation = 1, .sfxReverb = 2 },
-    { MAP(jan_18), .bgName = "yos_bg" },
-    { MAP(jan_19), .bgName = "jan_bg", .songVariation = 1, .sfxReverb = 2 },
-    { MAP(jan_22), .bgName = "jan_bg", .songVariation = 1, .sfxReverb = 1 },
-    { MAP(jan_23), .bgName = "yos_bg" },
-};
+// #include "area_jan/jan.h"
+// MapConfig jan_maps[] = {
+//     { MAP(jan_00), .bgName = "yos_bg" },
+//     { MAP(jan_01), .bgName = "yos_bg" },
+//     { MAP(jan_02), .bgName = "yos_bg" },
+//     { MAP(jan_03), .bgName = "yos_bg" },
+//     { MAP(jan_04), .bgName = "yos_bg" },
+//     { MAP(jan_05), .bgName = "yos_bg" },
+//     { MAP(jan_06), .bgName = "jan_bg" },
+//     { MAP(jan_07), .bgName = "yos_bg" },
+//     { MAP(jan_08), .bgName = "yos_bg" },
+//     { MAP(jan_09), .bgName = "yos_bg" },
+//     { MAP(jan_10), .bgName = "yos_bg" },
+//     { MAP(jan_11), .bgName = "jan_bg", .songVariation = 1, .sfxReverb = 2 },
+//     { MAP(jan_12), .bgName = "jan_bg", .songVariation = 1, .sfxReverb = 1 },
+//     { MAP(jan_13), .bgName = "jan_bg", .songVariation = 1, .sfxReverb = 1 },
+//     { MAP(jan_14), .bgName = "jan_bg", .songVariation = 1, .sfxReverb = 1 },
+//     { MAP(jan_15), .bgName = "jan_bg", .songVariation = 1, .sfxReverb = 1 },
+//     { MAP(jan_16), .bgName = "jan_bg", .songVariation = 1, .sfxReverb = 1 },
+//     { MAP(jan_17), .bgName = "jan_bg", .songVariation = 1, .sfxReverb = 2 },
+//     { MAP(jan_18), .bgName = "yos_bg" },
+//     { MAP(jan_19), .bgName = "jan_bg", .songVariation = 1, .sfxReverb = 2 },
+//     { MAP(jan_22), .bgName = "jan_bg", .songVariation = 1, .sfxReverb = 1 },
+//     { MAP(jan_23), .bgName = "yos_bg" },
+// };
 
 /// Forever Forest
 #include "area_mim/mim.h"
 MapConfig mim_maps[] = {
     { MAP_WITH_INIT(mim_01), .bgName = "fob_bg", .songVariation = 1, .sfxReverb = 2 },
     { MAP(mim_02), .bgName = "obk_bg", .songVariation = 1, .sfxReverb = 2 },
-    { MAP(mim_03), .bgName = "obk_bg", .songVariation = 1, .sfxReverb = 2 },
+    { MAP(mim_03), .bgName = "fob_bg", .songVariation = 1, .sfxReverb = 2 },
     { MAP(mim_04), .bgName = "obk_bg", .songVariation = 1, .sfxReverb = 2 },
     { MAP(mim_05), .bgName = "obk_bg", .songVariation = 1, .sfxReverb = 2 },
     { MAP(mim_06), .bgName = "obk_bg", .songVariation = 1, .sfxReverb = 2 },
-    { MAP(mim_07), .bgName = "obk_bg", .songVariation = 1, .sfxReverb = 2 },
-    { MAP(mim_08), .bgName = "obk_bg", .songVariation = 1, .sfxReverb = 2 },
+    { MAP(mim_07), .bgName = "fob_bg", .songVariation = 1, .sfxReverb = 2 },
+    { MAP(mim_08), .bgName = "fob_bg", .songVariation = 1, .sfxReverb = 2 },
     { MAP(mim_09), .bgName = "obk_bg", .songVariation = 1, .sfxReverb = 2 },
     { MAP(mim_10), .bgName = "nok_bg" },
-    { MAP(mim_11), .bgName = "obk_bg", .songVariation = 1, .sfxReverb = 2 },
+    { MAP(mim_11), .bgName = "fob_bg", .songVariation = 1, .sfxReverb = 2 },
     { MAP(mim_12), .bgName = "arn_bg", .songVariation = 1, .sfxReverb = 2 },
 };
 
@@ -729,29 +729,29 @@ MapConfig kzn_maps[] = {
 };
 
 /// Flower Fields
-#include "area_flo/flo.h"
-MapConfig flo_maps[] = {
-    { MAP(flo_00), .bgName = "fla_bg" },
-    { MAP(flo_03), .bgName = "fla_bg" },
-    { MAP(flo_07), .bgName = "fla_bg" },
-    { MAP(flo_08), .bgName = "fla_bg" },
-    { MAP(flo_09), .bgName = "fla_bg" },
-    { MAP(flo_10), .bgName = "fla_bg" },
-    { MAP(flo_11), .bgName = "fla_bg" },
-    { MAP(flo_12), .bgName = "fla_bg" },
-    { MAP(flo_13), .bgName = "fla_bg" },
-    { MAP(flo_14), .bgName = "fla_bg" },
-    { MAP(flo_15), .bgName = "fla_bg" },
-    { MAP(flo_16), .bgName = "fla_bg" },
-    { MAP(flo_17), .bgName = "fla_bg" },
-    { MAP(flo_18), .bgName = "fla_bg" },
-    { MAP(flo_19), .bgName = "sra_bg" },
-    { MAP(flo_21), .bgName = "sra_bg" },
-    { MAP(flo_22), .bgName = "fla_bg" },
-    { MAP(flo_23), .bgName = "fla_bg" },
-    { MAP(flo_24), .bgName = "fla_bg" },
-    { MAP(flo_25), .bgName = "fla_bg" },
-};
+// #include "area_flo/flo.h"
+// MapConfig flo_maps[] = {
+//     { MAP(flo_00), .bgName = "fla_bg" },
+//     { MAP(flo_03), .bgName = "fla_bg" },
+//     { MAP(flo_07), .bgName = "fla_bg" },
+//     { MAP(flo_08), .bgName = "fla_bg" },
+//     { MAP(flo_09), .bgName = "fla_bg" },
+//     { MAP(flo_10), .bgName = "fla_bg" },
+//     { MAP(flo_11), .bgName = "fla_bg" },
+//     { MAP(flo_12), .bgName = "fla_bg" },
+//     { MAP(flo_13), .bgName = "fla_bg" },
+//     { MAP(flo_14), .bgName = "fla_bg" },
+//     { MAP(flo_15), .bgName = "fla_bg" },
+//     { MAP(flo_16), .bgName = "fla_bg" },
+//     { MAP(flo_17), .bgName = "fla_bg" },
+//     { MAP(flo_18), .bgName = "fla_bg" },
+//     { MAP(flo_19), .bgName = "sra_bg" },
+//     { MAP(flo_21), .bgName = "sra_bg" },
+//     { MAP(flo_22), .bgName = "fla_bg" },
+//     { MAP(flo_23), .bgName = "fla_bg" },
+//     { MAP(flo_24), .bgName = "fla_bg" },
+//     { MAP(flo_25), .bgName = "fla_bg" },
+// };
 
 /// Shiver Region
 #include "area_sam/sam.h"
@@ -883,12 +883,12 @@ AreaConfig gAreas[] = {
     AREA(arn, "あれの"),  // areno [wasteland, Gusty Gulch]
     AREA(dgb, "ドガボンの城"),  // dogabon no shiro [dogabon's castle, Tubba Blubba's Castle]
     AREA(omo, "ヘイホーのおもちゃばこ"),  // heiho no omochabako [heiho's toy box, Shy Guy's Toy Box]
-    AREA(jan, "ジャングル"),  // janguru [jungle, Jade Jungle]
+    // AREA(jan, "ジャングル"),  // janguru [jungle, Jade Jungle]
     AREA(kzn, "火山"),  // kazan [volcano, Mt. Lavalava]
-    AREA(flo, "フラワーランド"),  // furawaa rando [flower land, Flower Fields]
+    // AREA(flo, "フラワーランド"),  // furawaa rando [flower land, Flower Fields]
     AREA(sam, "さむいさむい村"),  // samui samui mura [cold cold village, Shiver City]
     AREA(pra, "パラレルきゅうでん"),  // parareru kyuuden [parallel palace, Crystal Palace]
-    AREA(kpa, "クッパ城"),  // kuppa shiro [koopa's castle, Bowser's Castle]
+    // AREA(kpa, "クッパ城"),  // kuppa shiro [koopa's castle, Bowser's Castle]
     AREA(osr, "きのこ城そと"),  // kinoko shiro soto [outside mushroom castle, Outside Peach's Castle]
     AREA(end, "エンディング"),  // endingu [Ending]
     AREA(mgm, "ミニゲーム"),  // minige-mu [Minigames]

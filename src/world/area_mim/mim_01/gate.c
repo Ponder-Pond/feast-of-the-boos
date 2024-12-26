@@ -50,7 +50,7 @@ EvtScript N(EVS_InitializeGates) = {
     Call(ParentColliderToModel, COLLIDER_mone, MODEL_e1)
     Call(RotateGroup, MODEL_mone, LVar2, 0, 1, 0)
     Call(UpdateColliderTransform, COLLIDER_mone)
-    IfLt(GB_StoryProgress, STORY_MOD_CUTSCENE_ONE)
+    IfLt(GB_StoryProgress, STORY_MOD_CUTSCENE_1)
         Call(ParentColliderToModel, COLLIDER_monw, MODEL_w1)
         Call(RotateGroup, MODEL_monw, 10, 0, 1, 0)
         Call(UpdateColliderTransform, COLLIDER_monw)
@@ -70,8 +70,13 @@ EvtScript N(EVS_ResetGates) = {
     Call(UpdateColliderTransform, COLLIDER_mons)
     Call(RotateGroup, MODEL_mone, 0, 0, 1, 0)
     Call(UpdateColliderTransform, COLLIDER_mone)
-    Call(RotateGroup, MODEL_monw, 0, 0, 1, 0)
-    Call(UpdateColliderTransform, COLLIDER_monw)
+    IfLt(GB_StoryProgress, STORY_MOD_CUTSCENE_1)
+        Call(RotateGroup, MODEL_monw, 0, 0, 1, 0)
+        Call(UpdateColliderTransform, COLLIDER_monw)
+    Else
+        Call(RotateGroup, MODEL_monw, 0, 0, 1, 0)
+        Call(UpdateColliderTransform, COLLIDER_monw2)
+    EndIf
     Return
     End
 };
@@ -327,7 +332,7 @@ EvtScript N(EVS_SetupGates) = {
     Call(PanToTarget, CAM_DEFAULT, 0, FALSE)
     BindTrigger(Ref(N(EVS_UseGate_North)), TRIGGER_WALL_PRESS_A, COLLIDER_monn, 1, 0)
     BindTrigger(Ref(N(EVS_UseGate_South)), TRIGGER_WALL_PRESS_A, COLLIDER_mons, 1, 0)
-    IfLt(GB_StoryProgress, STORY_MOD_CUTSCENE_ONE)
+    IfLt(GB_StoryProgress, STORY_MOD_CUTSCENE_1)
         BindTrigger(Ref(N(EVS_UseGate_West)),  TRIGGER_WALL_PRESS_A, COLLIDER_monw, 1, 0)
     Else
         BindTrigger(Ref(N(EVS_DisabledGate_West)),  TRIGGER_WALL_PRESS_A, COLLIDER_monw2, 1, 0)

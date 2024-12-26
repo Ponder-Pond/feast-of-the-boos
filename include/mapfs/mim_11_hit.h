@@ -1,4 +1,7 @@
-#define COLLIDER_Root           0x24
+#define COLLIDER_Root           0x27
+#define COLLIDER_BookcaseCol    0x26
+#define COLLIDER_PortraitCol    0x25
+#define COLLIDER_TrashCanCol    0x24
 #define COLLIDER_g74            0x23
 #define COLLIDER_o210           0x22
 #define COLLIDER_o209           0x21

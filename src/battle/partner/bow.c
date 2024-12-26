@@ -458,9 +458,9 @@ EvtScript N(EVS_ExecuteAction) = {
         CaseEq(MOVE_OUTTA_SIGHT)
             Call(SetBattleFlagBits, BS_FLAGS1_4000, FALSE)
             ExecWait(N(EVS_Move_OuttaSight))
-        CaseEq(MOVE_SPOOK)
-            Call(SetBattleFlagBits, BS_FLAGS1_4000, FALSE)
-            ExecWait(N(EVS_Move_Spook))
+        // CaseEq(MOVE_SPOOK)
+        //     Call(SetBattleFlagBits, BS_FLAGS1_4000, FALSE)
+        //     ExecWait(N(EVS_Move_Spook))
         CaseEq(MOVE_FAN_SMACK)
             ExecWait(N(EVS_Move_FanSmack))
     EndSwitch

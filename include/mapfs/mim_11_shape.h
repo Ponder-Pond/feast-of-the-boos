@@ -1,4 +1,14 @@
-#define MODEL_Root              0x7A
+#define MODEL_Root              0x84
+#define MODEL_o191              0x83
+#define MODEL_o191              0x82
+#define MODEL_Bookcase          0x81
+#define MODEL_Portrait          0x80
+#define MODEL_TrashCan          0x7F
+#define MODEL_Paper4            0x7E
+#define MODEL_Paper3            0x7D
+#define MODEL_Paper2            0x7C
+#define MODEL_Paper1            0x7B
+#define MODEL_h_dai             0x7A
 #define MODEL_a_kusa            0x79
 #define MODEL_o185              0x78
 #define MODEL_o184              0x77

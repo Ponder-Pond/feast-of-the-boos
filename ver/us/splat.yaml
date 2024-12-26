@@ -788,6 +788,9 @@ segments:
       - [0x9DA58]
       - [0x9DA60, rgba32,  ui/stat_flower, 16, 16]
       - [0x9DE60]
+      - [auto, ci4,     ui/move_partner_4, 32, 32]
+      - [auto, palette, ui/move_partner_4]
+      - [auto, palette, ui/move_partner_4.disabled]
     - start: 0xA2960
       type: .data
       name: 8a160_len_700
@@ -9835,527 +9838,527 @@ segments:
     - [auto, c, settings]
     - [auto, c, main]
     - [auto, c, starship]
-  - name: kpa_01
-    dir: world/area_kpa/kpa_01
-    type: code
-    start: 0xA46F60
-    vram_class: map
-    subsegments:
-    - [auto, c, settings]
-    - [auto, c, music]
-    - [auto, c, main]
-    - [auto, c, npc]
-    - [auto, c, entity]
-  - name: kpa_03
-    dir: world/area_kpa/kpa_03
-    type: code
-    start: 0xA485C0
-    vram_class: map
-    subsegments:
-    - [auto, c, settings]
-    - [auto, c, music]
-    - [auto, c, main]
-    - [auto, c, npc]
-    - [auto, c, entity]
-  - name: kpa_04
-    dir: world/area_kpa/kpa_04
-    type: code
-    start: 0xA4BF60
-    vram_class: map
-    subsegments:
-    - [auto, c, settings]
-    - [auto, c, music]
-    - [auto, c, main]
-    - [auto, c, statues]
-  - name: kpa_08
-    dir: world/area_kpa/kpa_08
-    type: code
-    start: 0xA4CA20
-    vram_class: map
-    subsegments:
-    - [auto, c, settings]
-    - [auto, c, music]
-    - [auto, c, main]
-    - [auto, c, entity]
-    - [auto, c, npc]
-  - name: kpa_09
-    dir: world/area_kpa/kpa_09
-    type: code
-    start: 0xA4F000
-    vram_class: map
-    subsegments:
-    - [auto, c, settings]
-    - [auto, c, music]
-    - [auto, c, main]
-    - [auto, c, entity]
-    - [auto, c, npc]
-  - name: kpa_10
-    dir: world/area_kpa/kpa_10
-    type: code
-    start: 0xA51980
-    vram_class: map
-    subsegments:
-    - [auto, c, settings]
-    - [auto, c, music]
-    - [auto, c, main]
-    - [auto, c, npc]
-    - [auto, c, entity]
-  - name: kpa_11
-    dir: world/area_kpa/kpa_11
-    type: code
-    start: 0xA528C0
-    vram_class: map
-    subsegments:
-    - [auto, c, settings]
-    - [auto, c, music]
-    - [auto, c, main]
-    - [auto, c, entity]
-    - [auto, c, npc]
-  - name: kpa_12
-    dir: world/area_kpa/kpa_12
-    type: code
-    start: 0xA54950
-    vram_class: map
-    subsegments:
-    - [auto, c, settings]
-    - [auto, c, music]
-    - [auto, c, main]
-    - [auto, c, platforms]
-  - name: kpa_13
-    dir: world/area_kpa/kpa_13
-    type: code
-    start: 0xA55F20
-    vram_class: map
-    subsegments:
-    - [auto, c, settings]
-    - [auto, c, music]
-    - [auto, c, main]
-    - [auto, c, entity]
-    - [auto, c, platforms]
-  - name: kpa_14
-    dir: world/area_kpa/kpa_14
-    type: code
-    start: 0xA574B0
-    vram_class: map
-    subsegments:
-    - [auto, c, settings]
-    - [auto, c, music]
-    - [auto, c, main]
-    - [auto, c, entity]
-    - [auto, c, platforms]
-  - name: kpa_15
-    dir: world/area_kpa/kpa_15
-    type: code
-    start: 0xA59390
-    vram_class: map
-    subsegments:
-    - [auto, c, settings]
-    - [auto, c, music]
-    - [auto, c, main]
-    - [auto, c, entity]
-  - name: kpa_16
-    dir: world/area_kpa/kpa_16
-    type: code
-    start: 0xA5A030
-    vram_class: map
-    subsegments:
-    - [auto, c, settings]
-    - [auto, c, music]
-    - [auto, c, main]
-    - [auto, c, entity]
-    - [auto, c, npc]
-  - name: kpa_17
-    dir: world/area_kpa/kpa_17
-    type: code
-    start: 0xA5CA20
-    vram_class: map
-    subsegments:
-    - [auto, c, settings]
-    - [auto, c, music]
-    - [auto, c, entity]
-    - [auto, c, main]
-    - [auto, c, npc]
-  - name: kpa_32
-    dir: world/area_kpa/kpa_32
-    type: code
-    start: 0xA5E0C0
-    vram_class: map
-    subsegments:
-    - [auto, c, settings]
-    - [auto, c, music]
-    - [auto, c, entity]
-    - [auto, c, main]
-  - name: kpa_33
-    dir: world/area_kpa/kpa_33
-    type: code
-    start: 0xA5F080
-    vram_class: map
-    subsegments:
-    - [auto, c, settings]
-    - [auto, c, music]
-    - [auto, c, entity]
-    - [auto, c, main]
-  - name: kpa_40
-    dir: world/area_kpa/kpa_40
-    type: code
-    start: 0xA60040
-    vram_class: map
-    subsegments:
-    - [auto, c, settings]
-    - [auto, c, music]
-    - [auto, c, main]
-  - name: kpa_41
-    dir: world/area_kpa/kpa_41
-    type: code
-    start: 0xA60470
-    vram_class: map
-    subsegments:
-    - [auto, c, settings]
-    - [auto, c, music]
-    - [auto, c, main]
-  - name: kpa_50
-    dir: world/area_kpa/kpa_50
-    type: code
-    start: 0xA609D0
-    vram_class: map
-    subsegments:
-    - [auto, c, settings]
-    - [auto, c, music]
-    - [auto, c, main]
-    - [auto, c, npc]
-  - name: kpa_51
-    dir: world/area_kpa/kpa_51
-    type: code
-    start: 0xA64090
-    vram_class: map
-    subsegments:
-    - [auto, c, settings]
-    - [auto, c, music]
-    - [auto, c, main]
-    - [auto, c, npc]
-  - name: kpa_52
-    dir: world/area_kpa/kpa_52
-    type: code
-    start: 0xA67100
-    vram_class: map
-    subsegments:
-    - [auto, c, settings]
-    - [auto, c, music]
-    - [auto, c, entity]
-    - [auto, c, main]
-    - [auto, c, npc]
-  - name: kpa_53
-    dir: world/area_kpa/kpa_53
-    type: code
-    start: 0xA6ACA0
-    vram_class: map
-    subsegments:
-    - [auto, c, settings]
-    - [auto, c, music]
-    - [auto, c, main]
-    - [auto, c, npc]
-    - [auto, c, entity]
-  - name: kpa_60
-    dir: world/area_kpa/kpa_60
-    type: code
-    start: 0xA6CB00
-    vram_class: map
-    subsegments:
-    - [auto, c, settings]
-    - [auto, c, music]
-    - [auto, c, entity]
-    - [auto, c, main]
-    - [auto, c, scenes]
-  - name: kpa_61
-    dir: world/area_kpa/kpa_61
-    type: code
-    start: 0xA6E3E0
-    vram_class: map
-    subsegments:
-    - [auto, c, settings]
-    - [auto, c, music]
-    - [auto, c, main]
-    - [auto, c, npc]
-    - [auto, c, entity]
-  - name: kpa_62
-    dir: world/area_kpa/kpa_62
-    type: code
-    start: 0xA72220
-    vram_class: map
-    subsegments:
-    - [auto, c, settings]
-    - [auto, c, music]
-    - [auto, c, entity]
-    - [auto, c, main]
-  - name: kpa_63
-    dir: world/area_kpa/kpa_63
-    type: code
-    start: 0xA735B0
-    vram_class: map
-    subsegments:
-    - [auto, c, settings]
-    - [auto, c, music]
-    - [auto, c, entity]
-    - [auto, c, main]
-    - [auto, c, scenes]
-  - name: kpa_70
-    dir: world/area_kpa/kpa_70
-    type: code
-    start: 0xA74870
-    vram_class: map
-    subsegments:
-    - [auto, c, settings]
-    - [auto, c, music]
-    - [auto, c, main]
-    - [auto, c, npc]
-    - [auto, c, chain_skele]
-    - [auto, c, chain_anim]
-  - name: kpa_81
-    dir: world/area_kpa/kpa_81
-    type: code
-    start: 0xA784C0
-    vram_class: map
-    subsegments:
-    - [auto, c, settings]
-    - [auto, c, music]
-    - [auto, c, main]
-    - [auto, c, npc]
-  - name: kpa_82
-    dir: world/area_kpa/kpa_82
-    type: code
-    start: 0xA7A500
-    vram_class: map
-    subsegments:
-    - [auto, c, settings]
-    - [auto, c, music]
-    - [auto, c, main]
-    - [auto, c, npc]
-  - name: kpa_83
-    dir: world/area_kpa/kpa_83
-    type: code
-    start: 0xA83490
-    vram_class: map
-    subsegments:
-    - [auto, c, settings]
-    - [auto, c, music]
-    - [auto, c, main]
-    - [auto, c, npc]
-  - name: kpa_90
-    dir: world/area_kpa/kpa_90
-    type: code
-    start: 0xA867B0
-    vram_class: map
-    subsegments:
-    - [auto, c, settings]
-    - [auto, c, music]
-    - [auto, c, main]
-  - name: kpa_91
-    dir: world/area_kpa/kpa_91
-    type: code
-    start: 0xA86A50
-    vram_class: map
-    subsegments:
-    - [auto, c, settings]
-    - [auto, c, music]
-    - [auto, c, main]
-    - [auto, c, npc]
-    - [auto, c, entity]
-  - name: kpa_94
-    dir: world/area_kpa/kpa_94
-    type: code
-    start: 0xA8C7C0
-    vram_class: map
-    subsegments:
-    - [auto, c, settings]
-    - [auto, c, music]
-    - [auto, c, main]
-  - name: kpa_95
-    dir: world/area_kpa/kpa_95
-    type: code
-    start: 0xA8CA80
-    vram_class: map
-    subsegments:
-    - [auto, c, settings]
-    - [auto, c, music]
-    - [auto, c, entity]
-    - [auto, c, main]
-    - [auto, c, npc]
-  - name: kpa_96
-    dir: world/area_kpa/kpa_96
-    type: code
-    start: 0xA927C0
-    vram_class: map
-    subsegments:
-    - [auto, c, settings]
-    - [auto, c, music]
-    - [auto, c, main]
-    - [auto, c, npc]
-  - name: kpa_100
-    dir: world/area_kpa/kpa_100
-    type: code
-    start: 0xA93160
-    vram_class: map
-    subsegments:
-    - [auto, c, settings]
-    - [auto, c, music]
-    - [auto, c, main]
-    - [auto, c, entity]
-  - name: kpa_101
-    dir: world/area_kpa/kpa_101
-    type: code
-    start: 0xA93440
-    vram_class: map
-    subsegments:
-    - [auto, c, settings]
-    - [auto, c, music]
-    - [auto, c, main]
-    - [auto, c, entity]
-  - name: kpa_102
-    dir: world/area_kpa/kpa_102
-    type: code
-    start: 0xA93740
-    vram_class: map
-    subsegments:
-    - [auto, c, settings]
-    - [auto, c, music]
-    - [auto, c, main]
-    - [auto, c, npc]
-  - name: kpa_111
-    dir: world/area_kpa/kpa_111
-    type: code
-    start: 0xA99590
-    vram_class: map
-    subsegments:
-    - [auto, c, settings]
-    - [auto, c, music]
-    - [auto, c, main]
-    - [auto, c, statues]
-    - [auto, c, npc]
-    - [auto, c, entity]
-  - name: kpa_112
-    dir: world/area_kpa/kpa_112
-    type: code
-    start: 0xA9C990
-    vram_class: map
-    subsegments:
-    - [auto, c, settings]
-    - [auto, c, music]
-    - [auto, c, main]
-  - name: kpa_113
-    dir: world/area_kpa/kpa_113
-    type: code
-    start: 0xA9CC30
-    vram_class: map
-    subsegments:
-    - [auto, c, settings]
-    - [auto, c, music]
-    - [auto, c, main]
-    - [auto, c, entity]
-    - [auto, c, statues]
-    - [auto, c, npc]
-  - name: kpa_114
-    dir: world/area_kpa/kpa_114
-    type: code
-    start: 0xA9E980
-    vram_class: map
-    subsegments:
-    - [auto, c, settings]
-    - [auto, c, music]
-    - [auto, c, main]
-    - [auto, c, entity]
-  - name: kpa_115
-    dir: world/area_kpa/kpa_115
-    type: code
-    start: 0xA9ED40
-    vram_class: map
-    subsegments:
-    - [auto, c, settings]
-    - [auto, c, music]
-    - [auto, c, main]
-    - [auto, c, statues]
-    - [auto, c, npc]
-  - name: kpa_116
-    dir: world/area_kpa/kpa_116
-    type: code
-    start: 0xAA1EE0
-    vram_class: map
-    subsegments:
-    - [auto, c, settings]
-    - [auto, c, music]
-    - [auto, c, main]
-  - name: kpa_117
-    dir: world/area_kpa/kpa_117
-    type: code
-    start: 0xAA2180
-    vram_class: map
-    subsegments:
-    - [auto, c, settings]
-    - [auto, c, music]
-    - [auto, c, main]
-  - name: kpa_118
-    dir: world/area_kpa/kpa_118
-    type: code
-    start: 0xAA23C0
-    vram_class: map
-    subsegments:
-    - [auto, c, settings]
-    - [auto, c, music]
-    - [auto, c, main]
-  - name: kpa_119
-    dir: world/area_kpa/kpa_119
-    type: code
-    start: 0xAA2660
-    vram_class: map
-    subsegments:
-    - [auto, c, settings]
-    - [auto, c, music]
-    - [auto, c, entity]
-    - [auto, c, main]
-  - name: kpa_121
-    dir: world/area_kpa/kpa_121
-    type: code
-    start: 0xAA28F0
-    vram_class: map
-    subsegments:
-    - [auto, c, settings]
-    - [auto, c, music]
-    - [auto, c, main]
-  - name: kpa_130
-    dir: world/area_kpa/kpa_130
-    type: code
-    start: 0xAA2D20
-    vram_class: map
-    subsegments:
-    - [auto, c, settings]
-    - [auto, c, music]
-    - [auto, c, main]
-    - [auto, c, npc]
-  - name: kpa_133
-    dir: world/area_kpa/kpa_133
-    type: code
-    start: 0xAA7480
-    vram_class: map
-    subsegments:
-    - [auto, c, settings]
-    - [auto, c, music]
-    - [auto, c, main]
-    - [auto, c, entity]
-    - [auto, c, npc]
-    - [auto, c, water]
-    - [auto, c, ease]
-  - name: kpa_134
-    dir: world/area_kpa/kpa_134
-    type: code
-    start: 0xAA8FA0
-    vram_class: map
-    subsegments:
-    - [auto, c, settings]
-    - [auto, c, music]
-    - [auto, c, main]
-    - [auto, c, chains]
-    - [auto, c, npc]
-    - [auto, c, panels]
-    - [auto, c, entity]
+  # - name: kpa_01
+  #   dir: world/area_kpa/kpa_01
+  #   type: code
+  #   start: 0xA46F60
+  #   vram_class: map
+  #   subsegments:
+  #   - [auto, c, settings]
+  #   - [auto, c, music]
+  #   - [auto, c, main]
+  #   - [auto, c, npc]
+  #   - [auto, c, entity]
+  # - name: kpa_03
+  #   dir: world/area_kpa/kpa_03
+  #   type: code
+  #   start: 0xA485C0
+  #   vram_class: map
+  #   subsegments:
+  #   - [auto, c, settings]
+  #   - [auto, c, music]
+  #   - [auto, c, main]
+  #   - [auto, c, npc]
+  #   - [auto, c, entity]
+  # - name: kpa_04
+  #   dir: world/area_kpa/kpa_04
+  #   type: code
+  #   start: 0xA4BF60
+  #   vram_class: map
+  #   subsegments:
+  #   - [auto, c, settings]
+  #   - [auto, c, music]
+  #   - [auto, c, main]
+  #   - [auto, c, statues]
+  # - name: kpa_08
+  #   dir: world/area_kpa/kpa_08
+  #   type: code
+  #   start: 0xA4CA20
+  #   vram_class: map
+  #   subsegments:
+  #   - [auto, c, settings]
+  #   - [auto, c, music]
+  #   - [auto, c, main]
+  #   - [auto, c, entity]
+  #   - [auto, c, npc]
+  # - name: kpa_09
+  #   dir: world/area_kpa/kpa_09
+  #   type: code
+  #   start: 0xA4F000
+  #   vram_class: map
+  #   subsegments:
+  #   - [auto, c, settings]
+  #   - [auto, c, music]
+  #   - [auto, c, main]
+  #   - [auto, c, entity]
+  #   - [auto, c, npc]
+  # - name: kpa_10
+  #   dir: world/area_kpa/kpa_10
+  #   type: code
+  #   start: 0xA51980
+  #   vram_class: map
+  #   subsegments:
+  #   - [auto, c, settings]
+  #   - [auto, c, music]
+  #   - [auto, c, main]
+  #   - [auto, c, npc]
+  #   - [auto, c, entity]
+  # - name: kpa_11
+  #   dir: world/area_kpa/kpa_11
+  #   type: code
+  #   start: 0xA528C0
+  #   vram_class: map
+  #   subsegments:
+  #   - [auto, c, settings]
+  #   - [auto, c, music]
+  #   - [auto, c, main]
+  #   - [auto, c, entity]
+  #   - [auto, c, npc]
+  # - name: kpa_12
+  #   dir: world/area_kpa/kpa_12
+  #   type: code
+  #   start: 0xA54950
+  #   vram_class: map
+  #   subsegments:
+  #   - [auto, c, settings]
+  #   - [auto, c, music]
+  #   - [auto, c, main]
+  #   - [auto, c, platforms]
+  # - name: kpa_13
+  #   dir: world/area_kpa/kpa_13
+  #   type: code
+  #   start: 0xA55F20
+  #   vram_class: map
+  #   subsegments:
+  #   - [auto, c, settings]
+  #   - [auto, c, music]
+  #   - [auto, c, main]
+  #   - [auto, c, entity]
+  #   - [auto, c, platforms]
+  # - name: kpa_14
+  #   dir: world/area_kpa/kpa_14
+  #   type: code
+  #   start: 0xA574B0
+  #   vram_class: map
+  #   subsegments:
+  #   - [auto, c, settings]
+  #   - [auto, c, music]
+  #   - [auto, c, main]
+  #   - [auto, c, entity]
+  #   - [auto, c, platforms]
+  # - name: kpa_15
+  #   dir: world/area_kpa/kpa_15
+  #   type: code
+  #   start: 0xA59390
+  #   vram_class: map
+  #   subsegments:
+  #   - [auto, c, settings]
+  #   - [auto, c, music]
+  #   - [auto, c, main]
+  #   - [auto, c, entity]
+  # - name: kpa_16
+  #   dir: world/area_kpa/kpa_16
+  #   type: code
+  #   start: 0xA5A030
+  #   vram_class: map
+  #   subsegments:
+  #   - [auto, c, settings]
+  #   - [auto, c, music]
+  #   - [auto, c, main]
+  #   - [auto, c, entity]
+  #   - [auto, c, npc]
+  # - name: kpa_17
+  #   dir: world/area_kpa/kpa_17
+  #   type: code
+  #   start: 0xA5CA20
+  #   vram_class: map
+  #   subsegments:
+  #   - [auto, c, settings]
+  #   - [auto, c, music]
+  #   - [auto, c, entity]
+  #   - [auto, c, main]
+  #   - [auto, c, npc]
+  # - name: kpa_32
+  #   dir: world/area_kpa/kpa_32
+  #   type: code
+  #   start: 0xA5E0C0
+  #   vram_class: map
+  #   subsegments:
+  #   - [auto, c, settings]
+  #   - [auto, c, music]
+  #   - [auto, c, entity]
+  #   - [auto, c, main]
+  # - name: kpa_33
+  #   dir: world/area_kpa/kpa_33
+  #   type: code
+  #   start: 0xA5F080
+  #   vram_class: map
+  #   subsegments:
+  #   - [auto, c, settings]
+  #   - [auto, c, music]
+  #   - [auto, c, entity]
+  #   - [auto, c, main]
+  # - name: kpa_40
+  #   dir: world/area_kpa/kpa_40
+  #   type: code
+  #   start: 0xA60040
+  #   vram_class: map
+  #   subsegments:
+  #   - [auto, c, settings]
+  #   - [auto, c, music]
+  #   - [auto, c, main]
+  # - name: kpa_41
+  #   dir: world/area_kpa/kpa_41
+  #   type: code
+  #   start: 0xA60470
+  #   vram_class: map
+  #   subsegments:
+  #   - [auto, c, settings]
+  #   - [auto, c, music]
+  #   - [auto, c, main]
+  # - name: kpa_50
+  #   dir: world/area_kpa/kpa_50
+  #   type: code
+  #   start: 0xA609D0
+  #   vram_class: map
+  #   subsegments:
+  #   - [auto, c, settings]
+  #   - [auto, c, music]
+  #   - [auto, c, main]
+  #   - [auto, c, npc]
+  # - name: kpa_51
+  #   dir: world/area_kpa/kpa_51
+  #   type: code
+  #   start: 0xA64090
+  #   vram_class: map
+  #   subsegments:
+  #   - [auto, c, settings]
+  #   - [auto, c, music]
+  #   - [auto, c, main]
+  #   - [auto, c, npc]
+  # - name: kpa_52
+  #   dir: world/area_kpa/kpa_52
+  #   type: code
+  #   start: 0xA67100
+  #   vram_class: map
+  #   subsegments:
+  #   - [auto, c, settings]
+  #   - [auto, c, music]
+  #   - [auto, c, entity]
+  #   - [auto, c, main]
+  #   - [auto, c, npc]
+  # - name: kpa_53
+  #   dir: world/area_kpa/kpa_53
+  #   type: code
+  #   start: 0xA6ACA0
+  #   vram_class: map
+  #   subsegments:
+  #   - [auto, c, settings]
+  #   - [auto, c, music]
+  #   - [auto, c, main]
+  #   - [auto, c, npc]
+  #   - [auto, c, entity]
+  # - name: kpa_60
+  #   dir: world/area_kpa/kpa_60
+  #   type: code
+  #   start: 0xA6CB00
+  #   vram_class: map
+  #   subsegments:
+  #   - [auto, c, settings]
+  #   - [auto, c, music]
+  #   - [auto, c, entity]
+  #   - [auto, c, main]
+  #   - [auto, c, scenes]
+  # - name: kpa_61
+  #   dir: world/area_kpa/kpa_61
+  #   type: code
+  #   start: 0xA6E3E0
+  #   vram_class: map
+  #   subsegments:
+  #   - [auto, c, settings]
+  #   - [auto, c, music]
+  #   - [auto, c, main]
+  #   - [auto, c, npc]
+  #   - [auto, c, entity]
+  # - name: kpa_62
+  #   dir: world/area_kpa/kpa_62
+  #   type: code
+  #   start: 0xA72220
+  #   vram_class: map
+  #   subsegments:
+  #   - [auto, c, settings]
+  #   - [auto, c, music]
+  #   - [auto, c, entity]
+  #   - [auto, c, main]
+  # - name: kpa_63
+  #   dir: world/area_kpa/kpa_63
+  #   type: code
+  #   start: 0xA735B0
+  #   vram_class: map
+  #   subsegments:
+  #   - [auto, c, settings]
+  #   - [auto, c, music]
+  #   - [auto, c, entity]
+  #   - [auto, c, main]
+  #   - [auto, c, scenes]
+  # - name: kpa_70
+  #   dir: world/area_kpa/kpa_70
+  #   type: code
+  #   start: 0xA74870
+  #   vram_class: map
+  #   subsegments:
+  #   - [auto, c, settings]
+  #   - [auto, c, music]
+  #   - [auto, c, main]
+  #   - [auto, c, npc]
+  #   - [auto, c, chain_skele]
+  #   - [auto, c, chain_anim]
+  # - name: kpa_81
+  #   dir: world/area_kpa/kpa_81
+  #   type: code
+  #   start: 0xA784C0
+  #   vram_class: map
+  #   subsegments:
+  #   - [auto, c, settings]
+  #   - [auto, c, music]
+  #   - [auto, c, main]
+  #   - [auto, c, npc]
+  # - name: kpa_82
+  #   dir: world/area_kpa/kpa_82
+  #   type: code
+  #   start: 0xA7A500
+  #   vram_class: map
+  #   subsegments:
+  #   - [auto, c, settings]
+  #   - [auto, c, music]
+  #   - [auto, c, main]
+  #   - [auto, c, npc]
+  # - name: kpa_83
+  #   dir: world/area_kpa/kpa_83
+  #   type: code
+  #   start: 0xA83490
+  #   vram_class: map
+  #   subsegments:
+  #   - [auto, c, settings]
+  #   - [auto, c, music]
+  #   - [auto, c, main]
+  #   - [auto, c, npc]
+  # - name: kpa_90
+  #   dir: world/area_kpa/kpa_90
+  #   type: code
+  #   start: 0xA867B0
+  #   vram_class: map
+  #   subsegments:
+  #   - [auto, c, settings]
+  #   - [auto, c, music]
+  #   - [auto, c, main]
+  # - name: kpa_91
+  #   dir: world/area_kpa/kpa_91
+  #   type: code
+  #   start: 0xA86A50
+  #   vram_class: map
+  #   subsegments:
+  #   - [auto, c, settings]
+  #   - [auto, c, music]
+  #   - [auto, c, main]
+  #   - [auto, c, npc]
+  #   - [auto, c, entity]
+  # - name: kpa_94
+  #   dir: world/area_kpa/kpa_94
+  #   type: code
+  #   start: 0xA8C7C0
+  #   vram_class: map
+  #   subsegments:
+  #   - [auto, c, settings]
+  #   - [auto, c, music]
+  #   - [auto, c, main]
+  # - name: kpa_95
+  #   dir: world/area_kpa/kpa_95
+  #   type: code
+  #   start: 0xA8CA80
+  #   vram_class: map
+  #   subsegments:
+  #   - [auto, c, settings]
+  #   - [auto, c, music]
+  #   - [auto, c, entity]
+  #   - [auto, c, main]
+  #   - [auto, c, npc]
+  # - name: kpa_96
+  #   dir: world/area_kpa/kpa_96
+  #   type: code
+  #   start: 0xA927C0
+  #   vram_class: map
+  #   subsegments:
+  #   - [auto, c, settings]
+  #   - [auto, c, music]
+  #   - [auto, c, main]
+  #   - [auto, c, npc]
+  # - name: kpa_100
+  #   dir: world/area_kpa/kpa_100
+  #   type: code
+  #   start: 0xA93160
+  #   vram_class: map
+  #   subsegments:
+  #   - [auto, c, settings]
+  #   - [auto, c, music]
+  #   - [auto, c, main]
+  #   - [auto, c, entity]
+  # - name: kpa_101
+  #   dir: world/area_kpa/kpa_101
+  #   type: code
+  #   start: 0xA93440
+  #   vram_class: map
+  #   subsegments:
+  #   - [auto, c, settings]
+  #   - [auto, c, music]
+  #   - [auto, c, main]
+  #   - [auto, c, entity]
+  # - name: kpa_102
+  #   dir: world/area_kpa/kpa_102
+  #   type: code
+  #   start: 0xA93740
+  #   vram_class: map
+  #   subsegments:
+  #   - [auto, c, settings]
+  #   - [auto, c, music]
+  #   - [auto, c, main]
+  #   - [auto, c, npc]
+  # - name: kpa_111
+  #   dir: world/area_kpa/kpa_111
+  #   type: code
+  #   start: 0xA99590
+  #   vram_class: map
+  #   subsegments:
+  #   - [auto, c, settings]
+  #   - [auto, c, music]
+  #   - [auto, c, main]
+  #   - [auto, c, statues]
+  #   - [auto, c, npc]
+  #   - [auto, c, entity]
+  # - name: kpa_112
+  #   dir: world/area_kpa/kpa_112
+  #   type: code
+  #   start: 0xA9C990
+  #   vram_class: map
+  #   subsegments:
+  #   - [auto, c, settings]
+  #   - [auto, c, music]
+  #   - [auto, c, main]
+  # - name: kpa_113
+  #   dir: world/area_kpa/kpa_113
+  #   type: code
+  #   start: 0xA9CC30
+  #   vram_class: map
+  #   subsegments:
+  #   - [auto, c, settings]
+  #   - [auto, c, music]
+  #   - [auto, c, main]
+  #   - [auto, c, entity]
+  #   - [auto, c, statues]
+  #   - [auto, c, npc]
+  # - name: kpa_114
+  #   dir: world/area_kpa/kpa_114
+  #   type: code
+  #   start: 0xA9E980
+  #   vram_class: map
+  #   subsegments:
+  #   - [auto, c, settings]
+  #   - [auto, c, music]
+  #   - [auto, c, main]
+  #   - [auto, c, entity]
+  # - name: kpa_115
+  #   dir: world/area_kpa/kpa_115
+  #   type: code
+  #   start: 0xA9ED40
+  #   vram_class: map
+  #   subsegments:
+  #   - [auto, c, settings]
+  #   - [auto, c, music]
+  #   - [auto, c, main]
+  #   - [auto, c, statues]
+  #   - [auto, c, npc]
+  # - name: kpa_116
+  #   dir: world/area_kpa/kpa_116
+  #   type: code
+  #   start: 0xAA1EE0
+  #   vram_class: map
+  #   subsegments:
+  #   - [auto, c, settings]
+  #   - [auto, c, music]
+  #   - [auto, c, main]
+  # - name: kpa_117
+  #   dir: world/area_kpa/kpa_117
+  #   type: code
+  #   start: 0xAA2180
+  #   vram_class: map
+  #   subsegments:
+  #   - [auto, c, settings]
+  #   - [auto, c, music]
+  #   - [auto, c, main]
+  # - name: kpa_118
+  #   dir: world/area_kpa/kpa_118
+  #   type: code
+  #   start: 0xAA23C0
+  #   vram_class: map
+  #   subsegments:
+  #   - [auto, c, settings]
+  #   - [auto, c, music]
+  #   - [auto, c, main]
+  # - name: kpa_119
+  #   dir: world/area_kpa/kpa_119
+  #   type: code
+  #   start: 0xAA2660
+  #   vram_class: map
+  #   subsegments:
+  #   - [auto, c, settings]
+  #   - [auto, c, music]
+  #   - [auto, c, entity]
+  #   - [auto, c, main]
+  # - name: kpa_121
+  #   dir: world/area_kpa/kpa_121
+  #   type: code
+  #   start: 0xAA28F0
+  #   vram_class: map
+  #   subsegments:
+  #   - [auto, c, settings]
+  #   - [auto, c, music]
+  #   - [auto, c, main]
+  # - name: kpa_130
+  #   dir: world/area_kpa/kpa_130
+  #   type: code
+  #   start: 0xAA2D20
+  #   vram_class: map
+  #   subsegments:
+  #   - [auto, c, settings]
+  #   - [auto, c, music]
+  #   - [auto, c, main]
+  #   - [auto, c, npc]
+  # - name: kpa_133
+  #   dir: world/area_kpa/kpa_133
+  #   type: code
+  #   start: 0xAA7480
+  #   vram_class: map
+  #   subsegments:
+  #   - [auto, c, settings]
+  #   - [auto, c, music]
+  #   - [auto, c, main]
+  #   - [auto, c, entity]
+  #   - [auto, c, npc]
+  #   - [auto, c, water]
+  #   - [auto, c, ease]
+  # - name: kpa_134
+  #   dir: world/area_kpa/kpa_134
+  #   type: code
+  #   start: 0xAA8FA0
+  #   vram_class: map
+  #   subsegments:
+  #   - [auto, c, settings]
+  #   - [auto, c, music]
+  #   - [auto, c, main]
+  #   - [auto, c, chains]
+  #   - [auto, c, npc]
+  #   - [auto, c, panels]
+  #   - [auto, c, entity]
   - name: osr_00
     dir: world/area_osr/osr_00
     type: code
@@ -10768,273 +10771,273 @@ segments:
     vram_class: map
     subsegments:
     - [auto, c, main]
-  - name: jan_00
-    dir: world/area_jan/jan_00
-    type: code
-    start: 0xB20540
-    vram_class: map
-    subsegments:
-    - [auto, c, settings]
-    - [auto, c, main]
-    - [auto, c, npc]
-    - [auto, c, entity]
-    - [auto, c, whale]
-    - [auto, c, foliage]
-  - name: jan_01
-    dir: world/area_jan/jan_01
-    type: code
-    start: 0xB28030
-    vram_class: map
-    subsegments:
-    - [auto, c, settings]
-    - [auto, c, music]
-    - [auto, c, main]
-    - [auto, c, npc]
-    - [auto, c, entity]
-    - [auto, c, foliage]
-  - name: jan_02
-    dir: world/area_jan/jan_02
-    type: code
-    start: 0xB2C470
-    vram_class: map
-    subsegments:
-    - [auto, c, settings]
-    - [auto, c, music]
-    - [auto, c, main]
-    - [auto, c, npc]
-    - [auto, c, entity]
-    - [auto, c, foliage]
-  - name: jan_03
-    dir: world/area_jan/jan_03
-    type: code
-    start: 0xB34BD0
-    vram_class: map
-    subsegments:
-    - [auto, c, settings]
-    - [auto, c, music]
-    - [auto, c, main]
-    - [auto, c, shop]
-    - [auto, c, npc]
-    - [auto, c, entity]
-    - [auto, c, rooms]
-    - [auto, c, foliage]
-  - name: jan_04
-    dir: world/area_jan/jan_04
-    type: code
-    start: 0xB44770
-    vram_class: map
-    subsegments:
-    - [auto, c, settings]
-    - [auto, c, music]
-    - [auto, c, main]
-    - [auto, c, entity]
-    - [auto, c, npc]
-    - [auto, c, unused]
-    - [auto, c, trees]
-    - [auto, c, scenes]
-    - [auto, c, treasure]
-    - [auto, c, bushes]
-    - [auto, c, demo]
-  - name: jan_05
-    dir: world/area_jan/jan_05
-    type: code
-    start: 0xB4AA70
-    vram_class: map
-    subsegments:
-    - [auto, c, settings]
-    - [auto, c, music]
-    - [auto, c, main]
-    - [auto, c, log]
-    - [auto, c, bushes]
-    - [auto, c, npc]
-    - [auto, c, trees]
-    - [auto, c, entity]
-  - name: jan_06
-    dir: world/area_jan/jan_06
-    type: code
-    start: 0xB52830
-    vram_class: map
-    subsegments:
-    - [auto, c, settings]
-    - [auto, c, main]
-    - [auto, c, statue]
-    - [auto, c, log]
-    - [auto, c, trees]
-    - [auto, c, entity]
-    - [auto, c, npc]
-    - [auto, c, bushes]
-  - name: jan_07
-    dir: world/area_jan/jan_07
-    type: code
-    start: 0xB59870
-    vram_class: map
-    subsegments:
-    - [auto, c, settings]
-    - [auto, c, music]
-    - [auto, c, main]
-    - [auto, c, npc]
-    - [auto, c, trees]
-    - [auto, c, bushes]
-  - name: jan_08
-    dir: world/area_jan/jan_08
-    type: code
-    start: 0xB5E2B0
-    vram_class: map
-    subsegments:
-    - [auto, c, settings]
-    - [auto, c, music]
-    - [auto, c, main]
-    - [auto, c, bushes]
-    - [auto, c, entity]
-    - [auto, c, npc]
-    - [auto, c, trees]
-  - name: jan_09
-    dir: world/area_jan/jan_09
-    type: code
-    start: 0xB65AB0
-    vram_class: map
-    subsegments:
-    - [auto, c, settings]
-    - [auto, c, main]
-    - [auto, c, bushes]
-    - [auto, c, npc]
-    - [auto, c, trees]
-    - [auto, c, entity]
-  - name: jan_10
-    dir: world/area_jan/jan_10
-    type: code
-    start: 0xB6C390
-    vram_class: map
-    subsegments:
-    - [auto, c, settings]
-    - [auto, c, music]
-    - [auto, c, main]
-    - [auto, c, npc]
-    - [auto, c, log]
-    - [auto, c, trees]
-    - [auto, c, bushes]
-    - [auto, c, entity]
-  - name: jan_11
-    dir: world/area_jan/jan_11
-    type: code
-    start: 0xB70860
-    vram_class: map
-    subsegments:
-    - [auto, c, settings]
-    - [auto, c, music]
-    - [auto, c, main]
-    - [auto, c, npc]
-  - name: jan_12
-    dir: world/area_jan/jan_12
-    type: code
-    start: 0xB730B0
-    vram_class: map
-    subsegments:
-    - [auto, c, settings]
-    - [auto, c, main]
-    - [auto, c, vines]
-    - [auto, c, trees]
-    - [auto, c, entity]
-    - [auto, c, npc]
-  - name: jan_13
-    dir: world/area_jan/jan_13
-    type: code
-    start: 0xB767B0
-    vram_class: map
-    subsegments:
-    - [auto, c, settings]
-    - [auto, c, main]
-    - [auto, c, puzzle]
-    - [auto, c, trees]
-    - [auto, c, entity]
-  - name: jan_14
-    dir: world/area_jan/jan_14
-    type: code
-    start: 0xB7A050
-    vram_class: map
-    subsegments:
-    - [auto, c, settings]
-    - [auto, c, main]
-    - [auto, c, vines]
-    - [auto, c, trees]
-    - [auto, c, npc]
-  - name: jan_15
-    dir: world/area_jan/jan_15
-    type: code
-    start: 0xB7D920
-    vram_class: map
-    subsegments:
-    - [auto, c, settings]
-    - [auto, c, main]
-    - [auto, c, npc]
-    - [auto, c, trees]
-    - [auto, c, entity]
-  - name: jan_16
-    dir: world/area_jan/jan_16
-    type: code
-    start: 0xB80000
-    vram_class: map
-    subsegments:
-    - [auto, c, settings]
-    - [auto, c, music]
-    - [auto, c, main]
-    - [auto, c, npc]
-    - [auto, c, entity]
-    - [auto, c, bushes]
-  - name: jan_17
-    dir: world/area_jan/jan_17
-    type: code
-    start: 0xB837C0
-    vram_class: map
-    subsegments:
-    - [auto, c, settings]
-    - [auto, c, music]
-    - [auto, c, main]
-    - [auto, c, entity]
-  - name: jan_18
-    dir: world/area_jan/jan_18
-    type: code
-    start: 0xB83B90
-    vram_class: map
-    subsegments:
-    - [auto, c, settings]
-    - [auto, c, music]
-    - [auto, c, main]
-    - [auto, c, entity]
-  - name: jan_19
-    dir: world/area_jan/jan_19
-    type: code
-    start: 0xB83E60
-    vram_class: map
-    subsegments:
-    - [auto, c, settings]
-    - [auto, c, music]
-    - [auto, c, main]
-    - [auto, c, entity]
-  - name: jan_22
-    dir: world/area_jan/jan_22
-    type: code
-    start: 0xB84180
-    vram_class: map
-    subsegments:
-    - [auto, c, settings]
-    - [auto, c, music]
-    - [auto, c, main]
-    - [auto, c, npc]
-    - [auto, c, entity]
-    - [auto, c, zipline]
-    - [auto, c, bushes]
-    - [auto, c, trees]
-  - name: jan_23
-    dir: world/area_jan/jan_23
-    type: code
-    start: 0xB8FCD0
-    vram_class: map
-    subsegments:
-    - [auto, c, settings]
-    - [auto, c, music]
-    - [auto, c, main]
-    - [auto, c, npc]
+  # - name: jan_00
+  #   dir: world/area_jan/jan_00
+  #   type: code
+  #   start: 0xB20540
+  #   vram_class: map
+  #   subsegments:
+  #   - [auto, c, settings]
+  #   - [auto, c, main]
+  #   - [auto, c, npc]
+  #   - [auto, c, entity]
+  #   - [auto, c, whale]
+  #   - [auto, c, foliage]
+  # - name: jan_01
+  #   dir: world/area_jan/jan_01
+  #   type: code
+  #   start: 0xB28030
+  #   vram_class: map
+  #   subsegments:
+  #   - [auto, c, settings]
+  #   - [auto, c, music]
+  #   - [auto, c, main]
+  #   - [auto, c, npc]
+  #   - [auto, c, entity]
+  #   - [auto, c, foliage]
+  # - name: jan_02
+  #   dir: world/area_jan/jan_02
+  #   type: code
+  #   start: 0xB2C470
+  #   vram_class: map
+  #   subsegments:
+  #   - [auto, c, settings]
+  #   - [auto, c, music]
+  #   - [auto, c, main]
+  #   - [auto, c, npc]
+  #   - [auto, c, entity]
+  #   - [auto, c, foliage]
+  # - name: jan_03
+  #   dir: world/area_jan/jan_03
+  #   type: code
+  #   start: 0xB34BD0
+  #   vram_class: map
+  #   subsegments:
+  #   - [auto, c, settings]
+  #   - [auto, c, music]
+  #   - [auto, c, main]
+  #   - [auto, c, shop]
+  #   - [auto, c, npc]
+  #   - [auto, c, entity]
+  #   - [auto, c, rooms]
+  #   - [auto, c, foliage]
+  # - name: jan_04
+  #   dir: world/area_jan/jan_04
+  #   type: code
+  #   start: 0xB44770
+  #   vram_class: map
+  #   subsegments:
+  #   - [auto, c, settings]
+  #   - [auto, c, music]
+  #   - [auto, c, main]
+  #   - [auto, c, entity]
+  #   - [auto, c, npc]
+  #   - [auto, c, unused]
+  #   - [auto, c, trees]
+  #   - [auto, c, scenes]
+  #   - [auto, c, treasure]
+  #   - [auto, c, bushes]
+  #   - [auto, c, demo]
+  # - name: jan_05
+  #   dir: world/area_jan/jan_05
+  #   type: code
+  #   start: 0xB4AA70
+  #   vram_class: map
+  #   subsegments:
+  #   - [auto, c, settings]
+  #   - [auto, c, music]
+  #   - [auto, c, main]
+  #   - [auto, c, log]
+  #   - [auto, c, bushes]
+  #   - [auto, c, npc]
+  #   - [auto, c, trees]
+  #   - [auto, c, entity]
+  # - name: jan_06
+  #   dir: world/area_jan/jan_06
+  #   type: code
+  #   start: 0xB52830
+  #   vram_class: map
+  #   subsegments:
+  #   - [auto, c, settings]
+  #   - [auto, c, main]
+  #   - [auto, c, statue]
+  #   - [auto, c, log]
+  #   - [auto, c, trees]
+  #   - [auto, c, entity]
+  #   - [auto, c, npc]
+  #   - [auto, c, bushes]
+  # - name: jan_07
+  #   dir: world/area_jan/jan_07
+  #   type: code
+  #   start: 0xB59870
+  #   vram_class: map
+  #   subsegments:
+  #   - [auto, c, settings]
+  #   - [auto, c, music]
+  #   - [auto, c, main]
+  #   - [auto, c, npc]
+  #   - [auto, c, trees]
+  #   - [auto, c, bushes]
+  # - name: jan_08
+  #   dir: world/area_jan/jan_08
+  #   type: code
+  #   start: 0xB5E2B0
+  #   vram_class: map
+  #   subsegments:
+  #   - [auto, c, settings]
+  #   - [auto, c, music]
+  #   - [auto, c, main]
+  #   - [auto, c, bushes]
+  #   - [auto, c, entity]
+  #   - [auto, c, npc]
+  #   - [auto, c, trees]
+  # - name: jan_09
+  #   dir: world/area_jan/jan_09
+  #   type: code
+  #   start: 0xB65AB0
+  #   vram_class: map
+  #   subsegments:
+  #   - [auto, c, settings]
+  #   - [auto, c, main]
+  #   - [auto, c, bushes]
+  #   - [auto, c, npc]
+  #   - [auto, c, trees]
+  #   - [auto, c, entity]
+  # - name: jan_10
+  #   dir: world/area_jan/jan_10
+  #   type: code
+  #   start: 0xB6C390
+  #   vram_class: map
+  #   subsegments:
+  #   - [auto, c, settings]
+  #   - [auto, c, music]
+  #   - [auto, c, main]
+  #   - [auto, c, npc]
+  #   - [auto, c, log]
+  #   - [auto, c, trees]
+  #   - [auto, c, bushes]
+  #   - [auto, c, entity]
+  # - name: jan_11
+  #   dir: world/area_jan/jan_11
+  #   type: code
+  #   start: 0xB70860
+  #   vram_class: map
+  #   subsegments:
+  #   - [auto, c, settings]
+  #   - [auto, c, music]
+  #   - [auto, c, main]
+  #   - [auto, c, npc]
+  # - name: jan_12
+  #   dir: world/area_jan/jan_12
+  #   type: code
+  #   start: 0xB730B0
+  #   vram_class: map
+  #   subsegments:
+  #   - [auto, c, settings]
+  #   - [auto, c, main]
+  #   - [auto, c, vines]
+  #   - [auto, c, trees]
+  #   - [auto, c, entity]
+  #   - [auto, c, npc]
+  # - name: jan_13
+  #   dir: world/area_jan/jan_13
+  #   type: code
+  #   start: 0xB767B0
+  #   vram_class: map
+  #   subsegments:
+  #   - [auto, c, settings]
+  #   - [auto, c, main]
+  #   - [auto, c, puzzle]
+  #   - [auto, c, trees]
+  #   - [auto, c, entity]
+  # - name: jan_14
+  #   dir: world/area_jan/jan_14
+  #   type: code
+  #   start: 0xB7A050
+  #   vram_class: map
+  #   subsegments:
+  #   - [auto, c, settings]
+  #   - [auto, c, main]
+  #   - [auto, c, vines]
+  #   - [auto, c, trees]
+  #   - [auto, c, npc]
+  # - name: jan_15
+  #   dir: world/area_jan/jan_15
+  #   type: code
+  #   start: 0xB7D920
+  #   vram_class: map
+  #   subsegments:
+  #   - [auto, c, settings]
+  #   - [auto, c, main]
+  #   - [auto, c, npc]
+  #   - [auto, c, trees]
+  #   - [auto, c, entity]
+  # - name: jan_16
+  #   dir: world/area_jan/jan_16
+  #   type: code
+  #   start: 0xB80000
+  #   vram_class: map
+  #   subsegments:
+  #   - [auto, c, settings]
+  #   - [auto, c, music]
+  #   - [auto, c, main]
+  #   - [auto, c, npc]
+  #   - [auto, c, entity]
+  #   - [auto, c, bushes]
+  # - name: jan_17
+  #   dir: world/area_jan/jan_17
+  #   type: code
+  #   start: 0xB837C0
+  #   vram_class: map
+  #   subsegments:
+  #   - [auto, c, settings]
+  #   - [auto, c, music]
+  #   - [auto, c, main]
+  #   - [auto, c, entity]
+  # - name: jan_18
+  #   dir: world/area_jan/jan_18
+  #   type: code
+  #   start: 0xB83B90
+  #   vram_class: map
+  #   subsegments:
+  #   - [auto, c, settings]
+  #   - [auto, c, music]
+  #   - [auto, c, main]
+  #   - [auto, c, entity]
+  # - name: jan_19
+  #   dir: world/area_jan/jan_19
+  #   type: code
+  #   start: 0xB83E60
+  #   vram_class: map
+  #   subsegments:
+  #   - [auto, c, settings]
+  #   - [auto, c, music]
+  #   - [auto, c, main]
+  #   - [auto, c, entity]
+  # - name: jan_22
+  #   dir: world/area_jan/jan_22
+  #   type: code
+  #   start: 0xB84180
+  #   vram_class: map
+  #   subsegments:
+  #   - [auto, c, settings]
+  #   - [auto, c, music]
+  #   - [auto, c, main]
+  #   - [auto, c, npc]
+  #   - [auto, c, entity]
+  #   - [auto, c, zipline]
+  #   - [auto, c, bushes]
+  #   - [auto, c, trees]
+  # - name: jan_23
+  #   dir: world/area_jan/jan_23
+  #   type: code
+  #   start: 0xB8FCD0
+  #   vram_class: map
+  #   subsegments:
+  #   - [auto, c, settings]
+  #   - [auto, c, music]
+  #   - [auto, c, main]
+  #   - [auto, c, npc]
   - name: mim_01
     dir: world/area_mim/mim_01
     type: code
@@ -12181,246 +12184,246 @@ segments:
     - [auto, c, music]
     - [auto, c, main]
     - [auto, c, npc]
-  - name: flo_00
-    dir: world/area_flo/flo_00
-    type: code
-    start: 0xC9DF20
-    vram_class: map
-    subsegments:
-    - [auto, c, settings]
-    - [auto, c, music]
-    - [auto, c, main]
-    - [auto, c, npc]
-    - [auto, c, epilogue]
-    - [auto, c, beanstalk]
-    - [auto, c, entity]
-  - name: flo_03
-    dir: world/area_flo/flo_03
-    type: code
-    start: 0xCA72A0
-    vram_class: map
-    subsegments:
-    - [auto, c, settings]
-    - [auto, c, music]
-    - [auto, c, main]
-    - [auto, c, npc]
-    - [auto, c, foliage]
-    - [auto, c, entity]
-  - name: flo_07
-    dir: world/area_flo/flo_07
-    type: code
-    start: 0xCAC1F0
-    vram_class: map
-    subsegments:
-    - [auto, c, settings]
-    - [auto, c, music]
-    - [auto, c, main]
-    - [auto, c, npc]
-  - name: flo_08
-    dir: world/area_flo/flo_08
-    type: code
-    start: 0xCAED40
-    vram_class: map
-    subsegments:
-    - [auto, c, settings]
-    - [auto, c, music]
-    - [auto, c, entity]
-    - [auto, c, main]
-    - [auto, c, npc]
-    - [auto, c, foliage]
-    - [auto, c, vines]
-  - name: flo_09
-    dir: world/area_flo/flo_09
-    type: code
-    start: 0xCB5000
-    vram_class: map
-    subsegments:
-    - [auto, c, settings]
-    - [auto, c, music]
-    - [auto, c, main]
-    - [auto, c, vines]
-    - [auto, c, foliage]
-    - [auto, c, npc]
-  - name: flo_10
-    dir: world/area_flo/flo_10
-    type: code
-    start: 0xCB9200
-    vram_class: map
-    subsegments:
-    - [auto, c, settings]
-    - [auto, c, music]
-    - [auto, c, entity]
-    - [auto, c, main]
-    - [auto, c, fountain]
-    - [auto, c, npc]
-    - [auto, c, waterfx]
-    - [auto, c, foliage]
-  - name: flo_11
-    dir: world/area_flo/flo_11
-    type: code
-    start: 0xCBDCD0
-    vram_class: map
-    subsegments:
-    - [auto, c, settings]
-    - [auto, c, music]
-    - [auto, c, main]
-    - [auto, c, npc]
-    - [auto, c, entity]
-  - name: flo_12
-    dir: world/area_flo/flo_12
-    type: code
-    start: 0xCC0E30
-    vram_class: map
-    subsegments:
-    - [auto, c, settings]
-    - [auto, c, music]
-    - [auto, c, main]
-    - [auto, c, npc]
-  - name: flo_13
-    dir: world/area_flo/flo_13
-    type: code
-    start: 0xCC3810
-    vram_class: map
-    subsegments:
-    - [auto, c, settings]
-    - [auto, c, music]
-    - [auto, c, entity]
-    - [auto, c, main]
-    - [auto, c, npc]
-    - [auto, c, new_partner]
-  - name: flo_14
-    dir: world/area_flo/flo_14
-    type: code
-    start: 0xCCB310
-    vram_class: map
-    subsegments:
-    - [auto, c, settings]
-    - [auto, c, music]
-    - [auto, c, main]
-    - [auto, c, bubbles]
-    - [auto, c, npc]
-    - [auto, c, entity]
-    - [auto, c, logs]
-  - name: flo_15
-    dir: world/area_flo/flo_15
-    type: code
-    start: 0xCD06C0
-    vram_class: map
-    subsegments:
-    - [auto, c, settings]
-    - [auto, c, music]
-    - [auto, c, main]
-    - [auto, c, npc]
-    - [auto, c, entity]
-    - [auto, c, stairs]
-  - name: flo_16
-    dir: world/area_flo/flo_16
-    type: code
-    start: 0xCD1E30
-    vram_class: map
-    subsegments:
-    - [auto, c, settings]
-    - [auto, c, music]
-    - [auto, c, main]
-    - [auto, c, vines]
-    - [auto, c, entity]
-    - [auto, c, npc]
-    - [auto, c, puzzle]
-  - name: flo_17
-    dir: world/area_flo/flo_17
-    type: code
-    start: 0xCD72E0
-    vram_class: map
-    subsegments:
-    - [auto, c, settings]
-    - [auto, c, music]
-    - [auto, c, main]
-    - [auto, c, logs]
-    - [auto, c, npc]
-    - [auto, c, entity]
-  - name: flo_18
-    dir: world/area_flo/flo_18
-    type: code
-    start: 0xCDC6A0
-    vram_class: map
-    subsegments:
-    - [auto, c, settings]
-    - [auto, c, music]
-    - [auto, c, main]
-    - [auto, c, machine]
-    - [auto, c, npc]
-    - [auto, c, foliage]
-  - name: flo_19
-    dir: world/area_flo/flo_19
-    type: code
-    start: 0xCE36F0
-    vram_class: map
-    subsegments:
-    - [auto, c, settings]
-    - [auto, c, music]
-    - [auto, c, entity]
-    - [auto, c, main]
-    - [auto, c, clouds]
-    - [auto, c, beanstalk]
-  - name: flo_21
-    dir: world/area_flo/flo_21
-    type: code
-    start: 0xCE6700
-    vram_class: map
-    subsegments:
-    - [auto, c, settings]
-    - [auto, c, music]
-    - [auto, c, main]
-    - [auto, c, clouds]
-    - [auto, c, npc]
-  - name: flo_22
-    dir: world/area_flo/flo_22
-    type: code
-    start: 0xCEC240
-    vram_class: map
-    subsegments:
-    - [auto, c, settings]
-    - [auto, c, music]
-    - [auto, c, main]
-    - [auto, c, npc]
-    - [auto, c, well]
-    - [auto, c, foliage]
-  - name: flo_23
-    dir: world/area_flo/flo_23
-    type: code
-    start: 0xCEE260
-    vram_class: map
-    subsegments:
-    - [auto, c, settings]
-    - [auto, c, music]
-    - [auto, c, main]
-    - [auto, c, npc]
-    - [auto, c, entity]
-  - name: flo_24
-    dir: world/area_flo/flo_24
-    type: code
-    start: 0xCF0940
-    vram_class: map
-    subsegments:
-    - [auto, c, settings]
-    - [auto, c, music]
-    - [auto, c, main]
-    - [auto, c, foliage]
-    - [auto, c, water]
-    - [auto, c, entity]
-  - name: flo_25
-    dir: world/area_flo/flo_25
-    type: code
-    start: 0xCF2BD0
-    vram_class: map
-    subsegments:
-    - [auto, c, settings]
-    - [auto, c, music]
-    - [auto, c, main]
-    - [auto, c, npc]
-    - [auto, c, entity]
-    - [auto, c, foliage]
-    - [auto, c, vine]
+  # - name: flo_00
+  #   dir: world/area_flo/flo_00
+  #   type: code
+  #   start: 0xC9DF20
+  #   vram_class: map
+  #   subsegments:
+  #   - [auto, c, settings]
+  #   - [auto, c, music]
+  #   - [auto, c, main]
+  #   - [auto, c, npc]
+  #   - [auto, c, epilogue]
+  #   - [auto, c, beanstalk]
+  #   - [auto, c, entity]
+  # - name: flo_03
+  #   dir: world/area_flo/flo_03
+  #   type: code
+  #   start: 0xCA72A0
+  #   vram_class: map
+  #   subsegments:
+  #   - [auto, c, settings]
+  #   - [auto, c, music]
+  #   - [auto, c, main]
+  #   - [auto, c, npc]
+  #   - [auto, c, foliage]
+  #   - [auto, c, entity]
+  # - name: flo_07
+  #   dir: world/area_flo/flo_07
+  #   type: code
+  #   start: 0xCAC1F0
+  #   vram_class: map
+  #   subsegments:
+  #   - [auto, c, settings]
+  #   - [auto, c, music]
+  #   - [auto, c, main]
+  #   - [auto, c, npc]
+  # - name: flo_08
+  #   dir: world/area_flo/flo_08
+  #   type: code
+  #   start: 0xCAED40
+  #   vram_class: map
+  #   subsegments:
+  #   - [auto, c, settings]
+  #   - [auto, c, music]
+  #   - [auto, c, entity]
+  #   - [auto, c, main]
+  #   - [auto, c, npc]
+  #   - [auto, c, foliage]
+  #   - [auto, c, vines]
+  # - name: flo_09
+  #   dir: world/area_flo/flo_09
+  #   type: code
+  #   start: 0xCB5000
+  #   vram_class: map
+  #   subsegments:
+  #   - [auto, c, settings]
+  #   - [auto, c, music]
+  #   - [auto, c, main]
+  #   - [auto, c, vines]
+  #   - [auto, c, foliage]
+  #   - [auto, c, npc]
+  # - name: flo_10
+  #   dir: world/area_flo/flo_10
+  #   type: code
+  #   start: 0xCB9200
+  #   vram_class: map
+  #   subsegments:
+  #   - [auto, c, settings]
+  #   - [auto, c, music]
+  #   - [auto, c, entity]
+  #   - [auto, c, main]
+  #   - [auto, c, fountain]
+  #   - [auto, c, npc]
+  #   - [auto, c, waterfx]
+  #   - [auto, c, foliage]
+  # - name: flo_11
+  #   dir: world/area_flo/flo_11
+  #   type: code
+  #   start: 0xCBDCD0
+  #   vram_class: map
+  #   subsegments:
+  #   - [auto, c, settings]
+  #   - [auto, c, music]
+  #   - [auto, c, main]
+  #   - [auto, c, npc]
+  #   - [auto, c, entity]
+  # - name: flo_12
+  #   dir: world/area_flo/flo_12
+  #   type: code
+  #   start: 0xCC0E30
+  #   vram_class: map
+  #   subsegments:
+  #   - [auto, c, settings]
+  #   - [auto, c, music]
+  #   - [auto, c, main]
+  #   - [auto, c, npc]
+  # - name: flo_13
+  #   dir: world/area_flo/flo_13
+  #   type: code
+  #   start: 0xCC3810
+  #   vram_class: map
+  #   subsegments:
+  #   - [auto, c, settings]
+  #   - [auto, c, music]
+  #   - [auto, c, entity]
+  #   - [auto, c, main]
+  #   - [auto, c, npc]
+  #   - [auto, c, new_partner]
+  # - name: flo_14
+  #   dir: world/area_flo/flo_14
+  #   type: code
+  #   start: 0xCCB310
+  #   vram_class: map
+  #   subsegments:
+  #   - [auto, c, settings]
+  #   - [auto, c, music]
+  #   - [auto, c, main]
+  #   - [auto, c, bubbles]
+  #   - [auto, c, npc]
+  #   - [auto, c, entity]
+  #   - [auto, c, logs]
+  # - name: flo_15
+  #   dir: world/area_flo/flo_15
+  #   type: code
+  #   start: 0xCD06C0
+  #   vram_class: map
+  #   subsegments:
+  #   - [auto, c, settings]
+  #   - [auto, c, music]
+  #   - [auto, c, main]
+  #   - [auto, c, npc]
+  #   - [auto, c, entity]
+  #   - [auto, c, stairs]
+  # - name: flo_16
+  #   dir: world/area_flo/flo_16
+  #   type: code
+  #   start: 0xCD1E30
+  #   vram_class: map
+  #   subsegments:
+  #   - [auto, c, settings]
+  #   - [auto, c, music]
+  #   - [auto, c, main]
+  #   - [auto, c, vines]
+  #   - [auto, c, entity]
+  #   - [auto, c, npc]
+  #   - [auto, c, puzzle]
+  # - name: flo_17
+  #   dir: world/area_flo/flo_17
+  #   type: code
+  #   start: 0xCD72E0
+  #   vram_class: map
+  #   subsegments:
+  #   - [auto, c, settings]
+  #   - [auto, c, music]
+  #   - [auto, c, main]
+  #   - [auto, c, logs]
+  #   - [auto, c, npc]
+  #   - [auto, c, entity]
+  # - name: flo_18
+  #   dir: world/area_flo/flo_18
+  #   type: code
+  #   start: 0xCDC6A0
+  #   vram_class: map
+  #   subsegments:
+  #   - [auto, c, settings]
+  #   - [auto, c, music]
+  #   - [auto, c, main]
+  #   - [auto, c, machine]
+  #   - [auto, c, npc]
+  #   - [auto, c, foliage]
+  # - name: flo_19
+  #   dir: world/area_flo/flo_19
+  #   type: code
+  #   start: 0xCE36F0
+  #   vram_class: map
+  #   subsegments:
+  #   - [auto, c, settings]
+  #   - [auto, c, music]
+  #   - [auto, c, entity]
+  #   - [auto, c, main]
+  #   - [auto, c, clouds]
+  #   - [auto, c, beanstalk]
+  # - name: flo_21
+  #   dir: world/area_flo/flo_21
+  #   type: code
+  #   start: 0xCE6700
+  #   vram_class: map
+  #   subsegments:
+  #   - [auto, c, settings]
+  #   - [auto, c, music]
+  #   - [auto, c, main]
+  #   - [auto, c, clouds]
+  #   - [auto, c, npc]
+  # - name: flo_22
+  #   dir: world/area_flo/flo_22
+  #   type: code
+  #   start: 0xCEC240
+  #   vram_class: map
+  #   subsegments:
+  #   - [auto, c, settings]
+  #   - [auto, c, music]
+  #   - [auto, c, main]
+  #   - [auto, c, npc]
+  #   - [auto, c, well]
+  #   - [auto, c, foliage]
+  # - name: flo_23
+  #   dir: world/area_flo/flo_23
+  #   type: code
+  #   start: 0xCEE260
+  #   vram_class: map
+  #   subsegments:
+  #   - [auto, c, settings]
+  #   - [auto, c, music]
+  #   - [auto, c, main]
+  #   - [auto, c, npc]
+  #   - [auto, c, entity]
+  # - name: flo_24
+  #   dir: world/area_flo/flo_24
+  #   type: code
+  #   start: 0xCF0940
+  #   vram_class: map
+  #   subsegments:
+  #   - [auto, c, settings]
+  #   - [auto, c, music]
+  #   - [auto, c, main]
+  #   - [auto, c, foliage]
+  #   - [auto, c, water]
+  #   - [auto, c, entity]
+  # - name: flo_25
+  #   dir: world/area_flo/flo_25
+  #   type: code
+  #   start: 0xCF2BD0
+  #   vram_class: map
+  #   subsegments:
+  #   - [auto, c, settings]
+  #   - [auto, c, music]
+  #   - [auto, c, main]
+  #   - [auto, c, npc]
+  #   - [auto, c, entity]
+  #   - [auto, c, foliage]
+  #   - [auto, c, vine]
   - name: sam_01
     dir: world/area_sam/sam_01
     type: code

@@ -29,13 +29,13 @@
 #define DX_SKIP_DEMO 1
 
 /// Map to load when starting a new game.
-#define NEW_GAME_MAP_ID "mim_01"
+#define NEW_GAME_MAP_ID "kmr_20"
 
 /// Entry to use when starting a new game.
-#define NEW_GAME_ENTRY_ID mim_01_ENTRY_1
+#define NEW_GAME_ENTRY_ID kmr_20_ENTRY_4
 
 /// Story progress when starting a new game.
-#define NEW_GAME_STORY_PROGRESS     STORY_MOD_INTRO
+#define NEW_GAME_STORY_PROGRESS     STORY_MOD_CUTSCENE_1
 
 /// Enables the profiler, which shows lots of performance info on screen.
 /// Press L + D-Pad Up to show/hide the profiler.

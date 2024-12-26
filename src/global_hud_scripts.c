@@ -708,6 +708,11 @@ INCLUDE_PAL("ui/move_partner_3.pal", ui_move_partner_3_pal);
 #define ui_move_partner_3_disabled_png ui_move_partner_3_png
 INCLUDE_PAL("ui/move_partner_3.disabled.pal", ui_move_partner_3_disabled_pal);
 
+INCLUDE_IMG("ui/move_partner_4.png", ui_move_partner_4_png);
+INCLUDE_PAL("ui/move_partner_4.pal", ui_move_partner_4_pal);
+#define ui_move_partner_4_disabled_png ui_move_partner_4_png
+INCLUDE_PAL("ui/move_partner_4.disabled.pal", ui_move_partner_4_disabled_pal);
+
 Gfx D_801041A0[] = {
     gsSPEndDisplayList(),
 };
@@ -2596,6 +2601,8 @@ HudScript HES_MoveGreenOrb = HES_TEMPLATE_CI_ENUM_SIZE(ui_move_partner_2, 32, 32
 
 HudScript HES_MoveRedOrb = HES_TEMPLATE_CI_ENUM_SIZE(ui_move_partner_3, 32, 32);
 
+HudScript HES_MovePurpleOrb = HES_TEMPLATE_CI_ENUM_SIZE(ui_move_partner_4, 32, 32);
+
 HudScript HES_MoveDiamond_disabled = HES_TEMPLATE_CI_ENUM_SIZE(ui_move_basic_disabled, 32, 32);
 
 HudScript HES_MoveBlueOrbDisabled = HES_TEMPLATE_CI_ENUM_SIZE(ui_move_partner_1_disabled, 32, 32);
@@ -2603,3 +2610,5 @@ HudScript HES_MoveBlueOrbDisabled = HES_TEMPLATE_CI_ENUM_SIZE(ui_move_partner_1_
 HudScript HES_MoveGreenOrbDisabled = HES_TEMPLATE_CI_ENUM_SIZE(ui_move_partner_2_disabled, 32, 32);
 
 HudScript HES_MoveRedOrbDisabled = HES_TEMPLATE_CI_ENUM_SIZE(ui_move_partner_3_disabled, 32, 32);
+
+HudScript HES_MovePurpleOrbDisabled = HES_TEMPLATE_CI_ENUM_SIZE(ui_move_partner_4_disabled, 32, 32);
