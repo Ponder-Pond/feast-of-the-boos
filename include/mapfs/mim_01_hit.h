@@ -6,7 +6,7 @@
 #define COLLIDER_GreenPipeTop   0x28
 #define COLLIDER_GreenPipeBody  0x27
 #define COLLIDER_monw2          0x26
-#define COLLIDER_RockGroup2 0x25
+#define COLLIDER_RockGroup2     0x25
 #define COLLIDER_Rock2Col       0x24
 #define COLLIDER_RockGroup1     0x23
 #define COLLIDER_Rock1Col       0x22
@@ -58,3 +58,4 @@
 #define ZONE_higashi            0x2
 #define ZONE_kaiten             0x1
 #define ZONE_stage              0x0
+

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Map desc="Flower Sounds" background="fob_bg" textures="mim_tex">
 	<Editor>
-		<Camera pos="437.786652,139.057495,96.643417" pitch="16.640009" yaw="272.480591"/>
+		<Camera pos="448.173615,193.257126,34.869583" pitch="5.279966" yaw="241.120834"/>
 		<Camera pos="276.416595,65536.000000,-163.585770"/>
 		<Camera pos="65536.000000,24.927225,-200.014175"/>
 		<Camera pos="282.036163,41.103729,65536.000000"/>
@@ -278,7 +278,7 @@
 			<Node name="RockGroup1" id="23">
 				<Node name="Rock1Col" id="22"/>
 			</Node>
-			<Node name="RightRockGroup" id="25">
+			<Node name="RockGroup2" id="25">
 				<Node name="Rock2Col" id="24"/>
 			</Node>
 			<Node name="monw2" id="26"/>
@@ -8238,7 +8238,7 @@
 			</HitMesh>
 		</Collider>
 		<Collider ver="0" flags="0" surface="0">
-			<MapObject name="RightRockGroup" id="25"/>
+			<MapObject name="RockGroup2" id="25"/>
 			<HitObject type="GROUP"/>
 		</Collider>
 		<Collider ver="0" flags="0" surface="0">
