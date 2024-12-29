@@ -576,5 +576,15 @@
         },
         "filter": true,
         "combine": "Multiply"
+    },
+    {
+        "name": "mim_snowtoptif",
+        "main": {
+            "format": "CI4",
+            "hwrap": "Mirror",
+            "vwrap": "Mirror"
+        },
+        "filter": true,
+        "combine": "Multiply"
     }
 ]

@@ -1,4 +1,5 @@
-#define MODEL_Root              0x21
+#define MODEL_Root              0x22
+#define MODEL_kusa              0x21
 #define MODEL_dai               0x20
 #define MODEL_waku1             0x1F
 #define MODEL_y                 0x1E
