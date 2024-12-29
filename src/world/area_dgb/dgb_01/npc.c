@@ -435,7 +435,7 @@ NpcGroupList N(ThirdFloorEscapeNPCs) = {
     NPC_GROUP(N(NpcData_Sentinel_02)),
     NPC_GROUP(N(NpcData_Sentinel_03)),
     NPC_GROUP(N(NpcData_Sentinel_04)),
-    NPC_GROUP(N(NpcData_Tubba_Floor3), BTL_DGB_FORMATION_04),
+    // NPC_GROUP(N(NpcData_Tubba_Floor3), BTL_DGB_FORMATION_04),
     {}
 };
 
@@ -444,7 +444,7 @@ NpcGroupList N(SecondFloorEscapeNPCs) = {
     NPC_GROUP(N(NpcData_Sentinel_02)),
     NPC_GROUP(N(NpcData_Sentinel_03)),
     NPC_GROUP(N(NpcData_Sentinel_04)),
-    NPC_GROUP(N(NpcData_Tubba_Floor2), BTL_DGB_FORMATION_04, BTL_DGB_STAGE_00),
+    // NPC_GROUP(N(NpcData_Tubba_Floor2), BTL_DGB_FORMATION_04, BTL_DGB_STAGE_00),
     {}
 };
 
@@ -453,6 +453,6 @@ NpcGroupList N(FirstFloorEscapeNPCs) = {
     NPC_GROUP(N(NpcData_Sentinel_02)),
     NPC_GROUP(N(NpcData_Sentinel_03)),
     NPC_GROUP(N(NpcData_Sentinel_04)),
-    NPC_GROUP(N(NpcData_Tubba_Floor1), BTL_DGB_FORMATION_04, BTL_DGB_STAGE_00),
+    // NPC_GROUP(N(NpcData_Tubba_Floor1), BTL_DGB_FORMATION_04, BTL_DGB_STAGE_00),
     {}
 };

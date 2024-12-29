@@ -803,7 +803,7 @@ NpcData N(NpcData_Skolar) = {
 };
 
 NpcGroupList N(BossNPCs) = {
-    NPC_GROUP(N(NpcData_Tubba), BTL_ARN_FORMATION_10, BTL_ARN_STAGE_01),
+    // NPC_GROUP(N(NpcData_Tubba), BTL_ARN_FORMATION_10, BTL_ARN_STAGE_01),
     NPC_GROUP(N(NpcData_Boos)),
     NPC_GROUP(N(NpcData_Bow)),
     NPC_GROUP(N(NpcData_Bootler)),
@@ -811,9 +811,9 @@ NpcGroupList N(BossNPCs) = {
 };
 
 NpcGroupList N(DefaultNPCs) = {
-    NPC_GROUP(N(NpcData_HyperParagoomba_01), BTL_ARN_FORMATION_06, BTL_ARN_STAGE_01),
-    NPC_GROUP(N(NpcData_HyperParagoomba_02), BTL_ARN_FORMATION_07, BTL_ARN_STAGE_01),
-    NPC_GROUP(N(NpcData_HyperParagoomba_03), BTL_ARN_FORMATION_08, BTL_ARN_STAGE_01),
+    // NPC_GROUP(N(NpcData_HyperParagoomba_01), BTL_ARN_FORMATION_06, BTL_ARN_STAGE_01),
+    // NPC_GROUP(N(NpcData_HyperParagoomba_02), BTL_ARN_FORMATION_07, BTL_ARN_STAGE_01),
+    // NPC_GROUP(N(NpcData_HyperParagoomba_03), BTL_ARN_FORMATION_08, BTL_ARN_STAGE_01),
     {}
 };
 

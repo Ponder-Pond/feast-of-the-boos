@@ -261,7 +261,7 @@ void state_step_demo(void) {
             set_game_mode(GAME_MODE_ENTER_DEMO_WORLD);
             break;
         case DEMO_SCENE_BATTLE:
-            load_demo_battle(demoSceneData->index);
+            // load_demo_battle(demoSceneData->index);
             break;
     }
 

@@ -90,7 +90,7 @@ NpcData N(NpcData_Bubulb) = {
 };
 
 NpcGroupList N(DefaultNPCs) = {
-    NPC_GROUP(N(NpcData_Fuzzy), BTL_MIM_FORMATION_04, BTL_MIM_STAGE_00),
+    // NPC_GROUP(N(NpcData_Fuzzy), BTL_MIM_FORMATION_04, BTL_MIM_STAGE_00),
     NPC_GROUP(N(NpcData_Bubulb)),
     {}
 };

@@ -161,6 +161,6 @@ NpcData N(NpcData_TubbasHeart) = {
 };
 
 NpcGroupList N(DefaultNPCs) = {
-    NPC_GROUP(N(NpcData_TubbasHeart), BTL_ARN_FORMATION_0F),
+    // NPC_GROUP(N(NpcData_TubbasHeart), BTL_ARN_FORMATION_0F),
     {}
 };

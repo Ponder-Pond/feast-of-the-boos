@@ -96,8 +96,8 @@ NpcData N(NpcData_Sentinel) = {
 };
 
 NpcGroupList N(DefaultNPCs) = {
-    NPC_GROUP(N(NpcData_Clubba_Wander), BTL_DGB_FORMATION_03, BTL_DGB_STAGE_00),
-    NPC_GROUP(N(NpcData_Clubba_Napping), BTL_DGB_FORMATION_01, BTL_DGB_STAGE_00),
+    // NPC_GROUP(N(NpcData_Clubba_Wander), BTL_DGB_FORMATION_03, BTL_DGB_STAGE_00),
+    // NPC_GROUP(N(NpcData_Clubba_Napping), BTL_DGB_FORMATION_01, BTL_DGB_STAGE_00),
     NPC_GROUP(N(NpcData_Sentinel)),
     {}
 };

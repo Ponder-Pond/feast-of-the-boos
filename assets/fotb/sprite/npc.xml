@@ -235,5 +235,6 @@
         <Sprite name="Leaf"/>
         <Sprite name="InsectsDK3"/>
         <Sprite name="Panser"/>
+        <Sprite name="BooBully"/>
     </Sprites>
 </Names>

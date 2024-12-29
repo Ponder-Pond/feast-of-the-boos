@@ -1,5 +1,5 @@
 #include "../area.h"
-#include "sprite/npc/Boo.h"
+#include "sprite/npc/BooBully.h"
 
 #define NAMESPACE A(boo_bully)
 
@@ -10,6 +10,7 @@ extern EvtScript N(EVS_Idle);
 extern EvtScript N(EVS_TakeTurn);
 extern EvtScript N(EVS_HandleEvent);
 extern EvtScript N(EVS_Attack_Scare);
+extern EvtScript N(EVS_Move_PowerTransfer);
 
 enum N(ActorPartIDs) {
     PRT_MAIN        = 1,
@@ -20,15 +21,15 @@ enum N(ActorParams) {
 };
 
 s32 N(DefaultAnims)[] = {
-    STATUS_KEY_NORMAL,    ANIM_Boo_Idle,
-    STATUS_KEY_STONE,     ANIM_Boo_Still,
-    STATUS_KEY_SLEEP,     ANIM_Boo_Idle,
-    STATUS_KEY_POISON,    ANIM_Boo_Idle,
-    STATUS_KEY_STOP,      ANIM_Boo_Still,
-    STATUS_KEY_STATIC,    ANIM_Boo_Idle,
-    STATUS_KEY_PARALYZE,  ANIM_Boo_Still,
-    STATUS_KEY_DIZZY,     ANIM_Boo_Idle,
-    STATUS_KEY_FEAR,      ANIM_Boo_Idle,
+    STATUS_KEY_NORMAL,    ANIM_BooBully_Idle,
+    STATUS_KEY_STONE,     ANIM_BooBully_Still,
+    STATUS_KEY_SLEEP,     ANIM_BooBully_Idle,
+    STATUS_KEY_POISON,    ANIM_BooBully_Idle,
+    STATUS_KEY_STOP,      ANIM_BooBully_Still,
+    STATUS_KEY_STATIC,    ANIM_BooBully_Idle,
+    STATUS_KEY_PARALYZE,  ANIM_BooBully_Still,
+    STATUS_KEY_DIZZY,     ANIM_BooBully_Idle,
+    STATUS_KEY_FEAR,      ANIM_BooBully_Idle,
     STATUS_END,
 };
 
@@ -66,7 +67,7 @@ ActorPartBlueprint N(ActorParts)[] = {
     {
         .flags = ACTOR_PART_FLAG_PRIMARY_TARGET,
         .index = PRT_MAIN,
-        .posOffset = { 0, 20, 0 },
+        .posOffset = { 0, 0, 0 },
         .targetOffset = { 0, 24 },
         .opacity = 255,
         .idleAnimations = N(DefaultAnims),
@@ -117,9 +118,9 @@ EvtScript N(EVS_Idle) = {
 EvtScript N(EVS_ReturnHome) = {
     Call(ResetAllActorSounds, ACTOR_SELF)
     SetConst(LVar0, PRT_MAIN)
-    SetConst(LVar1, ANIM_Boo_Idle)
+    SetConst(LVar1, ANIM_BooBully_Idle)
     ExecWait(EVS_Enemy_ReturnHome)
-    Call(SetAnimation, ACTOR_SELF, PRT_MAIN, ANIM_Boo_Idle)
+    Call(SetAnimation, ACTOR_SELF, PRT_MAIN, ANIM_BooBully_Idle)
     Return
     End
 };
@@ -132,65 +133,65 @@ EvtScript N(EVS_HandleEvent) = {
         CaseOrEq(EVENT_HIT_COMBO)
         CaseOrEq(EVENT_HIT)
             SetConst(LVar0, PRT_MAIN)
-            SetConst(LVar1, ANIM_Boo_Flail)
+            SetConst(LVar1, ANIM_BooBully_Flail)
             ExecWait(EVS_Enemy_Hit)
         EndCaseGroup
         CaseEq(EVENT_BURN_HIT)
             SetConst(LVar0, PRT_MAIN)
-            SetConst(LVar1, ANIM_Boo_Flail) //BurnHurt
-            SetConst(LVar2, ANIM_Boo_Flail) //BurnStill
+            SetConst(LVar1, ANIM_BooBully_Flail) //BurnHurt
+            SetConst(LVar2, ANIM_BooBully_Flail) //BurnStill
             ExecWait(EVS_Enemy_BurnHit)
         CaseEq(EVENT_BURN_DEATH)
             SetConst(LVar0, PRT_MAIN)
-            SetConst(LVar1, ANIM_Boo_Flail) //BurnHurt
-            SetConst(LVar2, ANIM_Boo_Flail) //BurnStill
+            SetConst(LVar1, ANIM_BooBully_Flail) //BurnHurt
+            SetConst(LVar2, ANIM_BooBully_Flail) //BurnStill
             ExecWait(EVS_Enemy_BurnHit)
             SetConst(LVar0, PRT_MAIN)
-            SetConst(LVar1, ANIM_Boo_Flail) //BurnStill
+            SetConst(LVar1, ANIM_BooBully_Flail) //BurnStill
             ExecWait(EVS_Enemy_Death)
             Return
         CaseEq(EVENT_SPIN_SMASH_HIT)
             SetConst(LVar0, PRT_MAIN)
-            SetConst(LVar1, ANIM_Boo_Flail)
+            SetConst(LVar1, ANIM_BooBully_Flail)
             ExecWait(EVS_Enemy_SpinSmashHit)
         CaseEq(EVENT_SPIN_SMASH_DEATH)
             SetConst(LVar0, PRT_MAIN)
-            SetConst(LVar1, ANIM_Boo_Flail)
+            SetConst(LVar1, ANIM_BooBully_Flail)
             ExecWait(EVS_Enemy_SpinSmashHit)
             SetConst(LVar0, PRT_MAIN)
-            SetConst(LVar1, ANIM_Boo_Flail) //Death
+            SetConst(LVar1, ANIM_BooBully_Flail) //Death
             ExecWait(EVS_Enemy_Death)
             Return
         CaseEq(EVENT_SHOCK_HIT)
             SetConst(LVar0, PRT_MAIN)
-            SetConst(LVar1, ANIM_Boo_Flail)
+            SetConst(LVar1, ANIM_BooBully_Flail)
             ExecWait(EVS_Enemy_ShockHit)
             SetConst(LVar0, PRT_MAIN)
-            SetConst(LVar1, ANIM_Boo_Flail)
+            SetConst(LVar1, ANIM_BooBully_Flail)
             ExecWait(EVS_Enemy_Knockback)
             ExecWait(N(EVS_ReturnHome))
         CaseEq(EVENT_SHOCK_DEATH)
             SetConst(LVar0, PRT_MAIN)
-            SetConst(LVar1, ANIM_Boo_Flail)
+            SetConst(LVar1, ANIM_BooBully_Flail)
             ExecWait(EVS_Enemy_ShockHit)
             SetConst(LVar0, PRT_MAIN)
-            SetConst(LVar1, ANIM_Boo_Flail)//Death
+            SetConst(LVar1, ANIM_BooBully_Flail)//Death
             ExecWait(EVS_Enemy_Death)
             Return
         CaseOrEq(EVENT_ZERO_DAMAGE)
         CaseOrEq(EVENT_IMMUNE)
         CaseOrEq(EVENT_AIR_LIFT_FAILED)
             SetConst(LVar0, PRT_MAIN)
-            SetConst(LVar1, ANIM_Boo_Idle)
+            SetConst(LVar1, ANIM_BooBully_Idle)
             ExecWait(EVS_Enemy_NoDamageHit)
         EndCaseGroup
         CaseEq(EVENT_DEATH)
             SetConst(LVar0, PRT_MAIN)
-            SetConst(LVar1, ANIM_Boo_Flail)
+            SetConst(LVar1, ANIM_BooBully_Flail)
             ExecWait(EVS_Enemy_Hit)
             Wait(10)
             SetConst(LVar0, PRT_MAIN)
-            SetConst(LVar1, ANIM_Boo_Flail)//Death
+            SetConst(LVar1, ANIM_BooBully_Flail)//Death
             ExecWait(EVS_Enemy_Death)
             Return
         CaseEq(EVENT_BEGIN_FIRST_STRIKE)
@@ -201,18 +202,18 @@ EvtScript N(EVS_HandleEvent) = {
             Call(HPBarToHome, ACTOR_SELF)
         CaseEq(EVENT_RECOVER_STATUS)
             SetConst(LVar0, PRT_MAIN)
-            SetConst(LVar1, ANIM_Boo_Idle)
+            SetConst(LVar1, ANIM_BooBully_Idle)
             ExecWait(EVS_Enemy_Recover)
         CaseEq(EVENT_SCARE_AWAY)
             Call(SetActorFlagBits, ACTOR_SELF, ACTOR_FLAG_FLYING, FALSE)
             SetConst(LVar0, PRT_MAIN)
-            SetConst(LVar1, ANIM_Boo_Idle)//Move?
-            SetConst(LVar2, ANIM_Boo_Flail)
+            SetConst(LVar1, ANIM_BooBully_Idle)//Move?
+            SetConst(LVar2, ANIM_BooBully_Flail)
             ExecWait(EVS_Enemy_ScareAway)
             Return
         CaseEq(EVENT_BEGIN_AIR_LIFT)
             SetConst(LVar0, PRT_MAIN)
-            SetConst(LVar1, ANIM_Boo_Idle)
+            SetConst(LVar1, ANIM_BooBully_Idle)
             ExecWait(EVS_Enemy_AirLift)
         CaseEq(EVENT_BLOW_AWAY)
             Call(GetStatusFlags, ACTOR_SELF, LVar0)
@@ -224,7 +225,7 @@ EvtScript N(EVS_HandleEvent) = {
                 EndIf
             EndIf
             SetConst(LVar0, PRT_MAIN)
-            SetConst(LVar1, ANIM_Boo_Flail)
+            SetConst(LVar1, ANIM_BooBully_Flail)
             ExecWait(EVS_Enemy_BlowAway)
         CaseDefault
     EndSwitch
@@ -237,7 +238,19 @@ EvtScript N(EVS_HandleEvent) = {
 EvtScript N(EVS_TakeTurn) = {
     Call(EnableIdleScript, ACTOR_SELF, IDLE_SCRIPT_DISABLE)
     Call(UseIdleAnimation, ACTOR_SELF, FALSE)
-    ExecWait(N(EVS_Attack_Scare))
+    Call(CountTargets, ACTOR_SELF, TARGET_FLAG_2 | TARGET_FLAG_PRIMARY_ONLY, LVar0)
+    IfEq(LVar0, 1)
+        ExecWait(N(EVS_Attack_Scare))
+        Return
+    Else
+        Call(RandInt, 100, LVar4)
+        Switch(LVar4)
+            CaseLt(20)
+                ExecWait(N(EVS_Move_PowerTransfer))
+            CaseDefault
+                ExecWait(N(EVS_Attack_Scare))
+        EndSwitch
+    EndIf
     Call(EnableIdleScript, ACTOR_SELF, IDLE_SCRIPT_ENABLE)
     Call(UseIdleAnimation, ACTOR_SELF, TRUE)
     Return
@@ -256,7 +269,7 @@ EvtScript N(EVS_Attack_Scare) = {
 		Call(SetPartAlpha, ACTOR_SELF, PRT_MAIN, LVar0)
 		Wait(1)
 	EndLoop
-	Call(SetAnimation, ACTOR_SELF, PRT_MAIN, ANIM_Boo_Conceal) //Hide
+	Call(SetAnimation, ACTOR_SELF, PRT_MAIN, ANIM_BooBully_Conceal) //Hide
 	Wait(20)
 	Call(UseBattleCamPreset, BTL_CAM_REPOSITION)
 	Call(SetGoalToTarget, ACTOR_SELF)
@@ -282,8 +295,8 @@ EvtScript N(EVS_Attack_Scare) = {
 		Call(SetPartAlpha, ACTOR_SELF, PRT_MAIN, LVar0)
 		Wait(1)
 	EndLoop
-	Call(SetAnimation, ACTOR_SELF, PRT_MAIN, ANIM_Boo_Spook)//Scare
-	Wait(28)
+	Call(SetAnimation, ACTOR_SELF, PRT_MAIN, ANIM_BooBully_Scare)
+    Wait(28)
 	Call(EnemyTestTarget, ACTOR_SELF, LVar0, DAMAGE_TYPE_NO_CONTACT, 0, 1, BS_FLAGS1_INCLUDE_POWER_UPS)
 	Switch(LVar0)
         CaseOrEq(HIT_RESULT_MISS)
@@ -296,7 +309,7 @@ EvtScript N(EVS_Attack_Scare) = {
 		EndCaseGroup
 	EndSwitch
 	Call(PlaySoundAtActor, ACTOR_SELF, SOUND_BOO_SPOOK)
-	Wait(5)
+	Wait(2)
     Call(SetGoalToTarget, ACTOR_SELF)
 	Call(EnemyDamageTarget, ACTOR_SELF, LVar0, DAMAGE_TYPE_NO_CONTACT, 0, 0, DMG_SCARE, BS_FLAGS1_TRIGGER_EVENTS) // 3 Damage
 	Label(LBL_SKIP_DAMAGE)
@@ -314,7 +327,7 @@ EvtScript N(EVS_Attack_Scare) = {
 	Call(SetGoalToHome, ACTOR_SELF)
 	Call(SetActorSpeed, ACTOR_SELF, Float(10.0))
 	Call(FlyToGoal, ACTOR_SELF, 30, 0, EASING_COS_IN_OUT)
-	Call(SetAnimation, ACTOR_SELF, PRT_MAIN, ANIM_Boo_Idle)
+	Call(SetAnimation, ACTOR_SELF, PRT_MAIN, ANIM_BooBully_Idle)
 	Call(PlaySoundAtActor, ACTOR_SELF, SOUND_BOO_APPEAR_A)
 	SetF(LVar0, 0)
 	Loop(16)
@@ -322,6 +335,82 @@ EvtScript N(EVS_Attack_Scare) = {
 		Call(SetPartAlpha, ACTOR_SELF, PRT_MAIN, LVar0)
 		Wait(1)
 	EndLoop
+    Call(EnableIdleScript, ACTOR_SELF, IDLE_SCRIPT_ENABLE)
+    Call(UseIdleAnimation, ACTOR_SELF, TRUE)
+    Return
+    End
+};
+
+#include "common/battle/CheckMagikoopaCastTarget.inc.c"
+
+EvtScript N(EVS_Move_PowerTransfer) = {
+    Call(EnableIdleScript, ACTOR_SELF, IDLE_SCRIPT_DISABLE)
+    Call(UseIdleAnimation, ACTOR_SELF, FALSE)
+    Set(LFlag0, FALSE)
+    Label(10)
+        Call(CreateHomeTargetList, TARGET_FLAG_2 | TARGET_FLAG_PRIMARY_ONLY)
+        Call(InitTargetIterator)
+        Label(0)
+            Call(GetOwnerTarget, LVar0, LVar1)
+            Call(GetIndexFromHome, LVar0, LVar1)
+            Call(GetBattleVar, BTL_VAR_Magikoopa_LastIndexBoosted, LVar2)
+            IfGt(LVar1, LVar2)
+                Call(N(CheckMagikoopaCastTarget), LVar0, LVar3)
+                IfEq(LVar3, 0)
+                    Call(GetStatusFlags, LVar0, LVar4)
+                    IfNotFlag(LVar4, STATUS_FLAG_STATIC | STATUS_FLAG_TRANSPARENT)
+                        Set(LVar8, LVar0)
+                        Call(SetBattleVar, BTL_VAR_Magikoopa_LastIndexBoosted, LVar1)
+                        Goto(100)
+                    EndIf
+                EndIf
+            EndIf
+            Call(ChooseNextTarget, ITER_NEXT, LVar0)
+            IfNe(LVar0, ITER_NO_MORE)
+                Goto(0)
+            EndIf
+        IfEq(LFlag0, FALSE)
+            Set(LFlag0, TRUE)
+            Call(SetBattleVar, BTL_VAR_Magikoopa_LastIndexBoosted, -1)
+            Goto(10)
+        EndIf
+    Return
+    Label(100) // make ally invisible
+    Call(SetTargetActor, ACTOR_SELF, ACTOR_PLAYER)
+    Call(UseBattleCamPreset, BTL_CAM_ACTOR)
+    Call(BattleCamTargetActor, ACTOR_SELF)
+    Call(MoveBattleCamOver, 15)
+    Wait(15)
+    Call(SetAnimation, ACTOR_SELF, PRT_MAIN, ANIM_BooBully_Laugh)
+    Wait(5)
+    Call(PlaySoundAtActor, ACTOR_SELF, SOUND_SPELL_CAST1)
+    Call(GetActorPos, ACTOR_SELF, LVar0, LVar1, LVar2)
+    Call(GetStatusFlags, ACTOR_SELF, LVarA)
+    IfFlag(LVarA, STATUS_FLAG_SHRINK)
+        Add(LVar1, 10)
+        Sub(LVar2, 2)
+        PlayEffect(EFFECT_RADIAL_SHIMMER, 6, LVar0, LVar1, LVar2, Float(0.12), 30, 0)
+    Else
+        Add(LVar1, 20)
+        Sub(LVar2, 2)
+        PlayEffect(EFFECT_RADIAL_SHIMMER, 6, LVar0, LVar1, LVar2, Float(0.3), 30, 0)
+    EndIf
+    Wait(30)
+    Call(SetAnimation, ACTOR_SELF, PRT_MAIN, ANIM_BooBully_Idle)
+    Wait(5)
+    Thread
+        Wait(10)
+        Call(PlaySoundAtActor, LVar8, SOUND_MAGIKOOPA_VANISH)
+    EndThread
+    Thread
+        Call(FreezeBattleState, TRUE)
+        Call(VanishActor, LVar8, 1)
+        Call(FreezeBattleState, FALSE)
+    EndThread
+    Call(WaitForBuffDone)
+    Call(UseBattleCamPreset, BTL_CAM_DEFAULT)
+    Wait(10)
+    Call(YieldTurn)
     Call(EnableIdleScript, ACTOR_SELF, IDLE_SCRIPT_ENABLE)
     Call(UseIdleAnimation, ACTOR_SELF, TRUE)
     Return

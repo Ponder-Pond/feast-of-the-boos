@@ -285,10 +285,10 @@ NpcData N(NpcData_Oaklie) = {
 };
 
 NpcGroupList N(DefaultNPCs) = {
-    NPC_GROUP(N(NpcData_FreezyFuzzy), BTL_MIM_FORMATION_10, BTL_MIM_STAGE_00),
-    NPC_GROUP(N(NpcData_PiranhaPlant), BTL_MIM_FORMATION_0F, BTL_MIM_STAGE_00),
-    NPC_GROUP(N(NpcData_Beehive), BTL_MIM_FORMATION_0F, BTL_MIM_STAGE_00),
-    NPC_GROUP(N(NpcData_BooBully), BTL_MIM_FORMATION_0F, BTL_MIM_STAGE_00),
+    NPC_GROUP(N(NpcData_FreezyFuzzy), BTL_FOB_FORMATION_00, BTL_FOB_STAGE_00),
+    NPC_GROUP(N(NpcData_PiranhaPlant), BTL_FOB_FORMATION_00, BTL_FOB_STAGE_00),
+    NPC_GROUP(N(NpcData_Beehive), BTL_FOB_FORMATION_00, BTL_FOB_STAGE_00),
+    NPC_GROUP(N(NpcData_BooBully), BTL_FOB_FORMATION_00, BTL_FOB_STAGE_00),
     NPC_GROUP(N(NpcData_Oaklie)),
     {}
 };

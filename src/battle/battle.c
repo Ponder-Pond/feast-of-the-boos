@@ -48,52 +48,52 @@ BSS Battle* gCurrentBattlePtr;
 } \
 
 BattleArea gBattleAreas[] = {
-    [BTL_AREA_KMR_1]    BTL_AREA(kmr_part_1, "エリア ＫＭＲ その１"),
-    [BTL_AREA_KMR_2]    BTL_AREA(kmr_part_2, "エリア ＫＭＲ その２"),
-    [BTL_AREA_KMR_3]    BTL_AREA(kmr_part_3, "エリア ＫＭＲ その３"),
-    [BTL_AREA_MAC]      BTL_AREA(mac, "エリア ＭＡＣ"),
-    [BTL_AREA_HOS]      BTL_AREA(hos, "エリア ＨＯＳ"),
-    [BTL_AREA_NOK]      BTL_AREA(nok, "エリア ＮＯＫ"),
-    [BTL_AREA_TRD_1]    BTL_AREA(trd_part_1, "エリア ＴＲＤ その１"),
-    [BTL_AREA_TRD_2]    BTL_AREA(trd_part_2, "エリア ＴＲＤ その２"),
-    [BTL_AREA_TRD_3]    BTL_AREA(trd_part_3, "エリア ＴＲＤ その３"),
-    [BTL_AREA_IWA]      BTL_AREA(iwa, "エリア ＩＷＡ"),
-    [BTL_AREA_SBK]      BTL_AREA(sbk, "エリア ＳＢＫ"),
-    [BTL_AREA_ISK_1]    BTL_AREA(isk_part_1, "エリア ＩＳＫ その１"),
-    [BTL_AREA_ISK_2]    BTL_AREA(isk_part_2, "エリア ＩＳＫ その２"),
-    [BTL_AREA_MIM]      BTL_AREA(mim, "エリア ＭＩＭ"),
-    [BTL_AREA_ARN]      BTL_AREA(arn, "エリア ＡＲＮ"),
-    [BTL_AREA_DGB]      BTL_AREA(dgb, "エリア ＤＧＢ"),
-    [BTL_AREA_OMO]      BTL_AREA(omo, "エリア ＯＭＯ"),
-    [BTL_AREA_OMO2]     BTL_AREA(omo2, "エリア ＯＭＯ２"),
-    [BTL_AREA_OMO3]     BTL_AREA(omo3, "エリア ＯＭＯ３"),
-    [BTL_AREA_KGR]      BTL_AREA(kgr, "エリア ＫＧＲ"),
-    [BTL_AREA_JAN]      BTL_AREA(jan, "エリア ＪＡＮ"),
-    [BTL_AREA_JAN2]     BTL_AREA(jan2, "エリア ＪＡＮ２"),
-    [BTL_AREA_KZN]      BTL_AREA(kzn, "エリア ＫＺＮ"),
-    [BTL_AREA_KZN2]     BTL_AREA_DMA(kzn2, "エリア ＫＺＮ２"),
-    [BTL_AREA_FLO]      BTL_AREA(flo, "エリア ＦＬＯ"),
-    [BTL_AREA_FLO2]     BTL_AREA(flo2, "エリア ＦＬＯ２"),
-    [BTL_AREA_TIK]      BTL_AREA(tik, "エリア ＴＩＫ"),
-    [BTL_AREA_TIK2]     BTL_AREA(tik2, "エリア ＴＩＫ２"),
-    [BTL_AREA_TIK3]     BTL_AREA(tik3, "エリア ＴＩＫ３"),
-    [BTL_AREA_SAM]      BTL_AREA(sam, "エリア ＳＡＭ"),
-    [BTL_AREA_SAM2]     BTL_AREA(sam2, "エリア ＳＡＭ２"),
-    [BTL_AREA_PRA]      BTL_AREA(pra, "エリア ＰＲＡ"),
-    [BTL_AREA_PRA2]     BTL_AREA(pra2, "エリア ＰＲＡ２"),
-    [BTL_AREA_PRA3]     BTL_AREA(pra3, "エリア ＰＲＡ３"),
-    [BTL_AREA_KPA]      BTL_AREA(kpa, "エリア ＫＰＡ"),
-    [BTL_AREA_KPA2]     BTL_AREA(kpa2, "エリア ＫＰＡ２"),
-    [BTL_AREA_KPA3]     BTL_AREA(kpa3, "エリア ＫＰＡ３"),
-    [BTL_AREA_KPA4]     BTL_AREA(kpa4, "エリア ＫＰＡ４"),
-    [BTL_AREA_KKJ]      BTL_AREA(kkj, "エリア ＫＫＪ"),
-    [BTL_AREA_DIG]      BTL_AREA(dig, "エリア ＤＩＧ"),
-    [BTL_AREA_OMO2_1]   BTL_AREA_AUX(omo2_1, "エリア ＯＭＯ２＿１"),
-    [BTL_AREA_OMO2_2]   BTL_AREA_AUX(omo2_2, "エリア ＯＭＯ２＿２"),
-    [BTL_AREA_OMO2_3]   BTL_AREA_AUX(omo2_3, "エリア ＯＭＯ２＿３"),
-    [BTL_AREA_OMO2_4]   BTL_AREA_AUX(omo2_4, "エリア ＯＭＯ２＿４"),
-    [BTL_AREA_OMO2_5]   BTL_AREA_AUX(omo2_5, "エリア ＯＭＯ２＿５"),
-    [BTL_AREA_OMO2_6]   BTL_AREA_AUX(omo2_6, "エリア ＯＭＯ２＿６"),
+    // [BTL_AREA_KMR_1]    BTL_AREA(kmr_part_1, "エリア ＫＭＲ その１"),
+    // [BTL_AREA_KMR_2]    BTL_AREA(kmr_part_2, "エリア ＫＭＲ その２"),
+    // [BTL_AREA_KMR_3]    BTL_AREA(kmr_part_3, "エリア ＫＭＲ その３"),
+    // [BTL_AREA_MAC]      BTL_AREA(mac, "エリア ＭＡＣ"),
+    // [BTL_AREA_HOS]      BTL_AREA(hos, "エリア ＨＯＳ"),
+    // [BTL_AREA_NOK]      BTL_AREA(nok, "エリア ＮＯＫ"),
+    // [BTL_AREA_TRD_1]    BTL_AREA(trd_part_1, "エリア ＴＲＤ その１"),
+    // [BTL_AREA_TRD_2]    BTL_AREA(trd_part_2, "エリア ＴＲＤ その２"),
+    // [BTL_AREA_TRD_3]    BTL_AREA(trd_part_3, "エリア ＴＲＤ その３"),
+    // [BTL_AREA_IWA]      BTL_AREA(iwa, "エリア ＩＷＡ"),
+    // [BTL_AREA_SBK]      BTL_AREA(sbk, "エリア ＳＢＫ"),
+    // [BTL_AREA_ISK_1]    BTL_AREA(isk_part_1, "エリア ＩＳＫ その１"),
+    // [BTL_AREA_ISK_2]    BTL_AREA(isk_part_2, "エリア ＩＳＫ その２"),
+    // [BTL_AREA_MIM]      BTL_AREA(mim, "エリア ＭＩＭ"),
+    // [BTL_AREA_ARN]      BTL_AREA(arn, "エリア ＡＲＮ"),
+    // [BTL_AREA_DGB]      BTL_AREA(dgb, "エリア ＤＧＢ"),
+    // [BTL_AREA_OMO]      BTL_AREA(omo, "エリア ＯＭＯ"),
+    // [BTL_AREA_OMO2]     BTL_AREA(omo2, "エリア ＯＭＯ２"),
+    // [BTL_AREA_OMO3]     BTL_AREA(omo3, "エリア ＯＭＯ３"),
+    // [BTL_AREA_KGR]      BTL_AREA(kgr, "エリア ＫＧＲ"),
+    // [BTL_AREA_JAN]      BTL_AREA(jan, "エリア ＪＡＮ"),
+    // [BTL_AREA_JAN2]     BTL_AREA(jan2, "エリア ＪＡＮ２"),
+    // [BTL_AREA_KZN]      BTL_AREA(kzn, "エリア ＫＺＮ"),
+    // // [BTL_AREA_KZN2]     BTL_AREA_DMA(kzn2, "エリア ＫＺＮ２"),
+    // [BTL_AREA_FLO]      BTL_AREA(flo, "エリア ＦＬＯ"),
+    // [BTL_AREA_FLO2]     BTL_AREA(flo2, "エリア ＦＬＯ２"),
+    // [BTL_AREA_TIK]      BTL_AREA(tik, "エリア ＴＩＫ"),
+    // [BTL_AREA_TIK2]     BTL_AREA(tik2, "エリア ＴＩＫ２"),
+    // [BTL_AREA_TIK3]     BTL_AREA(tik3, "エリア ＴＩＫ３"),
+    // [BTL_AREA_SAM]      BTL_AREA(sam, "エリア ＳＡＭ"),
+    // [BTL_AREA_SAM2]     BTL_AREA(sam2, "エリア ＳＡＭ２"),
+    // [BTL_AREA_PRA]      BTL_AREA(pra, "エリア ＰＲＡ"),
+    // [BTL_AREA_PRA2]     BTL_AREA(pra2, "エリア ＰＲＡ２"),
+    // [BTL_AREA_PRA3]     BTL_AREA(pra3, "エリア ＰＲＡ３"),
+    // [BTL_AREA_KPA]      BTL_AREA(kpa, "エリア ＫＰＡ"),
+    // [BTL_AREA_KPA2]     BTL_AREA(kpa2, "エリア ＫＰＡ２"),
+    // [BTL_AREA_KPA3]     BTL_AREA(kpa3, "エリア ＫＰＡ３"),
+    // [BTL_AREA_KPA4]     BTL_AREA(kpa4, "エリア ＫＰＡ４"),
+    // [BTL_AREA_KKJ]      BTL_AREA(kkj, "エリア ＫＫＪ"),
+    // [BTL_AREA_DIG]      BTL_AREA(dig, "エリア ＤＩＧ"),
+    // [BTL_AREA_OMO2_1]   BTL_AREA_AUX(omo2_1, "エリア ＯＭＯ２＿１"),
+    // [BTL_AREA_OMO2_2]   BTL_AREA_AUX(omo2_2, "エリア ＯＭＯ２＿２"),
+    // [BTL_AREA_OMO2_3]   BTL_AREA_AUX(omo2_3, "エリア ＯＭＯ２＿３"),
+    // [BTL_AREA_OMO2_4]   BTL_AREA_AUX(omo2_4, "エリア ＯＭＯ２＿４"),
+    // [BTL_AREA_OMO2_5]   BTL_AREA_AUX(omo2_5, "エリア ＯＭＯ２＿５"),
+    // [BTL_AREA_OMO2_6]   BTL_AREA_AUX(omo2_6, "エリア ＯＭＯ２＿６"),
     [BTL_AREA_FOB]      BTL_AREA(fob, "FOB"),
 };
 
@@ -188,123 +188,123 @@ void setup_demo_player(void) {
     playerData->starBeamLevel = 0;
 }
 
-void load_demo_battle(u32 index) {
-    PlayerData* playerData = &gPlayerData;
-    u32 mode;
-    s32 battleID;
+// void load_demo_battle(u32 index) {
+//     PlayerData* playerData = &gPlayerData;
+//     u32 mode;
+//     s32 battleID;
 
-    gGameStatusPtr->demoBattleFlags = 0;
-    gGameStatusPtr->areaID = 0;
-    gGameStatusPtr->mapID = 0;
-    gGameStatusPtr->context = CONTEXT_WORLD;
+//     gGameStatusPtr->demoBattleFlags = 0;
+//     gGameStatusPtr->areaID = 0;
+//     gGameStatusPtr->mapID = 0;
+//     gGameStatusPtr->context = CONTEXT_WORLD;
 
-    general_heap_create();
-    clear_worker_list();
-    clear_script_list();
-    create_cameras();
-    spr_init_sprites(PLAYER_SPRITES_MARIO_WORLD);
-    clear_animator_list();
-    clear_entity_models();
-    clear_npcs();
-    hud_element_clear_cache();
-    clear_trigger_data();
-    clear_model_data();
-    clear_sprite_shading_data();
-    reset_background_settings();
-    func_80138188();
-    reset_battle_status();
-    clear_encounter_status();
-    clear_entity_data(TRUE);
-    clear_effect_data();
-    clear_player_status();
-    clear_printers();
-    clear_item_entity_data();
-    clear_player_data();
-    initialize_status_bar();
-    clear_item_entity_data();
-    set_screen_overlay_params_front(OVERLAY_TYPE_9, 255.0f);
+//     general_heap_create();
+//     clear_worker_list();
+//     clear_script_list();
+//     create_cameras();
+//     spr_init_sprites(PLAYER_SPRITES_MARIO_WORLD);
+//     clear_animator_list();
+//     clear_entity_models();
+//     clear_npcs();
+//     hud_element_clear_cache();
+//     clear_trigger_data();
+//     clear_model_data();
+//     clear_sprite_shading_data();
+//     reset_background_settings();
+//     func_80138188();
+//     reset_battle_status();
+//     clear_encounter_status();
+//     clear_entity_data(TRUE);
+//     clear_effect_data();
+//     clear_player_status();
+//     clear_printers();
+//     clear_item_entity_data();
+//     clear_player_data();
+//     initialize_status_bar();
+//     clear_item_entity_data();
+//     set_screen_overlay_params_front(OVERLAY_TYPE_9, 255.0f);
 
-    switch (index) {
-        case 0: // hammer first strike on Fuzzies
-            setup_demo_player();
-            mode = 0;
-            playerData->hasActionCommands = FALSE;
-            battleID = BTL_DIG_FORMATION_00;
-            break;
-        case 1: // jump on Monty Mole
-            setup_demo_player();
-            mode = 0;
-            playerData->curPartner = PARTNER_BOW;
-            battleID = BTL_DIG_FORMATION_01;
-            break;
-        case 2: // Parakarry shell shot against Pokey
-            setup_demo_player();
-            mode = 0;
-            playerData->curPartner = PARTNER_PARAKARRY;
-            gGameStatusPtr->demoBattleFlags |= DEMO_BTL_FLAG_PARTNER_ACTING;
-            battleID = BTL_DIG_FORMATION_02;
-            break;
-        case 3: // Thunder Rage on Shy Guys at the slot machine
-            setup_demo_player();
-            mode = 0;
-            playerData->curPartner = PARTNER_WATT;
-            battleID = BTL_DIG_FORMATION_03;
-            break;
-        case 4: // stomped by Tubba Blubba
-            setup_demo_player();
-            mode = 0;
-            playerData->curPartner = PARTNER_KOOPER;
-            gGameStatusPtr->demoBattleFlags |= DEMO_BTL_FLAG_ENEMY_ACTING;
-            battleID = BTL_DIG_FORMATION_04;
-            break;
-        default:
-            setup_demo_player();
-            mode = 2;
-            battleID = BTL_DIG_FORMATION_00;
-    }
+//     switch (index) {
+//         case 0: // hammer first strike on Fuzzies
+//             setup_demo_player();
+//             mode = 0;
+//             playerData->hasActionCommands = FALSE;
+//             battleID = BTL_DIG_FORMATION_00;
+//             break;
+//         case 1: // jump on Monty Mole
+//             setup_demo_player();
+//             mode = 0;
+//             playerData->curPartner = PARTNER_BOW;
+//             battleID = BTL_DIG_FORMATION_01;
+//             break;
+//         case 2: // Parakarry shell shot against Pokey
+//             setup_demo_player();
+//             mode = 0;
+//             playerData->curPartner = PARTNER_PARAKARRY;
+//             gGameStatusPtr->demoBattleFlags |= DEMO_BTL_FLAG_PARTNER_ACTING;
+//             battleID = BTL_DIG_FORMATION_02;
+//             break;
+//         case 3: // Thunder Rage on Shy Guys at the slot machine
+//             setup_demo_player();
+//             mode = 0;
+//             playerData->curPartner = PARTNER_WATT;
+//             battleID = BTL_DIG_FORMATION_03;
+//             break;
+//         case 4: // stomped by Tubba Blubba
+//             setup_demo_player();
+//             mode = 0;
+//             playerData->curPartner = PARTNER_KOOPER;
+//             gGameStatusPtr->demoBattleFlags |= DEMO_BTL_FLAG_ENEMY_ACTING;
+//             battleID = BTL_DIG_FORMATION_04;
+//             break;
+//         default:
+//             setup_demo_player();
+//             mode = 2;
+//             battleID = BTL_DIG_FORMATION_00;
+//     }
 
-    gGameStatusPtr->debugEnemyContact = DEBUG_CONTACT_NONE;
-    gGameStatusPtr->healthBarsEnabled = TRUE;
+//     gGameStatusPtr->debugEnemyContact = DEBUG_CONTACT_NONE;
+//     gGameStatusPtr->healthBarsEnabled = TRUE;
 
-    switch (mode) {
-        case 0:
-            gCurrentEncounter.firstStrikeType = FIRST_STRIKE_NONE;
-            gCurrentEncounter.hitType = ENCOUNTER_TRIGGER_NONE;
-            gCurrentEncounter.hitTier = 0;
-            gGameStatusPtr->demoBattleFlags |= DEMO_BTL_FLAG_10;
-            gGameStatusPtr->demoBattleFlags |= DEMO_BTL_FLAG_20;
-            gGameStatusPtr->demoBattleFlags |= DEMO_BTL_FLAG_40;
-            break;
-        case 1:
-            gCurrentEncounter.firstStrikeType = FIRST_STRIKE_PLAYER;
-            gCurrentEncounter.hitType = ENCOUNTER_TRIGGER_HAMMER;
-            gCurrentEncounter.hitTier = playerData->hammerLevel;
-            gGameStatusPtr->demoBattleFlags |= DEMO_BTL_FLAG_10;
-            break;
-        case 2:
-            gCurrentEncounter.firstStrikeType = FIRST_STRIKE_PLAYER;
-            gCurrentEncounter.hitType = ENCOUNTER_TRIGGER_JUMP;
-            gCurrentEncounter.hitTier = playerData->bootsLevel;
-            gGameStatusPtr->demoBattleFlags |= DEMO_BTL_FLAG_10;
-            break;
-        case 3:
-            gCurrentEncounter.firstStrikeType = FIRST_STRIKE_PLAYER;
-            gCurrentEncounter.hitType = ENCOUNTER_TRIGGER_PARTNER;
-            gGameStatusPtr->demoBattleFlags |= DEMO_BTL_FLAG_20;
-            break;
-        case 4:
-            gCurrentEncounter.firstStrikeType = FIRST_STRIKE_ENEMY;
-            gCurrentEncounter.hitType = ENCOUNTER_TRIGGER_NONE;
-            gCurrentEncounter.hitTier = 0;
-            gGameStatusPtr->demoBattleFlags |= DEMO_BTL_FLAG_40;
-            break;
-    }
+//     switch (mode) {
+//         case 0:
+//             gCurrentEncounter.firstStrikeType = FIRST_STRIKE_NONE;
+//             gCurrentEncounter.hitType = ENCOUNTER_TRIGGER_NONE;
+//             gCurrentEncounter.hitTier = 0;
+//             gGameStatusPtr->demoBattleFlags |= DEMO_BTL_FLAG_10;
+//             gGameStatusPtr->demoBattleFlags |= DEMO_BTL_FLAG_20;
+//             gGameStatusPtr->demoBattleFlags |= DEMO_BTL_FLAG_40;
+//             break;
+//         case 1:
+//             gCurrentEncounter.firstStrikeType = FIRST_STRIKE_PLAYER;
+//             gCurrentEncounter.hitType = ENCOUNTER_TRIGGER_HAMMER;
+//             gCurrentEncounter.hitTier = playerData->hammerLevel;
+//             gGameStatusPtr->demoBattleFlags |= DEMO_BTL_FLAG_10;
+//             break;
+//         case 2:
+//             gCurrentEncounter.firstStrikeType = FIRST_STRIKE_PLAYER;
+//             gCurrentEncounter.hitType = ENCOUNTER_TRIGGER_JUMP;
+//             gCurrentEncounter.hitTier = playerData->bootsLevel;
+//             gGameStatusPtr->demoBattleFlags |= DEMO_BTL_FLAG_10;
+//             break;
+//         case 3:
+//             gCurrentEncounter.firstStrikeType = FIRST_STRIKE_PLAYER;
+//             gCurrentEncounter.hitType = ENCOUNTER_TRIGGER_PARTNER;
+//             gGameStatusPtr->demoBattleFlags |= DEMO_BTL_FLAG_20;
+//             break;
+//         case 4:
+//             gCurrentEncounter.firstStrikeType = FIRST_STRIKE_ENEMY;
+//             gCurrentEncounter.hitType = ENCOUNTER_TRIGGER_NONE;
+//             gCurrentEncounter.hitTier = 0;
+//             gGameStatusPtr->demoBattleFlags |= DEMO_BTL_FLAG_40;
+//             break;
+//     }
 
-    evt_set_variable(NULL, GF_Tutorial_SwapTurnOrder, 1);
-    gCurrentEncounter.unk_07 = 0;
-    gCurrentEncounter.instigatorValue = 0;
-    set_battle_stage(BTL_STAGE_DEFAULT);
-    gGameStatusPtr->demoBattleFlags |= DEMO_BTL_FLAG_ENABLED;
-    gOverrideFlags &= ~GLOBAL_OVERRIDES_DISABLE_DRAW_FRAME;
-    load_battle(battleID);
-}
+//     evt_set_variable(NULL, GF_Tutorial_SwapTurnOrder, 1);
+//     gCurrentEncounter.unk_07 = 0;
+//     gCurrentEncounter.instigatorValue = 0;
+//     set_battle_stage(BTL_STAGE_DEFAULT);
+//     gGameStatusPtr->demoBattleFlags |= DEMO_BTL_FLAG_ENABLED;
+//     gOverrideFlags &= ~GLOBAL_OVERRIDES_DISABLE_DRAW_FRAME;
+//     load_battle(battleID);
+// }

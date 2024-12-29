@@ -96,6 +96,6 @@ NpcData N(NpcData_HyperGoomba) = {
 
 NpcGroupList N(DefaultNPCs) = {
     NPC_GROUP(N(NpcData_TubbasHeart)),
-    NPC_GROUP(N(NpcData_HyperGoomba), BTL_ARN_FORMATION_00, BTL_ARN_STAGE_04),
+    // NPC_GROUP(N(NpcData_HyperGoomba), BTL_ARN_FORMATION_00, BTL_ARN_STAGE_04),
     {}
 };

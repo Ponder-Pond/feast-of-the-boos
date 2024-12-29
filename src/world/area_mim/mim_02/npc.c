@@ -216,7 +216,7 @@ NpcData N(NpcData_Fuzzy_02) = {
 
 NpcGroupList N(DefaultNPCs) = {
     NPC_GROUP(N(NpcData_Oaklie)),
-    NPC_GROUP(N(NpcData_Fuzzy_01), BTL_MIM_FORMATION_00, BTL_MIM_STAGE_00),
-    NPC_GROUP(N(NpcData_Fuzzy_02), BTL_MIM_FORMATION_01, BTL_MIM_STAGE_00),
+    // NPC_GROUP(N(NpcData_Fuzzy_01), BTL_MIM_FORMATION_00, BTL_MIM_STAGE_00),
+    // NPC_GROUP(N(NpcData_Fuzzy_02), BTL_MIM_FORMATION_01, BTL_MIM_STAGE_00),
     {}
 };

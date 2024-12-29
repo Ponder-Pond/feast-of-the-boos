@@ -37,6 +37,7 @@ Stage NAMESPACE = {
     .texture = "mim_tex",
     .shape = "mim_bt01_shape",
     .hit = "mim_bt01_hit",
+    .bg = "fob_bg",
     .preBattle = &N(EVS_PreBattle),
     .postBattle = &N(EVS_PostBattle),
 };

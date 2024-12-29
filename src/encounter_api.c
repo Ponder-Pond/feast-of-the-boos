@@ -25,12 +25,12 @@ API_CALLABLE(IsStartingConversation) {
     return ApiStatus_DONE2;
 }
 
-API_CALLABLE(LoadDemoBattle) {
-    Bytecode* args = script->ptrReadPos;
+// API_CALLABLE(LoadDemoBattle) {
+//     Bytecode* args = script->ptrReadPos;
 
-    load_demo_battle(evt_get_variable(script, *args++));
-    return ApiStatus_DONE2;
-}
+//     load_demo_battle(evt_get_variable(script, *args++));
+//     return ApiStatus_DONE2;
+// }
 
 API_CALLABLE(func_80044290) {
     return ApiStatus_DONE2;

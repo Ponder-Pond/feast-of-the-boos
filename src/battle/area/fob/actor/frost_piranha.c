@@ -403,7 +403,29 @@ EvtScript N(EVS_Attack_Bite) = {
     End
 };
 
-#include "common/UnkEffect6FFunc.inc.c"
+API_CALLABLE(N(FrostBreath)) {
+    Bytecode* args = script->ptrReadPos;
+    EffectInstance* effect;
+    s32 unusedType = evt_get_variable(script, *args++);
+    s32 posX = evt_get_variable(script, *args++);
+    s32 posY = evt_get_variable(script, *args++);
+    s32 posZ = evt_get_variable(script, *args++);
+    f32 scale = evt_get_float_variable(script, *args++);
+    s32 duration = evt_get_variable(script, *args++);
+    s32 r = evt_get_variable(script, *args++);
+    s32 g = evt_get_variable(script, *args++);
+    s32 b = evt_get_variable(script, *args++);
+
+    effect = fx_cold_breath(1, posX, posY, posZ, scale, duration);
+    effect->data.coldBreath->primCol.r = 248;
+    effect->data.coldBreath->primCol.g = 248;
+    effect->data.coldBreath->primCol.b = 255;
+    effect->data.coldBreath->envCol.r = 128;
+    effect->data.coldBreath->envCol.g = 224;
+    effect->data.coldBreath->envCol.b = 255;
+
+    return ApiStatus_DONE2;
+}
 
 EvtScript N(EVS_Attack_FrostBreath) = {
     Call(UseIdleAnimation, ACTOR_SELF, FALSE)
@@ -442,7 +464,7 @@ EvtScript N(EVS_Attack_FrostBreath) = {
         Set(LVar1, 13)
         SetF(LVar3, Float(1.0))
     EndIf
-    Call(N(UnkEffect6FFunc), LVar2, LVar0, LVar1, LVar2, LVar3, 30, 120, 0, 120)
+    Call(N(FrostBreath), LVar2, LVar0, LVar1, LVar2, LVar3, 30, 120, 0, 120)
     Wait(1)
     Call(SetAnimation, ACTOR_SELF, PRT_MAIN, ANIM_LargePiranha_Frost_Anim0C)
     Wait(5)

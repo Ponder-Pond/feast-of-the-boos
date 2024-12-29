@@ -544,7 +544,7 @@ NpcData N(NpcData_Yakkey) = {
 };
 
 NpcGroupList N(DefaultNPCs) = {
-    NPC_GROUP(N(NpcData_Tubba), BTL_DGB_FORMATION_04),
+    // NPC_GROUP(N(NpcData_Tubba), BTL_DGB_FORMATION_04),
     NPC_GROUP(N(NpcData_Yakkey)),
     {}
 };

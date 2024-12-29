@@ -177,7 +177,7 @@ EvtScript N(EVS_NpcInit_Toad_02) = {
     End
 };
 
-#include "npc/dojo_members.inc.c"
+// #include "npc/dojo_members.inc.c"
 #include "npc/waterfront_family.inc.c"
 #include "npc/trading_toad.inc.c"
 
@@ -306,65 +306,65 @@ AnimID N(ExtraAnims_Lee)[] = {
     ANIM_LIST_END
 };
 
-NpcData N(NpcData_Toad_03)[] = {
-    {
-        .id = NPC_TheMaster,
-        .pos = { 375.0f, 115.0f, -440.0f },
-        .yaw = 225,
-        .init = &N(EVS_NpcInit_TheMaster),
-        .settings = &N(NpcSettings_Dummy),
-        .flags = ENEMY_FLAG_PASSIVE | ENEMY_FLAG_DO_NOT_KILL | ENEMY_FLAG_ENABLE_HIT_SCRIPT | ENEMY_FLAG_IGNORE_WORLD_COLLISION | ENEMY_FLAG_IGNORE_ENTITY_COLLISION | ENEMY_FLAG_FLYING | ENEMY_FLAG_NO_SHADOW_RAYCAST | ENEMY_FLAG_RAYCAST_TO_INTERACT | ENEMY_FLAG_NO_DELAY_AFTER_FLEE | ENEMY_FLAG_NO_DROPS,
-        .drops = NO_DROPS,
-        .animations = {
-            .idle   = ANIM_TheMaster_Idle,
-            .walk   = ANIM_TheMaster_Still,
-            .run    = ANIM_TheMaster_Still,
-            .chase  = ANIM_TheMaster_Still,
-            .anim_4 = ANIM_TheMaster_Still,
-            .anim_5 = ANIM_TheMaster_Still,
-            .death  = ANIM_TheMaster_Still,
-            .hit    = ANIM_TheMaster_Still,
-            .anim_8 = ANIM_TheMaster_Still,
-            .anim_9 = ANIM_TheMaster_Still,
-            .anim_A = ANIM_TheMaster_Still,
-            .anim_B = ANIM_TheMaster_Still,
-            .anim_C = ANIM_TheMaster_Still,
-            .anim_D = ANIM_TheMaster_Still,
-            .anim_E = ANIM_TheMaster_Still,
-            .anim_F = ANIM_TheMaster_Still,
-        },
-        .extraAnimations = N(ExtraAnims_TheMaster),
-        .tattle = MSG_NpcTattle_TheMaster,
-    },
-    {
-        .id = NPC_Chan,
-        .pos = { 310.0f, 115.0f, -390.0f },
-        .yaw = 45,
-        .init = &N(EVS_NpcInit_Chan),
-        .settings = &N(NpcSettings_Dummy),
-        .flags = ENEMY_FLAG_PASSIVE | ENEMY_FLAG_DO_NOT_KILL | ENEMY_FLAG_ENABLE_HIT_SCRIPT | ENEMY_FLAG_IGNORE_WORLD_COLLISION | ENEMY_FLAG_IGNORE_ENTITY_COLLISION | ENEMY_FLAG_FLYING | ENEMY_FLAG_NO_SHADOW_RAYCAST | ENEMY_FLAG_RAYCAST_TO_INTERACT | ENEMY_FLAG_NO_DELAY_AFTER_FLEE | ENEMY_FLAG_NO_DROPS,
-        .drops = NO_DROPS,
-        .animations = {
-            .idle   = ANIM_Chan_Idle,
-        },
-        .extraAnimations = N(ExtraAnims_Chan),
-        .tattle = MSG_NpcTattle_Chan,
-    },
-    {
-        .id = NPC_Lee,
-        .pos = { 330.0f, 115.0f, -410.0f },
-        .yaw = 45,
-        .init = &N(EVS_NpcInit_Lee),
-        .settings = &N(NpcSettings_Dummy),
-        .flags = ENEMY_FLAG_PASSIVE | ENEMY_FLAG_DO_NOT_KILL | ENEMY_FLAG_ENABLE_HIT_SCRIPT | ENEMY_FLAG_IGNORE_WORLD_COLLISION | ENEMY_FLAG_IGNORE_ENTITY_COLLISION | ENEMY_FLAG_FLYING | ENEMY_FLAG_NO_SHADOW_RAYCAST | ENEMY_FLAG_RAYCAST_TO_INTERACT | ENEMY_FLAG_NO_DELAY_AFTER_FLEE | ENEMY_FLAG_NO_DROPS,
-        .drops = NO_DROPS,
-        .animations = {
-            .idle   = ANIM_Lee_Idle,
-        },
-        .extraAnimations = N(ExtraAnims_Lee),
-        .tattle = MSG_NpcTattle_Lee,
-    },
-};
+// NpcData N(NpcData_Toad_03)[] = {
+//     {
+//         .id = NPC_TheMaster,
+//         .pos = { 375.0f, 115.0f, -440.0f },
+//         .yaw = 225,
+//         .init = &N(EVS_NpcInit_TheMaster),
+//         .settings = &N(NpcSettings_Dummy),
+//         .flags = ENEMY_FLAG_PASSIVE | ENEMY_FLAG_DO_NOT_KILL | ENEMY_FLAG_ENABLE_HIT_SCRIPT | ENEMY_FLAG_IGNORE_WORLD_COLLISION | ENEMY_FLAG_IGNORE_ENTITY_COLLISION | ENEMY_FLAG_FLYING | ENEMY_FLAG_NO_SHADOW_RAYCAST | ENEMY_FLAG_RAYCAST_TO_INTERACT | ENEMY_FLAG_NO_DELAY_AFTER_FLEE | ENEMY_FLAG_NO_DROPS,
+//         .drops = NO_DROPS,
+//         .animations = {
+//             .idle   = ANIM_TheMaster_Idle,
+//             .walk   = ANIM_TheMaster_Still,
+//             .run    = ANIM_TheMaster_Still,
+//             .chase  = ANIM_TheMaster_Still,
+//             .anim_4 = ANIM_TheMaster_Still,
+//             .anim_5 = ANIM_TheMaster_Still,
+//             .death  = ANIM_TheMaster_Still,
+//             .hit    = ANIM_TheMaster_Still,
+//             .anim_8 = ANIM_TheMaster_Still,
+//             .anim_9 = ANIM_TheMaster_Still,
+//             .anim_A = ANIM_TheMaster_Still,
+//             .anim_B = ANIM_TheMaster_Still,
+//             .anim_C = ANIM_TheMaster_Still,
+//             .anim_D = ANIM_TheMaster_Still,
+//             .anim_E = ANIM_TheMaster_Still,
+//             .anim_F = ANIM_TheMaster_Still,
+//         },
+//         .extraAnimations = N(ExtraAnims_TheMaster),
+//         .tattle = MSG_NpcTattle_TheMaster,
+//     },
+//     {
+//         .id = NPC_Chan,
+//         .pos = { 310.0f, 115.0f, -390.0f },
+//         .yaw = 45,
+//         .init = &N(EVS_NpcInit_Chan),
+//         .settings = &N(NpcSettings_Dummy),
+//         .flags = ENEMY_FLAG_PASSIVE | ENEMY_FLAG_DO_NOT_KILL | ENEMY_FLAG_ENABLE_HIT_SCRIPT | ENEMY_FLAG_IGNORE_WORLD_COLLISION | ENEMY_FLAG_IGNORE_ENTITY_COLLISION | ENEMY_FLAG_FLYING | ENEMY_FLAG_NO_SHADOW_RAYCAST | ENEMY_FLAG_RAYCAST_TO_INTERACT | ENEMY_FLAG_NO_DELAY_AFTER_FLEE | ENEMY_FLAG_NO_DROPS,
+//         .drops = NO_DROPS,
+//         .animations = {
+//             .idle   = ANIM_Chan_Idle,
+//         },
+//         .extraAnimations = N(ExtraAnims_Chan),
+//         .tattle = MSG_NpcTattle_Chan,
+//     },
+//     {
+//         .id = NPC_Lee,
+//         .pos = { 330.0f, 115.0f, -410.0f },
+//         .yaw = 45,
+//         .init = &N(EVS_NpcInit_Lee),
+//         .settings = &N(NpcSettings_Dummy),
+//         .flags = ENEMY_FLAG_PASSIVE | ENEMY_FLAG_DO_NOT_KILL | ENEMY_FLAG_ENABLE_HIT_SCRIPT | ENEMY_FLAG_IGNORE_WORLD_COLLISION | ENEMY_FLAG_IGNORE_ENTITY_COLLISION | ENEMY_FLAG_FLYING | ENEMY_FLAG_NO_SHADOW_RAYCAST | ENEMY_FLAG_RAYCAST_TO_INTERACT | ENEMY_FLAG_NO_DELAY_AFTER_FLEE | ENEMY_FLAG_NO_DROPS,
+//         .drops = NO_DROPS,
+//         .animations = {
+//             .idle   = ANIM_Lee_Idle,
+//         },
+//         .extraAnimations = N(ExtraAnims_Lee),
+//         .tattle = MSG_NpcTattle_Lee,
+//     },
+// };
 
 NpcData N(NpcData_Quizmo_Unused) = {
     .id = NPC_ChuckQuizmo,
@@ -458,7 +458,7 @@ NpcData N(NpcData_PrizeToad) = {
 extern NpcData N(NpcData_SharedTownsfolk)[10];
 
 NpcGroupList N(DefaultNPCs) = {
-    NPC_GROUP(N(NpcData_Toad_03)),
+    // NPC_GROUP(N(NpcData_Toad_03)),
     NPC_GROUP(N(NpcData_ShyGuy_01)),
     NPC_GROUP(N(NpcData_RussT)),
     NPC_GROUP(N(NpcData_Toad_01)),
