@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Map desc="Bee Hive (HP Plus)" background="fob_bg" textures="mim_tex">
 	<Editor>
-		<Camera pos="150.931091,144.827805,-121.004433" pitch="40.639935" yaw="230.200394"/>
+		<Camera pos="407.679260,116.468567,443.164459" pitch="9.000000" yaw="-90.000000"/>
 		<Camera pos="95.575233,65536.000000,-5.786282"/>
 		<Camera pos="65536.000000,16.494497,-78.775162"/>
 		<Camera pos="-98.000000,34.000000,65536.000000"/>
@@ -248,19 +248,20 @@
 		</Node>
 	</ZoneTree>
 	<MarkerTree>
-		<Node name="Root" id="B">
+		<Node name="Root" id="C">
 			<Node name="Cutscene2" id="FFFFFFFF"/>
-			<Node name="Cutscene4" id="0"/>
-			<Node name="Cutscene5" id="1"/>
-			<Node name="Cutscene6" id="2"/>
-			<Node name="FreezyFuzzy" id="3"/>
-			<Node name="PiranhaPlant" id="4"/>
-			<Node name="Beehive" id="5"/>
-			<Node name="BooBully" id="6"/>
-			<Node name="Item2" id="7"/>
-			<Node name="ChestOaklie" id="8"/>
-			<Node name="HPBlock" id="9"/>
-			<Node name="SaveBlock" id="A"/>
+			<Node name="MarioCutscene2" id="0"/>
+			<Node name="Cutscene4" id="1"/>
+			<Node name="Cutscene5" id="2"/>
+			<Node name="Cutscene6" id="3"/>
+			<Node name="FreezyFuzzy" id="4"/>
+			<Node name="PiranhaPlant" id="5"/>
+			<Node name="Beehive" id="6"/>
+			<Node name="BooBully" id="7"/>
+			<Node name="Item2" id="8"/>
+			<Node name="ChestOaklie" id="9"/>
+			<Node name="HPBlock" id="A"/>
+			<Node name="SaveBlock" id="B"/>
 		</Node>
 	</MarkerTree>
 	<LightSets>
@@ -8545,40 +8546,43 @@
 	</Zones>
 	<Markers>
 		<Marker ver="4" type="Root">
-			<MapObject name="Root" id="B"/>
+			<MapObject name="Root" id="C"/>
 		</Marker>
 		<Marker ver="4" type="Position" pos="-177,60,-289" yaw="-45.000000">
-			<MapObject name="SaveBlock" id="A"/>
+			<MapObject name="SaveBlock" id="B"/>
 		</Marker>
 		<Marker ver="4" type="Position" pos="-112,60,-320" yaw="-45.000000">
-			<MapObject name="HPBlock" id="9"/>
+			<MapObject name="HPBlock" id="A"/>
 		</Marker>
 		<Marker ver="4" type="Position" pos="-98,34,-26" yaw="90.000000">
-			<MapObject name="ChestOaklie" id="8"/>
+			<MapObject name="ChestOaklie" id="9"/>
 		</Marker>
 		<Marker ver="4" type="Position" pos="-286,0,186" yaw="0.000000">
-			<MapObject name="Item2" id="7"/>
+			<MapObject name="Item2" id="8"/>
 		</Marker>
 		<Marker ver="4" type="Position" pos="-3,0,-3" yaw="0.000000">
-			<MapObject name="BooBully" id="6"/>
+			<MapObject name="BooBully" id="7"/>
 		</Marker>
 		<Marker ver="4" type="Position" pos="-298,0,28" yaw="0.000000">
-			<MapObject name="Beehive" id="5"/>
+			<MapObject name="Beehive" id="6"/>
 		</Marker>
 		<Marker ver="4" type="Position" pos="299,0,160" yaw="0.000000">
-			<MapObject name="PiranhaPlant" id="4"/>
+			<MapObject name="PiranhaPlant" id="5"/>
 		</Marker>
 		<Marker ver="4" type="Position" pos="-212,0,271" yaw="0.000000">
-			<MapObject name="FreezyFuzzy" id="3"/>
+			<MapObject name="FreezyFuzzy" id="4"/>
 		</Marker>
 		<Marker ver="4" type="Position" pos="-89,34,-4" yaw="0.000000">
-			<MapObject name="Cutscene6" id="2"/>
+			<MapObject name="Cutscene6" id="3"/>
 		</Marker>
 		<Marker ver="4" type="Position" pos="91,34,-56" yaw="0.000000">
-			<MapObject name="Cutscene5" id="1"/>
+			<MapObject name="Cutscene5" id="2"/>
 		</Marker>
 		<Marker ver="4" type="Position" pos="55,34,-79" yaw="0.000000">
-			<MapObject name="Cutscene4" id="0"/>
+			<MapObject name="Cutscene4" id="1"/>
+		</Marker>
+		<Marker ver="4" type="Position" pos="2,34,445" yaw="0.000000">
+			<MapObject name="MarioCutscene2" id="0"/>
 		</Marker>
 		<Marker ver="4" type="Position" pos="6,34,343" yaw="0.000000">
 			<MapObject name="Cutscene2" id="FFFFFFFF"/>

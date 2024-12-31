@@ -10,6 +10,60 @@
 
 #include "world/common/npc/Oaklie.inc.c"
 
+EvtScript N(EVS_Cutscene2) = {
+    Call(DisablePlayerInput, TRUE)
+    Call(func_802D1270, GEN_MARIO_CUTSCENE2_X, GEN_MARIO_CUTSCENE2_Z, Float(4.0))
+    Exec(N(EVS_UseGate_South))
+    Wait(30)
+    Call(GetPlayerPos, LVar0, 0, LVar2)
+    Set(LVar0, -90)
+    Set(LVar2, 307)
+    Call(func_802D1270, LVar0, LVar2, Float(4.0))
+    Wait(15)
+    // Call(AwaitPlayerApproach, GEN_CUTSCENE2_X, GEN_CUTSCENE2_Z, 250)
+    Call(DisablePartnerAI, 0)
+    Call(GetNpcPos, NPC_PARTNER, 0, LVar1, 0)
+    Call(GetPlayerPos, LVar0, 0, LVar2)
+    Add(LVar0, 30)
+    Add(LVar2, 0)
+    Call(NpcFlyTo, NPC_PARTNER, LVar0, LVar1, LVar2, 30, 0, EASING_LINEAR)
+    Wait(10)
+    Call(GetNpcYaw, NPC_PARTNER, LVar3)
+    Sub(LVar3, 180)
+    Call(InterpNpcYaw, NPC_PARTNER, LVar3, 12)
+    Wait(20)
+    Call(GetNpcYaw, NPC_PARTNER, LVar3)
+    Add(LVar3, 180)
+    Call(InterpNpcYaw, NPC_PARTNER, LVar3, 12)
+    Wait(20)
+    Call(InterpPlayerYaw, 180)
+    Wait(20)
+    Call(SpeakToPlayer, NPC_PARTNER, ANIM_WorldBow_Talk, ANIM_WorldBow_Idle, 0, MSG_FotB_0005)
+    Wait(5)
+    Call(GetNpcYaw, NPC_PARTNER, LVar3)
+    Sub(LVar3, 180)
+    Call(InterpNpcYaw, NPC_PARTNER, LVar3, 12)
+    Wait(20)
+    Call(GetNpcYaw, NPC_PARTNER, LVar3)
+    Add(LVar3, 180)
+    Call(InterpNpcYaw, NPC_PARTNER, LVar3, 12)
+    Wait(20)
+    Call(SpeakToPlayer, NPC_PARTNER, ANIM_WorldBow_Talk, ANIM_WorldBow_Idle, 0, MSG_FotB_0006)
+    Call(GetNpcPos, NPC_PARTNER, 0, LVar1, 0)
+    Call(GetPlayerPos, LVar0, 0, LVar2)
+    Sub(LVar0, 30)
+    Sub(LVar2, 1)
+    Call(NpcFlyTo, NPC_PARTNER, LVar0, LVar1, LVar2, 30, 0, EASING_LINEAR)
+    Call(GetNpcYaw, NPC_PARTNER, LVar3)
+    Add(LVar3, 180)
+    Call(InterpNpcYaw, NPC_PARTNER, LVar3, 25)
+    Wait(10)
+    Call(EnablePartnerAI)
+    Call(DisablePlayerInput, FALSE)
+    Return
+    End
+};
+
 NpcData N(NpcData_FreezyFuzzy) = {
     .id = NPC_FreezyFuzzy,
     .pos = { GEN_FREEZY_FUZZY_VEC },

@@ -10,8 +10,11 @@
 #include "mapfs/mim_08_shape.h"
 #include "mapfs/mim_08_hit.h"
 
-#include "sprite/npc/Bzzap.h"
+#include "sprite/npc/WorldBow.h"
+#include "sprite/npc/Oaklie.h"
+#include "sprite/npc/Fuzzy.h"
 #include "sprite/npc/SmallPiranha.h"
+#include "sprite/npc/InsectsDK3.h"
 
 enum {
     NPC_FreezyFuzzy                   = 0,
@@ -33,3 +36,5 @@ extern EvtScript N(EVS_SetupMusic);
 extern EvtScript N(EVS_SetupGates);
 extern EvtScript N(EVS_MakeEntities);
 extern NpcGroupList N(DefaultNPCs);
+extern EvtScript N(EVS_UseGate_South);
+extern EvtScript N(EVS_Cutscene2);

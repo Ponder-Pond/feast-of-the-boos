@@ -13,6 +13,14 @@
 #define GEN_CUTSCENE2_VEC 6,34,343
 
 // type: Marker:Position
+// name: MarioCutscene2
+#define GEN_MARIO_CUTSCENE2_X 2
+#define GEN_MARIO_CUTSCENE2_Y 34
+#define GEN_MARIO_CUTSCENE2_Z 445
+#define GEN_MARIO_CUTSCENE2_DIR 0
+#define GEN_MARIO_CUTSCENE2_VEC 2,34,445
+
+// type: Marker:Position
 // name: Cutscene4
 #define GEN_CUTSCENE4_X 55
 #define GEN_CUTSCENE4_Y 34

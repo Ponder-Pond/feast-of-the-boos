@@ -23,6 +23,30 @@ EvtScript N(EVS_BindExitTriggers) = {
     End
 };
 
+EvtScript N(EVS_EnterMap) = {
+    Call(GetEntryID, LVar0)
+    Switch(LVar0)
+        CaseEq(mim_08_ENTRY_0)
+            Set(LVar0, Ref(N(EVS_BindExitTriggers)))
+            Exec(EnterWalk)
+        CaseEq(mim_08_ENTRY_1)
+            Set(LVar0, Ref(N(EVS_BindExitTriggers)))
+            Exec(EnterWalk)
+        CaseEq(mim_08_ENTRY_2)
+            Set(LVar0, Ref(N(EVS_BindExitTriggers)))
+            Exec(EnterWalk)
+            IfLt(GB_StoryProgress, STORY_MOD_CUTSCENE_2)
+                Exec(N(EVS_Cutscene2))
+                Set(GB_StoryProgress, STORY_MOD_CUTSCENE_2)
+            EndIf
+        CaseEq(mim_08_ENTRY_3)
+            Set(LVar0, Ref(N(EVS_BindExitTriggers)))
+            Exec(EnterWalk)
+    EndSwitch
+    Return
+    End
+};
+
 EvtScript N(EVS_ShakeTree) = {
     Loop(6)
         Set(LVar0, 2)
@@ -53,7 +77,7 @@ EvtScript N(EVS_Main) = {
     // Call(MakeNpcs, TRUE, Ref(N(DefaultNPCs)))
     ExecWait(N(EVS_MakeEntities))
     Set(LVar0, Ref(N(EVS_BindExitTriggers)))
-    Exec(EnterWalk)
+    Exec(N(EVS_EnterMap))
     Wait(1)
     Exec(N(EVS_SetupMusic))
     BindTrigger(Ref(N(EVS_ShakeTree)), TRIGGER_WALL_HAMMER, COLLIDER_o473, 1, 0)

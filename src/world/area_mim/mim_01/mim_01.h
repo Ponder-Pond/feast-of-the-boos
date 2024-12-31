@@ -11,7 +11,7 @@
 #include "mapfs/mim_01_hit.h"
 
 #include "sprite/npc/WorldBow.h"
-#include "sprite/npc/SmallPiranha.h"
+#include "sprite/npc/Fuzzy.h"
 
 // enum {
 //     // NPC_PiranhaPlant            = 1,
