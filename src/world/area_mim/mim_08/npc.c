@@ -20,7 +20,6 @@ EvtScript N(EVS_Cutscene2) = {
     Set(LVar2, 307)
     Call(func_802D1270, LVar0, LVar2, Float(4.0))
     Wait(15)
-    // Call(AwaitPlayerApproach, GEN_CUTSCENE2_X, GEN_CUTSCENE2_Z, 250)
     Call(DisablePartnerAI, 0)
     Call(GetNpcPos, NPC_PARTNER, 0, LVar1, 0)
     Call(GetPlayerPos, LVar0, 0, LVar2)
@@ -73,10 +72,10 @@ NpcData N(NpcData_FreezyFuzzy) = {
             .isFlying = TRUE,
             .moveSpeedOverride = NO_OVERRIDE_MOVEMENT_SPEED,
             .wanderShape = SHAPE_CYLINDER,
-            .centerPos  = { 0, 0, 0 },
+            .centerPos  = { GEN_FREEZY_FUZZY_VEC },
             .wanderSize = { 400 },
             .detectShape = SHAPE_CYLINDER,
-            .detectPos  = { 0, 0, 0 },
+            .detectPos  = { GEN_FREEZY_FUZZY_VEC },
             .detectSize = { 400 },
         }
     },
@@ -97,10 +96,10 @@ NpcData N(NpcData_PiranhaPlant)[] = {
                 .isFlying = TRUE,
                 .moveSpeedOverride = NO_OVERRIDE_MOVEMENT_SPEED,
                 .wanderShape = SHAPE_CYLINDER,
-                .centerPos  = { 0, 0, 0 },
+                .centerPos  = { GEN_PIRANHA_PLANT_VEC },
                 .wanderSize = { 400 },
                 .detectShape = SHAPE_CYLINDER,
-                .detectPos  = { 0, 0, 0 },
+                .detectPos  = { GEN_PIRANHA_PLANT_VEC },
                 .detectSize = { 400 },
             }
         },

@@ -13,6 +13,14 @@
 #define GEN_CUTSCENE3_VEC -6,0,-341
 
 // type: Marker:Position
+// name: MarioCutscene3
+#define GEN_MARIO_CUTSCENE3_X 0
+#define GEN_MARIO_CUTSCENE3_Y 0
+#define GEN_MARIO_CUTSCENE3_Z -437
+#define GEN_MARIO_CUTSCENE3_DIR 0
+#define GEN_MARIO_CUTSCENE3_VEC 0,0,-437
+
+// type: Marker:Position
 // name: Cutscene7
 #define GEN_CUTSCENE7_X -91
 #define GEN_CUTSCENE7_Y 32
@@ -21,36 +29,36 @@
 #define GEN_CUTSCENE7_VEC -91,32,59
 
 // type: Marker:Position
-// name: Formation5
-#define GEN_FORMATION5_X 288
-#define GEN_FORMATION5_Y 0
-#define GEN_FORMATION5_Z -176
-#define GEN_FORMATION5_DIR 0
-#define GEN_FORMATION5_VEC 288,0,-176
+// name: FreezyFuzzy
+#define GEN_FREEZY_FUZZY_X 331
+#define GEN_FREEZY_FUZZY_Y 0
+#define GEN_FREEZY_FUZZY_Z 0
+#define GEN_FREEZY_FUZZY_DIR 0
+#define GEN_FREEZY_FUZZY_VEC 331,0,0
 
 // type: Marker:Position
-// name: Formation6
-#define GEN_FORMATION6_X 45
-#define GEN_FORMATION6_Y 0
-#define GEN_FORMATION6_Z 282
-#define GEN_FORMATION6_DIR 0
-#define GEN_FORMATION6_VEC 45,0,282
+// name: RedPanser
+#define GEN_RED_PANSER_X 45
+#define GEN_RED_PANSER_Y 0
+#define GEN_RED_PANSER_Z 336
+#define GEN_RED_PANSER_DIR 0
+#define GEN_RED_PANSER_VEC 45,0,336
 
 // type: Marker:Position
-// name: Formation7
-#define GEN_FORMATION7_X -315
-#define GEN_FORMATION7_Y 0
-#define GEN_FORMATION7_Z -128
-#define GEN_FORMATION7_DIR 0
-#define GEN_FORMATION7_VEC -315,0,-128
+// name: PiranhaPlant
+#define GEN_PIRANHA_PLANT_X -315
+#define GEN_PIRANHA_PLANT_Y 0
+#define GEN_PIRANHA_PLANT_Z -128
+#define GEN_PIRANHA_PLANT_DIR 0
+#define GEN_PIRANHA_PLANT_VEC -315,0,-128
 
 // type: Marker:Position
 // name: ItemBoxItem3
 #define GEN_ITEM_BOX_ITEM3_X -289
-#define GEN_ITEM_BOX_ITEM3_Y 78
+#define GEN_ITEM_BOX_ITEM3_Y 60
 #define GEN_ITEM_BOX_ITEM3_Z -176
 #define GEN_ITEM_BOX_ITEM3_DIR 0
-#define GEN_ITEM_BOX_ITEM3_VEC -289,78,-176
+#define GEN_ITEM_BOX_ITEM3_VEC -289,60,-176
 
 // type: Marker:Position
 // name: Oaklie

@@ -90,10 +90,10 @@ NpcData N(NpcData_FreezyFuzzy) = {
             .isFlying = TRUE,
             .moveSpeedOverride = NO_OVERRIDE_MOVEMENT_SPEED,
             .wanderShape = SHAPE_CYLINDER,
-            .centerPos  = { 0, 0, 0 },
+            .centerPos  = { GEN_FREEZY_FUZZY_VEC },
             .wanderSize = { 400 },
             .detectShape = SHAPE_CYLINDER,
-            .detectPos  = { 0, 0, 0 },
+            .detectPos  = { GEN_FREEZY_FUZZY_VEC },
             .detectSize = { 400 },
         }
     },

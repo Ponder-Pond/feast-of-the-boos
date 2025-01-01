@@ -935,7 +935,7 @@ enum GameFlags {
     GF_MIM08_Item_MapleSyrup                    = GameFlag(0x3A3),
     GF_MIM8_Chest_Oaklie                        = GameFlag(0x3A4),
     GF_MIM12_HiddenPanel                        = GameFlag(0x3A5),
-    GF_Unused_MIM_0A                            = GameFlag(0x3A6),
+    GF_MIM03_ItemBlock_LifeShroom               = GameFlag(0x3A6),
     GF_MIM11_ItemBlock_VoltShroom               = GameFlag(0x3A7),
     GF_Unused_MIM_0C                            = GameFlag(0x3A8),
     GF_Unused_MIM_0D                            = GameFlag(0x3A9),

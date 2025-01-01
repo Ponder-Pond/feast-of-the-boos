@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Map desc="Flowers (Oaklie)" background="fob_bg" textures="mim_tex">
 	<Editor>
-		<Camera pos="-157.908707,138.586029,152.033218" pitch="38.719959" yaw="64.360657"/>
+		<Camera pos="-352.803680,76.688377,-185.646851" pitch="15.839992" yaw="99.159912"/>
 		<Camera pos="250.455338,65536.000000,-188.165390"/>
 		<Camera pos="65536.000000,762.531128,616.664917"/>
 		<Camera pos="-68.302887,47.587368,65536.000000"/>
@@ -322,15 +322,16 @@
 		</Node>
 	</ZoneTree>
 	<MarkerTree>
-		<Node name="Root" id="7">
+		<Node name="Root" id="8">
 			<Node name="Cutscene3" id="FFFFFFFF"/>
-			<Node name="Cutscene7" id="0"/>
-			<Node name="Formation5" id="1"/>
-			<Node name="Formation6" id="2"/>
-			<Node name="Formation7" id="3"/>
-			<Node name="ItemBoxItem3" id="4"/>
-			<Node name="Oaklie" id="5"/>
-			<Node name="BluePipe" id="6"/>
+			<Node name="MarioCutscene3" id="0"/>
+			<Node name="Cutscene7" id="1"/>
+			<Node name="FreezyFuzzy" id="2"/>
+			<Node name="RedPanser" id="3"/>
+			<Node name="PiranhaPlant" id="4"/>
+			<Node name="ItemBoxItem3" id="5"/>
+			<Node name="Oaklie" id="6"/>
+			<Node name="BluePipe" id="7"/>
 		</Node>
 	</MarkerTree>
 	<LightSets>
@@ -9148,28 +9149,31 @@
 	</Zones>
 	<Markers>
 		<Marker ver="4" type="Root">
-			<MapObject name="Root" id="7"/>
+			<MapObject name="Root" id="8"/>
 		</Marker>
 		<Marker ver="4" type="Position" pos="-59,32,92" yaw="0.000000">
-			<MapObject name="BluePipe" id="6"/>
+			<MapObject name="BluePipe" id="7"/>
 		</Marker>
 		<Marker ver="4" type="Position" pos="-91,32,59" yaw="0.000000">
-			<MapObject name="Oaklie" id="5"/>
+			<MapObject name="Oaklie" id="6"/>
 		</Marker>
-		<Marker ver="4" type="Position" pos="-289,78,-176" yaw="0.000000">
-			<MapObject name="ItemBoxItem3" id="4"/>
+		<Marker ver="4" type="Position" pos="-289,60,-176" yaw="0.000000">
+			<MapObject name="ItemBoxItem3" id="5"/>
 		</Marker>
 		<Marker ver="4" type="Position" pos="-315,0,-128" yaw="0.000000">
-			<MapObject name="Formation7" id="3"/>
+			<MapObject name="PiranhaPlant" id="4"/>
 		</Marker>
-		<Marker ver="4" type="Position" pos="45,0,282" yaw="0.000000">
-			<MapObject name="Formation6" id="2"/>
+		<Marker ver="4" type="Position" pos="45,0,336" yaw="0.000000">
+			<MapObject name="RedPanser" id="3"/>
 		</Marker>
-		<Marker ver="4" type="Position" pos="288,0,-176" yaw="0.000000">
-			<MapObject name="Formation5" id="1"/>
+		<Marker ver="4" type="Position" pos="331,0,0" yaw="0.000000">
+			<MapObject name="FreezyFuzzy" id="2"/>
 		</Marker>
 		<Marker ver="4" type="Position" pos="-91,32,59" yaw="0.000000">
-			<MapObject name="Cutscene7" id="0"/>
+			<MapObject name="Cutscene7" id="1"/>
+		</Marker>
+		<Marker ver="4" type="Position" pos="0,0,-437" yaw="0.000000">
+			<MapObject name="MarioCutscene3" id="0"/>
 		</Marker>
 		<Marker ver="4" type="Position" pos="-6,0,-341" yaw="0.000000">
 			<MapObject name="Cutscene3" id="FFFFFFFF"/>
