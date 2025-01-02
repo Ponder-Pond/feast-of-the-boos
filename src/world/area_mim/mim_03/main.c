@@ -52,6 +52,8 @@ EvtScript N(EVS_EnterMap) = {
             Set(LVar0, Ref(N(EVS_BindExitTriggers)))
             Exec(EnterWalk)
             IfLt(GB_StoryProgress, STORY_MOD_CUTSCENE_3)
+                Call(SetNpcPos, NPC_DupiOaklie, 185, 0, -280)
+                Call(AwaitPlayerApproach, 110, -315, 30)
                 Exec(N(EVS_Cutscene3))
                 Set(GB_StoryProgress, STORY_MOD_CUTSCENE_3)
             EndIf
