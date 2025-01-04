@@ -29,10 +29,10 @@
 #define DX_SKIP_DEMO 1
 
 /// Map to load when starting a new game.
-#define NEW_GAME_MAP_ID "kmr_20"
+#define NEW_GAME_MAP_ID "mim_07"
 
 /// Entry to use when starting a new game.
-#define NEW_GAME_ENTRY_ID kmr_20_ENTRY_4
+#define NEW_GAME_ENTRY_ID mim_07_ENTRY_3
 
 /// Story progress when starting a new game.
 #define NEW_GAME_STORY_PROGRESS     STORY_MOD_CUTSCENE_2

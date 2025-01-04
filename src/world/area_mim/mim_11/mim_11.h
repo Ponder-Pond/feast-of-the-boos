@@ -30,7 +30,7 @@ enum {
 
 extern EvtScript N(EVS_Main);
 extern EvtScript N(EVS_MakeEntities);
-extern EvtScript N(D_802430E0_BBA150);
+// extern EvtScript N(D_802430E0_BBA150);
 extern EvtScript N(EVS_SetupFoliage);
 extern EvtScript N(EVS_SetupMusic);
 

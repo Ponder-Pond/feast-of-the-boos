@@ -19,3 +19,21 @@ EvtScript N(EVS_ManageSnowfall) = {
     Return
     End
 };
+
+EvtScript N(EVS_ManageMansionSnowfall) = {
+    Set(AF_MIM_Snowing, TRUE)
+    Set(AF_MIM_LastSnowing, FALSE)
+    Label(10)
+        IfNe(AF_MIM_Snowing, AF_MIM_LastSnowing)
+            IfEq(AF_MIM_Snowing, FALSE)
+                Call(RemoveEffect, LVarF)
+            Else
+                PlayEffect(EFFECT_SNOWFALL, 0, 100)
+            EndIf
+            Set(AF_MIM_LastSnowing, AF_MIM_Snowing)
+        EndIf
+        Wait(1)
+        Goto(10)
+    Return
+    End
+};

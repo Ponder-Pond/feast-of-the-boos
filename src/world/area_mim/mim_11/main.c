@@ -4,14 +4,16 @@
 
 #include "world/common/atomic/TexturePan.inc.c"
 
-API_CALLABLE(N(func_802405EC_BB765C)) {
+#include "../common/ManageSnowfall.inc.c"
+
+API_CALLABLE(N(SetFogAndBackgroundColor)) {
     enable_world_fog();
-    set_world_fog_dist(960, 1000);
-    set_world_fog_color(32, 30, 28, 255);
+    set_world_fog_dist(950, 1010);
+    set_world_fog_color(75, 120, 170, 255);
 
     enable_entity_fog();
-    set_entity_fog_dist(990, 1000);
-    set_entity_fog_color(0, 0, 0, 255);
+    set_entity_fog_dist(950, 1010); // Was 990, 1000
+    set_entity_fog_color(75, 120, 170, 255); // Was 0, 0, 0
 
     gCameras[CAM_DEFAULT].bgColor[0] = 24;
     gCameras[CAM_DEFAULT].bgColor[1] = 24;
@@ -173,20 +175,20 @@ EvtScript N(EVS_EnterMap) = {
     Switch(LVar0)
         CaseEq(mim_11_ENTRY_0)
             Set(AF_MIM_01, FALSE)
-            IfLt(GB_StoryProgress, STORY_CH3_ARRIVED_AT_BOOS_MANSION)
-                Set(GB_StoryProgress, STORY_CH3_ARRIVED_AT_BOOS_MANSION)
-                ExecWait(N(EVS_Scene_ReachedMansion))
-                Call(SetCamSpeed, CAM_DEFAULT, Float(4.0))
-                Call(GetPlayerPos, LVar0, LVar1, LVar2)
-                Call(UseSettingsFrom, CAM_DEFAULT, LVar0, LVar1, LVar2)
-                Call(SetPanTarget, CAM_DEFAULT, LVar0, LVar1, LVar2)
-                Call(WaitForCam, CAM_DEFAULT, Float(1.0))
-                Call(PanToTarget, CAM_DEFAULT, 0, FALSE)
-                Exec(N(EVS_BindExitTriggers))
-            Else
+            // IfLt(GB_StoryProgress, STORY_CH3_ARRIVED_AT_BOOS_MANSION)
+            //     Set(GB_StoryProgress, STORY_CH3_ARRIVED_AT_BOOS_MANSION)
+            //     ExecWait(N(EVS_Scene_ReachedMansion))
+            //     Call(SetCamSpeed, CAM_DEFAULT, Float(4.0))
+            //     Call(GetPlayerPos, LVar0, LVar1, LVar2)
+            //     Call(UseSettingsFrom, CAM_DEFAULT, LVar0, LVar1, LVar2)
+            //     Call(SetPanTarget, CAM_DEFAULT, LVar0, LVar1, LVar2)
+            //     Call(WaitForCam, CAM_DEFAULT, Float(1.0))
+            //     Call(PanToTarget, CAM_DEFAULT, 0, FALSE)
+            //     Exec(N(EVS_BindExitTriggers))
+            // Else
                 Set(LVar0, Ref(N(EVS_BindExitTriggers)))
                 Exec(EnterWalk)
-            EndIf
+            // EndIf
         CaseEq(mim_11_ENTRY_1)
             Set(LVar0, Ref(N(EVS_BindExitTriggers)))
             Exec(EnterWalk)
@@ -233,11 +235,12 @@ EvtScript N(EVS_Main) = {
     Call(EnableGroup, MODEL_g62, FALSE)
     Call(MakeNpcs, TRUE, Ref(N(DefaultNPCs)))
     ExecWait(N(EVS_MakeEntities))
-    Exec(N(D_802430E0_BBA150))
+    // Exec(N(D_802430E0_BBA150))
     Exec(N(EVS_SetupFoliage))
     Exec(N(EVS_SetupMusic))
     Exec(N(EVS_EnterMap))
-    Call(N(func_802405EC_BB765C))
+    Call(N(SetFogAndBackgroundColor))
+    Exec(N(EVS_ManageMansionSnowfall))
     Return
     End
 };
