@@ -9,12 +9,14 @@ when I left this morning...[BR]
 
 
 
+
 #message:2F:(FotB_0001)
 {
 [Style right]
 Let's be careful![BR]
 [Wait][End]
 }
+
 
 
 
@@ -28,12 +30,14 @@ is a death sentence![BR]
 
 
 
+
 #message:2F:(FotB_0003)
 {
 [Style Inspect]
 The gate won't move, it's jammed.[BR]
 [Wait][End]
 }
+
 
 
 
@@ -48,6 +52,7 @@ It sounds like snickering.[BR]
 }
 
 
+
 #message:2F:(FotB_0005)
 {
 [Style right]
@@ -60,6 +65,7 @@ off the path?[BR]
 }
 
 
+
 #message:2F:(FotB_0006)
 {
 [Style right]
@@ -67,6 +73,7 @@ Let's keep going, Bootler will be[BR]
 worried if we dawdle too long.[BR]
 [Wait][End]
 }
+
 
 
 #message:2F:(FotB_0007)
@@ -78,6 +85,7 @@ Hey, you![BR]
 }
 
 
+
 #message:2F:(FotB_0008)
 {
 [Style right]
@@ -87,11 +95,13 @@ let's try this...[BR]
 }
 
 
+
 #message:2F:(FotB_0009)
 {
-[Style right][Down 10][Shake][PrintRising][Size 32,32]Gwaah ha ha ha![/fx][BR]
-[Wait][End]
+[Style right][Down 10][Shake][PrintRising][Size 32,32]Gwaah ha ha ha!
+[Pause 100][End]
 }
+
 
 
 #message:2F:(FotB_000A)
@@ -103,6 +113,7 @@ that you lout! Come back here![BR]
 }
 
 
+
 #message:2F:(FotB_000B)
 {
 [Style right]
@@ -110,6 +121,7 @@ Maybe he's heading for an exit?[BR]
 Let's follow him![BR]
 [Wait][End]
 }
+
 
 
 #message:2F:(FotB_000C)
@@ -120,12 +132,14 @@ There he is![BR]
 }
 
 
+
 #message:2F:(FotB_000D)
 {
 [Style right]
 Hey Okey! ...Dokey? No, no..[BR]
 [Wait][End]
 }
+
 
 
 #message:2F:(FotB_000E)
@@ -135,6 +149,7 @@ Hey Okey! ...Dokey? No, no..[BR]
 We request your help![BR]
 [Wait][End]
 }
+
 
 
 #message:2F:(FotB_000F)
@@ -149,6 +164,7 @@ What's going on? Can you help us?[BR]
 }
 
 
+
 #message:2F:(FotB_0010)
 {
 [Style right]
@@ -156,6 +172,7 @@ What's going on? Can you help us?[BR]
 direction?[BR]
 [Wait][End]
 }
+
 
 
 #message:2F:(FotB_0011)
@@ -167,13 +184,15 @@ it was a trap![BR]
 }
 
 
+
 #message:2F:(FotB_0012)
 {
 [Style right]
-More like an am-[Shake]BOO[/fx]-sh![BR]
-[Shake]Heh heh heh![/fx][BR]
+More like an am-[Shake]BOO
+[Shake]Heh heh heh!
 [Wait][End]
 }
+
 
 
 #message:2F:(FotB_0013)
@@ -186,6 +205,7 @@ I'm not missing the party for[BR]this, I was lookout last time!![BR]
 }
 
 
+
 #message:2F:(FotB_0014)
 {
 [Style right]
@@ -195,6 +215,7 @@ getting lost in the forest again![BR]
 }
 
 
+
 #message:2F:(FotB_0015)
 {
 [Style right]
@@ -202,6 +223,7 @@ Party? What on earth were[BR]
 they talking about?[BR]
 [Wait][End]
 }
+
 
 
 #message:2F:(FotB_0016)
@@ -218,12 +240,14 @@ bullies at my home![BR]
 }
 
 
+
 #message:2F:(FotB_0017)
 {
 [Style right]
-[Wave]Oooo.... ughhh.....[/fx][BR]
+[Wave]Oooo.... ughhh.....
 [Wait][End]
 }
+
 
 
 #message:2F:(FotB_0018)
@@ -236,12 +260,14 @@ Boos a bad name![BR]
 }
 
 
+
 #message:2F:(FotB_0019)
 {
 [Style right]
 ...Oh? From the chest?[BR]
 [Wait][End]
 }
+
 
 
 #message:2F:(FotB_001A)
@@ -253,6 +279,7 @@ out of there.[BR]
 }
 
 
+
 #message:2F:(FotB_001B)
 {
 [Style right]
@@ -261,12 +288,14 @@ Oof... What a bunch of rude kids...[BR]
 }
 
 
+
 #message:2F:(FotB_001C)
 {
 [Style right]
 Oaklie! Are you alright?[BR]
 [Wait][End]
 }
+
 
 
 #message:2F:(FotB_001D)
@@ -278,6 +307,7 @@ Thank you for saving me. That[BR]
 chest is difficult to breathe in.[BR]
 [Wait][End]
 }
+
 
 
 #message:2F:(FotB_001E)
@@ -293,6 +323,7 @@ We can't even make our way[BR]
 back to the Manor![BR]
 [Wait][End]
 }
+
 
 
 #message:2F:(FotB_001F)
@@ -312,6 +343,7 @@ trapped me inside that chest.[BR]
 }
 
 
+
 #message:2F:(FotB_0020)
 {
 [Style right]
@@ -320,6 +352,7 @@ I feel uneasiness in the[BR]
 forest tonight...[BR]
 [Wait][End]
 }
+
 
 
 #message:2F:(FotB_0021)
@@ -331,6 +364,7 @@ know of some hidden detours[BR]
 we can make use of.[BR]
 [Wait][End]
 }
+
 
 
 #message:2F:(FotB_0022)
@@ -347,12 +381,14 @@ them for too long.[BR]
 }
 
 
+
 #message:2F:(FotB_0023)
 {
 [Style right]
 Follow me to the clearing.[BR]
 [Wait][End]
 }
+
 
 
 #message:2F:(FotB_0024)
@@ -370,12 +406,14 @@ should arrive safely.[BR]
 }
 
 
+
 #message:2F:(FotB_0025)
 {
 [Style right]
 Oh wonderful! Thank you Oaklie![BR]
 [Wait][End]
 }
+
 
 
 #message:2F:(FotB_0026)
@@ -385,3 +423,4 @@ Come now Mario, a fancy feast[BR]
 awaits you![BR]
 [Wait][End]
 }
+

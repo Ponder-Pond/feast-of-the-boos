@@ -83,6 +83,7 @@ EvtScript N(EVS_Main) = {
     ExecWait(N(EVS_SetupGates))
     Call(MakeNpcs, TRUE, Ref(N(DefaultNPCs)))
     Call(SetZoneEnabled, ZONE_stagecutscene, FALSE)
+    Call(SetZoneEnabled, ZONE_cutscene, FALSE)
     ExecWait(N(EVS_MakeEntities))
     // Exec(N(EVS_HideBluePipe))
     Set(LVar0, Ref(N(EVS_BindExitTriggers)))
