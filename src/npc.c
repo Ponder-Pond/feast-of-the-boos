@@ -2553,7 +2553,7 @@ Enemy* get_enemy(s32 npcID) {
             }
         }
     }
-    PANIC();
+    PANIC_MSG("no enemy with npc ID %d in encounter", npcID);
 }
 
 Enemy* get_enemy_safe(s32 npcID) {

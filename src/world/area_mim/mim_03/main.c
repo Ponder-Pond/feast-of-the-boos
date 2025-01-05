@@ -53,7 +53,7 @@ EvtScript N(EVS_EnterMap) = {
             Exec(EnterWalk)
             IfLt(GB_StoryProgress, STORY_MOD_CUTSCENE_3)
                 Call(SetNpcPos, NPC_DupiOaklie, 185, 0, -280)
-                Call(AwaitPlayerApproach, 110, -315, 30)
+                Call(AwaitPlayerApproach, 110, -315, 60)
                 Exec(N(EVS_Cutscene3))
                 Set(GB_StoryProgress, STORY_MOD_CUTSCENE_3)
             EndIf
@@ -82,6 +82,7 @@ EvtScript N(EVS_Main) = {
     Set(AF_MIM03_Oaklie_DialogueToggle, FALSE)
     ExecWait(N(EVS_SetupGates))
     Call(MakeNpcs, TRUE, Ref(N(DefaultNPCs)))
+    Call(SetZoneEnabled, ZONE_stagecutscene, FALSE)
     ExecWait(N(EVS_MakeEntities))
     // Exec(N(EVS_HideBluePipe))
     Set(LVar0, Ref(N(EVS_BindExitTriggers)))

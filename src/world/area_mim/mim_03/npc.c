@@ -8,37 +8,156 @@
 
 #include "world/common/npc/Oaklie.inc.c"
 
+EvtScript N(EVS_Bow_SpookNpc) = {
+    ChildThread
+        Call(SetZoneEnabled, ZONE_stage, FALSE)
+        Call(SetZoneEnabled, ZONE_stagecutscene, TRUE)
+        Call(GetPlayerPos, LVarA, LVarB, LVarC)
+        Call(SetPanTarget, CAM_DEFAULT, LVarA, LVarB, LVarC)
+        Call(UseSettingsFrom, CAM_DEFAULT, LVarA, LVarB, LVarC)
+        Call(SetCamSpeed, CAM_DEFAULT, Float(90.0))
+        Loop(0)
+            Call(SetCamDistance, CAM_DEFAULT, 400)
+            Call(PanToTarget, CAM_DEFAULT, 0, TRUE)
+            Wait(1)
+            Call(SetCamDistance, CAM_DEFAULT, 450)
+            Call(PanToTarget, CAM_DEFAULT, 0, TRUE)
+            Wait(1)
+        EndLoop
+    EndChildThread
+    Call(SpeakToNpc, NPC_PARTNER, ANIM_WorldBow_SpookLoop, ANIM_WorldBow_SpookLoop, 0, NPC_PARTNER, MSG_FotB_0009)
+    Return
+    End
+};
+
 EvtScript N(EVS_Cutscene3) = {
     Call(DisablePlayerInput, TRUE)
+    Call(func_802D1270, 110, -315, Float(4.0))
+    Wait(5)
     Call(DisablePartnerAI, 0)
     Call(GetNpcPos, NPC_PARTNER, 0, LVar1, 0)
     Call(GetPlayerPos, LVar0, 0, LVar2)
-    Sub(LVar0, 20)
+    Sub(LVar0, 30)
     Call(SetNpcSpeed, NPC_PARTNER, Float(4.0))
     Call(NpcFlyTo, NPC_PARTNER, LVar0, LVar1, LVar2, 0, 0, EASING_LINEAR)
-    Wait(5)
-    Call(GetPlayerPos, LVar0, LVar1, LVar2)
-    Call(UseSettingsFrom, CAM_DEFAULT, LVar0, LVar1, LVar2)
-    Call(SetCamDistance, CAM_DEFAULT, 300)
-    Call(SetCamSpeed, CAM_DEFAULT, Float(4.0))
-    Call(SetPanTarget, CAM_DEFAULT, LVar0, LVar1, LVar2)
-    Call(PanToTarget, CAM_DEFAULT, 0, TRUE)
-    Call(WaitForCam, CAM_DEFAULT, Float(1.0))
-    Wait(1)
+    // Call(GetPlayerPos, LVar0, LVar1, LVar2)
+    // Call(UseSettingsFrom, CAM_DEFAULT, LVar0, LVar1, LVar2)
+    // Call(SetCamDistance, CAM_DEFAULT, 300)
+    // Call(SetCamSpeed, CAM_DEFAULT, Float(4.0))
+    // Call(SetPanTarget, CAM_DEFAULT, LVar0, LVar1, LVar2)
+    // Call(PanToTarget, CAM_DEFAULT, 0, TRUE)
+    // Call(WaitForCam, CAM_DEFAULT, Float(1.0))
+    // Wait(1)
     Call(PlaySoundAtPlayer, SOUND_EMOTE_IDEA, SOUND_SPACE_DEFAULT)
     Call(ShowEmote, 0, EMOTE_EXCLAMATION, 0, 25, EMOTER_PLAYER, 0, 0, 0, 0)
     Call(PlaySoundAtNpc, NPC_PARTNER, SOUND_EMOTE_IDEA, SOUND_SPACE_DEFAULT)
     Call(ShowEmote, NPC_PARTNER, EMOTE_EXCLAMATION, 0, 25, EMOTER_NPC, 0, 0, 0, 0)
     Wait(25)
+    Call(SpeakToNpc, NPC_PARTNER, ANIM_WorldBow_Talk, ANIM_WorldBow_Idle, 0, NPC_PARTNER, MSG_FotB_0007)
+    WaitSecs(3)
+    Call(PlaySoundAtPlayer, SOUND_EMOTE_QUESTION, SOUND_SPACE_DEFAULT)
+    Call(ShowEmote, 0, EMOTE_QUESTION, 0, 25, EMOTER_PLAYER, 0, 0, 0, 0)
+    Wait(25)
+    Call(SpeakToNpc, NPC_PARTNER, ANIM_WorldBow_Talk, ANIM_WorldBow_Idle, 0, NPC_PARTNER, MSG_FotB_0008)
+    Call(SetCamLeadPlayer, CAM_DEFAULT, TRUE)
+    Wait(1)
+    Call(GetNpcPos, NPC_PARTNER, 0, LVar1, 0)
+    Call(GetNpcPos, NPC_DupiOaklie, LVar0, 0, LVar2)
+    Sub(LVar0, 40)
+    Call(NpcFlyTo, NPC_PARTNER, LVar0, LVar1, LVar2, 30, 0, EASING_LINEAR)
+    Call(SetNpcAnimation, NPC_PARTNER, ANIM_WorldBow_SpookBegin)
+    Wait(6)
+    Call(SetNpcAnimation, NPC_PARTNER, ANIM_WorldBow_SpookLoop)
+    Thread
+        // Call(GetNpcPos, NPC_PARTNER, LVarA, LVarB, LVarC)
+        // Sub(LVarB, 40)
+        // Call(SetNpcPos, NPC_PARTNER, LVarA, LVarB, LVarC)
+        Call(SetNpcScale, NPC_PARTNER, Float(2.0), Float(2.0), Float(2.0))
+    EndThread
+    Call(PlaySoundAtNpc, NPC_PARTNER, SOUND_BOW_SPOOK, SOUND_SPACE_DEFAULT)
+    ExecWait(N(EVS_Bow_SpookNpc))
+    Call(SetNpcScale, NPC_PARTNER, Float(2.0), Float(2.0), Float(2.0))
+    Wait(1)
+    Call(SetNpcScale, NPC_PARTNER, Float(1.9), Float(1.9), Float(1.9))
+    Wait(1)
+    Call(SetNpcScale, NPC_PARTNER, Float(1.8), Float(1.8), Float(1.8))
+    Wait(1)
+    Call(SetNpcScale, NPC_PARTNER, Float(1.7), Float(1.7), Float(1.7))
+    Wait(1)
+    Call(SetNpcScale, NPC_PARTNER, Float(1.6), Float(1.6), Float(1.6))
+    Wait(1)
+    Call(SetNpcScale, NPC_PARTNER, Float(1.5), Float(1.5), Float(1.5))
+    Wait(1)
+    Call(SetNpcScale, NPC_PARTNER, Float(1.4), Float(1.4), Float(1.4))
+    Wait(1)
+    Call(SetNpcScale, NPC_PARTNER, Float(1.3), Float(1.3), Float(1.3))
+    Wait(1)
+    Call(SetNpcScale, NPC_PARTNER, Float(1.2), Float(1.2), Float(1.2))
+    Wait(1)
+    Call(SetNpcScale, NPC_PARTNER, Float(1.1), Float(1.1), Float(1.1))
+    Wait(1)
+    Call(SetNpcScale, NPC_PARTNER, Float(1.0), Float(1.0), Float(1.0))
+    Wait(1)
+    Call(SetNpcAnimation, NPC_PARTNER, ANIM_WorldBow_Idle)
+    Wait(5)
+    Call(SetZoneEnabled, ZONE_stage, TRUE)
+    Call(SetZoneEnabled, ZONE_stagecutscene, FALSE)
+    Call(SetCamDistance, CAM_DEFAULT, 450)
+    Call(PanToTarget, CAM_DEFAULT, 0, TRUE)
+    Wait(1)
+    Call(PanToTarget, CAM_DEFAULT, 0, FALSE)
+    WaitSecs(3)
+   Thread
+        Call(SetNpcAnimation, NPC_DupiOaklie, ANIM_Oaklie_Dupi_Jump)
+        Wait(15)
+        Call(SetNpcAnimation, NPC_DupiOaklie, ANIM_Oaklie_Dupi_Fall)
+    EndThread
+    Call(PlaySoundAtNpc, NPC_DupiOaklie, SOUND_NPC_JUMP, SOUND_SPACE_DEFAULT)
+    Call(GetNpcPos, NPC_DupiOaklie, LVar0, LVar1, LVar2)
+    Add(LVar0, 33)
+    Call(NpcJump0, NPC_DupiOaklie, LVar0, LVar1, LVar2, 15)
+    Call(SetNpcAnimation, NPC_DupiOaklie, ANIM_Oaklie_Dupi_Land)
+    Wait(5)
+   Thread
+        Call(SetNpcAnimation, NPC_DupiOaklie, ANIM_Oaklie_Dupi_Jump)
+        Wait(15)
+        Call(SetNpcAnimation, NPC_DupiOaklie, ANIM_Oaklie_Dupi_Fall)
+    EndThread
+    Call(PlaySoundAtNpc, NPC_DupiOaklie, SOUND_NPC_JUMP, SOUND_SPACE_DEFAULT)
+    Call(GetNpcPos, NPC_DupiOaklie, LVar0, LVar1, LVar2)
+    Add(LVar0, 33)
+    Call(NpcJump0, NPC_DupiOaklie, LVar0, LVar1, LVar2, 15)
+    Call(SetNpcAnimation, NPC_DupiOaklie, ANIM_Oaklie_Dupi_Land)
+    Wait(5)
+   Thread
+        Call(SetNpcAnimation, NPC_DupiOaklie, ANIM_Oaklie_Dupi_Jump)
+        Wait(15)
+        Call(SetNpcAnimation, NPC_DupiOaklie, ANIM_Oaklie_Dupi_Fall)
+    EndThread
+    Call(PlaySoundAtNpc, NPC_DupiOaklie, SOUND_NPC_JUMP, SOUND_SPACE_DEFAULT)
+    Call(GetNpcPos, NPC_DupiOaklie, LVar0, LVar1, LVar2)
+    Add(LVar0, 33)
+    Call(NpcJump0, NPC_DupiOaklie, LVar0, LVar1, LVar2, 15)
+    Call(SetNpcAnimation, NPC_DupiOaklie, ANIM_Oaklie_Dupi_Land)
+    Wait(5)
+    Call(SetNpcPos, NPC_DupiOaklie, NPC_DISPOSE_LOCATION)
+    Call(SpeakToNpc, NPC_PARTNER, ANIM_WorldBow_Flail, ANIM_WorldBow_Flail, 0, NPC_PARTNER, MSG_FotB_000A)
+    Call(GetNpcYaw, NPC_PARTNER, LVar3)
+    Add(LVar3, 180)
+    Call(InterpNpcYaw, NPC_PARTNER, LVar3, 25)
+    Wait(10)
+    Call(SpeakToPlayer, NPC_PARTNER, ANIM_WorldBow_Talk, ANIM_WorldBow_Idle, 0, MSG_FotB_000B)
     Call(GetNpcPos, NPC_PARTNER, 0, LVar1, 0)
     Call(GetPlayerPos, LVar0, 0, LVar2)
-    Sub(LVar0, 20)
+    Sub(LVar0, 30)
     Call(NpcFlyTo, NPC_PARTNER, LVar0, LVar1, LVar2, 30, 0, EASING_LINEAR)
+    Call(GetNpcYaw, NPC_PARTNER, LVar3)
+    Add(LVar3, 180)
+    Call(InterpNpcYaw, NPC_PARTNER, LVar3, 25)
     Wait(10)
     Call(ResetCam, CAM_DEFAULT, 6)
     Call(EnablePartnerAI)
     Call(DisablePlayerInput, FALSE)
-    Call(SetNpcPos, NPC_DupiOaklie, NPC_DISPOSE_LOCATION)
     Return
     End
 };
@@ -80,16 +199,15 @@ NpcData N(NpcData_RedPanser)[] = {
                 .wanderSize = { 30 },
                 .detectShape = SHAPE_CYLINDER,
                 .detectPos  = { GEN_RED_PANSER_VEC },
-                .detectSize = { 200 },
+                .detectSize = { 180 },
             }
         },
         .settings = &N(NpcSettings_RedPanser),
-        .flags = ENEMY_FLAG_IGNORE_ENTITY_COLLISION | ENEMY_FLAG_FLYING,
+        .flags = ENEMY_FLAG_FLYING,
         .drops = RED_PANSER_DROPS,
         .animations = RED_PANSER_ANIMS,
     },
-    RED_PANSER_FIREBALL_HITBOX(NPC_RedPanser_Fireball_1),
-    RED_PANSER_FIREBALL_HITBOX(NPC_RedPanser_Fireball_2),
+    RED_PANSER_FIREBALL_HITBOX(NPC_RedPanser_Fireball),
 };
 
 NpcData N(NpcData_PiranhaPlant)[] = {
@@ -187,7 +305,7 @@ NpcData N(NpcData_Oaklie) = {
 
 NpcGroupList N(DefaultNPCs) = {
     NPC_GROUP(N(NpcData_FreezyFuzzy), BTL_FOB_FORMATION_00, BTL_FOB_STAGE_00),
-    // NPC_GROUP(N(NpcData_RedPanser), BTL_FOB_FORMATION_00, BTL_FOB_STAGE_00),
+    NPC_GROUP(N(NpcData_RedPanser), BTL_FOB_FORMATION_00, BTL_FOB_STAGE_00),
     NPC_GROUP(N(NpcData_PiranhaPlant), BTL_FOB_FORMATION_00, BTL_FOB_STAGE_00),
     NPC_GROUP(N(NpcData_DupiOaklie)),
     NPC_GROUP(N(NpcData_Oaklie)),

@@ -227,12 +227,35 @@ EvtScript N(EVS_EnterMap) = {
     End
 };
 
+EvtScript N(EVS_WindowColorShift) = {
+    Loop(0)
+        Call(EnableModel, MODEL_RedWindows, TRUE)
+        Call(EnableModel, MODEL_GreenWindows, FALSE)
+        Call(EnableModel, MODEL_BlueWindows, FALSE)
+        Wait(32)
+        Call(EnableModel, MODEL_RedWindows, FALSE)
+        Call(EnableModel, MODEL_GreenWindows, TRUE)
+        Call(EnableModel, MODEL_BlueWindows, FALSE)
+        Wait(32)
+        Call(EnableModel, MODEL_RedWindows, FALSE)
+        Call(EnableModel, MODEL_GreenWindows, FALSE)
+        Call(EnableModel, MODEL_BlueWindows, TRUE)
+        Wait(32)
+    EndLoop
+    Return
+    End
+};
+
 EvtScript N(EVS_Main) = {
     Set(GB_WorldLocation, LOCATION_BOOS_MANSION)
     Set(GF_MAP_BoosMansion, TRUE)
     Call(SetSpriteShading, SHADING_MIM_11)
     EVT_SETUP_CAMERA_NO_LEAD(0, 0, 0)
     Call(EnableGroup, MODEL_g62, FALSE)
+    Call(SetModelCustomGfx, MODEL_RedWindows, CUSTOM_GFX_NONE, ENV_TINT_REMAP)
+    Call(SetModelCustomGfx, MODEL_GreenWindows, CUSTOM_GFX_NONE, ENV_TINT_REMAP)
+    Call(SetModelCustomGfx, MODEL_BlueWindows, CUSTOM_GFX_NONE, ENV_TINT_REMAP)
+    Exec(N(EVS_WindowColorShift))
     Call(MakeNpcs, TRUE, Ref(N(DefaultNPCs)))
     ExecWait(N(EVS_MakeEntities))
     // Exec(N(D_802430E0_BBA150))

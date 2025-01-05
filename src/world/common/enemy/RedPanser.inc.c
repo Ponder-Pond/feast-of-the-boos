@@ -52,6 +52,7 @@ NpcSettings N(NpcSettings_RedPanser) = {
     .ai = &N(EVS_NpcAI_RedPanser),
     .onHit = &EnemyNpcHit,
     .onDefeat = &EnemyNpcDefeat,
+    .actionFlags = AI_ACTION_08,
 };
 
 MobileAISettings N(AISettings_RedPanser_Fireball) = {
@@ -63,8 +64,9 @@ MobileAISettings N(AISettings_RedPanser_Fireball) = {
 
 EvtScript N(EVS_NpcAI_RedPanser_Fireball) = {
     Call(SetSelfVar, 0, 0)
-    Call(SetSelfVar, 1, 3)
-    Call(SetSelfVar, 2, 20)
+    Call(SetSelfVar, 1, 0)
+    Call(SetSelfVar, 2, 17)
+    Call(SetSelfVar, 3, 17)
     Call(N(ProjectileAI_Main), Ref(N(AISettings_RedPanser_Fireball)))
     Return
     End

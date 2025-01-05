@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Map desc="Outside Boo's Mansion" background="fob_bg" textures="mim_tex">
 	<Editor>
-		<Camera pos="-492.252258,346.362915,187.178589" pitch="52.560001" yaw="50.720032"/>
+		<Camera pos="-42.459030,342.223816,-53.488968" pitch="39.600029" yaw="36.800148"/>
 		<Camera pos="18.484102,65536.000000,71.317825"/>
 		<Camera pos="65536.000000,1225.969971,2043.907837"/>
 		<Camera pos="-149.856995,65.887245,65536.000000"/>
 	</Editor>
 	<ModelTree>
-		<Node name="Root" id="88">
+		<Node name="Root" id="8A">
 			<Node name="stage" id="27">
 				<Node name="o236" id="0"/>
 				<Node name="road" id="1"/>
@@ -68,109 +68,111 @@
 					<Node name="o7" id="31"/>
 				</Node>
 			</Node>
-			<Node name="ie" id="57">
-				<Node name="g2" id="3F">
+			<Node name="ie" id="59">
+				<Node name="g2" id="41">
 					<Node name="dan" id="34"/>
 					<Node name="waku1" id="35"/>
 					<Node name="kabe" id="36"/>
 					<Node name="kabe2" id="37"/>
-					<Node name="mado" id="38"/>
-					<Node name="o16" id="39"/>
-					<Node name="koyane" id="3A"/>
-					<Node name="waku2" id="3B"/>
-					<Node name="hasi" id="3C"/>
-					<Node name="kaza1" id="3D"/>
-					<Node name="o103" id="3E"/>
+					<Node name="RedWindows" id="38"/>
+					<Node name="GreenWindows" id="39"/>
+					<Node name="BlueWindows" id="3A"/>
+					<Node name="o16" id="3B"/>
+					<Node name="koyane" id="3C"/>
+					<Node name="waku2" id="3D"/>
+					<Node name="hasi" id="3E"/>
+					<Node name="kaza1" id="3F"/>
+					<Node name="o103" id="40"/>
 				</Node>
-				<Node name="demado" id="51">
-					<Node name="yane" id="40"/>
-					<Node name="g13" id="44">
-						<Node name="o28" id="41"/>
-						<Node name="o29" id="42"/>
-						<Node name="o30" id="43"/>
+				<Node name="demado" id="53">
+					<Node name="yane" id="42"/>
+					<Node name="g13" id="46">
+						<Node name="o28" id="43"/>
+						<Node name="o29" id="44"/>
+						<Node name="o30" id="45"/>
 					</Node>
-					<Node name="g26" id="48">
-						<Node name="o66" id="45"/>
-						<Node name="o67" id="46"/>
-						<Node name="o68" id="47"/>
+					<Node name="g26" id="4A">
+						<Node name="o66" id="47"/>
+						<Node name="o67" id="48"/>
+						<Node name="o68" id="49"/>
 					</Node>
-					<Node name="g27" id="4C">
-						<Node name="o69" id="49"/>
-						<Node name="o70" id="4A"/>
-						<Node name="o71" id="4B"/>
+					<Node name="g27" id="4E">
+						<Node name="o69" id="4B"/>
+						<Node name="o70" id="4C"/>
+						<Node name="o71" id="4D"/>
 					</Node>
-					<Node name="g28" id="50">
-						<Node name="o72" id="4D"/>
-						<Node name="o73" id="4E"/>
-						<Node name="o74" id="4F"/>
+					<Node name="g28" id="52">
+						<Node name="o72" id="4F"/>
+						<Node name="o73" id="50"/>
+						<Node name="o74" id="51"/>
 					</Node>
 				</Node>
-				<Node name="en" id="54">
-					<Node name="e_kabe" id="52"/>
-					<Node name="e_waku2" id="53"/>
+				<Node name="en" id="56">
+					<Node name="e_kabe" id="54"/>
+					<Node name="e_waku2" id="55"/>
 				</Node>
-				<Node name="g72" id="56">
-					<Node name="hasi2" id="55"/>
-				</Node>
-			</Node>
-			<Node name="etc" id="62">
-				<Node name="kusa" id="5A">
-					<Node name="o148" id="58"/>
-					<Node name="o151" id="59"/>
-				</Node>
-				<Node name="iwa" id="5F">
-					<Node name="o163" id="5B"/>
-					<Node name="o164" id="5C"/>
-					<Node name="o153" id="5D"/>
-					<Node name="o161" id="5E"/>
-				</Node>
-				<Node name="ki" id="61">
-					<Node name="o162" id="60"/>
+				<Node name="g72" id="58">
+					<Node name="hasi2" id="57"/>
 				</Node>
 			</Node>
-			<Node name="doa1" id="64">
-				<Node name="doa" id="63"/>
+			<Node name="etc" id="64">
+				<Node name="kusa" id="5C">
+					<Node name="o148" id="5A"/>
+					<Node name="o151" id="5B"/>
+				</Node>
+				<Node name="iwa" id="61">
+					<Node name="o163" id="5D"/>
+					<Node name="o164" id="5E"/>
+					<Node name="o153" id="5F"/>
+					<Node name="o161" id="60"/>
+				</Node>
+				<Node name="ki" id="63">
+					<Node name="o162" id="62"/>
+				</Node>
 			</Node>
-			<Node name="doa2" id="66">
-				<Node name="o166" id="65"/>
+			<Node name="doa1" id="66">
+				<Node name="doa" id="65"/>
 			</Node>
-			<Node name="mon2" id="68">
-				<Node name="h_mon2" id="67"/>
+			<Node name="doa2" id="68">
+				<Node name="o166" id="67"/>
 			</Node>
-			<Node name="mon1" id="6A">
-				<Node name="h_mon1" id="69"/>
+			<Node name="mon2" id="6A">
+				<Node name="h_mon2" id="69"/>
 			</Node>
-			<Node name="g62" id="71">
-				<Node name="o176" id="6B"/>
-				<Node name="o177" id="6C"/>
-				<Node name="o178" id="6D"/>
-				<Node name="o179" id="6E"/>
-				<Node name="o180" id="6F"/>
-				<Node name="o181" id="70"/>
+			<Node name="mon1" id="6C">
+				<Node name="h_mon1" id="6B"/>
 			</Node>
-			<Node name="a_kusa" id="76">
-				<Node name="o182" id="72"/>
-				<Node name="o183" id="73"/>
-				<Node name="o184" id="74"/>
-				<Node name="o185" id="75"/>
+			<Node name="g62" id="73">
+				<Node name="o176" id="6D"/>
+				<Node name="o177" id="6E"/>
+				<Node name="o178" id="6F"/>
+				<Node name="o179" id="70"/>
+				<Node name="o180" id="71"/>
+				<Node name="o181" id="72"/>
 			</Node>
-			<Node name="h_dai" id="77"/>
-			<Node name="CubeModel" id="78"/>
-			<Node name="CubeModel" id="79"/>
+			<Node name="a_kusa" id="78">
+				<Node name="o182" id="74"/>
+				<Node name="o183" id="75"/>
+				<Node name="o184" id="76"/>
+				<Node name="o185" id="77"/>
+			</Node>
+			<Node name="h_dai" id="79"/>
 			<Node name="CubeModel" id="7A"/>
-			<Node name="CylinderModel" id="7B"/>
+			<Node name="CubeModel" id="7B"/>
 			<Node name="CubeModel" id="7C"/>
-			<Node name="si1" id="7D"/>
-			<Node name="hon1" id="7E"/>
-			<Node name="o191" id="7F"/>
-			<Node name="o191" id="80"/>
-			<Node name="tokei" id="81"/>
+			<Node name="CylinderModel" id="7D"/>
+			<Node name="CubeModel" id="7E"/>
+			<Node name="si1" id="7F"/>
+			<Node name="hon1" id="80"/>
+			<Node name="o191" id="81"/>
 			<Node name="o191" id="82"/>
-			<Node name="o200" id="83"/>
-			<Node name="o200" id="84"/>
-			<Node name="o5" id="85"/>
-			<Node name="MeshModel" id="86"/>
-			<Node name="CubeModel" id="87"/>
+			<Node name="tokei" id="83"/>
+			<Node name="o191" id="84"/>
+			<Node name="o200" id="85"/>
+			<Node name="o200" id="86"/>
+			<Node name="o5" id="87"/>
+			<Node name="MeshModel" id="88"/>
+			<Node name="CubeModel" id="89"/>
 		</Node>
 	</ModelTree>
 	<ColliderTree>
@@ -253,13 +255,13 @@
 	</LightSets>
 	<Models>
 		<Model ver="2" type="ROOT" lightset="1">
-			<MapObject name="Root" id="88" dumped="true" fileOffset="12BEC"/>
+			<MapObject name="Root" id="8A" dumped="true" fileOffset="12BEC"/>
 			<BoundingBox empty="false" min="-780,-104,-781" max="783,1636,781"/>
 			<PropertyList>
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="CubeModel" id="87"/>
+			<MapObject name="CubeModel" id="89"/>
 			<ShapeMesh ver="3" texture="mim_papertif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -287,7 +289,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="MeshModel" id="86"/>
+			<MapObject name="MeshModel" id="88"/>
 			<ShapeMesh ver="3" texture="mim_darkgreen2tif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -467,7 +469,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="o5" id="85"/>
+			<MapObject name="o5" id="87"/>
 			<ShapeMesh ver="3" texture="mim_h_kabe2tif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -839,7 +841,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="o200" id="84"/>
+			<MapObject name="o200" id="86"/>
 			<ShapeMesh ver="3" texture="mim_dark_mitikusatif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -867,7 +869,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="o200" id="83"/>
+			<MapObject name="o200" id="85"/>
 			<ShapeMesh ver="3" texture="mim_dark_mitikusatif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -911,7 +913,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="o191" id="82"/>
+			<MapObject name="o191" id="84"/>
 			<ShapeMesh ver="3" texture="mim_dark_bushtif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -939,7 +941,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="tokei" id="81"/>
+			<MapObject name="tokei" id="83"/>
 			<ShapeMesh ver="3" texture="mim_tokeitif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -999,7 +1001,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="o191" id="80"/>
+			<MapObject name="o191" id="82"/>
 			<ShapeMesh ver="3" texture="mim_dark_bushtif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -1027,7 +1029,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="o191" id="7F"/>
+			<MapObject name="o191" id="81"/>
 			<ShapeMesh ver="3" texture="mim_dark_bushtif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -1055,7 +1057,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="hon1" id="7E"/>
+			<MapObject name="hon1" id="80"/>
 			<ShapeMesh ver="3" texture="mim_door_1tif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -1446,7 +1448,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="si1" id="7D"/>
+			<MapObject name="si1" id="7F"/>
 			<ShapeMesh ver="3" texture="mim_tererere_2tif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -1506,7 +1508,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="CubeModel" id="7C"/>
+			<MapObject name="CubeModel" id="7E"/>
 			<ShapeMesh ver="3" texture="mim_papertif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -1534,7 +1536,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="CylinderModel" id="7B"/>
+			<MapObject name="CylinderModel" id="7D"/>
 			<ShapeMesh ver="3" texture="mim_hikaritif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -1584,7 +1586,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="CubeModel" id="7A"/>
+			<MapObject name="CubeModel" id="7C"/>
 			<ShapeMesh ver="3" texture="mim_papertif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -1612,7 +1614,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="CubeModel" id="79"/>
+			<MapObject name="CubeModel" id="7B"/>
 			<ShapeMesh ver="3" texture="mim_papertif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -1640,7 +1642,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="CubeModel" id="78"/>
+			<MapObject name="CubeModel" id="7A"/>
 			<ShapeMesh ver="3" texture="mim_papertif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -1666,7 +1668,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="h_dai" id="77"/>
+			<MapObject name="h_dai" id="79"/>
 			<ShapeMesh ver="3" texture="mim_darkgreen2tif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -1829,7 +1831,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="GROUP" lightset="0">
-			<MapObject name="a_kusa" id="76" dumped="true" fileOffset="12B48"/>
+			<MapObject name="a_kusa" id="78" dumped="true" fileOffset="12B48"/>
 			<BoundingBox empty="false" min="-364,0,226" max="400,38,380"/>
 			<PropertyList>
 				<Property v="60,0,0"/>
@@ -1837,7 +1839,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="o185" id="75" dumped="true" fileOffset="12AA8"/>
+			<MapObject name="o185" id="77" dumped="true" fileOffset="12AA8"/>
 			<ShapeMesh ver="3" texture="mim_dark_bushtif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -1863,7 +1865,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="o184" id="74" dumped="true" fileOffset="12A20"/>
+			<MapObject name="o184" id="76" dumped="true" fileOffset="12A20"/>
 			<ShapeMesh ver="3" texture="mim_dark_bushtif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -1889,7 +1891,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="o183" id="73" dumped="true" fileOffset="12998"/>
+			<MapObject name="o183" id="75" dumped="true" fileOffset="12998"/>
 			<ShapeMesh ver="3" texture="mim_dark_bushtif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -1915,7 +1917,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="o182" id="72" dumped="true" fileOffset="12910"/>
+			<MapObject name="o182" id="74" dumped="true" fileOffset="12910"/>
 			<ShapeMesh ver="3" texture="mim_dark_bushtif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -1941,7 +1943,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="GROUP" lightset="0">
-			<MapObject name="g62" id="71" dumped="true" fileOffset="12888"/>
+			<MapObject name="g62" id="73" dumped="true" fileOffset="12888"/>
 			<BoundingBox empty="false" min="-66,599,-3" max="66,1636,103"/>
 			<TransformMatrix m="1.000000,0.000000,0.000000,0.000000,0.000000,1.000000,0.000000,599.812988,0.000000,0.000000,1.000000,50.000000,0.000000,0.000000,0.000000,1.000000"/>
 			<PropertyList>
@@ -1950,7 +1952,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="o181" id="70" dumped="true" fileOffset="127E0"/>
+			<MapObject name="o181" id="72" dumped="true" fileOffset="127E0"/>
 			<ShapeMesh ver="3" texture="mim_kusaritif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -1976,7 +1978,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="o180" id="6F" dumped="true" fileOffset="12758"/>
+			<MapObject name="o180" id="71" dumped="true" fileOffset="12758"/>
 			<ShapeMesh ver="3" texture="mim_hashira_atif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -2082,7 +2084,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="o179" id="6E" dumped="true" fileOffset="126D0"/>
+			<MapObject name="o179" id="70" dumped="true" fileOffset="126D0"/>
 			<ShapeMesh ver="3" texture="mim_bedtif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -2198,7 +2200,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="o178" id="6D" dumped="true" fileOffset="12648"/>
+			<MapObject name="o178" id="6F" dumped="true" fileOffset="12648"/>
 			<ShapeMesh ver="3" texture="mim_kabebe_mtif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -2234,7 +2236,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="o177" id="6C" dumped="true" fileOffset="125C0"/>
+			<MapObject name="o177" id="6E" dumped="true" fileOffset="125C0"/>
 			<ShapeMesh ver="3" texture="mim_yuka_tairu3tif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -2260,7 +2262,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="o176" id="6B" dumped="true" fileOffset="12538"/>
+			<MapObject name="o176" id="6D" dumped="true" fileOffset="12538"/>
 			<ShapeMesh ver="3" texture="mim_danrotif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -2298,7 +2300,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="GROUP" lightset="0">
-			<MapObject name="mon1" id="6A" dumped="true" fileOffset="124B0"/>
+			<MapObject name="mon1" id="6C" dumped="true" fileOffset="124B0"/>
 			<BoundingBox empty="false" min="-211,2,51" max="-161,2,103"/>
 			<TransformMatrix m="0.000000,1.000000,-0.000000,-211.000000,-0.707107,0.000000,0.707107,2.353284,0.707107,0.000000,0.707107,51.397078,0.000000,0.000000,0.000000,1.000000"/>
 			<PropertyList>
@@ -2307,7 +2309,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="h_mon1" id="69" dumped="true" fileOffset="1241C"/>
+			<MapObject name="h_mon1" id="6B" dumped="true" fileOffset="1241C"/>
 			<ShapeMesh ver="3" texture="mim_h_kazaritif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -2333,7 +2335,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="GROUP" lightset="0">
-			<MapObject name="mon2" id="68" dumped="true" fileOffset="12394"/>
+			<MapObject name="mon2" id="6A" dumped="true" fileOffset="12394"/>
 			<BoundingBox empty="false" min="-222,2,128" max="-154,2,196"/>
 			<TransformMatrix m="0.353553,0.866025,0.353553,-197.721659,-0.707107,0.000000,0.707107,2.548199,0.612372,-0.500000,0.612372,196.395207,0.000000,0.000000,0.000000,1.000000"/>
 			<PropertyList>
@@ -2342,7 +2344,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="h_mon2" id="67" dumped="true" fileOffset="12300"/>
+			<MapObject name="h_mon2" id="69" dumped="true" fileOffset="12300"/>
 			<ShapeMesh ver="3" texture="mim_h_kazaritif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -2368,7 +2370,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="GROUP" lightset="0">
-			<MapObject name="doa2" id="66" dumped="true" fileOffset="12278"/>
+			<MapObject name="doa2" id="68" dumped="true" fileOffset="12278"/>
 			<BoundingBox empty="false" min="135,37,-217" max="170,117,-182"/>
 			<TransformMatrix m="1.000000,0.000000,0.000000,170.954361,0.000000,1.000000,0.000000,37.940262,0.000000,0.000000,1.000000,-182.882477,0.000000,0.000000,0.000000,1.000000"/>
 			<PropertyList>
@@ -2377,7 +2379,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="o166" id="65" dumped="true" fileOffset="121E4"/>
+			<MapObject name="o166" id="67" dumped="true" fileOffset="121E4"/>
 			<ShapeMesh ver="3" texture="mim_doortif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -2403,7 +2405,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="GROUP" lightset="0">
-			<MapObject name="doa1" id="64" dumped="true" fileOffset="1215C"/>
+			<MapObject name="doa1" id="66" dumped="true" fileOffset="1215C"/>
 			<BoundingBox empty="false" min="100,37,-253" max="135,117,-218"/>
 			<TransformMatrix m="1.000000,0.000000,0.000000,100.243683,0.000000,1.000000,0.000000,37.940262,0.000000,0.000000,1.000000,-253.593170,0.000000,0.000000,0.000000,1.000000"/>
 			<PropertyList>
@@ -2412,7 +2414,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="doa" id="63" dumped="true" fileOffset="120C8"/>
+			<MapObject name="doa" id="65" dumped="true" fileOffset="120C8"/>
 			<ShapeMesh ver="3" texture="mim_doortif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -2437,7 +2439,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="GROUP" lightset="0">
-			<MapObject name="etc" id="62" dumped="true" fileOffset="1204C"/>
+			<MapObject name="etc" id="64" dumped="true" fileOffset="1204C"/>
 			<BoundingBox empty="false" min="-651,-20,-215" max="656,242,656"/>
 			<PropertyList>
 				<Property v="60,0,0"/>
@@ -2445,7 +2447,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="GROUP" lightset="0">
-			<MapObject name="ki" id="61" dumped="true" fileOffset="11FB0"/>
+			<MapObject name="ki" id="63" dumped="true" fileOffset="11FB0"/>
 			<BoundingBox empty="false" min="-640,0,-215" max="-558,242,-145"/>
 			<PropertyList>
 				<Property v="60,0,0"/>
@@ -2453,7 +2455,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="o162" id="60" dumped="true" fileOffset="11F1C"/>
+			<MapObject name="o162" id="62" dumped="true" fileOffset="11F1C"/>
 			<ShapeMesh ver="3" texture="mim_darkwoodtif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -2526,7 +2528,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="GROUP" lightset="0">
-			<MapObject name="iwa" id="5F" dumped="true" fileOffset="11E94"/>
+			<MapObject name="iwa" id="61" dumped="true" fileOffset="11E94"/>
 			<BoundingBox empty="false" min="-639,-4,150" max="545,48,465"/>
 			<PropertyList>
 				<Property v="60,0,0"/>
@@ -2534,7 +2536,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="o161" id="5E" dumped="true" fileOffset="11DF4"/>
+			<MapObject name="o161" id="60" dumped="true" fileOffset="11DF4"/>
 			<ShapeMesh ver="3" texture="mim_dark_rocktif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -2606,7 +2608,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="o153" id="5D" dumped="true" fileOffset="11D6C"/>
+			<MapObject name="o153" id="5F" dumped="true" fileOffset="11D6C"/>
 			<ShapeMesh ver="3" texture="mim_dark_rocktif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -2678,7 +2680,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="o164" id="5C" dumped="true" fileOffset="11CE4"/>
+			<MapObject name="o164" id="5E" dumped="true" fileOffset="11CE4"/>
 			<ShapeMesh ver="3" texture="mim_dark_rocktif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -2750,7 +2752,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="o163" id="5B" dumped="true" fileOffset="11C5C"/>
+			<MapObject name="o163" id="5D" dumped="true" fileOffset="11C5C"/>
 			<ShapeMesh ver="3" texture="mim_dark_rocktif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -2822,7 +2824,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="GROUP" lightset="0">
-			<MapObject name="kusa" id="5A" dumped="true" fileOffset="11BD4"/>
+			<MapObject name="kusa" id="5C" dumped="true" fileOffset="11BD4"/>
 			<BoundingBox empty="false" min="-651,-20,-173" max="656,55,656"/>
 			<PropertyList>
 				<Property v="60,0,0"/>
@@ -2830,7 +2832,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="o151" id="59" dumped="true" fileOffset="11B3C"/>
+			<MapObject name="o151" id="5B" dumped="true" fileOffset="11B3C"/>
 			<ShapeMesh ver="3" texture="mim_dark_bushtif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -2874,7 +2876,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="o148" id="58" dumped="true" fileOffset="11AB4"/>
+			<MapObject name="o148" id="5A" dumped="true" fileOffset="11AB4"/>
 			<ShapeMesh ver="3" texture="mim_dark_reeftif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -3003,7 +3005,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="GROUP" lightset="0">
-			<MapObject name="ie" id="57" dumped="true" fileOffset="11A2C"/>
+			<MapObject name="ie" id="59" dumped="true" fileOffset="11A2C"/>
 			<BoundingBox empty="false" min="-52,0,-711" max="627,649,-31"/>
 			<PropertyList>
 				<Property v="60,0,0"/>
@@ -3011,7 +3013,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="GROUP" lightset="0">
-			<MapObject name="g72" id="56" dumped="true" fileOffset="1198C"/>
+			<MapObject name="g72" id="58" dumped="true" fileOffset="1198C"/>
 			<BoundingBox empty="false" min="30,37,-276" max="192,137,-113"/>
 			<PropertyList>
 				<Property v="60,0,0"/>
@@ -3019,7 +3021,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="hasi2" id="55" dumped="true" fileOffset="118F8"/>
+			<MapObject name="hasi2" id="57" dumped="true" fileOffset="118F8"/>
 			<ShapeMesh ver="3" texture="mim_hashiratif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -3069,7 +3071,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="GROUP" lightset="0">
-			<MapObject name="en" id="54" dumped="true" fileOffset="1187C"/>
+			<MapObject name="en" id="56" dumped="true" fileOffset="1187C"/>
 			<BoundingBox empty="false" min="292,326,-590" max="383,649,-499"/>
 			<PropertyList>
 				<Property v="60,0,0"/>
@@ -3077,7 +3079,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="e_waku2" id="53" dumped="true" fileOffset="117E4"/>
+			<MapObject name="e_waku2" id="55" dumped="true" fileOffset="117E4"/>
 			<ShapeMesh ver="3" texture="mim_yuka_t1tif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -3108,7 +3110,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="e_kabe" id="52" dumped="true" fileOffset="11768"/>
+			<MapObject name="e_kabe" id="54" dumped="true" fileOffset="11768"/>
 			<ShapeMesh ver="3" texture="mim_h_kabe2tif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -3193,7 +3195,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="GROUP" lightset="0">
-			<MapObject name="demado" id="51" dumped="true" fileOffset="116EC"/>
+			<MapObject name="demado" id="53" dumped="true" fileOffset="116EC"/>
 			<BoundingBox empty="false" min="-52,346,-711" max="627,569,-31"/>
 			<PropertyList>
 				<Property v="60,0,0"/>
@@ -3201,7 +3203,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="GROUP" lightset="0">
-			<MapObject name="g28" id="50" dumped="true" fileOffset="11648"/>
+			<MapObject name="g28" id="52" dumped="true" fileOffset="11648"/>
 			<BoundingBox empty="false" min="251,391,-192" max="343,491,-100"/>
 			<PropertyList>
 				<Property v="60,0,0"/>
@@ -3209,7 +3211,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="o74" id="4F" dumped="true" fileOffset="115AC"/>
+			<MapObject name="o74" id="51" dumped="true" fileOffset="115AC"/>
 			<ShapeMesh ver="3" texture="mim_mado_2tif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -3234,7 +3236,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="o73" id="4E" dumped="true" fileOffset="11530"/>
+			<MapObject name="o73" id="50" dumped="true" fileOffset="11530"/>
 			<ShapeMesh ver="3" texture="mim_h_yane1tif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -3264,7 +3266,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="o72" id="4D" dumped="true" fileOffset="114B4"/>
+			<MapObject name="o72" id="4F" dumped="true" fileOffset="114B4"/>
 			<ShapeMesh ver="3" texture="mim_h_kabetif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -3374,7 +3376,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="GROUP" lightset="0">
-			<MapObject name="g27" id="4C" dumped="true" fileOffset="11438"/>
+			<MapObject name="g27" id="4E" dumped="true" fileOffset="11438"/>
 			<BoundingBox empty="false" min="173,391,-270" max="265,491,-178"/>
 			<PropertyList>
 				<Property v="60,0,0"/>
@@ -3382,7 +3384,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="o71" id="4B" dumped="true" fileOffset="1139C"/>
+			<MapObject name="o71" id="4D" dumped="true" fileOffset="1139C"/>
 			<ShapeMesh ver="3" texture="mim_mado_2tif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -3407,7 +3409,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="o70" id="4A" dumped="true" fileOffset="11320"/>
+			<MapObject name="o70" id="4C" dumped="true" fileOffset="11320"/>
 			<ShapeMesh ver="3" texture="mim_h_yane1tif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -3437,7 +3439,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="o69" id="49" dumped="true" fileOffset="112A4"/>
+			<MapObject name="o69" id="4B" dumped="true" fileOffset="112A4"/>
 			<ShapeMesh ver="3" texture="mim_h_kabetif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -3547,7 +3549,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="GROUP" lightset="0">
-			<MapObject name="g26" id="48" dumped="true" fileOffset="11228"/>
+			<MapObject name="g26" id="4A" dumped="true" fileOffset="11228"/>
 			<BoundingBox empty="false" min="95,391,-348" max="187,491,-256"/>
 			<PropertyList>
 				<Property v="60,0,0"/>
@@ -3555,7 +3557,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="o68" id="47" dumped="true" fileOffset="1118C"/>
+			<MapObject name="o68" id="49" dumped="true" fileOffset="1118C"/>
 			<ShapeMesh ver="3" texture="mim_mado_2tif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -3580,7 +3582,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="o67" id="46" dumped="true" fileOffset="11110"/>
+			<MapObject name="o67" id="48" dumped="true" fileOffset="11110"/>
 			<ShapeMesh ver="3" texture="mim_h_yane1tif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -3610,7 +3612,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="o66" id="45" dumped="true" fileOffset="11094"/>
+			<MapObject name="o66" id="47" dumped="true" fileOffset="11094"/>
 			<ShapeMesh ver="3" texture="mim_h_kabetif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -3720,7 +3722,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="GROUP" lightset="0">
-			<MapObject name="g13" id="44" dumped="true" fileOffset="11018"/>
+			<MapObject name="g13" id="46" dumped="true" fileOffset="11018"/>
 			<BoundingBox empty="false" min="18,391,-426" max="109,491,-334"/>
 			<PropertyList>
 				<Property v="60,0,0"/>
@@ -3728,7 +3730,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="o30" id="43" dumped="true" fileOffset="10F7C"/>
+			<MapObject name="o30" id="45" dumped="true" fileOffset="10F7C"/>
 			<ShapeMesh ver="3" texture="mim_mado_2tif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -3753,7 +3755,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="o29" id="42" dumped="true" fileOffset="10F00"/>
+			<MapObject name="o29" id="44" dumped="true" fileOffset="10F00"/>
 			<ShapeMesh ver="3" texture="mim_h_yane1tif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -3783,7 +3785,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="o28" id="41" dumped="true" fileOffset="10E84"/>
+			<MapObject name="o28" id="43" dumped="true" fileOffset="10E84"/>
 			<ShapeMesh ver="3" texture="mim_h_kabetif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -3893,7 +3895,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="yane" id="40" dumped="true" fileOffset="10E08"/>
+			<MapObject name="yane" id="42" dumped="true" fileOffset="10E08"/>
 			<ShapeMesh ver="3" texture="mim_h_yane1tif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -3981,7 +3983,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="GROUP" lightset="0">
-			<MapObject name="g2" id="3F" dumped="true" fileOffset="10D8C"/>
+			<MapObject name="g2" id="41" dumped="true" fileOffset="10D8C"/>
 			<BoundingBox empty="false" min="-52,0,-610" max="527,594,-31"/>
 			<PropertyList>
 				<Property v="60,0,0"/>
@@ -3989,7 +3991,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="o103" id="3E" dumped="true" fileOffset="10CD0"/>
+			<MapObject name="o103" id="40" dumped="true" fileOffset="10CD0"/>
 			<ShapeMesh ver="3" texture="mim_h_kazaritif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -4038,7 +4040,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="kaza1" id="3D" dumped="true" fileOffset="10C54"/>
+			<MapObject name="kaza1" id="3F" dumped="true" fileOffset="10C54"/>
 			<ShapeMesh ver="3" texture="mim_kaidan_5tif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -4061,7 +4063,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="hasi" id="3C" dumped="true" fileOffset="10BD8"/>
+			<MapObject name="hasi" id="3E" dumped="true" fileOffset="10BD8"/>
 			<ShapeMesh ver="3" texture="mim_h_kabetif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -4104,7 +4106,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="waku2" id="3B" dumped="true" fileOffset="10B5C"/>
+			<MapObject name="waku2" id="3D" dumped="true" fileOffset="10B5C"/>
 			<ShapeMesh ver="3" texture="mim_yuka_t1tif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -4245,7 +4247,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="koyane" id="3A" dumped="true" fileOffset="10AE0"/>
+			<MapObject name="koyane" id="3C" dumped="true" fileOffset="10AE0"/>
 			<ShapeMesh ver="3" texture="mim_darkgreen2tif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -4276,7 +4278,7 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="o16" id="39" dumped="true" fileOffset="10A64"/>
+			<MapObject name="o16" id="3B" dumped="true" fileOffset="10A64"/>
 			<ShapeMesh ver="3" texture="mim_h_kabetif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
@@ -4341,7 +4343,205 @@
 			</PropertyList>
 		</Model>
 		<Model ver="2" type="MODEL" lightset="0">
-			<MapObject name="mado" id="38" dumped="true" fileOffset="109E8"/>
+			<MapObject name="BlueWindows" id="3A"/>
+			<ShapeMesh ver="3" texture="mim_mado_2tif">
+				<DisplayList>
+					<F3DEX2 cmd="E7000000,0"/>
+					<F3DEX2 cmd="D9FDFFFF,0"/>
+					<F3DEX2 cmd="D9FFFFFF,200400"/>
+					<TriangleBatch ver="0">
+						<VertexTable>
+							<Vertex xyz="232,182,-175" uv="-40,2048" rgba="0,0,255,255"/>
+							<Vertex xyz="232,43,-175" rgba="0,0,255,255"/>
+							<Vertex xyz="289,43,-118" uv="2088,0" rgba="0,0,255,255"/>
+							<Vertex xyz="232,182,-175" uv="-40,2048" rgba="0,0,255,255"/>
+							<Vertex xyz="289,43,-118" uv="2088,0" rgba="0,0,255,255"/>
+							<Vertex xyz="289,182,-118" uv="2048,2048" rgba="0,0,255,255"/>
+							<Vertex xyz="275,182,-132" uv="-40,2048" rgba="0,0,255,255"/>
+							<Vertex xyz="275,43,-132" rgba="0,0,255,255"/>
+							<Vertex xyz="331,43,-76" uv="2088,0" rgba="0,0,255,255"/>
+							<Vertex xyz="275,182,-132" uv="-40,2048" rgba="0,0,255,255"/>
+							<Vertex xyz="331,43,-76" uv="2088,0" rgba="0,0,255,255"/>
+							<Vertex xyz="331,182,-76" uv="2048,2048" rgba="0,0,255,255"/>
+							<Vertex xyz="-4,182,-412" uv="2048,2048" rgba="0,0,255,255"/>
+							<Vertex xyz="-4,43,-412" uv="2088,0" rgba="0,0,255,255"/>
+							<Vertex xyz="52,43,-355" rgba="0,0,255,255"/>
+							<Vertex xyz="-4,182,-412" uv="2048,2048" rgba="0,0,255,255"/>
+							<Vertex xyz="52,43,-355" rgba="0,0,255,255"/>
+							<Vertex xyz="52,182,-355" uv="-40,2048" rgba="0,0,255,255"/>
+							<Vertex xyz="38,182,-369" uv="2048,2048" rgba="0,0,255,255"/>
+							<Vertex xyz="38,43,-369" uv="2088,0" rgba="0,0,255,255"/>
+							<Vertex xyz="95,43,-313" rgba="0,0,255,255"/>
+							<Vertex xyz="38,182,-369" uv="2048,2048" rgba="0,0,255,255"/>
+							<Vertex xyz="95,43,-313" rgba="0,0,255,255"/>
+							<Vertex xyz="95,182,-313" uv="-40,2048" rgba="0,0,255,255"/>
+							<Vertex xyz="49,313,-359" uv="-40,2048" rgba="0,0,255,255"/>
+							<Vertex xyz="49,213,-359" rgba="0,0,255,255"/>
+							<Vertex xyz="105,213,-302" uv="2088,0" rgba="0,0,255,255"/>
+							<Vertex xyz="49,313,-359" uv="-40,2048" rgba="0,0,255,255"/>
+							<Vertex xyz="105,213,-302" uv="2088,0" rgba="0,0,255,255"/>
+							<Vertex xyz="105,313,-302" uv="2048,2048" rgba="0,0,255,255"/>
+							<Vertex xyz="105,313,-302" uv="-40,2048" rgba="0,0,255,255"/>
+							<Vertex xyz="105,213,-302" rgba="0,0,255,255"/>
+							<Vertex xyz="162,213,-245" uv="2088,0" rgba="0,0,255,255"/>
+							<Vertex xyz="105,313,-302" uv="-40,2048" rgba="0,0,255,255"/>
+							<Vertex xyz="162,213,-245" uv="2088,0" rgba="0,0,255,255"/>
+							<Vertex xyz="162,313,-245" uv="2048,2048" rgba="0,0,255,255"/>
+							<Vertex xyz="162,313,-245" uv="-40,2048" rgba="0,0,255,255"/>
+							<Vertex xyz="162,213,-245" rgba="0,0,255,255"/>
+							<Vertex xyz="218,213,-189" uv="2088,0" rgba="0,0,255,255"/>
+							<Vertex xyz="162,313,-245" uv="-40,2048" rgba="0,0,255,255"/>
+							<Vertex xyz="218,213,-189" uv="2088,0" rgba="0,0,255,255"/>
+							<Vertex xyz="218,313,-189" uv="2048,2048" rgba="0,0,255,255"/>
+							<Vertex xyz="275,313,-132" uv="-40,2048" rgba="0,0,255,255"/>
+							<Vertex xyz="275,213,-132" rgba="0,0,255,255"/>
+							<Vertex xyz="331,213,-76" uv="2088,0" rgba="0,0,255,255"/>
+							<Vertex xyz="275,313,-132" uv="-40,2048" rgba="0,0,255,255"/>
+							<Vertex xyz="331,213,-76" uv="2088,0" rgba="0,0,255,255"/>
+							<Vertex xyz="331,313,-76" uv="2048,2048" rgba="0,0,255,255"/>
+							<Vertex xyz="218,313,-189" uv="-40,2048" rgba="0,0,255,255"/>
+							<Vertex xyz="218,213,-189" rgba="0,0,255,255"/>
+							<Vertex xyz="275,213,-132" uv="2088,0" rgba="0,0,255,255"/>
+							<Vertex xyz="218,313,-189" uv="-40,2048" rgba="0,0,255,255"/>
+							<Vertex xyz="275,213,-132" uv="2088,0" rgba="0,0,255,255"/>
+							<Vertex xyz="275,313,-132" uv="2048,2048" rgba="0,0,255,255"/>
+							<Vertex xyz="-8,313,-415" uv="-40,2048" rgba="0,0,255,255"/>
+							<Vertex xyz="-8,213,-415" rgba="0,0,255,255"/>
+							<Vertex xyz="49,213,-359" uv="2088,0" rgba="0,0,255,255"/>
+							<Vertex xyz="-8,313,-415" uv="-40,2048" rgba="0,0,255,255"/>
+							<Vertex xyz="49,213,-359" uv="2088,0" rgba="0,0,255,255"/>
+							<Vertex xyz="49,313,-359" uv="2048,2048" rgba="0,0,255,255"/>
+						</VertexTable>
+						<TriangleList>
+							<Triangle ijk="0,1,2"/>
+							<Triangle ijk="3,4,5"/>
+							<Triangle ijk="6,7,8"/>
+							<Triangle ijk="9,10,11"/>
+							<Triangle ijk="12,13,14"/>
+							<Triangle ijk="15,16,17"/>
+							<Triangle ijk="18,19,20"/>
+							<Triangle ijk="21,22,23"/>
+							<Triangle ijk="24,25,26"/>
+							<Triangle ijk="27,28,29"/>
+							<Triangle ijk="30,31,32"/>
+							<Triangle ijk="33,34,35"/>
+							<Triangle ijk="36,37,38"/>
+							<Triangle ijk="39,40,41"/>
+							<Triangle ijk="42,43,44"/>
+							<Triangle ijk="45,46,47"/>
+							<Triangle ijk="48,49,50"/>
+							<Triangle ijk="51,52,53"/>
+							<Triangle ijk="54,55,56"/>
+							<Triangle ijk="57,58,59"/>
+						</TriangleList>
+					</TriangleBatch>
+				</DisplayList>
+			</ShapeMesh>
+			<PropertyList>
+				<Property v="5C,0,D"/>
+			</PropertyList>
+		</Model>
+		<Model ver="2" type="MODEL" lightset="0">
+			<MapObject name="GreenWindows" id="39"/>
+			<ShapeMesh ver="3" texture="mim_mado_2tif">
+				<DisplayList>
+					<F3DEX2 cmd="E7000000,0"/>
+					<F3DEX2 cmd="D9FDFFFF,0"/>
+					<F3DEX2 cmd="D9FFFFFF,200400"/>
+					<TriangleBatch ver="0">
+						<VertexTable>
+							<Vertex xyz="232,182,-175" uv="-40,2048" rgba="0,160,0,255"/>
+							<Vertex xyz="232,43,-175" rgba="0,160,0,255"/>
+							<Vertex xyz="289,43,-118" uv="2088,0" rgba="0,160,0,255"/>
+							<Vertex xyz="232,182,-175" uv="-40,2048" rgba="0,160,0,255"/>
+							<Vertex xyz="289,43,-118" uv="2088,0" rgba="0,160,0,255"/>
+							<Vertex xyz="289,182,-118" uv="2048,2048" rgba="0,160,0,255"/>
+							<Vertex xyz="275,182,-132" uv="-40,2048" rgba="0,160,0,255"/>
+							<Vertex xyz="275,43,-132" rgba="0,160,0,255"/>
+							<Vertex xyz="331,43,-76" uv="2088,0" rgba="0,160,0,255"/>
+							<Vertex xyz="275,182,-132" uv="-40,2048" rgba="0,160,0,255"/>
+							<Vertex xyz="331,43,-76" uv="2088,0" rgba="0,160,0,255"/>
+							<Vertex xyz="331,182,-76" uv="2048,2048" rgba="0,160,0,255"/>
+							<Vertex xyz="-4,182,-412" uv="2048,2048" rgba="0,160,0,255"/>
+							<Vertex xyz="-4,43,-412" uv="2088,0" rgba="0,160,0,255"/>
+							<Vertex xyz="52,43,-355" rgba="0,160,0,255"/>
+							<Vertex xyz="-4,182,-412" uv="2048,2048" rgba="0,160,0,255"/>
+							<Vertex xyz="52,43,-355" rgba="0,160,0,255"/>
+							<Vertex xyz="52,182,-355" uv="-40,2048" rgba="0,160,0,255"/>
+							<Vertex xyz="38,182,-369" uv="2048,2048" rgba="0,160,0,255"/>
+							<Vertex xyz="38,43,-369" uv="2088,0" rgba="0,160,0,255"/>
+							<Vertex xyz="95,43,-313" rgba="0,160,0,255"/>
+							<Vertex xyz="38,182,-369" uv="2048,2048" rgba="0,160,0,255"/>
+							<Vertex xyz="95,43,-313" rgba="0,160,0,255"/>
+							<Vertex xyz="95,182,-313" uv="-40,2048" rgba="0,160,0,255"/>
+							<Vertex xyz="49,313,-359" uv="-40,2048" rgba="0,160,0,255"/>
+							<Vertex xyz="49,213,-359" rgba="0,160,0,255"/>
+							<Vertex xyz="105,213,-302" uv="2088,0" rgba="0,160,0,255"/>
+							<Vertex xyz="49,313,-359" uv="-40,2048" rgba="0,160,0,255"/>
+							<Vertex xyz="105,213,-302" uv="2088,0" rgba="0,160,0,255"/>
+							<Vertex xyz="105,313,-302" uv="2048,2048" rgba="0,160,0,255"/>
+							<Vertex xyz="105,313,-302" uv="-40,2048" rgba="0,160,0,255"/>
+							<Vertex xyz="105,213,-302" rgba="0,160,0,255"/>
+							<Vertex xyz="162,213,-245" uv="2088,0" rgba="0,160,0,255"/>
+							<Vertex xyz="105,313,-302" uv="-40,2048" rgba="0,160,0,255"/>
+							<Vertex xyz="162,213,-245" uv="2088,0" rgba="0,160,0,255"/>
+							<Vertex xyz="162,313,-245" uv="2048,2048" rgba="0,160,0,255"/>
+							<Vertex xyz="162,313,-245" uv="-40,2048" rgba="0,160,0,255"/>
+							<Vertex xyz="162,213,-245" rgba="0,160,0,255"/>
+							<Vertex xyz="218,213,-189" uv="2088,0" rgba="0,160,0,255"/>
+							<Vertex xyz="162,313,-245" uv="-40,2048" rgba="0,160,0,255"/>
+							<Vertex xyz="218,213,-189" uv="2088,0" rgba="0,160,0,255"/>
+							<Vertex xyz="218,313,-189" uv="2048,2048" rgba="0,160,0,255"/>
+							<Vertex xyz="275,313,-132" uv="-40,2048" rgba="0,160,0,255"/>
+							<Vertex xyz="275,213,-132" rgba="0,160,0,255"/>
+							<Vertex xyz="331,213,-76" uv="2088,0" rgba="0,160,0,255"/>
+							<Vertex xyz="275,313,-132" uv="-40,2048" rgba="0,160,0,255"/>
+							<Vertex xyz="331,213,-76" uv="2088,0" rgba="0,160,0,255"/>
+							<Vertex xyz="331,313,-76" uv="2048,2048" rgba="0,160,0,255"/>
+							<Vertex xyz="218,313,-189" uv="-40,2048" rgba="0,160,0,255"/>
+							<Vertex xyz="218,213,-189" rgba="0,160,0,255"/>
+							<Vertex xyz="275,213,-132" uv="2088,0" rgba="0,160,0,255"/>
+							<Vertex xyz="218,313,-189" uv="-40,2048" rgba="0,160,0,255"/>
+							<Vertex xyz="275,213,-132" uv="2088,0" rgba="0,160,0,255"/>
+							<Vertex xyz="275,313,-132" uv="2048,2048" rgba="0,160,0,255"/>
+							<Vertex xyz="-8,313,-415" uv="-40,2048" rgba="0,160,0,255"/>
+							<Vertex xyz="-8,213,-415" rgba="0,160,0,255"/>
+							<Vertex xyz="49,213,-359" uv="2088,0" rgba="0,160,0,255"/>
+							<Vertex xyz="-8,313,-415" uv="-40,2048" rgba="0,160,0,255"/>
+							<Vertex xyz="49,213,-359" uv="2088,0" rgba="0,160,0,255"/>
+							<Vertex xyz="49,313,-359" uv="2048,2048" rgba="0,160,0,255"/>
+						</VertexTable>
+						<TriangleList>
+							<Triangle ijk="0,1,2"/>
+							<Triangle ijk="3,4,5"/>
+							<Triangle ijk="6,7,8"/>
+							<Triangle ijk="9,10,11"/>
+							<Triangle ijk="12,13,14"/>
+							<Triangle ijk="15,16,17"/>
+							<Triangle ijk="18,19,20"/>
+							<Triangle ijk="21,22,23"/>
+							<Triangle ijk="24,25,26"/>
+							<Triangle ijk="27,28,29"/>
+							<Triangle ijk="30,31,32"/>
+							<Triangle ijk="33,34,35"/>
+							<Triangle ijk="36,37,38"/>
+							<Triangle ijk="39,40,41"/>
+							<Triangle ijk="42,43,44"/>
+							<Triangle ijk="45,46,47"/>
+							<Triangle ijk="48,49,50"/>
+							<Triangle ijk="51,52,53"/>
+							<Triangle ijk="54,55,56"/>
+							<Triangle ijk="57,58,59"/>
+						</TriangleList>
+					</TriangleBatch>
+				</DisplayList>
+			</ShapeMesh>
+			<PropertyList>
+				<Property v="5C,0,D"/>
+			</PropertyList>
+		</Model>
+		<Model ver="2" type="MODEL" lightset="0">
+			<MapObject name="RedWindows" id="38" dumped="true" fileOffset="109E8"/>
 			<ShapeMesh ver="3" texture="mim_mado_2tif">
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>

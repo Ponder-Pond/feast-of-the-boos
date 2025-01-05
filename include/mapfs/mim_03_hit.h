@@ -46,7 +46,8 @@
 #define COLLIDER_deilin         0x1
 #define COLLIDER_deilitn        0x0
 
-#define ZONE_Root               0xD
+#define ZONE_Root               0xE
+#define ZONE_stagecutscene      0xD
 #define ZONE_enter              0xC
 #define ZONE_north              0xB
 #define ZONE_south              0xA

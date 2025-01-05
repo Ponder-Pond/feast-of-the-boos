@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Map desc="Flowers (Oaklie)" background="fob_bg" textures="mim_tex">
 	<Editor>
-		<Camera pos="129.582062,228.340424,-391.798798" pitch="62.280006" yaw="201.396378"/>
+		<Camera pos="322.975128,89.213074,-337.849396" pitch="7.520030" yaw="203.156754"/>
 		<Camera pos="250.455338,65536.000000,-188.165390"/>
 		<Camera pos="65536.000000,762.531128,616.664917"/>
 		<Camera pos="-20.475847,-20.595165,65536.000000"/>
@@ -302,7 +302,7 @@
 		</Node>
 	</ColliderTree>
 	<ZoneTree>
-		<Node name="Root" id="D">
+		<Node name="Root" id="E">
 			<Node name="kaiten" id="2">
 				<Node name="stage" id="0"/>
 				<Node name="center" id="1"/>
@@ -319,6 +319,7 @@
 				<Node name="south" id="A"/>
 				<Node name="north" id="B"/>
 			</Node>
+			<Node name="stagecutscene" id="D"/>
 		</Node>
 	</ZoneTree>
 	<MarkerTree>
@@ -8917,8 +8918,45 @@
 	</Colliders>
 	<Zones>
 		<Zone ver="0">
-			<MapObject name="Root" id="D"/>
+			<MapObject name="Root" id="E"/>
 			<HitObject type="ROOT"/>
+		</Zone>
+		<Zone ver="0">
+			<MapObject name="stagecutscene" id="D"/>
+			<HitObject type="HIT"/>
+			<HitMesh ver="0">
+				<TriangleBatch ver="0">
+					<VertexTable>
+						<Vertex xyz="500,-50,-207"/>
+						<Vertex xyz="207,-50,-500"/>
+						<Vertex xyz="-207,-50,-500"/>
+						<Vertex xyz="500,-50,-207"/>
+						<Vertex xyz="-207,-50,-500"/>
+						<Vertex xyz="-500,-50,-207"/>
+						<Vertex xyz="500,-50,-207"/>
+						<Vertex xyz="-500,-50,-207"/>
+						<Vertex xyz="-500,-50,207"/>
+						<Vertex xyz="500,-50,-207"/>
+						<Vertex xyz="-500,-50,207"/>
+						<Vertex xyz="-207,-50,500"/>
+						<Vertex xyz="500,-50,-207"/>
+						<Vertex xyz="-207,-50,500"/>
+						<Vertex xyz="207,-50,500"/>
+						<Vertex xyz="500,-50,-207"/>
+						<Vertex xyz="207,-50,500"/>
+						<Vertex xyz="500,-50,207"/>
+					</VertexTable>
+					<TriangleList>
+						<Triangle ijk="0,1,2"/>
+						<Triangle ijk="3,4,5"/>
+						<Triangle ijk="6,7,8"/>
+						<Triangle ijk="9,10,11"/>
+						<Triangle ijk="12,13,14"/>
+						<Triangle ijk="15,16,17"/>
+					</TriangleList>
+				</TriangleBatch>
+			</HitMesh>
+			<Camera type="TYPE_1" flag="false" boomLength="450.000000" boomPitch="15.000000" viewPitch="-6.000000" posA="0,0,0" posB="0,0,339" posC="0,0,0"/>
 		</Zone>
 		<Zone ver="0">
 			<MapObject name="enter" id="C" dumped="true" fileOffset="1168"/>

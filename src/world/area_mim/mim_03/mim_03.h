@@ -17,14 +17,13 @@
 #include "sprite/npc/SmallPiranha.h"
 
 enum {
-    NPC_FreezyFuzzy             = 0,
-    NPC_PiranhaPlant            = 1,
-    NPC_PiranhaPlant_Hitbox     = 2,
-    NPC_RedPanser               = 3,
-    NPC_RedPanser_Fireball_1    = 4,
-    NPC_RedPanser_Fireball_2    = 5,
-    NPC_DupiOaklie              = 6,
-    NPC_Oaklie                  = 7,
+    NPC_FreezyFuzzy,
+    NPC_PiranhaPlant,
+    NPC_PiranhaPlant_Hitbox,
+    NPC_RedPanser,
+    NPC_RedPanser_Fireball,
+    NPC_DupiOaklie,
+    NPC_Oaklie,
 };
 
 #define NAMESPACE mim_03
