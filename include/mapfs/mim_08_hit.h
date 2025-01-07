@@ -1,4 +1,5 @@
-#define COLLIDER_Root           0x27
+#define COLLIDER_Root           0x28
+#define COLLIDER_ChestLockCollider 0x27
 #define COLLIDER_g145           0x26
 #define COLLIDER_monw           0x25
 #define COLLIDER_g144           0x24

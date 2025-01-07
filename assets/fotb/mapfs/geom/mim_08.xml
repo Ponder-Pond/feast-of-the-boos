@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Map desc="Bee Hive (HP Plus)" background="fob_bg" textures="mim_tex">
 	<Editor>
-		<Camera pos="407.679260,116.468567,443.164459" pitch="9.000000" yaw="-90.000000"/>
-		<Camera pos="95.575233,65536.000000,-5.786282"/>
+		<Camera pos="-45.918411,58.503735,-31.185354" pitch="17.919975" yaw="261.039978"/>
+		<Camera pos="-72.108910,65536.000000,-57.157574"/>
 		<Camera pos="65536.000000,16.494497,-78.775162"/>
-		<Camera pos="-98.000000,34.000000,65536.000000"/>
+		<Camera pos="-97.194275,47.559654,65536.000000"/>
 	</Editor>
 	<ModelTree>
 		<Node name="Root" id="83">
@@ -173,7 +173,7 @@
 		</Node>
 	</ModelTree>
 	<ColliderTree>
-		<Node name="Root" id="27">
+		<Node name="Root" id="28">
 			<Node name="g1" id="2">
 				<Node name="o474" id="0"/>
 				<Node name="o493" id="1"/>
@@ -225,6 +225,7 @@
 			<Node name="g145" id="26">
 				<Node name="monw" id="25"/>
 			</Node>
+			<Node name="ChestLockCollider" id="27"/>
 		</Node>
 	</ColliderTree>
 	<ZoneTree>
@@ -7390,8 +7391,28 @@
 	</Models>
 	<Colliders>
 		<Collider ver="0" flags="0" surface="0">
-			<MapObject name="Root" id="27"/>
+			<MapObject name="Root" id="28"/>
 			<HitObject type="ROOT"/>
+		</Collider>
+		<Collider ver="0" flags="0" surface="0">
+			<MapObject name="ChestLockCollider" id="27"/>
+			<HitObject type="HIT"/>
+			<HitMesh ver="0">
+				<TriangleBatch ver="0">
+					<VertexTable>
+						<Vertex xyz="-88,26,-42"/>
+						<Vertex xyz="-88,72,-42"/>
+						<Vertex xyz="-88,72,-8"/>
+						<Vertex xyz="-88,26,-42"/>
+						<Vertex xyz="-88,72,-8"/>
+						<Vertex xyz="-88,26,-8"/>
+					</VertexTable>
+					<TriangleList>
+						<Triangle ijk="0,1,2"/>
+						<Triangle ijk="3,4,5"/>
+					</TriangleList>
+				</TriangleBatch>
+			</HitMesh>
 		</Collider>
 		<Collider ver="0" flags="0" surface="0">
 			<MapObject name="g145" id="26" dumped="true" fileOffset="A18"/>

@@ -4,6 +4,11 @@
 
 #include "../common/ManageSnowfall.inc.c"
 
+s32 N(KeyList)[] = {
+    ITEM_RUINS_KEY,
+    ITEM_NONE
+};
+
 API_CALLABLE(N(GetPlayerDistFromMapCenter)) {
     script->varTable[0] = get_xz_dist_to_player(0.0f, 0.0f);
     return ApiStatus_DONE2;
@@ -29,6 +34,14 @@ EvtScript N(EVS_EnterMap) = {
         CaseEq(mim_08_ENTRY_0)
             Set(LVar0, Ref(N(EVS_BindExitTriggers)))
             Exec(EnterWalk)
+            IfLt(GB_StoryProgress, STORY_MOD_CUTSCENE_4)
+                // Call(NpcFaceNpc, NPC_DupiOaklie, NPC_DupiOaklie, 0)
+                Call(SetNpcYaw, NPC_DupiOaklie, 180)
+                Call(SetNpcPos, NPC_DupiOaklie, 55, 33, 27)
+                Call(AwaitPlayerApproach, GEN_CUTSCENE4_X, GEN_CUTSCENE4_Z, 60)
+                Exec(N(EVS_Cutscene4))
+                Set(GB_StoryProgress, STORY_MOD_CUTSCENE_4)
+            EndIf
         CaseEq(mim_08_ENTRY_1)
             Set(LVar0, Ref(N(EVS_BindExitTriggers)))
             Exec(EnterWalk)
@@ -74,7 +87,9 @@ EvtScript N(EVS_Main) = {
     Set(AB_MIM_2, GB_MIM_CurrentMapID)
     Call(GetMapID, GB_MIM_CurrentMapID)
     ExecWait(N(EVS_SetupGates))
-    // Call(MakeNpcs, TRUE, Ref(N(DefaultNPCs)))
+    Call(MakeNpcs, TRUE, Ref(N(DefaultNPCs)))
+    Set(GF_MIM08_UnlockedChest, FALSE)
+    BindPadlock(Ref(N(EVS_UnlockChest)), TRIGGER_WALL_PRESS_A, EVT_ENTITY_INDEX(0), Ref(N(KeyList)), 0, 1)
     ExecWait(N(EVS_MakeEntities))
     Set(LVar0, Ref(N(EVS_BindExitTriggers)))
     Exec(N(EVS_EnterMap))

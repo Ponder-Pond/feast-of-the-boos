@@ -10,18 +10,8 @@
 
 EvtScript N(EVS_Bow_SpookNpc) = {
     ChildThread
-        Call(SetZoneEnabled, ZONE_stage, FALSE)
-        Call(SetZoneEnabled, ZONE_stagecutscene, TRUE)
-        // Call(SetZoneEnabled, ZONE_cutscene, TRUE)
-        Call(GetPlayerPos, LVarA, LVarB, LVarC)
-        Call(UseSettingsFrom, CAM_DEFAULT, LVarA, LVarB, LVarC)
-        Call(SetCamSpeed, CAM_DEFAULT, Float(90.0))
         Loop(0)
-            Call(SetCamDistance, CAM_DEFAULT, 400)
-            Call(PanToTarget, CAM_DEFAULT, 0, TRUE)
-            Wait(1)
-            Call(SetCamDistance, CAM_DEFAULT, 450)
-            Call(PanToTarget, CAM_DEFAULT, 0, TRUE)
+            Call(ShakeCam, CAM_DEFAULT, 0, 10, Float(0.5))
             Wait(1)
         EndLoop
     EndChildThread
@@ -32,6 +22,7 @@ EvtScript N(EVS_Bow_SpookNpc) = {
 
 EvtScript N(EVS_Cutscene3) = {
     Call(DisablePlayerInput, TRUE)
+    Call(PlayerFaceNpc, NPC_DupiOaklie, TRUE)
     Call(func_802D1270, 110, -315, Float(4.0))
     Wait(5)
     Call(DisablePartnerAI, 0)
@@ -61,9 +52,6 @@ EvtScript N(EVS_Cutscene3) = {
     Wait(6)
     Call(SetNpcAnimation, NPC_PARTNER, ANIM_WorldBow_SpookLoop)
     Thread
-        // Call(GetNpcPos, NPC_PARTNER, LVarA, LVarB, LVarC)
-        // Sub(LVarB, 40)
-        // Call(SetNpcPos, NPC_PARTNER, LVarA, LVarB, LVarC)
         Call(SetNpcScale, NPC_PARTNER, Float(2.0), Float(2.0), Float(2.0))
     EndThread
     Call(PlaySoundAtNpc, NPC_PARTNER, SOUND_BOW_SPOOK, SOUND_SPACE_DEFAULT)
@@ -91,49 +79,22 @@ EvtScript N(EVS_Cutscene3) = {
     Call(SetNpcScale, NPC_PARTNER, Float(1.0), Float(1.0), Float(1.0))
     Wait(1)
     Call(SetNpcAnimation, NPC_PARTNER, ANIM_WorldBow_Idle)
-    Wait(5)
-    Call(SetZoneEnabled, ZONE_stage, TRUE)
-    Call(SetZoneEnabled, ZONE_stagecutscene, FALSE)
-    // Call(SetZoneEnabled, ZONE_cutscene, FALSE)
-    Call(SetCamDistance, CAM_DEFAULT, 450)
-    Call(PanToTarget, CAM_DEFAULT, 0, TRUE)
-    Wait(1)
-    Call(PanToTarget, CAM_DEFAULT, 0, FALSE)
     WaitSecs(3)
    Thread
         Call(SetNpcAnimation, NPC_DupiOaklie, ANIM_Oaklie_Dupi_Jump)
-        Wait(15)
+        Wait(10)
         Call(SetNpcAnimation, NPC_DupiOaklie, ANIM_Oaklie_Dupi_Fall)
     EndThread
     Call(PlaySoundAtNpc, NPC_DupiOaklie, SOUND_NPC_JUMP, SOUND_SPACE_DEFAULT)
     Call(GetNpcPos, NPC_DupiOaklie, LVar0, LVar1, LVar2)
-    Add(LVar0, 33)
-    Call(NpcJump0, NPC_DupiOaklie, LVar0, LVar1, LVar2, 15)
+    Add(LVar0, 120)
+    Add(LVar1, 10)
+    Call(NpcJump0, NPC_DupiOaklie, LVar0, LVar1, LVar2, 10)
     Call(SetNpcAnimation, NPC_DupiOaklie, ANIM_Oaklie_Dupi_Land)
-    Wait(5)
-   Thread
-        Call(SetNpcAnimation, NPC_DupiOaklie, ANIM_Oaklie_Dupi_Jump)
-        Wait(15)
-        Call(SetNpcAnimation, NPC_DupiOaklie, ANIM_Oaklie_Dupi_Fall)
-    EndThread
-    Call(PlaySoundAtNpc, NPC_DupiOaklie, SOUND_NPC_JUMP, SOUND_SPACE_DEFAULT)
-    Call(GetNpcPos, NPC_DupiOaklie, LVar0, LVar1, LVar2)
-    Add(LVar0, 33)
-    Call(NpcJump0, NPC_DupiOaklie, LVar0, LVar1, LVar2, 15)
-    Call(SetNpcAnimation, NPC_DupiOaklie, ANIM_Oaklie_Dupi_Land)
-    Wait(5)
-   Thread
-        Call(SetNpcAnimation, NPC_DupiOaklie, ANIM_Oaklie_Dupi_Jump)
-        Wait(15)
-        Call(SetNpcAnimation, NPC_DupiOaklie, ANIM_Oaklie_Dupi_Fall)
-    EndThread
-    Call(PlaySoundAtNpc, NPC_DupiOaklie, SOUND_NPC_JUMP, SOUND_SPACE_DEFAULT)
-    Call(GetNpcPos, NPC_DupiOaklie, LVar0, LVar1, LVar2)
-    Add(LVar0, 33)
-    Call(NpcJump0, NPC_DupiOaklie, LVar0, LVar1, LVar2, 15)
-    Call(SetNpcAnimation, NPC_DupiOaklie, ANIM_Oaklie_Dupi_Land)
-    Wait(5)
     Call(SetNpcPos, NPC_DupiOaklie, NPC_DISPOSE_LOCATION)
+    Call(PlaySoundAtNpc, NPC_PARTNER, SOUND_EMOTE_IDEA, SOUND_SPACE_DEFAULT)
+    Call(ShowEmote, NPC_PARTNER, EMOTE_EXCLAMATION, 0, 25, EMOTER_NPC, 0, 0, 0, 0)
+    Wait(25)
     Call(SpeakToNpc, NPC_PARTNER, ANIM_WorldBow_Flail, ANIM_WorldBow_Flail, 0, NPC_PARTNER, MSG_FotB_000A)
     Call(GetNpcYaw, NPC_PARTNER, LVar3)
     Add(LVar3, 180)

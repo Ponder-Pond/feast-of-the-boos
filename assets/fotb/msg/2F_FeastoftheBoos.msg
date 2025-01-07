@@ -10,12 +10,14 @@ when I left this morning...[BR]
 
 
 
+
 #message:2F:(FotB_0001)
 {
 [Style right]
 Let's be careful![BR]
 [Wait][End]
 }
+
 
 
 
@@ -31,12 +33,14 @@ is a death sentence![BR]
 
 
 
+
 #message:2F:(FotB_0003)
 {
 [Style Inspect]
 The gate won't move, it's jammed.[BR]
 [Wait][End]
 }
+
 
 
 
@@ -53,6 +57,7 @@ It sounds like snickering.[BR]
 
 
 
+
 #message:2F:(FotB_0005)
 {
 [Style right]
@@ -66,6 +71,7 @@ off the path?[BR]
 
 
 
+
 #message:2F:(FotB_0006)
 {
 [Style right]
@@ -76,13 +82,16 @@ worried if we dawdle too long.[BR]
 
 
 
+
 #message:2F:(FotB_0007)
 {
 [Style right]
 Oh look, it's that forest guide![BR]
+[Wait][Next]
 Hey, you![BR]
 [Wait][End]
 }
+
 
 
 
@@ -96,11 +105,15 @@ let's try this...[BR]
 
 
 
+
 #message:2F:(FotB_0009)
 {
-[Style right][Down 10][Shake][PrintRising][Size 32,32]Gwaah ha ha ha!
-[Pause 100][End]
+[InputOff]
+[Style right]
+[Down 10][Shake][PrintRising][Size 32,32]Gwaah ha ha ha![BR]
+[Pause 25][End]
 }
+
 
 
 
@@ -114,6 +127,7 @@ that you lout! Come back here![BR]
 
 
 
+
 #message:2F:(FotB_000B)
 {
 [Style right]
@@ -121,6 +135,7 @@ Maybe he's heading for an exit?[BR]
 Let's follow him![BR]
 [Wait][End]
 }
+
 
 
 
@@ -133,12 +148,14 @@ There he is![BR]
 
 
 
+
 #message:2F:(FotB_000D)
 {
 [Style right]
 Hey Okey! ...Dokey? No, no..[BR]
 [Wait][End]
 }
+
 
 
 
@@ -149,6 +166,7 @@ Hey Okey! ...Dokey? No, no..[BR]
 We request your help![BR]
 [Wait][End]
 }
+
 
 
 
@@ -165,6 +183,7 @@ What's going on? Can you help us?[BR]
 
 
 
+
 #message:2F:(FotB_0010)
 {
 [Style right]
@@ -172,6 +191,7 @@ What's going on? Can you help us?[BR]
 direction?[BR]
 [Wait][End]
 }
+
 
 
 
@@ -185,6 +205,7 @@ it was a trap![BR]
 
 
 
+
 #message:2F:(FotB_0012)
 {
 [Style right]
@@ -192,6 +213,7 @@ More like an am-[Shake]BOO
 [Shake]Heh heh heh!
 [Wait][End]
 }
+
 
 
 
@@ -206,6 +228,7 @@ I'm not missing the party for[BR]this, I was lookout last time!![BR]
 
 
 
+
 #message:2F:(FotB_0014)
 {
 [Style right]
@@ -216,6 +239,7 @@ getting lost in the forest again![BR]
 
 
 
+
 #message:2F:(FotB_0015)
 {
 [Style right]
@@ -223,6 +247,7 @@ Party? What on earth were[BR]
 they talking about?[BR]
 [Wait][End]
 }
+
 
 
 
@@ -241,12 +266,14 @@ bullies at my home![BR]
 
 
 
+
 #message:2F:(FotB_0017)
 {
 [Style right]
 [Wave]Oooo.... ughhh.....
 [Wait][End]
 }
+
 
 
 
@@ -261,12 +288,14 @@ Boos a bad name![BR]
 
 
 
+
 #message:2F:(FotB_0019)
 {
 [Style right]
 ...Oh? From the chest?[BR]
 [Wait][End]
 }
+
 
 
 
@@ -280,12 +309,14 @@ out of there.[BR]
 
 
 
+
 #message:2F:(FotB_001B)
 {
 [Style right]
 Oof... What a bunch of rude kids...[BR]
 [Wait][End]
 }
+
 
 
 
@@ -298,6 +329,7 @@ Oaklie! Are you alright?[BR]
 
 
 
+
 #message:2F:(FotB_001D)
 {
 [Style right]
@@ -307,6 +339,7 @@ Thank you for saving me. That[BR]
 chest is difficult to breathe in.[BR]
 [Wait][End]
 }
+
 
 
 
@@ -323,6 +356,7 @@ We can't even make our way[BR]
 back to the Manor![BR]
 [Wait][End]
 }
+
 
 
 
@@ -344,6 +378,7 @@ trapped me inside that chest.[BR]
 
 
 
+
 #message:2F:(FotB_0020)
 {
 [Style right]
@@ -352,6 +387,7 @@ I feel uneasiness in the[BR]
 forest tonight...[BR]
 [Wait][End]
 }
+
 
 
 
@@ -364,6 +400,7 @@ know of some hidden detours[BR]
 we can make use of.[BR]
 [Wait][End]
 }
+
 
 
 
@@ -382,12 +419,14 @@ them for too long.[BR]
 
 
 
+
 #message:2F:(FotB_0023)
 {
 [Style right]
 Follow me to the clearing.[BR]
 [Wait][End]
 }
+
 
 
 
@@ -407,12 +446,14 @@ should arrive safely.[BR]
 
 
 
+
 #message:2F:(FotB_0025)
 {
 [Style right]
 Oh wonderful! Thank you Oaklie![BR]
 [Wait][End]
 }
+
 
 
 
@@ -423,4 +464,3 @@ Come now Mario, a fancy feast[BR]
 awaits you![BR]
 [Wait][End]
 }
-

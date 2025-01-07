@@ -8092,20 +8092,20 @@ segments:
 ############
 ### maps ###
 ############
-  - name: machi
-    dir: world/area_mac/machi
-    type: code
-    start: 0x7E73A0
-    vram_class: map
-    subsegments:
-    - [auto, c, settings]
-    - [auto, c, tables]
-    - [auto, c, main]
-    - [auto, c, entity]
-    - [auto, c, goomba_king]
-    - [auto, c, npc]
-    - [auto, c, misstar]
-    - [auto, c, partner]
+  # - name: machi
+  #   dir: world/area_mac/machi
+  #   type: code
+  #   start: 0x7E73A0
+  #   vram_class: map
+  #   subsegments:
+  #   - [auto, c, settings]
+  #   - [auto, c, tables]
+  #   - [auto, c, main]
+  #   - [auto, c, entity]
+  #   - [auto, c, goomba_king]
+  #   - [auto, c, npc]
+  #   - [auto, c, misstar]
+  #   - [auto, c, partner]
   - name: mac_00
     dir: world/area_mac/mac_00
     type: code

@@ -306,7 +306,7 @@ s32 get_asset_offset(char* assetName, s32* compressedSize) {
 /// Toad Town
 #include "area_mac/mac.h"
 MapConfig mac_maps[] = {
-    { MAP(machi), .bgName = "nok_bg" },
+    // { MAP(machi), .bgName = "nok_bg" },
     { MAP(mac_00), .bgName = "nok_bg" },
     { MAP(mac_01), .bgName = "nok_bg" },
     { MAP(mac_02), .bgName = "nok_bg" },

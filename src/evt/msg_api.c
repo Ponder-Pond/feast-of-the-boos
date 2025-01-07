@@ -1,4 +1,5 @@
 #include "common.h"
+#include "dx/debug_menu.h"
 
 extern s32 ShowMessageScreenOffsetX;
 extern s32 ShowMessageScreenOffsetY;
@@ -92,6 +93,7 @@ s32 _show_message(Evt* script, s32 isInitialCall, s32 mode) {
             speakerNpc = (Npc*) NPC_PLAYER;
             script->varTable[15] = playerStatus->targetYaw;
         } else {
+            debug_printf("speakerNpcID=%d\n", speakerNpcID);
             speakerNpc = resolve_npc(script, speakerNpcID);
             get_screen_coords(gCurrentCameraID, speakerNpc->pos.x, speakerNpc->pos.y + speakerNpc->collisionHeight, speakerNpc->pos.z,
                               &screenX, &screenY, &screenZ);
