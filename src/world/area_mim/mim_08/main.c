@@ -38,6 +38,7 @@ EvtScript N(EVS_EnterMap) = {
                 // Call(NpcFaceNpc, NPC_DupiOaklie, NPC_DupiOaklie, 0)
                 Call(SetNpcYaw, NPC_DupiOaklie, 180)
                 Call(SetNpcPos, NPC_DupiOaklie, 55, 33, 27)
+                Call(SetNpcPos, NPC_Oaklie, GEN_CHEST_OAKLIE_X, -10, GEN_CHEST_OAKLIE_Z)
                 Call(AwaitPlayerApproach, GEN_CUTSCENE4_X, GEN_CUTSCENE4_Z, 60)
                 Exec(N(EVS_Cutscene4))
                 Set(GB_StoryProgress, STORY_MOD_CUTSCENE_4)

@@ -64,45 +64,41 @@ EvtScript N(EVS_Cutscene2) = {
 };
 
 EvtScript N(EVS_BooBully_SpookPlayer) = {
-    ChildThread
-        // Call(GetPlayerPos, LVarA, LVarB, LVarC)
-        // Call(UseSettingsFrom, CAM_DEFAULT, LVarA, LVarB, LVarC)
-        // Call(SetCamSpeed, CAM_DEFAULT, Float(90.0))
-        Loop(5)
-            // Call(SetCamDistance, CAM_DEFAULT, 400)
-            // Call(PanToTarget, CAM_DEFAULT, 0, TRUE)
-            // Wait(1)
-            // Call(SetCamDistance, CAM_DEFAULT, 450)
-            // Call(PanToTarget, CAM_DEFAULT, 0, TRUE)
-            Call(ShakeCam, CAM_DEFAULT, 0, 10, Float(0.5))
-            Wait(1)
-        EndLoop
-    EndChildThread
+    Loop(5)
+        // Call(SetCamDistance, CAM_DEFAULT, 400)
+        // Call(PanToTarget, CAM_DEFAULT, 0, TRUE)
+        // Wait(1)
+        // Call(SetCamDistance, CAM_DEFAULT, 450)
+        // Call(PanToTarget, CAM_DEFAULT, 0, TRUE)
+        Call(ShakeCam, CAM_DEFAULT, 0, 10, Float(0.5))
+        Wait(1)
+    EndLoop
     Call(SetPlayerAnimation, ANIM_Mario1_Flail)
     Call(SetNpcAnimation, NPC_PARTNER, ANIM_WorldBow_Flail)
-    Wait(5)
+    Wait(30)
     // Call(SpeakToPlayer, NPC_Bootler, ANIM_Bootler_Spook, ANIM_Bootler_Spook, 0, MSG_CH3_0002)
-    Call(SetNpcAnimation, NPC_PARTNER, ANIM_WorldBow_Idle)
-    Call(SetPlayerAnimation, ANIM_Mario1_Idle)
+    // Call(SetNpcAnimation, NPC_PARTNER, ANIM_WorldBow_Idle)
+    // Call(SetPlayerAnimation, ANIM_Mario1_Idle)
     Return
     End
 };
 
 EvtScript N(EVS_Cutscene4) = {
     SetF(LVar0, Float(0.0))
+    Call(NpcFacePlayer, NPC_BooBully_1, 0)
     Call(SetNpcImgFXParams, NPC_BooBully_1, IMGFX_SET_ALPHA, LVar0, 0, 0, 0)
     Call(SetNpcImgFXParams, NPC_BooBully_2, IMGFX_SET_ALPHA, LVar0, 0, 0, 0)
     Call(DisablePlayerInput, TRUE)
-    Call(func_802D1270, 53, -48, Float(4.0))
+    Call(func_802D1270, 40, -30, Float(4.0))
     Wait(5)
     Call(DisablePartnerAI, 0)
     Call(GetNpcPos, NPC_PARTNER, 0, LVar1, 0)
     Call(GetPlayerPos, LVar0, 0, LVar2)
-    Sub(LVar0, 40)
-    Add(LVar2, 30)
+    Sub(LVar0, 20)
+    Sub(LVar2, 20)
     Call(SetNpcSpeed, NPC_PARTNER, Float(4.0))
     Call(NpcFlyTo, NPC_PARTNER, LVar0, LVar1, LVar2, 0, 0, EASING_LINEAR)
-    Call(PlayerFaceNpc, 0)
+    Call(PlayerFaceNpc, NPC_DupiOaklie, 0)
     Call(NpcFaceNpc, NPC_PARTNER, NPC_DupiOaklie, 0)
     Call(PlaySoundAtPlayer, SOUND_EMOTE_IDEA, SOUND_SPACE_DEFAULT)
     Call(ShowEmote, 0, EMOTE_EXCLAMATION, 0, 25, EMOTER_PLAYER, 0, 0, 0, 0)
@@ -123,10 +119,10 @@ EvtScript N(EVS_Cutscene4) = {
     WaitSecs(3)
     Call(SpeakToNpc, NPC_PARTNER, ANIM_WorldBow_Talk, ANIM_WorldBow_Idle, 0, NPC_PARTNER, MSG_FotB_0010)
     WaitSecs(1)
-    Call(GetNpcPos, NPC_PARTNER, LVar0, LVar1, LVar2)
-    Add(LVar0, 20)
-    Sub(LVar2, 20)
-    Call(SetNpcPos, NPC_BooBully_1, LVar0, LVar1, LVar2)
+    Call(GetNpcPos, NPC_PARTNER, 0, LVar1, 0)
+    // Sub(LVar0, 50)
+    // Sub(LVar2, 50)
+    Call(SetNpcPos, NPC_BooBully_1, 1, LVar1, -75)
     Call(PlaySoundAtNpc, NPC_BooBully_1, SOUND_BOO_APPEAR_A, SOUND_SPACE_DEFAULT)
     Thread
         SetF(LVar0, Float(0.0))
@@ -175,10 +171,9 @@ EvtScript N(EVS_Cutscene4) = {
     Call(SetNpcAnimation, NPC_Duplighost, ANIM_Duplighost_Anim06)
     Wait(10)
     Call(SpeakToNpc, NPC_PARTNER, ANIM_WorldBow_Flail, ANIM_WorldBow_Flail, 0, NPC_PARTNER, MSG_FotB_0011)
-    Call(GetNpcPos, NPC_BooBully_1, LVar0, LVar1, LVar2)
-    Add(LVar0, 20)
-    Sub(LVar2, 20)
-    Call(SetNpcPos, NPC_BooBully_2, LVar0, LVar1, LVar2)
+    Call(GetNpcPos, NPC_BooBully_1, 0, LVar1, 0)
+    Call(SetNpcPos, NPC_BooBully_2, 68, LVar1, -8)
+    Call(NpcFacePlayer, NPC_BooBully_2, 0)
     Call(PlaySoundAtNpc, NPC_BooBully_2, SOUND_BOO_APPEAR_A, SOUND_SPACE_DEFAULT)
     SetF(LVar0, Float(0.0))
     Loop(20)
@@ -195,32 +190,6 @@ EvtScript N(EVS_Cutscene4) = {
     Return
     End
 };
-
-API_CALLABLE(N(DoNpcDefeatCustom)) {
-    s32 npcID = evt_get_variable(script, *script->ptrReadPos);
-    Npc* npc = get_npc_unsafe(npcID);
-    Enemy* enemy;
-    Evt* newScript;
-
-    ASSERT(npc != NULL);
-
-    enemy = get_enemy_safe(npcID);
-    if (enemy == NULL) {
-        return ApiStatus_BLOCK;
-    }
-
-    kill_script(script);
-
-    npc->curAnim = enemy->animList[6];
-    newScript = start_script(&EVS_NpcDefeat, EVT_PRIORITY_A, 0);
-    enemy->defeatScript = newScript;
-    enemy->defeatScriptID = newScript->id;
-    newScript->owner1.enemy = enemy;
-    newScript->owner2.npcID = npcID;
-    newScript->groupFlags = enemy->scriptGroup;
-
-    return ApiStatus_FINISH;
-}
 
 EvtScript N(EVS_BooBullyScareAndVanish) = {
     Call(SetNpcFlagBits, LVarA, NPC_FLAG_IGNORE_CAMERA_FOR_YAW, FALSE)
@@ -247,18 +216,26 @@ EvtScript N(EVS_Cutscene5) = {
     Call(SetPlayerPos, GEN_CUTSCENE5_VEC)
     Call(GetPlayerPos, LVar0, 0, LVar2)
     Call(GetNpcPos, NPC_PARTNER, 0, LVar1, 0)
+    Add(LVar0, 20)
+    Add(LVar2, 20)
     Call(SetNpcPos, NPC_PARTNER, LVar0, LVar1, LVar2)
     Call(DisablePartnerAI, 0)
-    Call(PlayerFaceNpc, 0)
+    Call(GetNpcPos, NPC_BooBully_1, LVar0, LVar1, LVar2)
+    Call(SetNpcPos, NPC_BooBully_1, -36, LVar1, -69)
+    Call(GetNpcPos, NPC_BooBully_2, LVar0, LVar1, LVar2)
+    Call(SetNpcPos, NPC_BooBully_2, -6, LVar1, -45)
+    Call(SetNpcPos, NPC_Duplighost, 19, 33, -14)
+    Call(PlayerFaceNpc, NPC_BooBully_2, 0)
     Call(NpcFaceNpc, NPC_PARTNER, NPC_BooBully_2, 0)
+    Call(NpcFacePlayer, NPC_Duplighost, 0)
     Call(SetNpcAnimation, NPC_BooBully_1, ANIM_BooBully_Flail)
     Call(SetNpcAnimation, NPC_BooBully_2, ANIM_BooBully_Flail)
     Call(SetNpcAnimation, NPC_Duplighost, ANIM_Duplighost_Anim0A)
-    // Call(SpeakToPlayer, NPC_BooBully_2, ANIM_BooBully_Flail, ANIM_BooBully_Flail, 0, MSG_FotB_0013)
+    Call(SpeakToPlayer, NPC_BooBully_2, ANIM_BooBully_Flail, ANIM_BooBully_Flail, 0, MSG_FotB_0013)
     Call(SetNpcAnimation, NPC_BooBully_1, ANIM_BooBully_Idle)
     Call(SetNpcAnimation, NPC_BooBully_2, ANIM_BooBully_Idle)
     // Wait(1)
-    // Call(SpeakToPlayer, NPC_BooBully_2, ANIM_BooBully_Talk, ANIM_BooBully_Idle, 0, MSG_FotB_0014)
+    Call(SpeakToPlayer, NPC_BooBully_2, ANIM_BooBully_Talk, ANIM_BooBully_Idle, 0, MSG_FotB_0014)
     // Wait(15)
     Call(PlaySoundAtNpc, NPC_BooBully_2, SOUND_BOO_SPOOK, SOUND_SPACE_DEFAULT)
     Set(LVarA, NPC_BooBully_2)
@@ -267,32 +244,154 @@ EvtScript N(EVS_Cutscene5) = {
     Set(LVarA, NPC_BooBully_1)
     Exec(N(EVS_BooBullyScareAndVanish))
     Call(PlaySoundAtNpc, NPC_BooBully_1, SOUND_BOO_VANISH_A, SOUND_SPACE_DEFAULT)
+    WaitSecs(4)
     Wait(15)
-    Call(RemoveNpc, NPC_BooBully_1)
-    Call(RemoveNpc, NPC_BooBully_2)
+    Call(SetNpcPos, NPC_BooBully_2, NPC_DISPOSE_LOCATION)
+    Call(SetNpcPos, NPC_BooBully_1, NPC_DISPOSE_LOCATION)
     Call(GetNpcPos, NPC_Duplighost, LVar0, LVar1, LVar2)
     // Call(PlaySound, SOUND_CHIME_SOLVED_PUZZLE)
     Call(MakeItemEntity, ITEM_RUINS_KEY, LVar0, LVar1, LVar2, ITEM_SPAWN_MODE_TOSS_NEVER_VANISH, GF_MIM08_Item_ChestKey)
-    Call(DoNpcDefeat)
+    Call(OnDefeatEnemy)
     // Call(RemoveNpc, NPC_Duplighost)
-    Call(SpeakToNpc, NPC_PARTNER, ANIM_WorldBow_Talk, ANIM_WorldBow_Idle, 0, NPC_PARTNER, MSG_FotB_0015)
+    Call(SetNpcPos, NPC_Duplighost, NPC_DISPOSE_LOCATION)
+    Call(NpcFacePlayer, NPC_PARTNER, 0)
+    Call(SpeakToPlayer, NPC_PARTNER, ANIM_WorldBow_Talk, ANIM_WorldBow_Idle, 0, MSG_FotB_0015)
     Call(PlaySoundAtNpc, NPC_PARTNER, SOUND_EMOTE_IDEA, SOUND_SPACE_DEFAULT)
     Call(ShowEmote, NPC_PARTNER, EMOTE_EXCLAMATION, 0, 25, EMOTER_NPC, 0, 0, 0, 0)
     Wait(25)
-    Call(SpeakToNpc, NPC_PARTNER, ANIM_WorldBow_Flail, ANIM_WorldBow_Flail, 0, NPC_PARTNER, MSG_FotB_0016)
+    Call(SpeakToPlayer, NPC_PARTNER, ANIM_WorldBow_Flail, ANIM_WorldBow_Flail, 0, MSG_FotB_0016)
     Call(SetNpcFlagBits, NPC_Oaklie, NPC_FLAG_INVISIBLE, TRUE)
     Call(SetNpcPos, GEN_CHEST_OAKLIE_VEC)
-    Call(SpeakToNpc, NPC_Oaklie, ANIM_Oaklie_Talk, ANIM_Oaklie_Idle, 0, NPC_Oaklie, MSG_FotB_0017)
-    Call(SpeakToNpc, NPC_PARTNER, ANIM_WorldBow_SpookLoop, ANIM_WorldBow_SpookLoop, 0, NPC_PARTNER, MSG_FotB_0018)
+    Call(SpeakToPlayer, NPC_Oaklie, ANIM_Oaklie_Talk, ANIM_Oaklie_Idle, 0, MSG_FotB_0017)
+    Call(SpeakToNpc, NPC_PARTNER, ANIM_WorldBow_SpookLoop, ANIM_WorldBow_SpookLoop, 0, NPC_Oaklie, MSG_FotB_0018)
     Call(PlaySoundAtPlayer, SOUND_EMOTE_QUESTION, SOUND_SPACE_DEFAULT)
     Call(ShowEmote, 0, EMOTE_QUESTION, 0, 25, EMOTER_PLAYER, 0, 0, 0, 0)
     Wait(25)
     Call(SetPlayerAnimation, ANIM_MarioW2_SpeakUp)
     Wait(20)
-    Call(SpeakToNpc, NPC_PARTNER, ANIM_WorldBow_Talk, ANIM_WorldBow_Idle, 0, NPC_PARTNER, MSG_FotB_0019)
+    Call(SpeakToPlayer, NPC_PARTNER, ANIM_WorldBow_Talk, ANIM_WorldBow_Idle, 0, MSG_FotB_0019)
     Call(SetNpcAnimation, NPC_PARTNER, ANIM_WorldBow_Laugh)
-    Call(SpeakToNpc, NPC_PARTNER, ANIM_WorldBow_Talk, ANIM_WorldBow_Idle, 0, NPC_PARTNER, MSG_FotB_001A)
+    Call(SpeakToPlayer, NPC_PARTNER, ANIM_WorldBow_Talk, ANIM_WorldBow_Idle, 0, MSG_FotB_001A)
     Call(EnablePartnerAI)
+    Call(DisablePlayerInput, FALSE)
+    Return
+    End
+};
+
+EvtScript N(EVS_Cutscene6) = {
+    WaitSecs(2)
+    Call(DisablePlayerInput, TRUE)
+    Call(SetNpcFlagBits, NPC_Oaklie, NPC_FLAG_INVISIBLE, FALSE)
+    Wait(15)
+    Call(SetNpcPos, NPC_Oaklie, GEN_CHEST_OAKLIE_X, -10, GEN_CHEST_OAKLIE_Z)
+   Thread
+        Call(SetNpcAnimation, NPC_Oaklie, ANIM_Oaklie_Jump)
+        Wait(15)
+        Call(SetNpcAnimation, NPC_Oaklie, ANIM_Oaklie_Fall)
+    EndThread
+    Call(PlaySoundAtNpc, NPC_Oaklie, SOUND_NPC_JUMP, SOUND_SPACE_DEFAULT)
+    Call(SetNpcJumpscale, NPC_Oaklie, Float(1.0))
+    Call(NpcJump0, NPC_Oaklie, GEN_CHEST_OAKLIE_X, 33, 0, 20)
+    Call(SetNpcAnimation, NPC_Oaklie, ANIM_Oaklie_Land)
+    Wait(5)
+    Call(SetNpcAnimation, NPC_Oaklie, ANIM_Oaklie_Idle)
+    Call(PlayerFaceNpc, NPC_Oaklie, FALSE)
+    Wait(15)
+    Call(GetPlayerPos, LVar0, LVar1, LVar2)
+    Call(UseSettingsFrom, CAM_DEFAULT, LVar0, LVar1, LVar2)
+    Call(SetCamSpeed, CAM_DEFAULT, Float(90.0))
+    Call(SetCamDistance, CAM_DEFAULT, 300)
+    Call(SetPanTarget, CAM_DEFAULT, LVar0, LVar1, LVar2)
+    Call(PanToTarget, CAM_DEFAULT, 0, TRUE)
+    // Call(SpeakToPlayer, NPC_SELF, ANIM_Yakkey_Talk, ANIM_Yakkey_Idle, 5, MSG_CH3_00F6)
+    // Wait(15)
+    // Call(SpeakToPlayer, NPC_SELF, ANIM_Yakkey_Talk, ANIM_Yakkey_Idle, 5, MSG_CH3_00F7)
+    // Call(ShowChoice, MSG_Choice_000D)
+    // IfEq(LVar0, 0)
+    //     Call(ContinueSpeech, NPC_SELF, ANIM_Yakkey_Talk, ANIM_Yakkey_Idle, 0, MSG_CH3_00F8)
+    // Else
+    //     Call(ContinueSpeech, NPC_SELF, ANIM_Yakkey_Talk, ANIM_Yakkey_Idle, 0, MSG_CH3_00F9)
+    // EndIf
+    // Call(GetPlayerPos, LVar0, LVar1, LVar2)
+    // Call(SetCamSpeed, CAM_DEFAULT, Float(4.0))
+    // Call(UseSettingsFrom, CAM_DEFAULT, 740, LVar1, LVar2)
+    // Call(SetCamDistance, CAM_DEFAULT, 600)
+    // Call(SetCamPosB, CAM_DEFAULT, 800, 245)
+    // Call(SetPanTarget, CAM_DEFAULT, 740, LVar1, LVar2)
+    // Call(WaitForCam, CAM_DEFAULT, Float(1.0))
+    // Thread
+    //     Set(MF_Sync_YakkeyDialogue, FALSE)
+    //     Call(SpeakToPlayer, NPC_SELF, ANIM_Yakkey_Talk, ANIM_Yakkey_Idle, 517, MSG_CH3_00FA)
+    //     Set(MF_Sync_YakkeyDialogue, TRUE)
+    // EndThread
+    // Call(GetPlayerPos, LVar0, LVar1, LVar2)
+    // Call(UseSettingsFrom, CAM_DEFAULT, LVar0, LVar1, LVar2)
+    // Loop(0)
+    //     Call(SetCamDistance, CAM_DEFAULT, Float(550.0))
+    //     Call(SetCamSpeed, CAM_DEFAULT, Float(90.0))
+    //     Call(SetPanTarget, CAM_DEFAULT, 740, LVar1, LVar2)
+    //     Wait(1)
+    //     Call(SetCamDistance, CAM_DEFAULT, Float(600.0))
+    //     Call(SetCamSpeed, CAM_DEFAULT, Float(90.0))
+    //     Call(SetPanTarget, CAM_DEFAULT, 740, LVar1, LVar2)
+    //     Wait(1)
+    //     IfEq(MF_Sync_YakkeyDialogue, TRUE)
+    //         BreakLoop
+    //     EndIf
+    // EndLoop
+    // Call(SetMusicTrack, 0, SONG_TUBBA_ESCAPE, 0, 8)
+    // Call(SetNpcVar, NPC_Tubba, 1, 1)
+    // Wait(15)
+    // Call(SetNpcAnimation, NPC_Tubba, ANIM_WorldTubba_Anim25)
+    // Thread
+    //     Loop(0)
+    //         Call(GetNpcVar, NPC_Tubba, 1, LVar0)
+    //         IfEq(LVar0, 2)
+    //             BreakLoop
+    //         EndIf
+    //         Call(RandInt, 40, LVar0)
+    //         Call(RandInt, 40, LVar1)
+    //         Add(LVar0, 537)
+    //         Add(LVar1, 110)
+    //         PlayEffect(EFFECT_SMOKE_BURST, 2, LVar0, LVar1, 128, Float(0.3), 24)
+    //         Wait(5)
+    //     EndLoop
+    // EndThread
+    // Wait(15)
+    // Call(SetNpcAnimation, NPC_Tubba, ANIM_WorldTubba_Anim05)
+    // Call(SpeakToPlayer, NPC_Tubba, ANIM_WorldTubba_Anim13, ANIM_WorldTubba_Anim05, 5, MSG_CH3_00FB)
+    // Wait(15)
+    // Call(DisablePartnerAI, 0)
+    // Call(GetCurrentPartnerID, LVar0)
+    // Switch(LVar0)
+    //     CaseEq(PARTNER_GOOMBARIO)
+    //         Call(SpeakToPlayer, NPC_PARTNER, ANIM_WorldGoombario_Talk, ANIM_WorldGoombario_Idle, 0, MSG_CH3_00FC)
+    //     CaseEq(PARTNER_KOOPER)
+    //         Call(SpeakToPlayer, NPC_PARTNER, ANIM_WorldKooper_Talk, ANIM_WorldKooper_Idle, 0, MSG_CH3_00FD)
+    //     CaseEq(PARTNER_BOMBETTE)
+    //         Call(SpeakToPlayer, NPC_PARTNER, ANIM_WorldBombette_Talk, ANIM_WorldBombette_Idle, 0, MSG_CH3_00FE)
+    //     CaseEq(PARTNER_PARAKARRY)
+    //         Call(SpeakToPlayer, NPC_PARTNER, ANIM_WorldParakarry_Talk, ANIM_WorldParakarry_Idle, 0, MSG_CH3_00FF)
+    //     CaseEq(PARTNER_BOW)
+    //         Call(SpeakToPlayer, NPC_PARTNER, ANIM_WorldBow_Talk, ANIM_WorldBow_Idle, 0, MSG_CH3_0100)
+    // EndSwitch
+    // Call(EnablePartnerAI)
+    // Wait(15)
+    // Call(BindNpcAI, NPC_Tubba, Ref(N(EVS_NpcAI_Tubba_WakeUp)))
+    // Call(GetPlayerPos, LVar0, LVar1, LVar2)
+    // Call(UseSettingsFrom, CAM_DEFAULT, LVar0, LVar1, LVar2)
+    // Call(SetCamSpeed, CAM_DEFAULT, Float(4.0))
+    // Call(SetPanTarget, CAM_DEFAULT, LVar0, LVar1, LVar2)
+    // Call(WaitForCam, CAM_DEFAULT, Float(1.0))
+    // Call(PanToTarget, CAM_DEFAULT, 0, FALSE)
+    // Call(GetPlayerPos, LVar0, LVar1, LVar2)
+    // Call(SetNpcJumpscale, NPC_SELF, Float(1.0))
+    // Call(SetNpcFlagBits, NPC_SELF, NPC_FLAG_IGNORE_PLAYER_COLLISION, TRUE)
+    // Sub(LVar1, 10)
+    // Call(NpcJump0, NPC_SELF, LVar0, LVar1, LVar2, 10)
+    // Call(SetNpcPos, NPC_SELF, NPC_DISPOSE_LOCATION)
+    // Set(GB_StoryProgress, STORY_CH3_TUBBA_WOKE_UP)
+    Call(ResetCam, CAM_DEFAULT, 6)
     Call(DisablePlayerInput, FALSE)
     Return
     End
@@ -557,8 +656,11 @@ EvtScript N(EVS_NpcDefeat_Duplighost) = {
     Switch(LVar0)
         CaseEq(OUTCOME_PLAYER_WON)
             IfLt(GB_StoryProgress, STORY_MOD_CUTSCENE_5)
-                Exec(N(EVS_Cutscene5))
                 Set(GB_StoryProgress, STORY_MOD_CUTSCENE_5)
+                ExecWait(N(EVS_Cutscene5))
+                Call(RemoveNpc, NPC_BooBully_1)
+                Call(RemoveNpc, NPC_BooBully_2)
+                Call(RemoveNpc, NPC_Duplighost)
             EndIf
         CaseEq(OUTCOME_PLAYER_LOST)
         CaseEq(OUTCOME_PLAYER_FLED)
@@ -615,7 +717,7 @@ NpcData N(NpcData_Imposter)[] = {
     },
 };
 
-EvtScript N(EVS_Scene_OaklieFreed) = {
+EvtScript N(EVS_NpcIdle_Oaklie) = {
     Loop(0)
         Call(GetSelfVar, 0, LVar0)
         IfEq(LVar0, 1)
@@ -623,119 +725,14 @@ EvtScript N(EVS_Scene_OaklieFreed) = {
         EndIf
         Wait(1)
     EndLoop
-    Call(DisablePlayerInput, TRUE)
-    Wait(40)
-    Call(SetNpcFlagBits, NPC_SELF, NPC_FLAG_IGNORE_PLAYER_COLLISION, TRUE)
-    Call(SetNpcPos, NPC_SELF, GEN_CHEST_OAKLIE_X, -10, GEN_CHEST_OAKLIE_Z)
-    Call(PlaySoundAtNpc, NPC_Oaklie, SOUND_NPC_JUMP, SOUND_SPACE_DEFAULT)
-    Call(SetNpcJumpscale, NPC_SELF, Float(1.0))
-    Call(NpcJump0, NPC_SELF, GEN_CHEST_OAKLIE_X, 0, 0, 20)
-    Call(SetNpcAnimation, NPC_Oaklie, ANIM_Oaklie_Land)
-    Call(PlayerFaceNpc, NPC_SELF, FALSE)
-    Wait(15)
-    Call(GetPlayerPos, LVar0, LVar1, LVar2)
-    Call(UseSettingsFrom, CAM_DEFAULT, LVar0, LVar1, LVar2)
-    Call(SetCamSpeed, CAM_DEFAULT, Float(90.0))
-    // Call(SetCamDistance, CAM_DEFAULT, 300)
-    // Call(SetCamPosB, CAM_DEFAULT, 800, 245)
-    // Call(SetPanTarget, CAM_DEFAULT, LVar0, LVar1, LVar2)
-    // Call(PanToTarget, CAM_DEFAULT, 0, TRUE)
-    // Call(SpeakToPlayer, NPC_SELF, ANIM_Yakkey_Talk, ANIM_Yakkey_Idle, 5, MSG_CH3_00F6)
-    // Wait(15)
-    // Call(SpeakToPlayer, NPC_SELF, ANIM_Yakkey_Talk, ANIM_Yakkey_Idle, 5, MSG_CH3_00F7)
-    // Call(ShowChoice, MSG_Choice_000D)
-    // IfEq(LVar0, 0)
-    //     Call(ContinueSpeech, NPC_SELF, ANIM_Yakkey_Talk, ANIM_Yakkey_Idle, 0, MSG_CH3_00F8)
-    // Else
-    //     Call(ContinueSpeech, NPC_SELF, ANIM_Yakkey_Talk, ANIM_Yakkey_Idle, 0, MSG_CH3_00F9)
-    // EndIf
-    // Call(GetPlayerPos, LVar0, LVar1, LVar2)
-    // Call(SetCamSpeed, CAM_DEFAULT, Float(4.0))
-    // Call(UseSettingsFrom, CAM_DEFAULT, 740, LVar1, LVar2)
-    // Call(SetCamDistance, CAM_DEFAULT, 600)
-    // Call(SetCamPosB, CAM_DEFAULT, 800, 245)
-    // Call(SetPanTarget, CAM_DEFAULT, 740, LVar1, LVar2)
-    // Call(WaitForCam, CAM_DEFAULT, Float(1.0))
-    // Thread
-    //     Set(MF_Sync_YakkeyDialogue, FALSE)
-    //     Call(SpeakToPlayer, NPC_SELF, ANIM_Yakkey_Talk, ANIM_Yakkey_Idle, 517, MSG_CH3_00FA)
-    //     Set(MF_Sync_YakkeyDialogue, TRUE)
-    // EndThread
-    // Call(GetPlayerPos, LVar0, LVar1, LVar2)
-    // Call(UseSettingsFrom, CAM_DEFAULT, LVar0, LVar1, LVar2)
-    // Loop(0)
-    //     Call(SetCamDistance, CAM_DEFAULT, Float(550.0))
-    //     Call(SetCamSpeed, CAM_DEFAULT, Float(90.0))
-    //     Call(SetPanTarget, CAM_DEFAULT, 740, LVar1, LVar2)
-    //     Wait(1)
-    //     Call(SetCamDistance, CAM_DEFAULT, Float(600.0))
-    //     Call(SetCamSpeed, CAM_DEFAULT, Float(90.0))
-    //     Call(SetPanTarget, CAM_DEFAULT, 740, LVar1, LVar2)
-    //     Wait(1)
-    //     IfEq(MF_Sync_YakkeyDialogue, TRUE)
-    //         BreakLoop
-    //     EndIf
-    // EndLoop
-    // Call(SetMusicTrack, 0, SONG_TUBBA_ESCAPE, 0, 8)
-    // Call(SetNpcVar, NPC_Tubba, 1, 1)
-    // Wait(15)
-    // Call(SetNpcAnimation, NPC_Tubba, ANIM_WorldTubba_Anim25)
-    // Thread
-    //     Loop(0)
-    //         Call(GetNpcVar, NPC_Tubba, 1, LVar0)
-    //         IfEq(LVar0, 2)
-    //             BreakLoop
-    //         EndIf
-    //         Call(RandInt, 40, LVar0)
-    //         Call(RandInt, 40, LVar1)
-    //         Add(LVar0, 537)
-    //         Add(LVar1, 110)
-    //         PlayEffect(EFFECT_SMOKE_BURST, 2, LVar0, LVar1, 128, Float(0.3), 24)
-    //         Wait(5)
-    //     EndLoop
-    // EndThread
-    // Wait(15)
-    // Call(SetNpcAnimation, NPC_Tubba, ANIM_WorldTubba_Anim05)
-    // Call(SpeakToPlayer, NPC_Tubba, ANIM_WorldTubba_Anim13, ANIM_WorldTubba_Anim05, 5, MSG_CH3_00FB)
-    // Wait(15)
-    // Call(DisablePartnerAI, 0)
-    // Call(GetCurrentPartnerID, LVar0)
-    // Switch(LVar0)
-    //     CaseEq(PARTNER_GOOMBARIO)
-    //         Call(SpeakToPlayer, NPC_PARTNER, ANIM_WorldGoombario_Talk, ANIM_WorldGoombario_Idle, 0, MSG_CH3_00FC)
-    //     CaseEq(PARTNER_KOOPER)
-    //         Call(SpeakToPlayer, NPC_PARTNER, ANIM_WorldKooper_Talk, ANIM_WorldKooper_Idle, 0, MSG_CH3_00FD)
-    //     CaseEq(PARTNER_BOMBETTE)
-    //         Call(SpeakToPlayer, NPC_PARTNER, ANIM_WorldBombette_Talk, ANIM_WorldBombette_Idle, 0, MSG_CH3_00FE)
-    //     CaseEq(PARTNER_PARAKARRY)
-    //         Call(SpeakToPlayer, NPC_PARTNER, ANIM_WorldParakarry_Talk, ANIM_WorldParakarry_Idle, 0, MSG_CH3_00FF)
-    //     CaseEq(PARTNER_BOW)
-    //         Call(SpeakToPlayer, NPC_PARTNER, ANIM_WorldBow_Talk, ANIM_WorldBow_Idle, 0, MSG_CH3_0100)
-    // EndSwitch
-    // Call(EnablePartnerAI)
-    // Wait(15)
-    // Call(BindNpcAI, NPC_Tubba, Ref(N(EVS_NpcAI_Tubba_WakeUp)))
-    // Call(GetPlayerPos, LVar0, LVar1, LVar2)
-    // Call(UseSettingsFrom, CAM_DEFAULT, LVar0, LVar1, LVar2)
-    // Call(SetCamSpeed, CAM_DEFAULT, Float(4.0))
-    // Call(SetPanTarget, CAM_DEFAULT, LVar0, LVar1, LVar2)
-    // Call(WaitForCam, CAM_DEFAULT, Float(1.0))
-    // Call(PanToTarget, CAM_DEFAULT, 0, FALSE)
-    // Call(GetPlayerPos, LVar0, LVar1, LVar2)
-    // Call(SetNpcJumpscale, NPC_SELF, Float(1.0))
-    // Call(SetNpcFlagBits, NPC_SELF, NPC_FLAG_IGNORE_PLAYER_COLLISION, TRUE)
-    // Sub(LVar1, 10)
-    // Call(NpcJump0, NPC_SELF, LVar0, LVar1, LVar2, 10)
-    // Call(SetNpcPos, NPC_SELF, NPC_DISPOSE_LOCATION)
-    // Set(GB_StoryProgress, STORY_CH3_TUBBA_WOKE_UP)
-    Call(DisablePlayerInput, FALSE)
+    ExecWait(N(EVS_Cutscene6))
     Return
     End
 };
 
 EvtScript N(EVS_NpcInit_Oaklie) = {
-    Call(SetSelfVar, 0, 0)
-    Call(BindNpcIdle, NPC_SELF, Ref(N(EVS_Scene_OaklieFreed)))
+    // Call(SetSelfVar, 0, 0)
+    // Call(BindNpcIdle, NPC_SELF, Ref(N(EVS_NpcIdle_Oaklie)))
     Return
     End
 };
@@ -746,7 +743,7 @@ NpcData N(NpcData_Oaklie) = {
     .yaw = GEN_CHEST_OAKLIE_DIR,
     .init = &N(EVS_NpcInit_Oaklie),
     .settings = &N(NpcSettings_Oaklie),
-    .flags = ENEMY_FLAG_PASSIVE | ENEMY_FLAG_FLYING,
+    .flags = ENEMY_FLAG_IGNORE_WORLD_COLLISION | ENEMY_FLAG_IGNORE_PLAYER_COLLISION | ENEMY_FLAG_IGNORE_ENTITY_COLLISION | ENEMY_FLAG_FLYING | ENEMY_FLAG_SKIP_BATTLE | ENEMY_FLAG_ACTIVE_WHILE_OFFSCREEN | ENEMY_FLAG_IGNORE_TOUCH | ENEMY_FLAG_IGNORE_PARTNER,
     .drops = NO_DROPS,
     .animations = OAKLIE_ANIMS,
     .tattle = MSG_NpcTattle_Oaklie,

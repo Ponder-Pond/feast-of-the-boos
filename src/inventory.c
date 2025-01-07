@@ -93,7 +93,7 @@ void clear_player_data(void) {
     for (i = 0; i < ARRAY_COUNT(playerData->keyItems); i++) {
         playerData->keyItems[i] = ITEM_NONE;
     }
-    // playerData->keyItems[0] = ITEM_ULTRA_STONE;
+    playerData->keyItems[0] = ITEM_RUINS_KEY;
 
     for (i = 0; i < ARRAY_COUNT(playerData->badges); i++) {
         playerData->badges[i] = ITEM_NONE;

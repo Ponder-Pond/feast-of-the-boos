@@ -6,8 +6,12 @@
 #include "world/common/todo/GetEntityPosition.inc.c"
 
 EvtScript N(EVS_OpenChest_Oaklie) = {
+    Call(DisablePlayerInput, TRUE)
     Set(GF_MIM08_Chest_Oaklie, TRUE)
-    Call(SetNpcVar, NPC_Oaklie, 0, 1)
+    // Call(SetNpcVar, NPC_Oaklie, 0, 1)
+    Set(GB_StoryProgress, STORY_MOD_CUTSCENE_6)
+    Exec(N(EVS_Cutscene6))
+    Call(DisablePlayerInput, FALSE)
     Return
     End
 };
