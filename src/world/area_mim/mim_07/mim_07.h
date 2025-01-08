@@ -19,9 +19,7 @@
 #include "sprite/npc/Fuzzy.h"
 
 enum {
-    NPC_Fuzzy_01                = 0,
-    NPC_Fuzzy_02                = 1,
-    NPC_JrTroopa                = 2,
+    NPC_BooBully,
 };
 
 #define NAMESPACE mim_07
@@ -33,3 +31,4 @@ extern EvtScript N(EVS_SetupGates);
 extern EvtScript N(EVS_SetupExitHint);
 extern EvtScript N(EVS_MakeEntities);
 extern NpcGroupList N(DefaultNPCs);
+extern EvtScript N(EVS_BooBullyChestScene);

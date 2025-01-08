@@ -670,14 +670,6 @@ NpcData N(NpcData_Imposter)[] = {
 };
 
 EvtScript N(EVS_NpcIdle_Oaklie) = {
-    Loop(0)
-        Call(GetSelfVar, 0, LVar0)
-        IfEq(LVar0, 1)
-            BreakLoop
-        EndIf
-        Wait(1)
-    EndLoop
-    ExecWait(N(EVS_Cutscene6))
     Return
     End
 };
@@ -702,12 +694,12 @@ NpcData N(NpcData_Oaklie) = {
 };
 
 NpcGroupList N(DefaultNPCs) = {
-    NPC_GROUP(N(NpcData_FreezyFuzzy), BTL_FOB_FORMATION_00, BTL_FOB_STAGE_00),
-    NPC_GROUP(N(NpcData_PiranhaPlant), BTL_FOB_FORMATION_00, BTL_FOB_STAGE_00),
-    NPC_GROUP(N(NpcData_Beehive), BTL_FOB_FORMATION_00, BTL_FOB_STAGE_00),
+    NPC_GROUP(N(NpcData_FreezyFuzzy), BTL_FOB_FORMATION_02, BTL_FOB_STAGE_00),
+    NPC_GROUP(N(NpcData_PiranhaPlant), BTL_FOB_FORMATION_03, BTL_FOB_STAGE_00),
+    NPC_GROUP(N(NpcData_Beehive), BTL_FOB_FORMATION_07, BTL_FOB_STAGE_00),
     NPC_GROUP(N(NpcData_BooBully_1)),
     NPC_GROUP(N(NpcData_BooBully_2)),
-    NPC_GROUP(N(NpcData_Imposter), BTL_FOB_FORMATION_00, BTL_FOB_STAGE_00),
+    NPC_GROUP(N(NpcData_Imposter), BTL_FOB_FORMATION_08, BTL_FOB_STAGE_00),
     NPC_GROUP(N(NpcData_Oaklie)),
     {}
 };

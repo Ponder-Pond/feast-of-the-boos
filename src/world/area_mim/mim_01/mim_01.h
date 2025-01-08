@@ -13,11 +13,6 @@
 #include "sprite/npc/WorldBow.h"
 #include "sprite/npc/Fuzzy.h"
 
-// enum {
-//     // NPC_PiranhaPlant            = 1,
-//     // NPC_PiranhaPlant_Hitbox     = 2,
-// };
-
 enum {
     NPC_FreezyFuzzy                = 0,
 };

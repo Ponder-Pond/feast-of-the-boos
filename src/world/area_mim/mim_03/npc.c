@@ -344,9 +344,9 @@ NpcData N(NpcData_Oaklie) = {
 
 
 NpcGroupList N(DefaultNPCs) = {
-    NPC_GROUP(N(NpcData_FreezyFuzzy), BTL_FOB_FORMATION_00, BTL_FOB_STAGE_00),
-    NPC_GROUP(N(NpcData_RedPanser), BTL_FOB_FORMATION_00, BTL_FOB_STAGE_00),
-    NPC_GROUP(N(NpcData_PiranhaPlant), BTL_FOB_FORMATION_00, BTL_FOB_STAGE_00),
+    NPC_GROUP(N(NpcData_FreezyFuzzy), BTL_FOB_FORMATION_04, BTL_FOB_STAGE_00),
+    NPC_GROUP(N(NpcData_RedPanser), BTL_FOB_FORMATION_05, BTL_FOB_STAGE_00),
+    NPC_GROUP(N(NpcData_PiranhaPlant), BTL_FOB_FORMATION_06, BTL_FOB_STAGE_00),
     NPC_GROUP(N(NpcData_DupiOaklie)),
     NPC_GROUP(N(NpcData_Oaklie)),
     {}

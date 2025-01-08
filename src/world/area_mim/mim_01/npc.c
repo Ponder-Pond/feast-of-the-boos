@@ -1,7 +1,5 @@
 #include "mim_01.h"
 
-// #include "world/common/enemy/PiranhaPlant.inc.c"
-
 #include "world/common/enemy/ForestFuzzy_Wander.inc.c"
 
 EvtScript N(EVS_Cutscene1) = {
@@ -55,32 +53,6 @@ EvtScript N(EVS_Cutscene1) = {
     End
 };
 
-// NpcData N(NpcData_PiranhaPlant)[] = {
-//     {
-//         .id = NPC_PiranhaPlant,
-//         .pos = { 135.0f, 0.0f, -300.0f },
-//         .yaw = 0,
-//         .territory = {
-//             .wander = {
-//                 .isFlying = TRUE,
-//                 .moveSpeedOverride = NO_OVERRIDE_MOVEMENT_SPEED,
-//                 .wanderShape = SHAPE_CYLINDER,
-//                 .centerPos  = { 135, 0, -300 },
-//                 .wanderSize = { 30 },
-//                 .detectShape = SHAPE_CYLINDER,
-//                 .detectPos  = { 0, 0, 0 },
-//                 .detectSize = { 400 },
-//             }
-//         },
-//         .settings = &N(NpcSettings_PiranhaPlant),
-//         .flags = ENEMY_FLAG_IGNORE_ENTITY_COLLISION,
-//         .drops = PIRANHA_PLANT_DROPS,
-//         .animations = PIRANHA_PLANT_ANIMS,
-//         .aiDetectFlags = AI_DETECT_SIGHT,
-//     },
-//     PIRANHA_PLANT_HITBOX(NPC_PiranhaPlant_Hitbox)
-// };
-
 NpcData N(NpcData_FreezyFuzzy) = {
     .id = NPC_FreezyFuzzy,
     .pos = { GEN_FREEZY_FUZZY_VEC },
@@ -105,7 +77,6 @@ NpcData N(NpcData_FreezyFuzzy) = {
 };
 
 NpcGroupList N(DefaultNPCs) = {
-    // NPC_GROUP(N(NpcData_PiranhaPlant), BTL_FOB_FORMATION_00, BTL_FOB_STAGE_00),
     NPC_GROUP(N(NpcData_FreezyFuzzy), BTL_FOB_FORMATION_00, BTL_FOB_STAGE_00),
     {}
 };

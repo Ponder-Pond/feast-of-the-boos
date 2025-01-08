@@ -93,7 +93,7 @@ s32 _show_message(Evt* script, s32 isInitialCall, s32 mode) {
             speakerNpc = (Npc*) NPC_PLAYER;
             script->varTable[15] = playerStatus->targetYaw;
         } else {
-            debug_printf("speakerNpcID=%d\n", speakerNpcID);
+            // debug_printf("speakerNpcID=%d\n", speakerNpcID);
             speakerNpc = resolve_npc(script, speakerNpcID);
             get_screen_coords(gCurrentCameraID, speakerNpc->pos.x, speakerNpc->pos.y + speakerNpc->collisionHeight, speakerNpc->pos.z,
                               &screenX, &screenY, &screenZ);

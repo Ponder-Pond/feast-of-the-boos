@@ -565,4 +565,12 @@ enum BattleNames {
     // BTL_DIG_FORMATION_08       = 0x2708,
     // BTL_DIG_FORMATION_09       = 0x2709,
     BTL_FOB_FORMATION_00       = 0x0000,
+    BTL_FOB_FORMATION_01       = 0x0001,
+    BTL_FOB_FORMATION_02       = 0x0002,
+    BTL_FOB_FORMATION_03       = 0x0003,
+    BTL_FOB_FORMATION_04       = 0x0004,
+    BTL_FOB_FORMATION_05       = 0x0005,
+    BTL_FOB_FORMATION_06       = 0x0006,
+    BTL_FOB_FORMATION_07       = 0x0007,
+    BTL_FOB_FORMATION_08       = 0x0008,
 };
