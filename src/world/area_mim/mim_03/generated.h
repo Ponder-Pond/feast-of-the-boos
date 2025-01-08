@@ -38,11 +38,11 @@
 
 // type: Marker:Position
 // name: RedPanser
-#define GEN_RED_PANSER_X 45
+#define GEN_RED_PANSER_X 24
 #define GEN_RED_PANSER_Y 0
-#define GEN_RED_PANSER_Z 336
+#define GEN_RED_PANSER_Z 260
 #define GEN_RED_PANSER_DIR 0
-#define GEN_RED_PANSER_VEC 45,0,336
+#define GEN_RED_PANSER_VEC 24,0,260
 
 // type: Marker:Position
 // name: PiranhaPlant

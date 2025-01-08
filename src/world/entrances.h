@@ -694,6 +694,7 @@ enum {
     mim_03_ENTRY_2   = 2,
     mim_03_ENTRY_3   = 3,
     mim_03_ENTRY_4   = 4,
+    mim_03_ENTRY_5   = 5,
     mim_04_ENTRY_0   = 0,
     mim_04_ENTRY_1   = 1,
     mim_04_ENTRY_2   = 2,

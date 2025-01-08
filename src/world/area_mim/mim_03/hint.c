@@ -123,6 +123,36 @@ EvtScript N(EVS_FlowersReact_Correct) = {
     End
 };
 
+EvtScript N(EVS_BurntFlowers_Scene) = {
+    Call(DisablePlayerInput, TRUE)
+    Call(SetTexPanOffset, LVar9, 0, 0, -0x8000)
+    Wait(2)
+    Call(SetTexPanOffset, LVar9, 0, 0, -0x10000)
+    Wait(2)
+    Call(MakeLerp, 0, 720, 200, EASING_COS_IN_OUT)
+    Label(0)
+    Call(UpdateLerp)
+    UseBuf(LVar8)
+    Loop(3)
+        BufRead2(LVar6, LVar7)
+        Call(N(GetFlowerNormal), LVar6, LVar3, LVar4, LVar5)
+        Call(RotateModel, LVar6, LVar0, LVar3, LVar4, LVar5)
+        Call(RotateModel, LVar7, LVar0, LVar3, LVar4, LVar5)
+    EndLoop
+    Wait(1)
+    IfEq(LVar1, 1)
+        Goto(0)
+    EndIf
+    Call(SetTexPanOffset, LVar9, 0, 0, -0x8000)
+    Wait(2)
+    Call(SetTexPanOffset, LVar9, 0, 0, 0)
+    Wait(2)
+    Call(SetNpcVar, NPC_RedPanser, 0, 1)
+    Call(DisablePlayerInput, FALSE)
+    Return
+    End
+};
+
 EvtScript N(EVS_CheckFlowers_North) = {
     Call(PlaySoundAt, SOUND_FLOWERS_LIGHT_GIGGLE, SOUND_SPACE_DEFAULT, 0, 0, -300)
     Set(LVar8, Ref(N(FlowerModels_North)))
@@ -142,10 +172,11 @@ EvtScript N(EVS_CheckFlowers_West) = {
 };
 
 EvtScript N(EVS_CheckFlowers_South) = {
-    Call(PlaySoundAt, SOUND_FLOWERS_LIGHT_GIGGLE, SOUND_SPACE_DEFAULT, 0, 0, 300)
+    Call(PlaySoundAt, SOUND_FLOWERS_SAD_GIGGLE, SOUND_SPACE_DEFAULT, 0, 0, 300)
     Set(LVar8, Ref(N(FlowerModels_South)))
     Set(LVar9, TEX_PANNER_2)
-    ExecWait(N(EVS_FlowersReact_Wrong))
+    ExecWait(N(EVS_BurntFlowers_Scene))
+    Unbind
     Return
     End
 };
@@ -173,10 +204,12 @@ EvtScript N(EVS_SetupExitHint) = {
     Call(SetTexPanner, MODEL_o8, TEX_PANNER_3)
     Call(SetTexPanner, MODEL_o10, TEX_PANNER_3)
     Call(SetTexPanner, MODEL_o12, TEX_PANNER_3)
-    BindTrigger(Ref(N(EVS_CheckFlowers_West)),  TRIGGER_WALL_PRESS_A, COLLIDER_o132, 1, 0)
-    BindTrigger(Ref(N(EVS_CheckFlowers_North)), TRIGGER_WALL_PRESS_A, COLLIDER_o149, 1, 0)
-    BindTrigger(Ref(N(EVS_CheckFlowers_South)), TRIGGER_WALL_PRESS_A, COLLIDER_o151, 1, 0)
-    BindTrigger(Ref(N(EVS_CheckFlowers_East)),  TRIGGER_WALL_PRESS_A, COLLIDER_o150, 1, 0)
+    // BindTrigger(Ref(N(EVS_CheckFlowers_West)),  TRIGGER_WALL_PRESS_A, COLLIDER_o132, 1, 0)
+    // BindTrigger(Ref(N(EVS_CheckFlowers_North)), TRIGGER_WALL_PRESS_A, COLLIDER_o149, 1, 0)
+    IfEq(GF_MIM03_DefeatedRedPanser, FALSE)
+        BindTrigger(Ref(N(EVS_CheckFlowers_South)), TRIGGER_WALL_PRESS_A, COLLIDER_o151, 1, 0)
+    EndIf
+    // BindTrigger(Ref(N(EVS_CheckFlowers_East)),  TRIGGER_WALL_PRESS_A, COLLIDER_o150, 1, 0)
     Return
     End
 };

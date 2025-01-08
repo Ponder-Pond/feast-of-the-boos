@@ -939,7 +939,7 @@ enum GameFlags {
     GF_MIM11_ItemBlock_VoltShroom               = GameFlag(0x3A7),
     GF_MIM08_Item_ChestKey                      = GameFlag(0x3A8),
     GF_MIM08_UnlockedChest                      = GameFlag(0x3A9),
-    GF_Unused_MIM_0E                            = GameFlag(0x3AA),
+    GF_MIM03_DefeatedRedPanser                  = GameFlag(0x3AA),
     GF_Unused_MIM_0F                            = GameFlag(0x3AB),
     GF_Unused_MIM_10                            = GameFlag(0x3AC),
     GF_Unused_MIM_11                            = GameFlag(0x3AD),

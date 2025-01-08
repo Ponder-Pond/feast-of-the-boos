@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Map desc="Flowers (Oaklie)" background="fob_bg" textures="mim_tex">
 	<Editor>
-		<Camera pos="141.626846,116.468567,-843.143921" pitch="8.000000" yaw="-172.694244"/>
+		<Camera pos="1.197491,92.263535,365.399048" pitch="41.919983" yaw="351.280640"/>
 		<Camera pos="250.455338,65536.000000,-188.165390"/>
 		<Camera pos="65536.000000,762.531128,616.664917"/>
 		<Camera pos="-20.475847,-20.595165,65536.000000"/>
@@ -9239,7 +9239,7 @@
 		<Marker ver="4" type="Position" pos="-315,0,-128" yaw="0.000000">
 			<MapObject name="PiranhaPlant" id="4"/>
 		</Marker>
-		<Marker ver="4" type="Position" pos="45,0,336" yaw="0.000000">
+		<Marker ver="4" type="Position" pos="24,0,260" yaw="0.000000">
 			<MapObject name="RedPanser" id="3"/>
 		</Marker>
 		<Marker ver="4" type="Position" pos="331,0,0" yaw="0.000000">

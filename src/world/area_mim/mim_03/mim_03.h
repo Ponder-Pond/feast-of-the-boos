@@ -10,6 +10,7 @@
 #include "mapfs/mim_03_shape.h"
 #include "mapfs/mim_03_hit.h"
 
+#include "sprite/player.h"
 #include "sprite/npc/WorldBow.h"
 #include "sprite/npc/Oaklie.h"
 #include "sprite/npc/Fuzzy.h"
@@ -21,9 +22,10 @@ enum {
     NPC_PiranhaPlant,
     NPC_PiranhaPlant_Hitbox,
     NPC_RedPanser,
-    NPC_RedPanser_Fireball,
+    // NPC_RedPanser_Fireball,
     NPC_DupiOaklie,
     NPC_Oaklie,
+    // NPC_HammerBros,
 };
 
 #define NAMESPACE mim_03
@@ -36,3 +38,4 @@ extern EvtScript N(EVS_SetupMusic);
 extern NpcGroupList N(DefaultNPCs);
 extern EvtScript N(EVS_UseGate_North);
 extern EvtScript N(EVS_Cutscene3);
+extern EvtScript N(EVS_Cutscene7);

@@ -35,7 +35,7 @@
 #define NEW_GAME_ENTRY_ID mim_08_ENTRY_0
 
 /// Story progress when starting a new game.
-#define NEW_GAME_STORY_PROGRESS     STORY_MOD_CUTSCENE_3
+#define NEW_GAME_STORY_PROGRESS     STORY_MOD_CUTSCENE_5
 
 /// Enables the profiler, which shows lots of performance info on screen.
 /// Press L + D-Pad Up to show/hide the profiler.

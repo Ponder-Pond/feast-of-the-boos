@@ -40,7 +40,7 @@
     .id = npcID, \
     .settings = &N(NpcSettings_RedPanser_Fireball), \
     .pos = { NPC_DISPOSE_LOCATION }, \
-    .yaw = 0, \
+    .yaw = 90, \
     .flags = ENEMY_FLAG_IGNORE_ENTITY_COLLISION | ENEMY_FLAG_FLYING | ENEMY_FLAG_NO_DROPS, \
     .drops = NO_DROPS, \
     .territory = { \

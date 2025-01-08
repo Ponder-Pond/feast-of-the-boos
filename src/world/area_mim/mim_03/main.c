@@ -12,8 +12,8 @@ API_CALLABLE(N(GetPlayerDistFromMapCenter)) {
 }
 
 EvtScript N(EVS_ExitWalk_n) = EVT_EXIT_WALK(60, mim_03_ENTRY_0, "mim_08", mim_08_ENTRY_3);
-EvtScript N(EVS_ExitWalk_w) = EVT_EXIT_WALK(60, mim_03_ENTRY_1, "mim_08", mim_08_ENTRY_0);
-EvtScript N(EVS_ExitWalk_s) = EVT_EXIT_WALK(60, mim_03_ENTRY_2, "mim_02", mim_02_ENTRY_0);
+EvtScript N(EVS_ExitWalk_w) = EVT_EXIT_WALK(60, mim_03_ENTRY_1, "mim_01", mim_01_ENTRY_2);
+EvtScript N(EVS_ExitWalk_s) = EVT_EXIT_WALK(60, mim_03_ENTRY_2, "mim_08", mim_08_ENTRY_2);
 EvtScript N(EVS_ExitWalk_e) = EVT_EXIT_WALK(60, mim_03_ENTRY_3, "mim_01", mim_01_ENTRY_1);
 
 EvtScript N(EVS_GotoMap_mim_01_5) = {
@@ -68,6 +68,8 @@ EvtScript N(EVS_EnterMap) = {
             Exec(EnterWalk)
         CaseEq(mim_03_ENTRY_4)
             EVT_ENTER_PIPE_VERTICAL(N(EVS_BindExitTriggers))
+        CaseEq(mim_03_ENTRY_5)
+            Set(LVar0, Ref(N(EVS_BindExitTriggers)))
     EndSwitch
     Return
     End

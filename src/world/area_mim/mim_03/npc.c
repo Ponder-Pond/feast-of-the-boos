@@ -4,7 +4,9 @@
 
 #include "world/common/enemy/PiranhaPlant.inc.c"
 
-#include "world/common/enemy/RedPanser.inc.c"
+#include "world/common/enemy/RedPanser_Stationary.inc.c"
+
+// #include "world/common/enemy/HammerBros_Wander.inc.c"
 
 #include "world/common/npc/Oaklie.inc.c"
 
@@ -116,6 +118,34 @@ EvtScript N(EVS_Cutscene3) = {
     End
 };
 
+EvtScript N(EVS_Cutscene7) = {
+    Call(DisablePlayerInput, TRUE)
+    Call(DisablePartnerAI, 0)
+    Call(GetNpcPos, NPC_PARTNER, 0, LVar1, 0)
+    Call(GetPlayerPos, LVar0, 0, LVar2)
+    Sub(LVar0, 20)
+    Sub(LVar2, 20)
+    Call(SetNpcPos, NPC_PARTNER, LVar0, LVar1, LVar2)
+    Call(PlayerFaceNpc, NPC_Oaklie, 0)
+    Call(NpcFaceNpc, NPC_PARTNER, NPC_Oaklie, 0)
+    Call(SpeakToPlayer, NPC_Oaklie, ANIM_Oaklie_Talk, ANIM_Oaklie_Idle, 0, MSG_FotB_0024)
+    Call(SpeakToNpc, NPC_PARTNER, ANIM_WorldBow_Talk, ANIM_WorldBow_Idle, 0, NPC_Oaklie, MSG_FotB_0025)
+    Call(NpcFacePlayer, NPC_PARTNER, 0)
+    Call(SpeakToPlayer, NPC_PARTNER, ANIM_WorldBow_Laugh, ANIM_WorldBow_Laugh, 0, MSG_FotB_0026)
+    Call(SetPlayerAnimation, ANIM_Mario1_ThumbsUp)
+    Call(SetNpcAnimation, NPC_PARTNER, ANIM_WorldBow_Laugh)
+    WaitSecs(1)
+    Call(PlayerFaceNpc, NPC_Oaklie, 0)
+    Call(SetPlayerAnimation, ANIM_Mario1_Idle)
+    Call(SetNpcAnimation, NPC_PARTNER, ANIM_WorldBow_Idle)
+    Set(GB_StoryProgress, STORY_MOD_CUTSCENE_7)
+    Exec(N(EVS_SetupMusic))
+    Call(EnablePartnerAI)
+    Call(DisablePlayerInput, FALSE)
+    Return
+    End
+};
+
 NpcData N(NpcData_FreezyFuzzy) = {
     .id = NPC_FreezyFuzzy,
     .pos = { GEN_FREEZY_FUZZY_VEC },
@@ -139,29 +169,99 @@ NpcData N(NpcData_FreezyFuzzy) = {
     .aiDetectFlags = AI_DETECT_SIGHT,
 };
 
+// EvtScript N(EVS_NpcIdle_RedPanser) = {
+//     IfEq(GF_MIM03_DefeatedRedPanser, FALSE)
+//         Loop(0)
+//             Call(GetSelfVar, 0, LVar0)
+//             IfEq(LVar0, 1)
+//                 BreakLoop
+//             EndIf
+//             Wait(1)
+//         EndLoop
+//         Call(DisablePlayerInput, TRUE)
+//         Call(SetNpcAnimation, NPC_RedPanser, ANIM_Panser_Red_Still)
+//         Call(PlaySoundAtNpc, NPC_RedPanser, SOUND_NPC_JUMP, SOUND_SPACE_DEFAULT)
+//         Call(SetNpcJumpscale, NPC_RedPanser, Float(1.0))
+//         Call(GetPlayerPos, LVar0, LVar1, LVar2)
+//         Sub(LVar0, 30)
+//         Call(NpcJump0, NPC_RedPanser, LVar0, LVar1, LVar2, 20)
+//         // Wait(5)
+//         Call(SetPlayerAnimation, ANIM_MarioW2_Flail)
+//         Call(SetNpcAnimation, NPC_RedPanser, ANIM_Panser_Red_Talk)
+//         Call(StartBossBattle, SONG_SPECIAL_BATTLE)
+//         Call(DisablePlayerInput, FALSE)
+//     Else
+//         Call(RemoveNpc, NPC_RedPanser)
+//     EndIf
+//     Return
+//     End
+// };
+
+EvtScript N(EVS_NpcIdle_RedPanser) = {
+    IfEq(GF_MIM03_DefeatedRedPanser, FALSE)
+        Loop(0)
+            Call(GetSelfVar, 0, LVar0)
+            IfEq(LVar0, 1)
+                BreakLoop
+            EndIf
+            Wait(1)
+        EndLoop
+        Call(DisablePlayerInput, TRUE)
+        Call(SetNpcAnimation, NPC_RedPanser, ANIM_Panser_Red_Still)
+        Call(PlaySoundAtNpc, NPC_RedPanser, SOUND_NPC_JUMP, SOUND_SPACE_DEFAULT)
+        Call(SetNpcJumpscale, NPC_RedPanser, Float(1.0))
+        Call(GetPlayerPos, LVar0, LVar1, LVar2)
+        Call(GetNpcPos, NPC_RedPanser, LVar3, 0, 0)
+        IfLt(LVar3, LVar0)
+            Sub(LVar0, 30)
+        Else
+            Add(LVar0, 30)
+        EndIf
+        Call(NpcJump0, NPC_RedPanser, LVar0, LVar1, LVar2, 20)
+        Call(SetPlayerAnimation, ANIM_MarioW2_Flail)
+        Call(SetNpcAnimation, NPC_RedPanser, ANIM_Panser_Red_Talk)
+        Call(StartBossBattle, SONG_SPECIAL_BATTLE)
+        Call(DisablePlayerInput, FALSE)
+    Else
+        Call(RemoveNpc, NPC_RedPanser)
+    EndIf
+    Return
+    End
+};
+
+
+EvtScript N(EVS_NpcDefeat_RedPanser) = {
+    Call(GetBattleOutcome, LVar0)
+    Switch(LVar0)
+        CaseEq(OUTCOME_PLAYER_WON)
+            Set(GF_MIM03_DefeatedRedPanser, TRUE)
+            Call(DoNpcDefeat)
+        CaseEq(OUTCOME_PLAYER_LOST)
+        CaseEq(OUTCOME_PLAYER_FLED)
+    EndSwitch
+    Return
+    End
+};
+
+EvtScript N(EVS_NpcInit_RedPanser) = {
+    Call(BindNpcIdle, NPC_SELF, Ref(N(EVS_NpcIdle_RedPanser)))
+    Call(BindNpcDefeat, NPC_SELF, Ref(N(EVS_NpcDefeat_RedPanser)))
+    Return
+    End
+};
+
 NpcData N(NpcData_RedPanser)[] = {
     {
         .id = NPC_RedPanser,
         .pos = { GEN_RED_PANSER_VEC },
         .yaw = GEN_RED_PANSER_DIR,
-        .territory = {
-            .wander = {
-                .isFlying = TRUE,
-                .moveSpeedOverride = NO_OVERRIDE_MOVEMENT_SPEED,
-                .wanderShape = SHAPE_CYLINDER,
-                .centerPos  = { GEN_RED_PANSER_VEC },
-                .wanderSize = { 30 },
-                .detectShape = SHAPE_CYLINDER,
-                .detectPos  = { GEN_RED_PANSER_VEC },
-                .detectSize = { 180 },
-            }
-        },
-        .settings = &N(NpcSettings_RedPanser),
+        .init = &N(EVS_NpcInit_RedPanser),
+        .settings = &N(NpcSettings_RedPanser_Stationary),
         .flags = ENEMY_FLAG_FLYING,
         .drops = RED_PANSER_DROPS,
         .animations = RED_PANSER_ANIMS,
     },
-    RED_PANSER_FIREBALL_HITBOX(NPC_RedPanser_Fireball),
+    // RED_PANSER_FIREBALL_HITBOX(NPC_RedPanser_Fireball),
 };
 
 NpcData N(NpcData_PiranhaPlant)[] = {
@@ -204,50 +304,35 @@ NpcData N(NpcData_DupiOaklie) = {
 
 EvtScript N(EVS_NpcInteract_Oaklie) = {
     Call(DisablePlayerInput, TRUE)
-    // Switch(GB_StoryProgress)
-    //     CaseLt(STORY_CH3_BOW_JOINED_PARTY)
-    //         IfEq(AF_MIM03_Oaklie_DialogueToggle, FALSE)
-    //             Call(SpeakToPlayer, NPC_SELF, ANIM_Oaklie_Talk, ANIM_Oaklie_Idle, 0, MSG_CH3_0009)
-    //             Set(AF_MIM03_Oaklie_DialogueToggle, TRUE)
-    //         Else
-    //             Call(SpeakToPlayer, NPC_SELF, ANIM_Oaklie_Talk, ANIM_Oaklie_Idle, 0, MSG_CH3_000A)
-    //             Set(AF_MIM03_Oaklie_DialogueToggle, FALSE)
-    //         EndIf
-    //     CaseLt(STORY_CH5_REACHED_LAVA_LAVA_ISLAND)
-    //         IfEq(AF_MIM03_Oaklie_DialogueToggle, FALSE)
-    //             Call(SpeakToPlayer, NPC_SELF, ANIM_Oaklie_Talk, ANIM_Oaklie_Idle, 0, MSG_CH3_000B)
-    //             Set(AF_MIM03_Oaklie_DialogueToggle, TRUE)
-    //         Else
-    //             Call(SpeakToPlayer, NPC_SELF, ANIM_Oaklie_Talk, ANIM_Oaklie_Idle, 0, MSG_CH3_000C)
-    //             Set(AF_MIM03_Oaklie_DialogueToggle, FALSE)
-    //         EndIf
-    //     CaseGe(STORY_CH5_REACHED_LAVA_LAVA_ISLAND)
-    //         IfEq(AF_MIM03_Oaklie_DialogueToggle, FALSE)
-    //             Call(SpeakToPlayer, NPC_SELF, ANIM_Oaklie_Talk, ANIM_Oaklie_Idle, 0, MSG_CH3_000D)
-    //             Set(AF_MIM03_Oaklie_DialogueToggle, TRUE)
-    //         Else
-    //             Call(SpeakToPlayer, NPC_SELF, ANIM_Oaklie_Talk, ANIM_Oaklie_Idle, 0, MSG_CH3_000E)
-    //             Set(AF_MIM03_Oaklie_DialogueToggle, FALSE)
-    //         EndIf
-    // EndSwitch
+
     Call(DisablePlayerInput, FALSE)
     Return
     End
 };
 
 EvtScript N(EVS_NpcInit_Oaklie) = {
-    IfGe(GB_StoryProgress, STORY_MOD_CUTSCENE_7)
-        Call(BindNpcInteract, NPC_SELF, Ref(N(EVS_NpcInteract_Oaklie)))
-    Else
-        Call(SetNpcPos, NPC_SELF, NPC_DISPOSE_LOCATION)
-    EndIf
+    Switch(GB_StoryProgress)
+        CaseOrEq(STORY_MOD_INTRO)
+        CaseOrEq(STORY_MOD_CUTSCENE_1)
+        CaseOrEq(STORY_MOD_CUTSCENE_2)
+        CaseOrEq(STORY_MOD_CUTSCENE_3)
+        CaseOrEq(STORY_MOD_CUTSCENE_4)
+        CaseOrEq(STORY_MOD_CUTSCENE_5)
+            Call(RemoveNpc, NPC_SELF)
+        EndCaseGroup
+        CaseEq(STORY_MOD_CUTSCENE_6)
+            Call(BindNpcInteract, NPC_SELF, Ref(N(EVS_NpcInteract_Oaklie)))
+            Exec(N(EVS_Cutscene7))
+        CaseEq(STORY_MOD_CUTSCENE_7)
+            Call(BindNpcInteract, NPC_SELF, Ref(N(EVS_NpcInteract_Oaklie)))
+    EndSwitch
     Return
     End
 };
 
 NpcData N(NpcData_Oaklie) = {
     .id = NPC_Oaklie,
-    .pos = { GEN_OAKLIE_VEC },
+    .pos = { 38, 31, 11 },
     .yaw = GEN_OAKLIE_DIR,
     .init = &N(EVS_NpcInit_Oaklie),
     .settings = &N(NpcSettings_Oaklie),
@@ -256,6 +341,7 @@ NpcData N(NpcData_Oaklie) = {
     .animations = OAKLIE_ANIMS,
     .tattle = MSG_NpcTattle_Oaklie,
 };
+
 
 NpcGroupList N(DefaultNPCs) = {
     NPC_GROUP(N(NpcData_FreezyFuzzy), BTL_FOB_FORMATION_00, BTL_FOB_STAGE_00),

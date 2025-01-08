@@ -1,12 +1,12 @@
-#include "RedPanser.h"
+#include "PurplePanser.h"
 
-#include "world/common/enemy/ai/RedPanserAI.inc.c"
+#include "world/common/enemy/ai/PurplePanserAI.inc.c"
 
 #include "world/common/enemy/ai/RangedAttackAI.inc.c"
 
 #include "world/common/todo/GetEncounterEnemyIsOwner.inc.c"
 
-EvtScript N(EVS_NpcDefeat_RedPanser_Fireball) = {
+EvtScript N(EVS_NpcDefeat_PurplePanser_Bit) = {
     Call(GetBattleOutcome, LVar0)
     Switch(LVar0)
         CaseEq(OUTCOME_PLAYER_WON)
@@ -23,7 +23,7 @@ EvtScript N(EVS_NpcDefeat_RedPanser_Fireball) = {
     End
 };
 
-MobileAISettings N(AISettings_RedPanser) = {
+MobileAISettings N(AISettings_PurplePanser) = {
     .moveSpeed = 1.5f,
     .moveTime = 30,
     .waitTime = 30,
@@ -37,54 +37,54 @@ MobileAISettings N(AISettings_RedPanser) = {
     .chaseOffsetDist = 20.0f,
 };
 
-EvtScript N(EVS_NpcAI_RedPanser) = {
+EvtScript N(EVS_NpcAI_PurplePanser) = {
     Call(SetSelfVar, 0, 70)
     Call(SetSelfVar, 1, 3)
     Call(SetSelfVar, 2, 3)
     Call(SetSelfVar, 3, 1)
-    Call(N(RedPanserAI_Main), Ref(N(AISettings_RedPanser)))
+    Call(N(PurplePanserAI_Main), Ref(N(AISettings_PurplePanser)))
     Return
     End
 };
 
-NpcSettings N(NpcSettings_RedPanser) = {
+NpcSettings N(NpcSettings_PurplePanser) = {
     .height = 24,
     .radius = 28,
-    .level = ACTOR_LEVEL_RED_PANSER,
-    .ai = &N(EVS_NpcAI_RedPanser),
+    .level = ACTOR_LEVEL_PURPLE_PANSER,
+    .ai = &N(EVS_NpcAI_PurplePanser),
     .onHit = &EnemyNpcHit,
     .onDefeat = &EnemyNpcDefeat,
     .actionFlags = AI_ACTION_08,
 };
 
-MobileAISettings N(AISettings_RedPanser_Fireball) = {
+MobileAISettings N(AISettings_PurplePanser_Fireball) = {
     .moveSpeed = 5.4f,
     .alertRadius = 13.0f,
     .alertOffsetDist = 1.4f,
     .playerSearchInterval = -1,
 };
 
-EvtScript N(EVS_NpcAI_RedPanser_Fireball) = {
+EvtScript N(EVS_NpcAI_PurplePanser_Bit) = {
     Call(SetSelfVar, 0, 0)
     Call(SetSelfVar, 1, 0)
     Call(SetSelfVar, 2, 17)
     Call(SetSelfVar, 3, 17)
-    Call(N(ProjectileAI_Main), Ref(N(AISettings_RedPanser_Fireball)))
+    Call(N(ProjectileAI_Main), Ref(N(AISettings_PurplePanser_Fireball)))
     Return
     End
 };
 
-EvtScript N(EVS_NoAI_RedPanser_Fireball) = {
+EvtScript N(EVS_NoAI_PurplePanser_Bit) = {
     Return
     End
 };
 
-EvtScript N(EVS_NpcHit_RedPanser_Fireball) = {
+EvtScript N(EVS_NpcHit_PurplePanser_Bit) = {
     Call(N(GetEncounterEnemyIsOwner))
     IfEq(LVar0, 0)
         Return
     EndIf
-    Call(BindNpcAI, NPC_SELF, Ref(N(EVS_NoAI_RedPanser_Fireball)))
+    Call(BindNpcAI, NPC_SELF, Ref(N(EVS_NoAI_PurplePanser_Bit)))
     Call(GetOwnerEncounterTrigger, LVar0)
     Switch(LVar0)
         CaseOrEq(ENCOUNTER_TRIGGER_HAMMER)
@@ -107,21 +107,21 @@ EvtScript N(EVS_NpcHit_RedPanser_Fireball) = {
             Call(SetBattleAsScripted)
         EndCaseGroup
     EndSwitch
-    Call(BindNpcAI, NPC_SELF, Ref(N(EVS_NpcAI_RedPanser_Fireball)))
+    Call(BindNpcAI, NPC_SELF, Ref(N(EVS_NpcAI_PurplePanser_Bit)))
     Return
     End
 };
 
-NpcSettings N(NpcSettings_RedPanser_Fireball) = {
+NpcSettings N(NpcSettings_PurplePanser_Bit) = {
     .height = 12,
     .radius = 12,
-    .ai = &N(EVS_NpcAI_RedPanser_Fireball),
-    .onHit = &N(EVS_NpcHit_RedPanser_Fireball),
-    .onDefeat = &N(EVS_NpcDefeat_RedPanser_Fireball),
+    .ai = &N(EVS_NpcAI_PurplePanser_Bit),
+    .onHit = &N(EVS_NpcHit_PurplePanser_Bit),
+    .onDefeat = &N(EVS_NpcDefeat_PurplePanser_Bit),
     .actionFlags = AI_ACTION_08,
 };
 
-AnimID N(ExtraAnims_RedPanser_Fireball)[] = {
-    ANIM_Panser_Red_Fireball,
+AnimID N(ExtraAnims_PurplePanser_Bit)[] = {
+    ANIM_Panser_Purple_DiamondBit,
     ANIM_LIST_END
 };
