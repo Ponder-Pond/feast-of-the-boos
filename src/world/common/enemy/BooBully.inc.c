@@ -31,7 +31,7 @@ NpcSettings N(NpcSettings_BooBully) = {
     .height = 24,
     .radius = 24,
     .level = ACTOR_LEVEL_BOO_BULLY,
-    .ai = &N(EVS_NpcAI_BooBully),
+    // .ai = &N(EVS_NpcAI_BooBully),
     .onHit = &EnemyNpcHit,
     .onDefeat = &EnemyNpcDefeat,
 };

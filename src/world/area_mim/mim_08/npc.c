@@ -285,7 +285,7 @@ EvtScript N(EVS_Cutscene6) = {
     Call(SetNpcYaw, NPC_Oaklie, 180)
     Call(SetNpcFlagBits, NPC_Oaklie, NPC_FLAG_INVISIBLE, FALSE)
     Wait(15)
-    Call(SetNpcPos, NPC_Oaklie, GEN_CHEST_OAKLIE_X, -10, GEN_CHEST_OAKLIE_Z)
+    Call(SetNpcPos, NPC_Oaklie, -92, 30, -33)
    Thread
         Call(SetNpcAnimation, NPC_Oaklie, ANIM_Oaklie_Jump)
         Wait(15)

@@ -10,6 +10,7 @@
 #include "mapfs/mim_07_shape.h"
 #include "mapfs/mim_07_hit.h"
 
+#include "sprite/player.h"
 #include "sprite/npc/JrTroopa.h"
 #include "sprite/npc/WorldGoombario.h"
 #include "sprite/npc/WorldKooper.h"

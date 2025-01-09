@@ -89,7 +89,6 @@ EvtScript N(EVS_Main) = {
     Call(GetMapID, GB_MIM_CurrentMapID)
     ExecWait(N(EVS_SetupGates))
     Call(MakeNpcs, TRUE, Ref(N(DefaultNPCs)))
-    Set(GF_MIM08_UnlockedChest, FALSE)
     BindPadlock(Ref(N(EVS_UnlockChest)), TRIGGER_WALL_PRESS_A, EVT_ENTITY_INDEX(0), Ref(N(KeyList)), 0, 1)
     ExecWait(N(EVS_MakeEntities))
     Set(LVar0, Ref(N(EVS_BindExitTriggers)))

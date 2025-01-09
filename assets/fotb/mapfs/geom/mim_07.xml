@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Map desc="Laughing Rock" background="fob_bg" textures="mim_tex">
 	<Editor>
-		<Camera pos="60.450108,170.167145,314.283325" pitch="34.559975" yaw="69.359741"/>
-		<Camera pos="8.010620,65536.000000,-71.209610"/>
-		<Camera pos="65536.000000,326.896942,-675.625549"/>
-		<Camera pos="-75.370636,-74.332764,65536.000000"/>
+		<Camera pos="-311.667084,51.323151,142.792770" pitch="24.999979" yaw="149.680115"/>
+		<Camera pos="-208.000000,65536.000000,-270.000000"/>
+		<Camera pos="65536.000000,0.000000,-270.000000"/>
+		<Camera pos="-208.000000,0.000000,65536.000000"/>
 	</Editor>
 	<ModelTree>
 		<Node name="Root" id="86">
@@ -8169,10 +8169,10 @@
 		<Marker ver="4" type="Position" pos="170,0,287" yaw="0.000000">
 			<MapObject name="GreenPipe" id="1"/>
 		</Marker>
-		<Marker ver="4" type="Position" pos="-208,0,-270" yaw="0.000000">
+		<Marker ver="4" type="Position" pos="-208,0,-270" yaw="-53.000000">
 			<MapObject name="ChestItem1" id="0"/>
 		</Marker>
-		<Marker ver="4" type="Position" pos="-277,0,195" yaw="0.000000">
+		<Marker ver="4" type="Position" pos="-277,0,195" yaw="-147.000000">
 			<MapObject name="ChestFormation2" id="FFFFFFFF"/>
 		</Marker>
 	</Markers>
