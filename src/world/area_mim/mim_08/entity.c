@@ -5,6 +5,37 @@
 #include "world/common/todo/RemovePadlock.inc.c"
 #include "world/common/todo/GetEntityPosition.inc.c"
 
+EvtScript N(EVS_DropShrinkStomp) = {
+    Call(DisablePlayerInput, TRUE)
+    Loop(12)
+        Set(LVar0, 2)
+        Call(TranslateModel, MODEL_Beehive1, LVar0, 0, LVar0)
+        Call(TranslateModel, MODEL_Beehive2, LVar0, 0, LVar0)
+        Call(TranslateModel, MODEL_o443, LVar0, 0, LVar0)
+        Call(TranslateModel, MODEL_o442, LVar0, 0, LVar0)
+        Wait(1)
+        Set(LVar0, -2)
+        Call(TranslateModel, MODEL_Beehive1, LVar0, 0, LVar0)
+        Call(TranslateModel, MODEL_Beehive2, LVar0, 0, LVar0)
+        Call(TranslateModel, MODEL_o443, LVar0, 0, LVar0)
+        Call(TranslateModel, MODEL_o442, LVar0, 0, LVar0)
+        Wait(1)
+    EndLoop
+    Set(LVar0, 0)
+    Call(TranslateModel, MODEL_Beehive1, LVar0, 0, LVar0)
+    Call(TranslateModel, MODEL_Beehive2, LVar0, 0, LVar0)
+    Call(TranslateModel, MODEL_o443, LVar0, 0, LVar0)
+    Call(TranslateModel, MODEL_o442, LVar0, 0, LVar0)
+    Wait(1)
+    Call(GetPlayerPos, LVar0, LVar1, LVar2)
+    Sub(LVar0, 20)
+    Sub(LVar2, 40)
+    Call(DropItemEntity, ITEM_SHRINK_STOMP, LVar0, LVar1, LVar2, ITEM_SPAWN_MODE_FALL_NEVER_VANISH, GF_MIM08_Badge_ShrinkStomp)
+    Call(DisablePlayerInput, FALSE)
+    Return
+    End
+};
+
 EvtScript N(EVS_OpenChest_Oaklie) = {
     Call(DisablePlayerInput, TRUE)
     Set(GF_MIM08_Chest_Oaklie, TRUE)

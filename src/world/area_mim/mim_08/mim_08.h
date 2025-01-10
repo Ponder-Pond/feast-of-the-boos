@@ -45,6 +45,7 @@ extern EvtScript N(EVS_SetupGates);
 extern EvtScript N(EVS_UnlockChest);
 extern EvtScript N(EVS_MakeEntities);
 extern NpcGroupList N(DefaultNPCs);
+extern EvtScript N(EVS_DropShrinkStomp);
 extern EvtScript N(EVS_UseGate_South);
 extern EvtScript N(EVS_Cutscene2);
 extern EvtScript N(EVS_Cutscene4);

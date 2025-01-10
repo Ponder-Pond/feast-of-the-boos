@@ -4,10 +4,9 @@
 #define RED_PANSER_DROPS \
 { \
     .dropFlags = NPC_DROP_FLAG_80, \
-    .itemDropChance = 5, \
+    .itemDropChance = 100, \
     .itemDrops = { \
-        { ITEM_SUPER_SHROOM, 5, 0 }, \
-        { ITEM_MAPLE_SYRUP, 5, 0 }, \
+        { ITEM_FIRE_FLOWER, 10, 0 }, \
     }, \
     .heartDrops  = STANDARD_HEART_DROPS(4), \
     .flowerDrops = STANDARD_FLOWER_DROPS(3), \

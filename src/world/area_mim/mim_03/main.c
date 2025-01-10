@@ -35,15 +35,13 @@ EvtScript N(EVS_BindExitTriggers) = {
     End
 };
 
-// EvtScript N(EVS_HideBluePipe) = {
-//     IfEq(GF_MAC03_UnlockedPlayroom, FALSE)
-//         Call(ModifyColliderFlags, MODIFY_COLLIDER_FLAGS_SET_BITS, COLLIDER_BluePipeBody, COLLIDER_FLAGS_UPPER_MASK)
-//         Call(ModifyColliderFlags, MODIFY_COLLIDER_FLAGS_SET_BITS, COLLIDER_BluePipeTop, COLLIDER_FLAGS_UPPER_MASK)
-//         Call(EnableModel, MODEL_BluePipe, FALSE)
-//     EndIf
-//     Return
-//     End
-// };
+EvtScript N(EVS_HideBluePipe) = {
+    Call(ModifyColliderFlags, MODIFY_COLLIDER_FLAGS_SET_BITS, COLLIDER_BluePipeBody, COLLIDER_FLAGS_UPPER_MASK)
+    Call(ModifyColliderFlags, MODIFY_COLLIDER_FLAGS_SET_BITS, COLLIDER_BluePipeTop, COLLIDER_FLAGS_UPPER_MASK)
+    Call(EnableModel, MODEL_BluePipe, FALSE)
+    Return
+    End
+};
 
 EvtScript N(EVS_EnterMap) = {
     Call(GetEntryID, LVar0)
@@ -87,7 +85,9 @@ EvtScript N(EVS_Main) = {
     Call(SetZoneEnabled, ZONE_stagecutscene, FALSE)
     Call(SetZoneEnabled, ZONE_cutscene, FALSE)
     ExecWait(N(EVS_MakeEntities))
-    // Exec(N(EVS_HideBluePipe))
+    IfLt(GB_StoryProgress, STORY_MOD_CUTSCENE_7)
+        Exec(N(EVS_HideBluePipe))
+    EndIf
     Set(LVar0, Ref(N(EVS_BindExitTriggers)))
     Exec(N(EVS_EnterMap))
     Wait(1)

@@ -119,6 +119,12 @@ EvtScript N(EVS_Cutscene3) = {
 };
 
 EvtScript N(EVS_Cutscene7) = {
+    Thread
+        Call(ModifyColliderFlags, MODIFY_COLLIDER_FLAGS_CLEAR_BITS, COLLIDER_BluePipeBody, COLLIDER_FLAGS_UPPER_MASK)
+        Call(ModifyColliderFlags, MODIFY_COLLIDER_FLAGS_CLEAR_BITS, COLLIDER_BluePipeTop, COLLIDER_FLAGS_UPPER_MASK)
+        Call(EnableModel, MODEL_BluePipe, TRUE)
+        Wait(1)
+    EndThread
     Call(DisablePlayerInput, TRUE)
     Call(DisablePartnerAI, 0)
     Call(GetNpcPos, NPC_PARTNER, 0, LVar1, 0)
@@ -218,6 +224,8 @@ EvtScript N(EVS_NpcIdle_RedPanser) = {
             Add(LVar0, 30)
         EndIf
         Call(NpcJump0, NPC_RedPanser, LVar0, LVar1, LVar2, 20)
+        Call(NpcFacePlayer, NPC_RedPanser, 0)
+        Call(PlayerFaceNpc, NPC_RedPanser, 0)
         Call(SetPlayerAnimation, ANIM_MarioW2_Flail)
         Call(SetNpcAnimation, NPC_RedPanser, ANIM_Panser_Red_Talk)
         Call(StartBossBattle, SONG_SPECIAL_BATTLE)
@@ -229,12 +237,14 @@ EvtScript N(EVS_NpcIdle_RedPanser) = {
     End
 };
 
-
 EvtScript N(EVS_NpcDefeat_RedPanser) = {
     Call(GetBattleOutcome, LVar0)
     Switch(LVar0)
         CaseEq(OUTCOME_PLAYER_WON)
+            // Call(GetNpcPos, NPC_SELF, LVar0, LVar1, LVar2)
+            // Call(DropItemEntity, ITEM_FIRE_FLOWER, LVar0, LVar1, LVar2, ITEM_SPAWN_MODE_FALL_NEVER_VANISH, GF_MIM03_Item_FireFlower)
             Set(GF_MIM03_DefeatedRedPanser, TRUE)
+            Call(DisablePlayerInput, FALSE)
             Call(DoNpcDefeat)
         CaseEq(OUTCOME_PLAYER_LOST)
         CaseEq(OUTCOME_PLAYER_FLED)

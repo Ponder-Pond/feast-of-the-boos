@@ -540,6 +540,7 @@ EvtScript N(EVS_NpcDefeat_Buzzbee) = {
     Switch(LVar0)
         CaseEq(OUTCOME_PLAYER_WON)
             Set(GF_MIM08_DefeatedBeehive, TRUE)
+            ExecWait(N(EVS_DropShrinkStomp))
             Call(DoNpcDefeat)
         CaseEq(OUTCOME_PLAYER_LOST)
         CaseEq(OUTCOME_PLAYER_FLED)
