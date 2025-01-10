@@ -24,6 +24,7 @@ enum {
     NPC_PiranhaPlant,
     NPC_PiranhaPlant_Hitbox,
     NPC_Beehive,
+    NPC_Buzzbee,
     NPC_BooBully_1,
     NPC_BooBully_2,
     NPC_DupiOaklie,

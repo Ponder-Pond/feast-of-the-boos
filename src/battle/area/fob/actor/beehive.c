@@ -28,11 +28,15 @@ extern EvtScript N(EVS_Butterfly_ReturnHome);
 extern EvtScript N(EVS_Attacker_ReturnHome);
 extern EvtScript N(EVS_Kabutomushi_ReturnHome);
 extern EvtScript N(EVS_Beespy_ReturnHome);
+extern EvtScript N(EVS_SetUp_Buzzbee_Attack);
 extern EvtScript N(EVS_Attack_Buzzbee);
 extern EvtScript N(EVS_Attack_SuperBee);
 extern EvtScript N(EVS_Attack_Butterfly);
 extern EvtScript N(EVS_Attack_Attacker);
 extern EvtScript N(EVS_Attack_Kabutomushi);
+extern EvtScript N(EVS_Buzzbee_BehindFollow_Beespy);
+extern EvtScript N(EVS_Buzzbee_GoBehind_Beespy);
+extern EvtScript N(EVS_Attack_QuadBuzzbee);
 extern EvtScript N(EVS_Attack_Beespy);
 extern EvtScript N(EVS_Attack_Creepy);
 extern EvtScript N(EVS_Attack_VineEater);
@@ -51,21 +55,27 @@ enum N(ActorParams) {
 // Define enum for actor part IDs
 enum N(ActorPartIDs) {
     PRT_MAIN            = 1,
-    PRT_BUZZBEE         = 2,
-    PRT_SUPER_BEE       = 3,
-    PRT_BUTTERFLY       = 4,
-    PRT_ATTACKER        = 5,
-    PRT_KABUTOMUSHI     = 6,
-    PRT_BEESPY          = 7,
-    PRT_CREEPY          = 8,
-    PRT_VINE_EATER      = 9,
-    PRT_SPEAR_1         = 10,
+    PRT_BUZZBEE_1       = 2,
+    PRT_BUZZBEE_2       = 3,
+    PRT_BUZZBEE_3       = 4,
+    PRT_BUZZBEE_4       = 5,
+    PRT_SUPER_BEE       = 6,
+    PRT_BUTTERFLY       = 7,
+    PRT_ATTACKER        = 8,
+    PRT_KABUTOMUSHI     = 9,
+    PRT_BEESPY          = 10,
+    PRT_CREEPY          = 11,
+    PRT_VINE_EATER      = 12,
+    PRT_SPEAR_1         = 13,
+    PRT_SPEAR_2         = 14,
+    PRT_SPEAR_3         = 15,
+    PRT_SPEAR_4         = 16,
 };
 
-// #define NUM_INSECTS (1 + PRT_VINE_EATER - PRT_BUZZBEE)  // There are 8 Insects from PRT_BUZZBEE to PRT_VINE_EATER
+// #define NUM_INSECTS (1 + PRT_VINE_EATER - PRT_BUZZBEE_1)  // There are 8 Insects from PRT_BUZZBEE_1 to PRT_VINE_EATER
 
 // #define LOOP_INSECTS(idx) \
-//     Set(idx, PRT_BUZZBEE) \
+//     Set(idx, PRT_BUZZBEE_1) \
 //     Loop(NUM_INSECTS)
 
 s32 N(DefenseTable)[] = {
@@ -115,7 +125,43 @@ ActorPartBlueprint N(ActorParts)[] = {
     },
     {
         .flags = ACTOR_PART_FLAG_NO_TARGET | ACTOR_PART_FLAG_INVISIBLE | ACTOR_PART_FLAG_USE_ABSOLUTE_POSITION,
-        .index = PRT_BUZZBEE,
+        .index = PRT_BUZZBEE_1,
+        .posOffset = { 0, 0, 0 },
+        .targetOffset = { 0, 0 },
+        .opacity = 255,
+        .idleAnimations = N(BuzzbeeAnims),
+        .defenseTable = N(DefenseTable),
+        .eventFlags = ACTOR_EVENT_FLAGS_NONE,
+        .elementImmunityFlags = 0,
+        .projectileTargetOffset = { 0, -10 },
+    },
+    {
+        .flags = ACTOR_PART_FLAG_NO_TARGET | ACTOR_PART_FLAG_INVISIBLE | ACTOR_PART_FLAG_USE_ABSOLUTE_POSITION,
+        .index = PRT_BUZZBEE_2,
+        .posOffset = { 0, 0, 0 },
+        .targetOffset = { 0, 0 },
+        .opacity = 255,
+        .idleAnimations = N(BuzzbeeAnims),
+        .defenseTable = N(DefenseTable),
+        .eventFlags = ACTOR_EVENT_FLAGS_NONE,
+        .elementImmunityFlags = 0,
+        .projectileTargetOffset = { 0, -10 },
+    },
+    {
+        .flags = ACTOR_PART_FLAG_NO_TARGET | ACTOR_PART_FLAG_INVISIBLE | ACTOR_PART_FLAG_USE_ABSOLUTE_POSITION,
+        .index = PRT_BUZZBEE_3,
+        .posOffset = { 0, 0, 0 },
+        .targetOffset = { 0, 0 },
+        .opacity = 255,
+        .idleAnimations = N(BuzzbeeAnims),
+        .defenseTable = N(DefenseTable),
+        .eventFlags = ACTOR_EVENT_FLAGS_NONE,
+        .elementImmunityFlags = 0,
+        .projectileTargetOffset = { 0, -10 },
+    },
+    {
+        .flags = ACTOR_PART_FLAG_NO_TARGET | ACTOR_PART_FLAG_INVISIBLE | ACTOR_PART_FLAG_USE_ABSOLUTE_POSITION,
+        .index = PRT_BUZZBEE_4,
         .posOffset = { 0, 0, 0 },
         .targetOffset = { 0, 0 },
         .opacity = 255,
@@ -212,6 +258,42 @@ ActorPartBlueprint N(ActorParts)[] = {
     {
         .flags = ACTOR_PART_FLAG_NO_TARGET | ACTOR_PART_FLAG_INVISIBLE | ACTOR_PART_FLAG_USE_ABSOLUTE_POSITION,
         .index = PRT_SPEAR_1,
+        .posOffset = { 0, 0, 0 },
+        .targetOffset = { 0, 0 },
+        .opacity = 255,
+        .idleAnimations = N(SpearAnims),
+        .defenseTable = N(DefenseTable),
+        .eventFlags = ACTOR_EVENT_FLAGS_NONE,
+        .elementImmunityFlags = 0,
+        .projectileTargetOffset = { 0, -10 },
+    },
+    {
+        .flags = ACTOR_PART_FLAG_NO_TARGET | ACTOR_PART_FLAG_INVISIBLE | ACTOR_PART_FLAG_USE_ABSOLUTE_POSITION,
+        .index = PRT_SPEAR_2,
+        .posOffset = { 0, 0, 0 },
+        .targetOffset = { 0, 0 },
+        .opacity = 255,
+        .idleAnimations = N(SpearAnims),
+        .defenseTable = N(DefenseTable),
+        .eventFlags = ACTOR_EVENT_FLAGS_NONE,
+        .elementImmunityFlags = 0,
+        .projectileTargetOffset = { 0, -10 },
+    },
+    {
+        .flags = ACTOR_PART_FLAG_NO_TARGET | ACTOR_PART_FLAG_INVISIBLE | ACTOR_PART_FLAG_USE_ABSOLUTE_POSITION,
+        .index = PRT_SPEAR_3,
+        .posOffset = { 0, 0, 0 },
+        .targetOffset = { 0, 0 },
+        .opacity = 255,
+        .idleAnimations = N(SpearAnims),
+        .defenseTable = N(DefenseTable),
+        .eventFlags = ACTOR_EVENT_FLAGS_NONE,
+        .elementImmunityFlags = 0,
+        .projectileTargetOffset = { 0, -10 },
+    },
+    {
+        .flags = ACTOR_PART_FLAG_NO_TARGET | ACTOR_PART_FLAG_INVISIBLE | ACTOR_PART_FLAG_USE_ABSOLUTE_POSITION,
+        .index = PRT_SPEAR_4,
         .posOffset = { 0, 0, 0 },
         .targetOffset = { 0, 0 },
         .opacity = 255,
@@ -401,10 +483,11 @@ EvtScript N(EVS_TakeTurn) = {
     CaseDefault // 5%
         Set(AttackEventScript, VineEaterAttack)
     EndSwitch
-    Set(AttackEventScript, CreepyAttack) // For attack testing.
+    Set(AttackEventScript, BeespyAttack) // For attack testing.
     Switch(AttackEventScript)
     CaseEq(BuzzbeeAttack)
-        ExecWait(N(EVS_Attack_Buzzbee))
+        Set(LVarC, 0)
+        ExecWait(N(EVS_SetUp_Buzzbee_Attack))
     CaseEq(SuperBeeAttack)
         ExecWait(N(EVS_Attack_SuperBee))
     CaseEq(ButterflyAttack)
@@ -438,7 +521,7 @@ EvtScript N(EVS_TakeTurn) = {
 #undef AttackEventScript
 #undef AttackPriority
 
-s32 PartArray[] = {PRT_BUZZBEE, PRT_SUPER_BEE, PRT_BUTTERFLY, PRT_ATTACKER, PRT_KABUTOMUSHI, PRT_BEESPY};
+s32 PartArray[] = {PRT_BUZZBEE_1, PRT_SUPER_BEE, PRT_BUTTERFLY, PRT_ATTACKER, PRT_KABUTOMUSHI, PRT_BEESPY};
 
 API_CALLABLE(N(GetBeePartIndex)) {
     Bytecode* args = script->ptrReadPos;
@@ -454,7 +537,7 @@ EvtScript N(EVS_Insects_GoBeehive) = {
     Loop(ARRAY_COUNT(PartArray))
         Call(N(GetBeePartIndex), LVar0, LVar1) //returns part to LVar1
         Switch(LVar1)
-            CaseEq(PRT_BUZZBEE)
+            CaseEq(PRT_BUZZBEE_1)
                 ExecWait(N(EVS_Buzzbee_ReturnHome))
             CaseEq(PRT_SUPER_BEE)
                 ExecWait(N(EVS_SuperBee_ReturnHome))
@@ -476,20 +559,29 @@ EvtScript N(EVS_Insects_GoBeehive) = {
 };
 
 EvtScript N(EVS_Buzzbee_ReturnHome) = {
-    Call(SetAnimation, ACTOR_SELF, PRT_BUZZBEE, ANIM_InsectsDK3_Buzzbee)
+    Call(UseIdleAnimation, ACTOR_SELF, FALSE)
+    Call(EnableIdleScript, ACTOR_SELF, IDLE_SCRIPT_DISABLE)
+    Call(SetAnimation, ACTOR_SELF, LVarA, ANIM_InsectsDK3_Buzzbee)
     Call(ResetAllActorSounds, ACTOR_SELF)
     Call(GetActorPos, ACTOR_PLAYER, 0, 0, LVar4)
     Add(LVar4, 2)
     Call(GetActorPos, ACTOR_SELF, LVar2, LVar3, 0)
     Add(LVar2, -10)
     Add(LVar3, -30)
-    Call(SetPartMoveSpeed, ACTOR_SELF, PRT_BUZZBEE, Float(6.0))
-    Call(FlyPartTo, ACTOR_SELF, PRT_BUZZBEE, LVar2, LVar3, LVar4, 0, 0, EASING_COS_IN_OUT)
+    Call(SetPartMoveSpeed, ACTOR_SELF, LVarA, Float(6.0))
+    Call(FlyPartTo, ACTOR_SELF, LVarA, LVar2, LVar3, LVar4, 0, 0, EASING_COS_IN_OUT)
+    Call(SetAnimation, ACTOR_SELF, LVarA, ANIM_InsectsDK3_BuzzbeeExit)
+    Wait(16)
+    Call(SetPartFlagBits, ACTOR_SELF, LVarA, ACTOR_PART_FLAG_INVISIBLE, TRUE)
+    Call(UseIdleAnimation, ACTOR_SELF, TRUE)
+    Call(EnableIdleScript, ACTOR_SELF, IDLE_SCRIPT_ENABLE)
     Return
     End
 };
 
 EvtScript N(EVS_SuperBee_ReturnHome) = {
+    Call(UseIdleAnimation, ACTOR_SELF, FALSE)
+    Call(EnableIdleScript, ACTOR_SELF, IDLE_SCRIPT_DISABLE)
     Call(SetAnimation, ACTOR_SELF, PRT_SUPER_BEE, ANIM_InsectsDK3_Superbee)
     Call(ResetAllActorSounds, ACTOR_SELF)
     Call(GetActorPos, ACTOR_PLAYER, 0, 0, LVar4)
@@ -499,11 +591,18 @@ EvtScript N(EVS_SuperBee_ReturnHome) = {
     Add(LVar3, -30)
     Call(SetPartMoveSpeed, ACTOR_SELF, PRT_SUPER_BEE, Float(13.5))
     Call(FlyPartTo, ACTOR_SELF, PRT_SUPER_BEE, LVar2, LVar3, LVar4, 0, -40, EASING_COS_IN_OUT)
+    Call(SetAnimation, ACTOR_SELF, PRT_SUPER_BEE, ANIM_InsectsDK3_SuperbeeExit)
+    Wait(16)
+    Call(SetPartFlagBits, ACTOR_SELF, PRT_SUPER_BEE, ACTOR_PART_FLAG_INVISIBLE, TRUE)
+    Call(UseIdleAnimation, ACTOR_SELF, TRUE)
+    Call(EnableIdleScript, ACTOR_SELF, IDLE_SCRIPT_ENABLE)
     Return
     End
 };
 
 EvtScript N(EVS_Butterfly_ReturnHome) = {
+    Call(UseIdleAnimation, ACTOR_SELF, FALSE)
+    Call(EnableIdleScript, ACTOR_SELF, IDLE_SCRIPT_DISABLE)
     Call(SetAnimation, ACTOR_SELF, PRT_BUTTERFLY, ANIM_InsectsDK3_Butterfly)
     Call(ResetAllActorSounds, ACTOR_SELF)
     Call(GetActorPos, ACTOR_PLAYER, 0, 0, LVar4)
@@ -513,11 +612,18 @@ EvtScript N(EVS_Butterfly_ReturnHome) = {
     Add(LVar3, -30)
     Call(SetPartMoveSpeed, ACTOR_SELF, PRT_BUTTERFLY, Float(8.0))
     Call(FlyPartTo, ACTOR_SELF, PRT_BUTTERFLY, LVar2, LVar3, LVar4, 0, 0, EASING_COS_IN_OUT)
+    Call(SetAnimation, ACTOR_SELF, PRT_BUTTERFLY, ANIM_InsectsDK3_ButterflyExit)
+    Wait(16)
+    Call(SetPartFlagBits, ACTOR_SELF, PRT_BUTTERFLY, ACTOR_PART_FLAG_INVISIBLE, TRUE)
+    Call(UseIdleAnimation, ACTOR_SELF, TRUE)
+    Call(EnableIdleScript, ACTOR_SELF, IDLE_SCRIPT_ENABLE)
     Return
     End
 };
 
 EvtScript N(EVS_Attacker_ReturnHome) = {
+    Call(UseIdleAnimation, ACTOR_SELF, FALSE)
+    Call(EnableIdleScript, ACTOR_SELF, IDLE_SCRIPT_DISABLE)
     Call(SetAnimation, ACTOR_SELF, PRT_ATTACKER, ANIM_InsectsDK3_Attacker)
     Call(ResetAllActorSounds, ACTOR_SELF)
     Call(GetActorPos, ACTOR_PLAYER, 0, 0, LVar4)
@@ -527,11 +633,18 @@ EvtScript N(EVS_Attacker_ReturnHome) = {
     Add(LVar3, -30)
     Call(SetPartMoveSpeed, ACTOR_SELF, PRT_ATTACKER, Float(11.0))
     Call(FlyPartTo, ACTOR_SELF, PRT_ATTACKER, LVar2, LVar3, LVar4, 0, -40, EASING_COS_IN_OUT)
+    Call(SetAnimation, ACTOR_SELF, PRT_ATTACKER, ANIM_InsectsDK3_AttackerExit)
+    Wait(16)
+    Call(SetPartFlagBits, ACTOR_SELF, PRT_ATTACKER, ACTOR_PART_FLAG_INVISIBLE, TRUE)
+    Call(UseIdleAnimation, ACTOR_SELF, TRUE)
+    Call(EnableIdleScript, ACTOR_SELF, IDLE_SCRIPT_ENABLE)
     Return
     End
 };
 
 EvtScript N(EVS_Kabutomushi_ReturnHome) = {
+    Call(UseIdleAnimation, ACTOR_SELF, FALSE)
+    Call(EnableIdleScript, ACTOR_SELF, IDLE_SCRIPT_DISABLE)
     Call(SetAnimation, ACTOR_SELF, PRT_KABUTOMUSHI, ANIM_InsectsDK3_Kabutomushi)
     Call(ResetAllActorSounds, ACTOR_SELF)
     Call(GetActorPos, ACTOR_PLAYER, 0, 0, LVar4)
@@ -541,11 +654,18 @@ EvtScript N(EVS_Kabutomushi_ReturnHome) = {
     Add(LVar3, -25)
     Call(SetPartMoveSpeed, ACTOR_SELF, PRT_KABUTOMUSHI, Float(15.0))
     Call(FlyPartTo, ACTOR_SELF, PRT_KABUTOMUSHI, LVar2, LVar3, LVar4, 0, -30, EASING_COS_IN_OUT)
+    Call(SetAnimation, ACTOR_SELF, PRT_KABUTOMUSHI, ANIM_InsectsDK3_KabutomushiExit)
+    Wait(16)
+    Call(SetPartFlagBits, ACTOR_SELF, PRT_KABUTOMUSHI, ACTOR_PART_FLAG_INVISIBLE, TRUE)
+    Call(UseIdleAnimation, ACTOR_SELF, TRUE)
+    Call(EnableIdleScript, ACTOR_SELF, IDLE_SCRIPT_ENABLE)
     Return
     End
 };
 
 EvtScript N(EVS_Beespy_ReturnHome) = {
+    Call(EnableIdleScript, ACTOR_SELF, IDLE_SCRIPT_DISABLE)
+    Call(UseIdleAnimation, ACTOR_SELF, FALSE)
     Call(SetAnimation, ACTOR_SELF, PRT_BEESPY, ANIM_InsectsDK3_QueenBeespy)
     Call(ResetAllActorSounds, ACTOR_SELF)
     Call(GetActorPos, ACTOR_PLAYER, 0, 0, LVar4)
@@ -554,7 +674,43 @@ EvtScript N(EVS_Beespy_ReturnHome) = {
     Add(LVar2, -10)
     Add(LVar3, -30)
     Call(SetPartMoveSpeed, ACTOR_SELF, PRT_BEESPY, Float(10.0))
-    Call(FlyPartTo, ACTOR_SELF, PRT_BEESPY, LVar2, LVar3, LVar4, 0, -40, EASING_COS_IN)
+    Call(FlyPartTo, ACTOR_SELF, PRT_BEESPY, LVar2, LVar3, LVar4, 0, 0, EASING_COS_IN_OUT)
+    Call(SetAnimation, ACTOR_SELF, PRT_BEESPY, ANIM_InsectsDK3_QueenBeespyExit)
+    Wait(16)
+    Call(SetPartFlagBits, ACTOR_SELF, PRT_BEESPY, ACTOR_PART_FLAG_INVISIBLE, TRUE)
+    Call(EnableIdleScript, ACTOR_SELF, IDLE_SCRIPT_ENABLE)
+    Call(UseIdleAnimation, ACTOR_SELF, TRUE)
+    Return
+    End
+};
+
+EvtScript N(EVS_SetUp_Buzzbee_Attack) = {
+    Call(UseIdleAnimation, ACTOR_SELF, FALSE)
+    Call(EnableIdleScript, ACTOR_SELF, IDLE_SCRIPT_DISABLE)
+    Switch(LVarC)
+        CaseEq(0)
+            Set(LVarA, PRT_BUZZBEE_1)
+            Set(LVar9, PRT_SPEAR_1)
+            ExecWait(N(EVS_Attack_Buzzbee))
+        CaseEq(1)
+            Set(LVarA, PRT_BUZZBEE_1)
+            Set(LVar9, PRT_SPEAR_1)
+            ExecWait(N(EVS_Attack_QuadBuzzbee))
+        CaseEq(2)
+            Set(LVarA, PRT_BUZZBEE_2)
+            Set(LVar9, PRT_SPEAR_2)
+            ExecWait(N(EVS_Attack_QuadBuzzbee))
+        CaseEq(3)
+            Set(LVarA, PRT_BUZZBEE_3)
+            Set(LVar9, PRT_SPEAR_3)
+            ExecWait(N(EVS_Attack_QuadBuzzbee))
+        CaseEq(4)
+            Set(LVarA, PRT_BUZZBEE_4)
+            Set(LVar9, PRT_SPEAR_4)
+            ExecWait(N(EVS_Attack_QuadBuzzbee))
+    EndSwitch
+    Call(EnableIdleScript, ACTOR_SELF, IDLE_SCRIPT_ENABLE)
+    Call(UseIdleAnimation, ACTOR_SELF, TRUE)
     Return
     End
 };
@@ -562,62 +718,60 @@ EvtScript N(EVS_Beespy_ReturnHome) = {
 EvtScript N(EVS_Attack_Buzzbee) = {
     Call(UseIdleAnimation, ACTOR_SELF, FALSE)
     Call(EnableIdleScript, ACTOR_SELF, IDLE_SCRIPT_DISABLE)
-    Call(EnableBattleStatusBar, FALSE)
     Call(SetTargetActor, ACTOR_SELF, ACTOR_PLAYER)
     Call(SetGoalToTarget, ACTOR_SELF)
     Call(GetActorPos, ACTOR_SELF, LVar0, LVar1, LVar2)
     Add(LVar0, 0)
     Add(LVar1, -30)
     Add(LVar2, 2)
-    Call(SetPartPos, ACTOR_SELF, PRT_BUZZBEE, LVar0, LVar1, LVar2)
+    Call(SetPartPos, ACTOR_SELF, LVarA, LVar0, LVar1, LVar2)
     Call(EnemyTestTarget, ACTOR_SELF, LVar0, 0, 0, 1, BS_FLAGS1_INCLUDE_POWER_UPS)
     Switch(LVar0)
     CaseOrEq(HIT_RESULT_MISS)
     CaseOrEq(HIT_RESULT_LUCKY)
         Call(SetAnimation, ACTOR_SELF, PRT_MAIN, ANIM_InsectsDK3_BeehiveSpawn)
         Wait(25)
-        Call(SetPartFlagBits, ACTOR_SELF, PRT_BUZZBEE, ACTOR_PART_FLAG_INVISIBLE, FALSE)
-        Call(SetAnimation, ACTOR_SELF, PRT_BUZZBEE, ANIM_InsectsDK3_BuzzbeeSpawn)
+        Call(SetPartFlagBits, ACTOR_SELF, LVarA, ACTOR_PART_FLAG_INVISIBLE, FALSE)
+        Call(SetAnimation, ACTOR_SELF, LVarA, ANIM_InsectsDK3_BuzzbeeSpawn)
         Call(SetAnimation, ACTOR_SELF, PRT_MAIN, ANIM_InsectsDK3_Beehive)
         Wait(10)
-        Call(SetAnimation, ACTOR_SELF, PRT_BUZZBEE, ANIM_InsectsDK3_Buzzbee)
-        Call(GetPartPos, ACTOR_SELF, PRT_BUZZBEE, LVar0, LVar1, LVar2)
+        Call(SetAnimation, ACTOR_SELF, LVarA, ANIM_InsectsDK3_Buzzbee)
+        Call(GetPartPos, ACTOR_SELF, LVarA, LVar0, LVar1, LVar2)
         Add(LVar1, -25)
         Call(SetGoalPos, ACTOR_SELF, LVar0, LVar1, LVar2)
-        Call(SetPartMoveSpeed, ACTOR_SELF, PRT_BUZZBEE, Float(6.0))
+        Call(SetPartMoveSpeed, ACTOR_SELF, LVarA, Float(6.0))
         Call(SetGoalToTarget, ACTOR_SELF)
-        Call(FlyPartTo, ACTOR_SELF, PRT_BUZZBEE, LVar0, LVar1, LVar2, 0, 0, EASING_COS_IN_OUT)
+        Call(FlyPartTo, ACTOR_SELF, LVarA, LVar0, LVar1, LVar2, 0, 0, EASING_COS_IN_OUT)
         Wait(5)
-        Call(SetPartRotation, ACTOR_SELF, PRT_SPEAR_1, 0, 0, 0)
+        Call(SetPartRotation, ACTOR_SELF, LVar9, 0, 0, 0)
         Thread
             Call(MakeLerp, 0, Float(47.5), 20, EASING_QUADRATIC_OUT)
             Label(0)
             Call(UpdateLerp)
-            Call(SetPartRotation, ACTOR_SELF, PRT_SPEAR_1, 0, 0, LVar0)
+            Call(SetPartRotation, ACTOR_SELF, LVar9, 0, 0, LVar0)
             Wait(1)
             IfEq(LVar1, 1)
                 Goto(0)
             EndIf
         EndThread
-        Call(GetPartPos, ACTOR_SELF, PRT_BUZZBEE, LVar0, LVar1, LVar2)
+        Call(GetPartPos, ACTOR_SELF, LVarA, LVar0, LVar1, LVar2)
         Add(LVar0, -10)
         Add(LVar1, 20)
-        Call(SetPartPos, ACTOR_SELF, PRT_SPEAR_1, LVar0, LVar1, LVar2)
-        Call(SetPartFlagBits, ACTOR_SELF, PRT_SPEAR_1, ACTOR_PART_FLAG_INVISIBLE, FALSE)
+        Call(SetPartPos, ACTOR_SELF, LVar9, LVar0, LVar1, LVar2)
+        Call(SetPartFlagBits, ACTOR_SELF, LVar9, ACTOR_PART_FLAG_INVISIBLE, FALSE)
         Call(GetActorPos, ACTOR_PLAYER, LVar0, LVar1, LVar2)
         Add(LVar1, 20)
         Add(LVar2, 2)
-        Call(SetPartJumpGravity, ACTOR_SELF, PRT_SPEAR_1, Float(0.7))
-        Call(JumpPartTo, ACTOR_SELF, PRT_SPEAR_1, LVar0, LVar1, LVar2, 18, TRUE)
-        Call(SetPartFlagBits, ACTOR_SELF, PRT_SPEAR_1, ACTOR_PART_FLAG_INVISIBLE, TRUE)
+        Call(SetPartJumpGravity, ACTOR_SELF, LVar9, Float(0.7))
+        Call(JumpPartTo, ACTOR_SELF, LVar9, LVar0, LVar1, LVar2, 18, TRUE)
+        Call(SetPartFlagBits, ACTOR_SELF, LVar9, ACTOR_PART_FLAG_INVISIBLE, TRUE)
         Wait(2)
-        Call(SetPartRotation, ACTOR_SELF, PRT_SPEAR_1, 0, 0, 0)
+        Call(SetPartRotation, ACTOR_SELF, LVar9, 0, 0, 0)
         IfEq(LVar0, HIT_RESULT_LUCKY)
             Call(SetGoalToTarget, ACTOR_SELF)
             Call(EnemyTestTarget, ACTOR_SELF, LVar0, DAMAGE_TYPE_TRIGGER_LUCKY, 0, 0, 0)
         EndIf
         ExecWait(N(EVS_Buzzbee_ReturnHome))
-        Call(SetPartFlagBits, ACTOR_SELF, PRT_BUZZBEE, ACTOR_PART_FLAG_INVISIBLE, TRUE)
         Call(YieldTurn)
         Call(EnableIdleScript, ACTOR_SELF, IDLE_SCRIPT_ENABLE)
         Call(UseIdleAnimation, ACTOR_SELF, TRUE)
@@ -626,55 +780,51 @@ EvtScript N(EVS_Attack_Buzzbee) = {
     EndSwitch
     Call(SetAnimation, ACTOR_SELF, PRT_MAIN, ANIM_InsectsDK3_BeehiveSpawn)
     Wait(25)
-    Call(SetPartFlagBits, ACTOR_SELF, PRT_BUZZBEE, ACTOR_PART_FLAG_INVISIBLE, FALSE)
-    Call(SetAnimation, ACTOR_SELF, PRT_BUZZBEE, ANIM_InsectsDK3_BuzzbeeSpawn)
+    Call(SetPartFlagBits, ACTOR_SELF, LVarA, ACTOR_PART_FLAG_INVISIBLE, FALSE)
+    Call(SetAnimation, ACTOR_SELF, LVarA, ANIM_InsectsDK3_BuzzbeeSpawn)
     Call(SetAnimation, ACTOR_SELF, PRT_MAIN, ANIM_InsectsDK3_Beehive)
     Wait(10)
-    Call(SetAnimation, ACTOR_SELF, PRT_BUZZBEE, ANIM_InsectsDK3_Buzzbee)
-    Call(GetPartPos, ACTOR_SELF, PRT_BUZZBEE, LVar0, LVar1, LVar2)
+    Call(SetAnimation, ACTOR_SELF, LVarA, ANIM_InsectsDK3_Buzzbee)
+    Call(GetPartPos, ACTOR_SELF, LVarA, LVar0, LVar1, LVar2)
     Add(LVar1, -25)
     Call(SetGoalPos, ACTOR_SELF, LVar0, LVar1, LVar2)
-    Call(SetPartMoveSpeed, ACTOR_SELF, PRT_BUZZBEE, Float(6.0))
+    Call(SetPartMoveSpeed, ACTOR_SELF, LVarA, Float(6.0))
     Call(SetGoalToTarget, ACTOR_SELF)
-    Call(FlyPartTo, ACTOR_SELF, PRT_BUZZBEE, LVar0, LVar1, LVar2, 0, 0, EASING_COS_IN_OUT)
+    Call(FlyPartTo, ACTOR_SELF, LVarA, LVar0, LVar1, LVar2, 0, 0, EASING_COS_IN_OUT)
     Wait(5)
-    Call(SetPartRotation, ACTOR_SELF, PRT_SPEAR_1, 0, 0, 0)
+    Call(SetPartRotation, ACTOR_SELF, LVar9, 0, 0, 0)
     Thread
         Call(MakeLerp, 0, Float(47.5), 20, EASING_QUADRATIC_OUT)
         Label(0)
         Call(UpdateLerp)
-        Call(SetPartRotation, ACTOR_SELF, PRT_SPEAR_1, 0, 0, LVar0)
+        Call(SetPartRotation, ACTOR_SELF, LVar9, 0, 0, LVar0)
         Wait(1)
         IfEq(LVar1, 1)
             Goto(0)
         EndIf
     EndThread
-    Call(GetPartPos, ACTOR_SELF, PRT_BUZZBEE, LVar0, LVar1, LVar2)
+    Call(GetPartPos, ACTOR_SELF, LVarA, LVar0, LVar1, LVar2)
     Add(LVar0, -10)
     Add(LVar1, 20)
-    Call(SetPartPos, ACTOR_SELF, PRT_SPEAR_1, LVar0, LVar1, LVar2)
-    Call(SetPartFlagBits, ACTOR_SELF, PRT_SPEAR_1, ACTOR_PART_FLAG_INVISIBLE, FALSE)
+    Call(SetPartPos, ACTOR_SELF, LVar9, LVar0, LVar1, LVar2)
+    Call(SetPartFlagBits, ACTOR_SELF, LVar9, ACTOR_PART_FLAG_INVISIBLE, FALSE)
     Call(GetActorPos, ACTOR_PLAYER, LVar0, LVar1, LVar2)
     Add(LVar1, 20)
     Add(LVar2, 2)
-    Call(SetPartJumpGravity, ACTOR_SELF, PRT_SPEAR_1, Float(0.7))
-    Call(JumpPartTo, ACTOR_SELF, PRT_SPEAR_1, LVar0, LVar1, LVar2, 18, TRUE)
-    Call(SetPartFlagBits, ACTOR_SELF, PRT_SPEAR_1, ACTOR_PART_FLAG_INVISIBLE, TRUE)
+    Call(SetPartJumpGravity, ACTOR_SELF, LVar9, Float(0.7))
+    Call(JumpPartTo, ACTOR_SELF, LVar9, LVar0, LVar1, LVar2, 18, TRUE)
+    Call(SetPartFlagBits, ACTOR_SELF, LVar9, ACTOR_PART_FLAG_INVISIBLE, TRUE)
     Wait(2)
-    Call(SetPartRotation, ACTOR_SELF, PRT_SPEAR_1, 0, 0, 0)
+    Call(SetPartRotation, ACTOR_SELF, LVar9, 0, 0, 0)
     Call(SetGoalToTarget, ACTOR_SELF)
     Call(EnemyDamageTarget, ACTOR_SELF, LVarF, DAMAGE_TYPE_NO_CONTACT, 0, 0, DMG_BUZZBEE, BS_FLAGS1_TRIGGER_EVENTS)
     Switch(LVarF)
     CaseOrEq(HIT_RESULT_HIT)
     CaseOrEq(HIT_RESULT_NO_DAMAGE)
         ExecWait(N(EVS_Buzzbee_ReturnHome))
-        Call(SetAnimation, ACTOR_SELF, PRT_BUZZBEE, ANIM_InsectsDK3_BuzzbeeExit)
-        Wait(10)
-        Call(SetPartFlagBits, ACTOR_SELF, PRT_BUZZBEE, ACTOR_PART_FLAG_INVISIBLE, TRUE)
         Call(YieldTurn)
     EndCaseGroup
     EndSwitch
-    Call(EnableBattleStatusBar, TRUE)
     Call(EnableIdleScript, ACTOR_SELF, IDLE_SCRIPT_ENABLE)
     Call(UseIdleAnimation, ACTOR_SELF, TRUE)
     Return
@@ -684,7 +834,6 @@ EvtScript N(EVS_Attack_Buzzbee) = {
 EvtScript N(EVS_Attack_SuperBee) = {
     Call(UseIdleAnimation, ACTOR_SELF, FALSE)
     Call(EnableIdleScript, ACTOR_SELF, IDLE_SCRIPT_DISABLE)
-    Call(EnableBattleStatusBar, FALSE)
     Call(SetTargetActor, ACTOR_SELF, ACTOR_PLAYER)
     Call(SetGoalToTarget, ACTOR_SELF)
     Call(GetActorPos, ACTOR_SELF, LVar0, LVar1, LVar2)
@@ -716,7 +865,6 @@ EvtScript N(EVS_Attack_SuperBee) = {
             Call(EnemyTestTarget, ACTOR_SELF, LVar0, DAMAGE_TYPE_TRIGGER_LUCKY, 0, 0, 0)
         EndIf
         ExecWait(N(EVS_SuperBee_ReturnHome))
-        Call(SetPartFlagBits, ACTOR_SELF, PRT_SUPER_BEE, ACTOR_PART_FLAG_INVISIBLE, TRUE)
         Call(YieldTurn)
         Call(EnableIdleScript, ACTOR_SELF, IDLE_SCRIPT_ENABLE)
         Call(UseIdleAnimation, ACTOR_SELF, TRUE)
@@ -744,13 +892,9 @@ EvtScript N(EVS_Attack_SuperBee) = {
     CaseOrEq(HIT_RESULT_HIT)
     CaseOrEq(HIT_RESULT_NO_DAMAGE)
         ExecWait(N(EVS_SuperBee_ReturnHome))
-        Call(SetAnimation, ACTOR_SELF, PRT_SUPER_BEE, ANIM_InsectsDK3_SuperbeeExit)
-        Wait(10)
-        Call(SetPartFlagBits, ACTOR_SELF, PRT_SUPER_BEE, ACTOR_PART_FLAG_INVISIBLE, TRUE)
         Call(YieldTurn)
     EndCaseGroup
     EndSwitch
-    Call(EnableBattleStatusBar, TRUE)
     Call(EnableIdleScript, ACTOR_SELF, IDLE_SCRIPT_ENABLE)
     Call(UseIdleAnimation, ACTOR_SELF, TRUE)
     Return
@@ -760,7 +904,6 @@ EvtScript N(EVS_Attack_SuperBee) = {
 EvtScript N(EVS_Attack_Butterfly) = {
     Call(UseIdleAnimation, ACTOR_SELF, FALSE)
     Call(EnableIdleScript, ACTOR_SELF, IDLE_SCRIPT_DISABLE)
-    Call(EnableBattleStatusBar, FALSE)
     Call(SetTargetActor, ACTOR_SELF, ACTOR_PLAYER)
     Call(SetGoalToTarget, ACTOR_SELF)
     Call(GetActorPos, ACTOR_SELF, LVar0, LVar1, LVar2)
@@ -814,7 +957,6 @@ EvtScript N(EVS_Attack_Butterfly) = {
             Call(EnemyTestTarget, ACTOR_SELF, LVar0, DAMAGE_TYPE_TRIGGER_LUCKY, 0, 0, 0)
         EndIf
         ExecWait(N(EVS_Butterfly_ReturnHome))
-        Call(SetPartFlagBits, ACTOR_SELF, PRT_BUTTERFLY, ACTOR_PART_FLAG_INVISIBLE, TRUE)
         Call(YieldTurn)
         Call(EnableIdleScript, ACTOR_SELF, IDLE_SCRIPT_ENABLE)
         Call(UseIdleAnimation, ACTOR_SELF, TRUE)
@@ -865,13 +1007,9 @@ EvtScript N(EVS_Attack_Butterfly) = {
     CaseOrEq(HIT_RESULT_HIT)
     CaseOrEq(HIT_RESULT_NO_DAMAGE)
         ExecWait(N(EVS_Butterfly_ReturnHome))
-        Call(SetAnimation, ACTOR_SELF, PRT_BUTTERFLY, ANIM_InsectsDK3_ButterflyExit)
-        Wait(10)
-        Call(SetPartFlagBits, ACTOR_SELF, PRT_BUTTERFLY, ACTOR_PART_FLAG_INVISIBLE, TRUE)
         Call(YieldTurn)
     EndCaseGroup
     EndSwitch
-    Call(EnableBattleStatusBar, TRUE)
     Call(EnableIdleScript, ACTOR_SELF, IDLE_SCRIPT_ENABLE)
     Call(UseIdleAnimation, ACTOR_SELF, TRUE)
     Return
@@ -881,7 +1019,6 @@ EvtScript N(EVS_Attack_Butterfly) = {
 EvtScript N(EVS_Attack_Attacker) = {
     Call(UseIdleAnimation, ACTOR_SELF, FALSE)
     Call(EnableIdleScript, ACTOR_SELF, IDLE_SCRIPT_DISABLE)
-    Call(EnableBattleStatusBar, FALSE)
     Call(SetTargetActor, ACTOR_SELF, ACTOR_PLAYER)
     Call(SetGoalToTarget, ACTOR_SELF)
     Call(GetActorPos, ACTOR_SELF, LVar0, LVar1, LVar2)
@@ -934,12 +1071,10 @@ EvtScript N(EVS_Attack_Attacker) = {
     Switch(LVarF)
     CaseOrEq(HIT_RESULT_HIT)
     CaseOrEq(HIT_RESULT_NO_DAMAGE)
-        ExecWait(N(EVS_Insects_GoBeehive))
-        Call(SetPartFlagBits, ACTOR_SELF, PRT_ATTACKER, ACTOR_PART_FLAG_INVISIBLE, TRUE)
+        ExecWait(N(EVS_Attacker_ReturnHome))
         Call(YieldTurn)
     EndCaseGroup
     EndSwitch
-    Call(EnableBattleStatusBar, TRUE)
     Call(EnableIdleScript, ACTOR_SELF, IDLE_SCRIPT_ENABLE)
     Call(UseIdleAnimation, ACTOR_SELF, TRUE)
     Return
@@ -949,7 +1084,6 @@ EvtScript N(EVS_Attack_Attacker) = {
 EvtScript N(EVS_Attack_Kabutomushi) = {
     Call(UseIdleAnimation, ACTOR_SELF, FALSE)
     Call(EnableIdleScript, ACTOR_SELF, IDLE_SCRIPT_DISABLE)
-    Call(EnableBattleStatusBar, FALSE)
     Call(SetTargetActor, ACTOR_SELF, ACTOR_PLAYER)
     Call(SetGoalToTarget, ACTOR_SELF)
     Call(GetActorPos, ACTOR_SELF, LVar0, LVar1, LVar2)
@@ -988,9 +1122,6 @@ EvtScript N(EVS_Attack_Kabutomushi) = {
         EndIf
         // ExecWait(N(EVS_Insects_GoBeehive))
         ExecWait(N(EVS_Kabutomushi_ReturnHome))
-        Call(SetAnimation, ACTOR_SELF, PRT_KABUTOMUSHI, ANIM_InsectsDK3_KabutomushiExit)
-        Wait(10)
-        Call(SetPartFlagBits, ACTOR_SELF, PRT_KABUTOMUSHI, ACTOR_PART_FLAG_INVISIBLE, TRUE)
         Call(YieldTurn)
         Call(EnableIdleScript, ACTOR_SELF, IDLE_SCRIPT_ENABLE)
         Call(UseIdleAnimation, ACTOR_SELF, TRUE)
@@ -1023,15 +1154,205 @@ EvtScript N(EVS_Attack_Kabutomushi) = {
     Switch(LVarF)
     CaseOrEq(HIT_RESULT_HIT)
     CaseOrEq(HIT_RESULT_NO_DAMAGE)
-        // ExecWait(N(EVS_Insects_GoBeehive))
         ExecWait(N(EVS_Kabutomushi_ReturnHome))
-        Call(SetAnimation, ACTOR_SELF, PRT_KABUTOMUSHI, ANIM_InsectsDK3_KabutomushiExit)
-        Wait(10)
-        Call(SetPartFlagBits, ACTOR_SELF, PRT_KABUTOMUSHI, ACTOR_PART_FLAG_INVISIBLE, TRUE)
         Call(YieldTurn)
     EndCaseGroup
     EndSwitch
-    Call(EnableBattleStatusBar, TRUE)
+    Call(EnableIdleScript, ACTOR_SELF, IDLE_SCRIPT_ENABLE)
+    Call(UseIdleAnimation, ACTOR_SELF, TRUE)
+    Return
+    End
+};
+
+EvtScript N(EVS_Buzzbee_BehindFollow_Beespy) = {
+    Call(UseIdleAnimation, ACTOR_SELF, FALSE)
+    Call(EnableIdleScript, ACTOR_SELF, IDLE_SCRIPT_DISABLE)
+    Switch(LVarA)
+        CaseEq(PRT_BUZZBEE_1)
+            Call(GetPartPos, ACTOR_SELF, PRT_BEESPY, LVar0, LVar1, LVar2)
+            Sub(LVar2, 2)
+            Call(SetPartPos, ACTOR_SELF, LVarA, LVar0, LVar1, LVar2)
+            Call(SetPartFlagBits, ACTOR_SELF, LVarA, ACTOR_PART_FLAG_INVISIBLE, FALSE)
+            Call(SetAnimation, ACTOR_SELF, LVarA, ANIM_InsectsDK3_Buzzbee)
+            Call(GetPartPos, ACTOR_SELF, PRT_BEESPY, LVar0, LVar1, LVar2)
+            Add(LVar0, 25)
+            Add(LVar1, 25)
+            Call(SetGoalPos, ACTOR_SELF, LVar0, LVar1, LVar2)
+            Call(SetPartMoveSpeed, ACTOR_SELF, LVarA, Float(6.0))
+            Call(SetGoalToTarget, ACTOR_SELF)
+            Call(FlyPartTo, ACTOR_SELF, LVarA, LVar0, LVar1, LVar2, 0, 0, EASING_COS_IN_OUT)
+            Wait(5)
+        CaseEq(PRT_BUZZBEE_2)
+            Call(GetPartPos, ACTOR_SELF, PRT_BEESPY, LVar0, LVar1, LVar2)
+            Sub(LVar2, 2)
+            Call(SetPartPos, ACTOR_SELF, LVarA, LVar0, LVar1, LVar2)
+            Call(SetPartFlagBits, ACTOR_SELF, LVarA, ACTOR_PART_FLAG_INVISIBLE, FALSE)
+            Call(SetAnimation, ACTOR_SELF, LVarA, ANIM_InsectsDK3_Buzzbee)
+            Call(GetPartPos, ACTOR_SELF, PRT_BEESPY, LVar0, LVar1, LVar2)
+            Sub(LVar0, 25)
+            Add(LVar1, 25)
+            Call(SetGoalPos, ACTOR_SELF, LVar0, LVar1, LVar2)
+            Call(SetPartMoveSpeed, ACTOR_SELF, LVarA, Float(6.0))
+            Call(SetGoalToTarget, ACTOR_SELF)
+            Call(FlyPartTo, ACTOR_SELF, LVarA, LVar0, LVar1, LVar2, 0, 0, EASING_COS_IN_OUT)
+            Wait(5)
+        CaseEq(PRT_BUZZBEE_3)
+            Call(GetPartPos, ACTOR_SELF, PRT_BEESPY, LVar0, LVar1, LVar2)
+            Sub(LVar2, 2)
+            Call(SetPartPos, ACTOR_SELF, LVarA, LVar0, LVar1, LVar2)
+            Call(SetPartFlagBits, ACTOR_SELF, LVarA, ACTOR_PART_FLAG_INVISIBLE, FALSE)
+            Call(SetAnimation, ACTOR_SELF, LVarA, ANIM_InsectsDK3_Buzzbee)
+            Call(GetPartPos, ACTOR_SELF, PRT_BEESPY, LVar0, LVar1, LVar2)
+            Add(LVar0, 25)
+            Sub(LVar1, 25)
+            Call(SetGoalPos, ACTOR_SELF, LVar0, LVar1, LVar2)
+            Call(SetPartMoveSpeed, ACTOR_SELF, LVarA, Float(6.0))
+            Call(SetGoalToTarget, ACTOR_SELF)
+            Call(FlyPartTo, ACTOR_SELF, LVarA, LVar0, LVar1, LVar2, 0, 0, EASING_COS_IN_OUT)
+            Wait(5)
+        CaseEq(PRT_BUZZBEE_4)
+            Call(GetPartPos, ACTOR_SELF, PRT_BEESPY, LVar0, LVar1, LVar2)
+            Sub(LVar2, 2)
+            Call(SetPartPos, ACTOR_SELF, LVarA, LVar0, LVar1, LVar2)
+            Call(SetPartFlagBits, ACTOR_SELF, LVarA, ACTOR_PART_FLAG_INVISIBLE, FALSE)
+            Call(SetAnimation, ACTOR_SELF, LVarA, ANIM_InsectsDK3_Buzzbee)
+            Call(GetPartPos, ACTOR_SELF, PRT_BEESPY, LVar0, LVar1, LVar2)
+            Sub(LVar0, 25)
+            Sub(LVar1, 25)
+            Call(SetGoalPos, ACTOR_SELF, LVar0, LVar1, LVar2)
+            Call(SetPartMoveSpeed, ACTOR_SELF, LVarA, Float(6.0))
+            Call(SetGoalToTarget, ACTOR_SELF)
+            Call(FlyPartTo, ACTOR_SELF, LVarA, LVar0, LVar1, LVar2, 0, 0, EASING_COS_IN_OUT)
+            Wait(5)
+    EndSwitch
+    Call(EnableIdleScript, ACTOR_SELF, IDLE_SCRIPT_ENABLE)
+    Call(UseIdleAnimation, ACTOR_SELF, TRUE)
+    Return
+    End
+};
+
+EvtScript N(EVS_Buzzbee_GoBehind_Beespy) = {
+    Call(UseIdleAnimation, ACTOR_SELF, FALSE)
+    Call(EnableIdleScript, ACTOR_SELF, IDLE_SCRIPT_DISABLE)
+    Switch(LVarA)
+        CaseEq(PRT_BUZZBEE_1)
+            Call(GetPartPos, ACTOR_SELF, PRT_BEESPY, LVar0, LVar1, LVar2)
+            Sub(LVar2, 2)
+            Call(SetGoalPos, ACTOR_SELF, LVar0, LVar1, LVar2)
+            Call(SetPartMoveSpeed, ACTOR_SELF, LVarA, Float(6.0))
+            Call(SetAnimation, ACTOR_SELF, LVarA, ANIM_InsectsDK3_Buzzbee)
+            Call(FlyPartTo, ACTOR_SELF, LVarA, LVar0, LVar1, LVar2, 0, 0, EASING_COS_IN_OUT)
+            Wait(5)
+            Call(SetPartFlagBits, ACTOR_SELF, LVarA, ACTOR_PART_FLAG_INVISIBLE, TRUE)
+        CaseEq(PRT_BUZZBEE_2)
+            Call(GetPartPos, ACTOR_SELF, PRT_BEESPY, LVar0, LVar1, LVar2)
+            Sub(LVar2, 2)
+            Call(SetGoalPos, ACTOR_SELF, LVar0, LVar1, LVar2)
+            Call(SetPartMoveSpeed, ACTOR_SELF, LVarA, Float(6.0))
+            Call(SetAnimation, ACTOR_SELF, LVarA, ANIM_InsectsDK3_Buzzbee)
+            Call(FlyPartTo, ACTOR_SELF, LVarA, LVar0, LVar1, LVar2, 0, 0, EASING_COS_IN_OUT)
+            Wait(5)
+            Call(SetPartFlagBits, ACTOR_SELF, LVarA, ACTOR_PART_FLAG_INVISIBLE, TRUE)
+        CaseEq(PRT_BUZZBEE_3)
+            Call(GetPartPos, ACTOR_SELF, PRT_BEESPY, LVar0, LVar1, LVar2)
+            Sub(LVar2, 2)
+            Call(SetGoalPos, ACTOR_SELF, LVar0, LVar1, LVar2)
+            Call(SetPartMoveSpeed, ACTOR_SELF, LVarA, Float(6.0))
+            Call(SetAnimation, ACTOR_SELF, LVarA, ANIM_InsectsDK3_Buzzbee)
+            Call(FlyPartTo, ACTOR_SELF, LVarA, LVar0, LVar1, LVar2, 0, 0, EASING_COS_IN_OUT)
+            Wait(5)
+            Call(SetPartFlagBits, ACTOR_SELF, LVarA, ACTOR_PART_FLAG_INVISIBLE, TRUE)
+        CaseEq(PRT_BUZZBEE_4)
+            Call(GetPartPos, ACTOR_SELF, PRT_BEESPY, LVar0, LVar1, LVar2)
+            Sub(LVar2, 2)
+            Call(SetGoalPos, ACTOR_SELF, LVar0, LVar1, LVar2)
+            Call(SetPartMoveSpeed, ACTOR_SELF, LVarA, Float(6.0))
+            Call(SetAnimation, ACTOR_SELF, LVarA, ANIM_InsectsDK3_Buzzbee)
+            Call(FlyPartTo, ACTOR_SELF, LVarA, LVar0, LVar1, LVar2, 0, 0, EASING_COS_IN_OUT)
+            Wait(5)
+            Call(SetPartFlagBits, ACTOR_SELF, LVarA, ACTOR_PART_FLAG_INVISIBLE, TRUE)
+    EndSwitch
+    Call(EnableIdleScript, ACTOR_SELF, IDLE_SCRIPT_ENABLE)
+    Call(UseIdleAnimation, ACTOR_SELF, TRUE)
+    Return
+    End
+};
+
+EvtScript N(EVS_Attack_QuadBuzzbee) = {
+    Call(UseIdleAnimation, ACTOR_SELF, FALSE)
+    Call(EnableIdleScript, ACTOR_SELF, IDLE_SCRIPT_DISABLE)
+    Call(SetTargetActor, ACTOR_SELF, ACTOR_PLAYER)
+    Call(SetGoalToTarget, ACTOR_SELF)
+    Call(EnemyTestTarget, ACTOR_SELF, LVar0, 0, 0, 1, BS_FLAGS1_INCLUDE_POWER_UPS)
+    Switch(LVar0)
+    CaseOrEq(HIT_RESULT_MISS)
+    CaseOrEq(HIT_RESULT_LUCKY)
+        Wait(5)
+        Call(SetPartRotation, ACTOR_SELF, LVar9, 0, 0, 0)
+        Thread
+            Call(MakeLerp, 0, Float(47.5), 20, EASING_QUADRATIC_OUT)
+            Label(0)
+            Call(UpdateLerp)
+            Call(SetPartRotation, ACTOR_SELF, LVar9, 0, 0, LVar0)
+            Wait(1)
+            IfEq(LVar1, 1)
+                Goto(0)
+            EndIf
+        EndThread
+        Call(GetPartPos, ACTOR_SELF, LVarA, LVar0, LVar1, LVar2)
+        Add(LVar0, -10)
+        Add(LVar1, 20)
+        Call(SetPartPos, ACTOR_SELF, LVar9, LVar0, LVar1, LVar2)
+        Call(SetPartFlagBits, ACTOR_SELF, LVar9, ACTOR_PART_FLAG_INVISIBLE, FALSE)
+        Call(GetActorPos, ACTOR_PLAYER, LVar0, LVar1, LVar2)
+        Add(LVar1, 20)
+        Add(LVar2, 2)
+        Call(SetPartJumpGravity, ACTOR_SELF, LVar9, Float(0.7))
+        Call(JumpPartTo, ACTOR_SELF, LVar9, LVar0, LVar1, LVar2, 18, TRUE)
+        Call(SetPartFlagBits, ACTOR_SELF, LVar9, ACTOR_PART_FLAG_INVISIBLE, TRUE)
+        Wait(2)
+        Call(SetPartRotation, ACTOR_SELF, LVar9, 0, 0, 0)
+        IfEq(LVar0, HIT_RESULT_LUCKY)
+            Call(SetGoalToTarget, ACTOR_SELF)
+            Call(EnemyTestTarget, ACTOR_SELF, LVar0, DAMAGE_TYPE_TRIGGER_LUCKY, 0, 0, 0)
+        EndIf
+        Call(EnableIdleScript, ACTOR_SELF, IDLE_SCRIPT_ENABLE)
+        Call(UseIdleAnimation, ACTOR_SELF, TRUE)
+        Return
+    EndCaseGroup
+    EndSwitch
+    Wait(5)
+    Call(SetPartRotation, ACTOR_SELF, LVar9, 0, 0, 0)
+    Thread
+        Call(MakeLerp, 0, Float(47.5), 20, EASING_QUADRATIC_OUT)
+        Label(0)
+        Call(UpdateLerp)
+        Call(SetPartRotation, ACTOR_SELF, LVar9, 0, 0, LVar0)
+        Wait(1)
+        IfEq(LVar1, 1)
+            Goto(0)
+        EndIf
+    EndThread
+    Call(GetPartPos, ACTOR_SELF, LVarA, LVar0, LVar1, LVar2)
+    Add(LVar0, -10)
+    Add(LVar1, 20)
+    Call(SetPartPos, ACTOR_SELF, LVar9, LVar0, LVar1, LVar2)
+    Call(SetPartFlagBits, ACTOR_SELF, LVar9, ACTOR_PART_FLAG_INVISIBLE, FALSE)
+    Call(GetActorPos, ACTOR_PLAYER, LVar0, LVar1, LVar2)
+    Add(LVar1, 20)
+    Add(LVar2, 2)
+    Call(SetPartJumpGravity, ACTOR_SELF, LVar9, Float(0.7))
+    Call(JumpPartTo, ACTOR_SELF, LVar9, LVar0, LVar1, LVar2, 18, TRUE)
+    Call(SetPartFlagBits, ACTOR_SELF, LVar9, ACTOR_PART_FLAG_INVISIBLE, TRUE)
+    Wait(2)
+    Call(SetPartRotation, ACTOR_SELF, LVar9, 0, 0, 0)
+    Call(SetGoalToTarget, ACTOR_SELF)
+    Call(EnemyDamageTarget, ACTOR_SELF, LVarF, DAMAGE_TYPE_NO_CONTACT, 0, 0, DMG_BUZZBEE, BS_FLAGS1_TRIGGER_EVENTS)
+    Switch(LVarF)
+    CaseOrEq(HIT_RESULT_HIT)
+    CaseOrEq(HIT_RESULT_NO_DAMAGE)
+    EndCaseGroup
+    EndSwitch
     Call(EnableIdleScript, ACTOR_SELF, IDLE_SCRIPT_ENABLE)
     Call(UseIdleAnimation, ACTOR_SELF, TRUE)
     Return
@@ -1041,7 +1362,83 @@ EvtScript N(EVS_Attack_Kabutomushi) = {
 EvtScript N(EVS_Attack_Beespy) = {
     Call(UseIdleAnimation, ACTOR_SELF, FALSE)
     Call(EnableIdleScript, ACTOR_SELF, IDLE_SCRIPT_DISABLE)
-    ExecWait(N(EVS_Insects_GoBeehive))
+    Call(GetActorPos, ACTOR_SELF, LVar0, LVar1, LVar2)
+    Add(LVar0, 0)
+    Add(LVar1, -30)
+    Add(LVar2, 2)
+    Call(SetPartPos, ACTOR_SELF, PRT_BEESPY, LVar0, LVar1, LVar2)
+    Call(SetAnimation, ACTOR_SELF, PRT_MAIN, ANIM_InsectsDK3_BeehiveSpawn)
+    Wait(25)
+    Call(SetPartFlagBits, ACTOR_SELF, PRT_BEESPY, ACTOR_PART_FLAG_INVISIBLE, FALSE)
+    Call(SetAnimation, ACTOR_SELF, PRT_BEESPY, ANIM_InsectsDK3_QueenBeespySpawn)
+    Call(SetAnimation, ACTOR_SELF, PRT_MAIN, ANIM_InsectsDK3_Beehive)
+    Wait(10)
+    Call(SetAnimation, ACTOR_SELF, PRT_BEESPY, ANIM_InsectsDK3_QueenBeespy)
+    Call(GetPartPos, ACTOR_SELF, PRT_BEESPY, LVar0, LVar1, LVar2)
+    Set(LVar0, 55)
+    Set(LVar1, 50)
+    Call(SetGoalPos, ACTOR_SELF, LVar0, LVar1, LVar2)
+    Call(SetPartMoveSpeed, ACTOR_SELF, PRT_BEESPY, Float(6.0))
+    Call(SetGoalToTarget, ACTOR_SELF)
+    Call(FlyPartTo, ACTOR_SELF, PRT_BEESPY, LVar0, LVar1, LVar2, 0, 0, EASING_COS_IN_OUT)
+    Wait(5)
+    Set(LVarA, PRT_BUZZBEE_1)
+    ExecWait(N(EVS_Buzzbee_BehindFollow_Beespy))
+    Set(LVarC, 1)
+    Exec(N(EVS_SetUp_Buzzbee_Attack))
+    Wait(10)
+    Set(LVarA, PRT_BUZZBEE_2)
+    ExecWait(N(EVS_Buzzbee_BehindFollow_Beespy))
+    Set(LVarA, PRT_BUZZBEE_1)
+    Exec(N(EVS_Buzzbee_GoBehind_Beespy))
+    Wait(5)
+    Set(LVarC, 2)
+    Exec(N(EVS_SetUp_Buzzbee_Attack))
+    Wait(5)
+    Set(LVarA, PRT_BUZZBEE_3)
+    ExecWait(N(EVS_Buzzbee_BehindFollow_Beespy))
+    Set(LVarA, PRT_BUZZBEE_2)
+    Exec(N(EVS_Buzzbee_GoBehind_Beespy))
+    Wait(10)
+    Set(LVarC, 3)
+    Exec(N(EVS_SetUp_Buzzbee_Attack))
+    Wait(10)
+    Set(LVarA, PRT_BUZZBEE_4)
+    ExecWait(N(EVS_Buzzbee_BehindFollow_Beespy))
+    Set(LVarA, PRT_BUZZBEE_3)
+    Exec(N(EVS_Buzzbee_GoBehind_Beespy))
+    Wait(5)
+    Set(LVarC, 4)
+    Exec(N(EVS_SetUp_Buzzbee_Attack))
+    Wait(10)
+    Set(LVarA, PRT_BUZZBEE_4)
+    Exec(N(EVS_Buzzbee_GoBehind_Beespy))
+    // Set(LVarC, 1)
+    // Exec(N(EVS_SetUp_Buzzbee_Attack))
+    // Wait(15)
+    // Set(LVarC, 2)
+    // Exec(N(EVS_SetUp_Buzzbee_Attack))
+    // Wait(15)
+    // Set(LVarC, 3)
+    // Exec(N(EVS_SetUp_Buzzbee_Attack))
+    // Wait(15)
+    // Set(LVarC, 4)
+    // Exec(N(EVS_SetUp_Buzzbee_Attack))
+    WaitSecs(1)
+    ExecWait(N(EVS_Beespy_ReturnHome))
+    // Set(LVarA, PRT_BUZZBEE_1)
+    // ExecWait(N(EVS_Buzzbee_GoBehind_Beespy))
+    // Wait(15)
+    // Set(LVarA, PRT_BUZZBEE_2)
+    // ExecWait(N(EVS_Buzzbee_GoBehind_Beespy))
+    // Wait(15)
+    // Set(LVarA, PRT_BUZZBEE_3)
+    // ExecWait(N(EVS_Buzzbee_GoBehind_Beespy))
+    // Wait(15)
+    // Set(LVarA, PRT_BUZZBEE_4)
+    // ExecWait(N(EVS_Buzzbee_GoBehind_Beespy))
+    // Wait(15)
+    Call(YieldTurn)
     Call(EnableIdleScript, ACTOR_SELF, IDLE_SCRIPT_ENABLE)
     Call(UseIdleAnimation, ACTOR_SELF, TRUE)
     Return
@@ -1192,7 +1589,7 @@ EvtScript N(EVS_Attack_Creepy) = {
         Wait(10)
         Call(SetBattleFlagBits, BS_FLAGS1_4000, FALSE)
         Call(action_command_stop_leech_start, 0, 32767, 3)
-        Set(LVarD, 0)
+        Set(LVar9, 0)
         Loop(5)
             Call(UseIdleAnimation, ACTOR_PLAYER, FALSE)
             Call(SetAnimation, ACTOR_PLAYER, 0, ANIM_MarioB1_Leeching)
@@ -1319,8 +1716,8 @@ EvtScript N(EVS_Attack_Creepy) = {
             IfNe(LVar3, 0)
                 // If it does damage.
             Else
-                Add(LVarD, 1)
-                IfGt(LVarD, 1)
+                Add(LVar9, 1)
+                IfGt(LVar9, 1)
                     Call(func_80269470)
                     BreakLoop
                 EndIf
@@ -1576,7 +1973,7 @@ EvtScript N(EVS_Attack_VineEater) = {
         Wait(10)
         Call(SetBattleFlagBits, BS_FLAGS1_4000, FALSE)
         Call(action_command_stop_leech_start, 0, 32767, 3)
-        Set(LVarD, 0)
+        Set(LVar9, 0)
         Loop(5)
             Call(UseIdleAnimation, ACTOR_PLAYER, FALSE)
             Call(SetAnimation, ACTOR_PLAYER, 0, ANIM_MarioB1_Leeching)
@@ -1703,8 +2100,8 @@ EvtScript N(EVS_Attack_VineEater) = {
             IfNe(LVar3, 0)
                 // If it does damage.
             Else
-                Add(LVarD, 1)
-                IfGt(LVarD, 1)
+                Add(LVar9, 1)
+                IfGt(LVar9, 1)
                     Call(func_80269470)
                     BreakLoop
                 EndIf

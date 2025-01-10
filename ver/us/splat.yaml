@@ -6888,6 +6888,7 @@ segments:
     - [auto, c, actor/beehive]
     - [auto, c, actor/jr_troopa_gang]
     - [auto, c, stage/fob_01]
+    - [auto, c, stage/fob_02]
 
 #######################
 ### Battle Partners ###

@@ -14,9 +14,10 @@ extern ActorBlueprint A(duplighost);
 extern ActorBlueprint A(jr_troopa_gang);
 
 extern Stage A(fob_01);
+extern Stage A(fob_02);
 
-Vec3i A(Beehive1Pos) = { 90, 125, -68 };
-Vec3i A(Beehive2Pos) = { 120, 125, -68 };
+Vec3i A(Beehive1Pos) = { 85, 120, -25 };
+Vec3i A(Beehive2Pos) = { 120, 120, -25 };
 Vec3i A(PiranhaPlantPos) = { 42, 25, 0 };
 Vec3i A(BooBullyPosB) = { 45, 30, -5 };
 Vec3i A(BooBullyPosC) = { 85, 30, 10 };
@@ -80,12 +81,13 @@ BattleList A(Formations) = {
     BATTLE(A(Formation_04), A(fob_01), "2 Freezy Fuzzies Purple Panser"),
     BATTLE(A(Formation_05), A(fob_01), "2 Purple Pansers Red Panser"),
     BATTLE(A(Formation_06), A(fob_01), "2 Piranha Plants"),
-    BATTLE(A(Formation_07), A(fob_01), "2 Beehives"),
+    BATTLE(A(Formation_07), A(fob_02), "2 Beehives"),
     BATTLE(A(Formation_08), A(fob_01), "Duplighost Boo Bully"),
     {},
 };
 
 StageList A(Stages) = {
     STAGE("fob_01", A(fob_01)),
+    STAGE("fob_02", A(fob_02)),
     {},
 };

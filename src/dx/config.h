@@ -32,7 +32,7 @@
 #define NEW_GAME_MAP_ID "mim_08"
 
 /// Entry to use when starting a new game.
-#define NEW_GAME_ENTRY_ID mim_08_ENTRY_0
+#define NEW_GAME_ENTRY_ID mim_08_ENTRY_1
 
 /// Story progress when starting a new game.
 #define NEW_GAME_STORY_PROGRESS     STORY_MOD_CUTSCENE_5

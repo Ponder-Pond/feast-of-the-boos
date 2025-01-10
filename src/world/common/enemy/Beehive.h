@@ -34,3 +34,23 @@
     .anim_E = ANIM_InsectsDK3_Beehive, \
     .anim_F = ANIM_InsectsDK3_Beehive, \
 }
+
+#define BUZZBEE_ANIMS \
+{ \
+    .idle   = ANIM_InsectsDK3_Buzzbee, \
+    .walk   = ANIM_InsectsDK3_Buzzbee, \
+    .run    = ANIM_InsectsDK3_Buzzbee, \
+    .chase  = ANIM_InsectsDK3_Buzzbee, \
+    .anim_4 = ANIM_InsectsDK3_Buzzbee, \
+    .anim_5 = ANIM_InsectsDK3_Buzzbee, \
+    .death  = ANIM_InsectsDK3_BuzzbeeSpawn, \
+    .hit    = ANIM_InsectsDK3_BuzzbeeSpawn, \
+    .anim_8 = ANIM_InsectsDK3_Buzzbee, \
+    .anim_9 = ANIM_InsectsDK3_Buzzbee, \
+    .anim_A = ANIM_InsectsDK3_Buzzbee, \
+    .anim_B = ANIM_InsectsDK3_Buzzbee, \
+    .anim_C = ANIM_InsectsDK3_Buzzbee, \
+    .anim_D = ANIM_InsectsDK3_Buzzbee, \
+    .anim_E = ANIM_InsectsDK3_Buzzbee, \
+    .anim_F = ANIM_InsectsDK3_Buzzbee, \
+}

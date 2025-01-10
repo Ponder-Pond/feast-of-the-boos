@@ -31,7 +31,7 @@ NpcSettings N(NpcSettings_Beehive) = {
     .height = 26,
     .radius = 24,
     .level = ACTOR_LEVEL_BEEHIVE,
-    .ai = &N(EVS_NpcAI_Beehive),
+    // .ai = &N(EVS_NpcAI_Beehive),
     .onHit = &EnemyNpcHit,
     .onDefeat = &EnemyNpcDefeat,
 };

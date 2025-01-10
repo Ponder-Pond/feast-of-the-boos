@@ -943,7 +943,7 @@ enum GameFlags {
     GF_MIM07_Chest_BooBullyFormation            = GameFlag(0x3AB),
     GF_MIM07_DefeatedBooBully                   = GameFlag(0x3AC),
     GF_MIM07_Chest_SuperShroom                  = GameFlag(0x3AD),
-    GF_Unused_MIM_12                            = GameFlag(0x3AE),
+    GF_MIM08_DefeatedBeehive                    = GameFlag(0x3AE),
     GF_Unused_MIM_13                            = GameFlag(0x3AF),
     GF_Unused_MIM_14                            = GameFlag(0x3B0),
     GF_Unused_MIM_15                            = GameFlag(0x3B1),

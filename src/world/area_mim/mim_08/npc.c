@@ -399,47 +399,189 @@ NpcData N(NpcData_PiranhaPlant)[] = {
 };
 
 EvtScript N(EVS_NpcIdle_Beehive) = {
+    // Label(100)
+    // Wait(1)
+    // IfEq(MV_ShakedTree, FALSE)
+    //     Goto(100)
+    // EndIf
+    // Call(SetNpcPos, NPC_SELF, -280, 108, 0)
+    // Call(SetNpcPos, NPC_Buzzbee -280, 108, 0)
+    // Call(SetNpcFlagBits, NPC_Buzzbee, NPC_FLAG_INVISIBLE, FALSE)
+    // Wait(15)
+    // Loop(6)
+    //     Set(LVar0, 2)
+    //     Call(TranslateModel, MODEL_Beehive1, LVar0, 0, LVar0)
+    //     Call(TranslateModel, MODEL_Beehive2, LVar0, 0, LVar0)
+    //     Call(TranslateModel, MODEL_o443, LVar0, 0, LVar0)
+    //     Call(TranslateModel, MODEL_o442, LVar0, 0, LVar0)
+    //     Wait(1)
+    //     Set(LVar0, -2)
+    //     Call(TranslateModel, MODEL_Beehive1, LVar0, 0, LVar0)
+    //     Call(TranslateModel, MODEL_Beehive2, LVar0, 0, LVar0)
+    //     Call(TranslateModel, MODEL_o443, LVar0, 0, LVar0)
+    //     Call(TranslateModel, MODEL_o442, LVar0, 0, LVar0)
+    //     Wait(1)
+    // EndLoop
+    // Set(LVar0, 0)
+    // Call(TranslateModel, MODEL_Beehive1, LVar0, 0, LVar0)
+    // Call(TranslateModel, MODEL_Beehive2, LVar0, 0, LVar0)
+    // Call(TranslateModel, MODEL_o443, LVar0, 0, LVar0)
+    // Call(TranslateModel, MODEL_o442, LVar0, 0, LVar0)
+    // WaitSecs(1)
+    // Call(NpcFacePlayer, NPC_Buzzbee, 0)
+    // Call(PlayerFaceNpc, NPC_Buzzbee, 0)
+    // Call(GetPlayerPos, LVar0, LVar1, LVar2)
+    // Call(UseSettingsFrom, CAM_DEFAULT, LVar0, LVar1, LVar2)
+    // Call(SetCamSpeed, CAM_DEFAULT, Float(4.0))
+    // Call(SetCamDistance, CAM_DEFAULT, 350)
+    // Call(GetNpcPos, NPC_Buzzbee, LVar0, LVar1, LVar2)
+    // Add(LVar1, 40)
+    // Call(SetPanTarget, CAM_DEFAULT, LVar0, LVar1, LVar2)
+    // Call(PanToTarget, CAM_DEFAULT, 0, TRUE)
+    // Wait(1)
+    // Call(SetPlayerAnimation, ANIM_Mario1_Flail)
+    // Call(GetPlayerPos, LVar0, 0, LVar2)
+    // Sub(LVar0, 20)
+    // Sub(LVar2, 40)
+    // Call(GetNpcPos, NPC_PARTNER, 0, LVar1, 0)
+    // Call(SetNpcAnimation, NPC_Buzzbee, ANIM_InsectsDK3_Buzzbee)
+    // Call(SetNpcJumpscale, NPC_Buzzbee, Float(0.0))
+    // Call(NpcJump1, NPC_Buzzbee, LVar0, LVar1, LVar2, 60)
+    // Call(NpcFlyTo, NPC_Buzzbee, LVar0, LVar1, LVar2, 30, 0, EASING_LINEAR)
+    // Wait(30)
+    // Call(StartBossBattle, SONG_SPECIAL_BATTLE)
+    Return
+    End
+};
+
+EvtScript N(EVS_NpcDefeat_Beehive) = {
+//     Call(GetBattleOutcome, LVar0)
+//     Switch(LVar0)
+//         CaseEq(OUTCOME_PLAYER_WON)
+//             Call(DoNpcDefeat)
+//         CaseEq(OUTCOME_PLAYER_LOST)
+//         CaseEq(OUTCOME_PLAYER_FLED)
+//     EndSwitch
+    Return
+    End
+};
+
+EvtScript N(EVS_NpcInit_Beehive) = {
+    IfEq(GF_MIM08_DefeatedBeehive, FALSE)
+        Call(SetNpcFlagBits, NPC_SELF, NPC_FLAG_INVISIBLE, TRUE)
+        Call(SetNpcFlagBits, NPC_SELF, NPC_FLAG_HAS_SHADOW, FALSE)
+        // Call(BindNpcIdle, NPC_SELF, Ref(N(EVS_NpcIdle_Beehive)))
+        // Call(BindNpcDefeat, NPC_SELF, Ref(N(EVS_NpcDefeat_Beehive)))
+    Else
+        Call(RemoveNpc, NPC_SELF)
+    EndIf
+    Return
+    End
+};
+
+EvtScript N(EVS_NpcIdle_Buzzbee) = {
     Label(100)
     Wait(1)
     IfEq(MV_ShakedTree, FALSE)
         Goto(100)
     EndIf
     Call(SetNpcPos, NPC_SELF, -280, 108, 0)
-    Call(SetNpcJumpscale, NPC_SELF, Float(0.0))
-    Call(NpcJump1, NPC_SELF, -280, 50, 10, 5)
-    Wait(50)
-    Call(BindNpcAI, NPC_SELF, Ref(N(EVS_NpcAI_Beehive)))
+    Call(SetNpcPos, NPC_Buzzbee -280, 108, 0)
+    Call(SetNpcFlagBits, NPC_Buzzbee, NPC_FLAG_INVISIBLE, FALSE)
+    Wait(15)
+    Loop(6)
+        Set(LVar0, 2)
+        Call(TranslateModel, MODEL_Beehive1, LVar0, 0, LVar0)
+        Call(TranslateModel, MODEL_Beehive2, LVar0, 0, LVar0)
+        Call(TranslateModel, MODEL_o443, LVar0, 0, LVar0)
+        Call(TranslateModel, MODEL_o442, LVar0, 0, LVar0)
+        Wait(1)
+        Set(LVar0, -2)
+        Call(TranslateModel, MODEL_Beehive1, LVar0, 0, LVar0)
+        Call(TranslateModel, MODEL_Beehive2, LVar0, 0, LVar0)
+        Call(TranslateModel, MODEL_o443, LVar0, 0, LVar0)
+        Call(TranslateModel, MODEL_o442, LVar0, 0, LVar0)
+        Wait(1)
+    EndLoop
+    Set(LVar0, 0)
+    Call(TranslateModel, MODEL_Beehive1, LVar0, 0, LVar0)
+    Call(TranslateModel, MODEL_Beehive2, LVar0, 0, LVar0)
+    Call(TranslateModel, MODEL_o443, LVar0, 0, LVar0)
+    Call(TranslateModel, MODEL_o442, LVar0, 0, LVar0)
+    Wait(1)
+    Call(NpcFacePlayer, NPC_Buzzbee, 0)
+    // Call(GetPlayerPos, LVar0, LVar1, LVar2)
+    // Call(UseSettingsFrom, CAM_DEFAULT, LVar0, LVar1, LVar2)
+    // Call(SetCamSpeed, CAM_DEFAULT, Float(4.0))
+    // Call(SetCamDistance, CAM_DEFAULT, 350)
+    // Call(GetNpcPos, NPC_Buzzbee, LVar0, LVar1, LVar2)
+    // Add(LVar1, 40)
+    // Call(SetPanTarget, CAM_DEFAULT, LVar0, LVar1, LVar2)
+    // Call(PanToTarget, CAM_DEFAULT, 0, TRUE)
+    // Wait(1)
+    Call(SetPlayerAnimation, ANIM_Mario1_Flail)
+    Call(GetPlayerPos, LVar0, 0, LVar2)
+    Sub(LVar0, 20)
+    Sub(LVar2, 40)
+    Call(GetNpcPos, NPC_PARTNER, 0, LVar1, 0)
+    Call(SetNpcAnimation, NPC_Buzzbee, ANIM_InsectsDK3_Buzzbee)
+    Call(SetNpcJumpscale, NPC_Buzzbee, Float(0.0))
+    Call(NpcJump1, NPC_Buzzbee, LVar0, LVar1, LVar2, 5)
+    Call(PlayerFaceNpc, NPC_Buzzbee, 0)
+    // Call(NpcFlyTo, NPC_Buzzbee, LVar0, LVar1, LVar2, 30, 0, EASING_LINEAR)
+    Wait(15)
+    Call(StartBossBattle, SONG_SPECIAL_BATTLE)
     Return
     End
 };
 
-EvtScript N(EVS_NpcInit_Beehive) = {
-    Call(BindNpcIdle, NPC_SELF, Ref(N(EVS_NpcIdle_Beehive)))
+EvtScript N(EVS_NpcDefeat_Buzzbee) = {
+    Call(GetBattleOutcome, LVar0)
+    Switch(LVar0)
+        CaseEq(OUTCOME_PLAYER_WON)
+            Set(GF_MIM08_DefeatedBeehive, TRUE)
+            Call(DoNpcDefeat)
+        CaseEq(OUTCOME_PLAYER_LOST)
+        CaseEq(OUTCOME_PLAYER_FLED)
+    EndSwitch
     Return
     End
 };
 
-NpcData N(NpcData_Beehive) = {
-    .id = NPC_Beehive,
-    .pos = { NPC_DISPOSE_LOCATION },
-    .yaw = GEN_BEEHIVE_DIR,
-    .territory = {
-        .wander = {
-            .isFlying = TRUE,
-            .moveSpeedOverride = NO_OVERRIDE_MOVEMENT_SPEED,
-            .wanderShape = SHAPE_CYLINDER,
-            .centerPos  = { -300, 60, 0 },
-            .wanderSize = { 60 },
-            .detectShape = SHAPE_CYLINDER,
-            .detectPos  = { -300, 60, 0 },
-            .detectSize = { 200 },
-        }
+EvtScript N(EVS_NpcInit_Buzzbee) = {
+    IfEq(GF_MIM08_DefeatedBeehive, FALSE)
+        Call(SetNpcFlagBits, NPC_SELF, NPC_FLAG_INVISIBLE, TRUE)
+        Call(SetNpcFlagBits, NPC_SELF, NPC_FLAG_HAS_SHADOW, FALSE)
+        Call(BindNpcIdle, NPC_SELF, Ref(N(EVS_NpcIdle_Buzzbee)))
+        Call(BindNpcDefeat, NPC_SELF, Ref(N(EVS_NpcDefeat_Buzzbee)))
+    Else
+        Call(RemoveNpc, NPC_SELF)
+    EndIf
+    Return
+    End
+};
+
+NpcData N(NpcData_Beehive)[] = {
+    {
+        .id = NPC_Beehive,
+        .pos = { NPC_DISPOSE_LOCATION },
+        .yaw = GEN_BEEHIVE_DIR,
+        .init = &N(EVS_NpcInit_Beehive),
+        .settings = &N(NpcSettings_Beehive),
+        .flags = ENEMY_FLAG_IGNORE_WORLD_COLLISION | ENEMY_FLAG_IGNORE_ENTITY_COLLISION | ENEMY_FLAG_FLYING | ENEMY_FLAG_NO_SHADOW_RAYCAST | ENEMY_FLAG_ACTIVE_WHILE_OFFSCREEN,
+        .drops = NO_DROPS,
+        .animations = BEEHIVE_ANIMS,
     },
-    .init = &N(EVS_NpcInit_Beehive),
-    .settings = &N(NpcSettings_Beehive),
-    .flags = ENEMY_FLAG_IGNORE_WORLD_COLLISION | ENEMY_FLAG_IGNORE_ENTITY_COLLISION | ENEMY_FLAG_FLYING | ENEMY_FLAG_NO_SHADOW_RAYCAST | ENEMY_FLAG_ACTIVE_WHILE_OFFSCREEN,
-    .drops = NO_DROPS,
-    .animations = BEEHIVE_ANIMS,
+    {
+        .id = NPC_Buzzbee,
+        .pos = { NPC_DISPOSE_LOCATION },
+        .yaw = 0,
+        .init = &N(EVS_NpcInit_Buzzbee),
+        .settings = &N(NpcSettings_Beehive),
+        .flags = ENEMY_FLAG_IGNORE_WORLD_COLLISION | ENEMY_FLAG_IGNORE_ENTITY_COLLISION | ENEMY_FLAG_FLYING | ENEMY_FLAG_NO_SHADOW_RAYCAST | ENEMY_FLAG_ACTIVE_WHILE_OFFSCREEN,
+        .drops = NO_DROPS,
+        .animations = BUZZBEE_ANIMS,
+    },
 };
 
 EvtScript N(EVS_NpcIdle_BooBully_1) = {
@@ -515,80 +657,6 @@ NpcSettings N(NpcSettings_Duplighost) = {
     .radius = 45,
     .level = ACTOR_LEVEL_NONE,
 };
-
-// EvtScript N(EVS_NpcAI_Duplighost_Flee) = {
-//     Call(GetNpcPos, NPC_SELF, LVar0, LVar1, LVar2)
-//     Add(LVar0, -130)
-//     Loop(0)
-//         Wait(1)
-//         Call(GetPlayerPos, LVar1, LVar2, LVar3)
-//         IfGe(LVar1, LVar0)
-//             BreakLoop
-//         EndIf
-//     EndLoop
-//     Call(DisablePlayerInput, TRUE)
-//     Call(PlaySoundAtNpc, NPC_SELF, SOUND_EMOTE_IDEA, SOUND_SPACE_DEFAULT)
-//     Call(ShowEmote, NPC_SELF, EMOTE_EXCLAMATION, 45, 20, EMOTER_NPC, 0, 0, 0, 0)
-//     Wait(20)
-//     Call(InterpNpcYaw, NPC_SELF, 90, 5)
-//     Call(SetNpcAnimation, NPC_SELF, ANIM_Duplighost_Anim04)
-//     Call(GetNpcPos, NPC_SELF, LVar0, LVar1, LVar2)
-//     Add(LVar0, 150)
-//     Call(NpcMoveTo, NPC_SELF, LVar0, -30, 20)
-//     Call(SetNpcAnimation, NPC_SELF, ANIM_Duplighost_Anim02)
-//     Call(SetNpcPos, NPC_SELF, NPC_DISPOSE_LOCATION)
-//     Call(DisablePlayerInput, FALSE)
-//     Return
-//     End
-// };
-
-// EvtScript N(EVS_NpcAI_Duplighost_Caught) = {
-//     Call(DisablePlayerInput, TRUE)
-//     Call(GetNpcPos, NPC_Follower, LVar2, LVar3, LVar4)
-//     Thread
-//         Add(LVar4, 15)
-//         Loop(8)
-//             PlayEffect(EFFECT_BIG_SMOKE_PUFF, LVar2, LVar3, LVar4, 1, 1, 1, 1)
-//             Wait(5)
-//         EndLoop
-//     EndThread
-//     Call(PlaySoundAtNpc, NPC_Follower, SOUND_GHOST_TRANSFORM, SOUND_SPACE_DEFAULT)
-//     Call(MakeLerp, 0, 1440, 20, EASING_QUADRATIC_IN)
-//     Loop(0)
-//         Call(UpdateLerp)
-//         Call(SetNpcRotation, NPC_Follower, 0, LVar0, 0)
-//         Wait(1)
-//         IfEq(LVar1, 0)
-//             BreakLoop
-//         EndIf
-//     EndLoop
-//     Call(PlaySoundAtNpc, NPC_Follower, SOUND_SMOKE_BURST, SOUND_SPACE_DEFAULT)
-//     Call(SetNpcPos, NPC_Guardian, NPC_DISPOSE_LOCATION)
-//     Call(SetNpcPos, NPC_Follower, NPC_DISPOSE_LOCATION)
-//     Call(EnableNpcShadow, NPC_Follower, FALSE)
-//     Call(SetNpcPos, NPC_SELF, LVar2, LVar3, LVar4)
-//     Call(SetNpcYaw, NPC_SELF, 270)
-//     Call(MakeLerp, -1440, 0, 20, EASING_QUADRATIC_OUT)
-//     Loop(0)
-//         Call(UpdateLerp)
-//         Call(SetNpcRotation, NPC_SELF, 0, LVar0, 0)
-//         Wait(1)
-//         IfEq(LVar1, 0)
-//             BreakLoop
-//         EndIf
-//     EndLoop
-//     Wait(10)
-//     Call(SpeakToPlayer, NPC_SELF, ANIM_Duplighost_Anim05, ANIM_Duplighost_Anim02, 0, MSG_CH8_002D)
-//     Call(StartBossBattle, SONG_SPECIAL_BATTLE)
-//     Call(GetPlayerPos, LVar0, LVar1, LVar2)
-//     IfLt(LVar0, 700)
-//         Add(LVar0, 30)
-//         Call(SetNpcAnimation, NPC_SELF, ANIM_Duplighost_Anim04)
-//         Call(NpcMoveTo, NPC_SELF, LVar0, LVar2, 35)
-//     EndIf
-//     Return
-//     End
-// };
 
 EvtScript N(EVS_NpcIdle_Duplighost) = {
     Loop(0)
@@ -696,7 +764,7 @@ NpcData N(NpcData_Oaklie) = {
 NpcGroupList N(DefaultNPCs) = {
     NPC_GROUP(N(NpcData_FreezyFuzzy), BTL_FOB_FORMATION_02, BTL_FOB_STAGE_00),
     NPC_GROUP(N(NpcData_PiranhaPlant), BTL_FOB_FORMATION_03, BTL_FOB_STAGE_00),
-    NPC_GROUP(N(NpcData_Beehive), BTL_FOB_FORMATION_07, BTL_FOB_STAGE_00),
+    NPC_GROUP(N(NpcData_Beehive), BTL_FOB_FORMATION_07, BTL_FOB_STAGE_01),
     NPC_GROUP(N(NpcData_BooBully_1)),
     NPC_GROUP(N(NpcData_BooBully_2)),
     NPC_GROUP(N(NpcData_Imposter), BTL_FOB_FORMATION_08, BTL_FOB_STAGE_00),
