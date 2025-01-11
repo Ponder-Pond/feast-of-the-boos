@@ -79,7 +79,7 @@ def write_ninja_rules(
 
     CPPFLAGS_EGCS = CPPFLAGS_COMMON + " -D__USE_ISOC99 -nostdinc"
 
-    CPPFLAGS = "-w " + CPPFLAGS_COMMON + " -nostdinc"
+    CPPFLAGS = CPPFLAGS_COMMON + " -nostdinc"
 
     cflags = f"-c -G0 -O2 -gdwarf-2 -B {BUILD_TOOLS}/cc/gcc/ {extra_cflags}"
 
@@ -92,7 +92,7 @@ def write_ninja_rules(
 
     ninja.variable("python", sys.executable)
 
-    ld_args = f"-T ver/$version/build/undefined_syms.txt -T ver/$version/undefined_syms_auto.txt -T ver/$version/undefined_funcs_auto.txt -Map $mapfile --no-check-sections -T $in -o $out"
+    ld_args = f"-T ver/$version/build/undefined_syms.txt -T ver/$version/undefined_syms_auto.txt -T ver/$version/undefined_funcs_auto.txt -Map $mapfile --no-check-sections --whole-archive -T $in -o $out"
     ld = f"{cross}ld" if not "PAPERMARIO_LD" in os.environ else os.environ["PAPERMARIO_LD"]
 
     ninja.rule(
@@ -148,7 +148,7 @@ def write_ninja_rules(
     ninja.rule(
         "cc_modern",
         description="gcc_modern $in",
-        command=f"{ccache}{cc_modern} {cflags_modern} $cflags {CPPFLAGS} {extra_cppflags} $cppflags -D_LANGUAGE_C -MD -MF $out.d $in -o $out",
+        command=f"{ccache}{cc_modern} {cflags_modern} $cflags {CPPFLAGS} {extra_cppflags} $cppflags -D_LANGUAGE_C -Werror=implicit -Werror=old-style-declaration -Werror=missing-parameter-type -MD -MF $out.d $in -o $out",
         depfile="$out.d",
         deps="gcc",
     )
@@ -1398,29 +1398,6 @@ if __name__ == "__main__":
     args.non_matching = not args.no_non_matching
     args.ccache = not args.no_ccache
 
-    exec_shell(["make", "-C", str(ROOT / args.splat)])
-
-    # on macOS, /usr/bin/cpp defaults to clang rather than gcc (but we need gcc's)
-    if (
-        args.cpp is None
-        and sys.platform == "darwin"
-        and "Free Software Foundation" not in exec_shell(["cpp", "--version"])
-    ):
-        gcc_cpps = ("cpp-14", "cpp-13", "cpp-12", "cpp-11")
-        for ver in gcc_cpps:
-            try:
-                if "Free Software Foundation" in exec_shell([ver, "--version"]):
-                    args.cpp = ver
-                    break
-            except FileNotFoundError:
-                pass
-        if args.cpp is None:
-            print("error: system C preprocessor is not GNU!")
-            print("This is a known issue on macOS - only clang's cpp is installed by default.")
-            print("Use 'brew' to obtain GNU cpp, then run this script again with the --cpp option, e.g.")
-            print(f"    ./configure --cpp {gcc_cpps[0]}")
-            exit(1)
-
     version_err_msg = ""
     missing_tools = []
     version_old_tools = []
@@ -1500,7 +1477,11 @@ if __name__ == "__main__":
     if args.shift:
         extra_cppflags += " -DSHIFT"
 
-    extra_cflags += " -Wmissing-braces -Wredundant-decls -Wno-redundant-decls"
+    extra_cflags += " -Wall -Wno-narrowing -Winline"
+
+    # Warnings made into errors by default in GCC 14
+    # https://gcc.gnu.org/gcc-14/porting_to.html#warnings-as-errors
+    extra_cflags += " --warn-missing-parameter-type -Wincompatible-pointer-types -Wint-conversion -Wreturn-type"
 
     # add splat to python import path
     sys.path.insert(0, str((ROOT / args.splat / "src").resolve()))
@@ -1511,7 +1492,7 @@ if __name__ == "__main__":
 
     write_ninja_rules(
         ninja,
-        args.cpp or "cpp",
+        args.cpp or "mips-linux-gnu-cpp",
         extra_cppflags,
         extra_cflags,
         args.ccache,
