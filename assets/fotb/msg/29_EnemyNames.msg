@@ -558,6 +558,10 @@
 	Jr. Troopa Gang[End]
 }
 
+#message:29:(EnemyName_KingBoo) {
+	King Boo[End]
+}
+
 #message:29:(EnemyName_MimicChest) {
 	Mimic Chest[End]
 }

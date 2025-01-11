@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Map desc="Bee Hive (HP Plus)" background="fob_bg" textures="mim_tex">
 	<Editor>
-		<Camera pos="-45.918411,58.503735,-31.185354" pitch="17.919975" yaw="261.039978"/>
-		<Camera pos="-72.108910,65536.000000,-57.157574"/>
-		<Camera pos="65536.000000,16.494497,-78.775162"/>
-		<Camera pos="-97.194275,47.559654,65536.000000"/>
+		<Camera pos="165.890350,85.860733,-296.671936" pitch="-17.159964" yaw="152.800064"/>
+		<Camera pos="278.000000,65536.000000,-176.713394"/>
+		<Camera pos="65536.000000,107.000000,-188.000000"/>
+		<Camera pos="278.000000,107.000000,65536.000000"/>
 	</Editor>
 	<ModelTree>
 		<Node name="Root" id="83">
@@ -173,7 +173,7 @@
 		</Node>
 	</ModelTree>
 	<ColliderTree>
-		<Node name="Root" id="28">
+		<Node name="Root" id="2E">
 			<Node name="g1" id="2">
 				<Node name="o474" id="0"/>
 				<Node name="o493" id="1"/>
@@ -226,6 +226,15 @@
 				<Node name="monw" id="25"/>
 			</Node>
 			<Node name="ChestLockCollider" id="27"/>
+			<Node name="RockGroup1" id="29">
+				<Node name="Rock1Col" id="28"/>
+			</Node>
+			<Node name="RockGroup2" id="2B">
+				<Node name="Rock2Col" id="2A"/>
+			</Node>
+			<Node name="RockGroup3" id="2D">
+				<Node name="Rock3Col" id="2C"/>
+			</Node>
 		</Node>
 	</ColliderTree>
 	<ZoneTree>
@@ -7391,8 +7400,104 @@
 	</Models>
 	<Colliders>
 		<Collider ver="0" flags="0" surface="0">
-			<MapObject name="Root" id="28"/>
+			<MapObject name="Root" id="2E"/>
 			<HitObject type="ROOT"/>
+		</Collider>
+		<Collider ver="0" flags="0" surface="0">
+			<MapObject name="RockGroup3" id="2D"/>
+			<HitObject type="GROUP"/>
+		</Collider>
+		<Collider ver="0" flags="0" surface="0">
+			<MapObject name="Rock3Col" id="2C"/>
+			<HitObject type="HIT"/>
+			<HitMesh ver="0">
+				<TriangleBatch ver="0">
+					<VertexTable>
+						<Vertex xyz="-286,216,64" uv="-512,512"/>
+						<Vertex xyz="-389,-1,89" uv="512,-512"/>
+						<Vertex xyz="-390,216,94" uv="-512,-512"/>
+						<Vertex xyz="-389,-1,89" uv="512,-512"/>
+						<Vertex xyz="-286,216,64" uv="-512,512"/>
+						<Vertex xyz="-285,0,59" uv="512,512"/>
+						<Vertex xyz="-340,217,180" uv="512,-512"/>
+						<Vertex xyz="-253,0,128" uv="-512,512"/>
+						<Vertex xyz="-252,216,123" uv="512,512"/>
+						<Vertex xyz="-253,0,128" uv="-512,512"/>
+						<Vertex xyz="-340,217,180" uv="512,-512"/>
+						<Vertex xyz="-342,0,184" uv="-512,-512"/>
+					</VertexTable>
+					<TriangleList>
+						<Triangle ijk="0,1,2"/>
+						<Triangle ijk="3,4,5"/>
+						<Triangle ijk="6,7,8"/>
+						<Triangle ijk="9,10,11"/>
+					</TriangleList>
+				</TriangleBatch>
+			</HitMesh>
+		</Collider>
+		<Collider ver="0" flags="0" surface="0">
+			<MapObject name="RockGroup2" id="2B"/>
+			<HitObject type="GROUP"/>
+		</Collider>
+		<Collider ver="0" flags="0" surface="0">
+			<MapObject name="Rock2Col" id="2A"/>
+			<HitObject type="HIT"/>
+			<HitMesh ver="0">
+				<TriangleBatch ver="0">
+					<VertexTable>
+						<Vertex xyz="330,216,-218" uv="-512,512"/>
+						<Vertex xyz="237,-1,-165" uv="512,-512"/>
+						<Vertex xyz="238,216,-160" uv="-512,-512"/>
+						<Vertex xyz="237,-1,-165" uv="512,-512"/>
+						<Vertex xyz="330,216,-218" uv="-512,512"/>
+						<Vertex xyz="329,0,-223" uv="512,512"/>
+						<Vertex xyz="282,217,-93" uv="512,-512"/>
+						<Vertex xyz="369,0,-145" uv="-512,512"/>
+						<Vertex xyz="370,216,-150" uv="512,512"/>
+						<Vertex xyz="369,0,-145" uv="-512,512"/>
+						<Vertex xyz="282,217,-93" uv="512,-512"/>
+						<Vertex xyz="280,0,-89" uv="-512,-512"/>
+					</VertexTable>
+					<TriangleList>
+						<Triangle ijk="0,1,2"/>
+						<Triangle ijk="3,4,5"/>
+						<Triangle ijk="6,7,8"/>
+						<Triangle ijk="9,10,11"/>
+					</TriangleList>
+				</TriangleBatch>
+			</HitMesh>
+		</Collider>
+		<Collider ver="0" flags="0" surface="0">
+			<MapObject name="RockGroup1" id="29"/>
+			<HitObject type="GROUP"/>
+		</Collider>
+		<Collider ver="0" flags="0" surface="0">
+			<MapObject name="Rock1Col" id="28"/>
+			<HitObject type="HIT"/>
+			<HitMesh ver="0">
+				<TriangleBatch ver="0">
+					<VertexTable>
+						<Vertex xyz="-303,216,-251" uv="-512,512"/>
+						<Vertex xyz="-233,-1,-171" uv="512,-512"/>
+						<Vertex xyz="-228,216,-172" uv="-512,-512"/>
+						<Vertex xyz="-233,-1,-171" uv="512,-512"/>
+						<Vertex xyz="-303,216,-251" uv="-512,512"/>
+						<Vertex xyz="-308,0,-249" uv="512,512"/>
+						<Vertex xyz="-186,217,-225" uv="512,-512"/>
+						<Vertex xyz="-225,0,-318" uv="-512,512"/>
+						<Vertex xyz="-230,216,-320" uv="512,512"/>
+						<Vertex xyz="-225,0,-318" uv="-512,512"/>
+						<Vertex xyz="-186,217,-225" uv="512,-512"/>
+						<Vertex xyz="-182,0,-223" uv="-512,-512"/>
+					</VertexTable>
+					<TriangleList>
+						<Triangle ijk="0,1,2"/>
+						<Triangle ijk="3,4,5"/>
+						<Triangle ijk="6,7,8"/>
+						<Triangle ijk="9,10,11"/>
+					</TriangleList>
+				</TriangleBatch>
+			</HitMesh>
 		</Collider>
 		<Collider ver="0" flags="0" surface="0">
 			<MapObject name="ChestLockCollider" id="27"/>

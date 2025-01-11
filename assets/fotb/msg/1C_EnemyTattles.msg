@@ -3348,6 +3348,11 @@
 	[Wait][End]
 }
 
+#message:1C:(EnemyTattle_KingBoo) {
+	[Style right]
+	Test[BR]
+	[Wait][End]
+}
 
 #message:1C:(EnemyTattle_MimicChest)
 {
@@ -3355,4 +3360,3 @@
 	Test[BR]
 	[Wait][End]
 }
-

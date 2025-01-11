@@ -6887,6 +6887,8 @@ segments:
     - [auto, c, actor/duplighost]
     - [auto, c, actor/beehive]
     - [auto, c, actor/jr_troopa_gang]
+    - [auto, c, actor/clone]
+    - [auto, c, actor/king_boo]
     - [auto, c, stage/fob_01]
     - [auto, c, stage/fob_02]
 

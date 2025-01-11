@@ -5,6 +5,20 @@
 #include "world/common/todo/RemovePadlock.inc.c"
 #include "world/common/todo/GetEntityPosition.inc.c"
 
+EvtScript N(EVS_CheckBlockade) = {
+    IfLt(GB_StoryProgress, STORY_MOD_CUTSCENE_5)
+        Call(DisablePlayerInput, TRUE)
+        Call(ShowMessageAtScreenPos, MSG_FotB_0004, 160, 40)
+        Call(DisablePlayerInput, FALSE)
+    Else
+        Call(DisablePlayerInput, TRUE)
+        Call(ShowMessageAtScreenPos, MSG_FotB_0027, 160, 40)
+        Call(DisablePlayerInput, FALSE)
+    EndIf
+    Return
+    End
+};
+
 EvtScript N(EVS_DropShrinkStomp) = {
     Call(DisablePlayerInput, TRUE)
     Loop(12)
@@ -95,6 +109,9 @@ EvtScript N(EVS_MakeEntities) = {
     Call(AssignScript, Ref(N(EVS_OpenChest_Oaklie)))
     Call(MakeEntity, Ref(Entity_HeartBlock), GEN_HP_BLOCK_VEC, GEN_HP_BLOCK_DIR, MAKE_ENTITY_END)
     Call(MakeEntity, Ref(Entity_SavePoint), GEN_SAVE_BLOCK_VEC, GEN_SAVE_BLOCK_DIR, MAKE_ENTITY_END)
+    BindTrigger(Ref(N(EVS_CheckBlockade)),  TRIGGER_WALL_PRESS_A, COLLIDER_Rock1Col, 1, 0)
+    BindTrigger(Ref(N(EVS_CheckBlockade)),  TRIGGER_WALL_PRESS_A, COLLIDER_Rock2Col, 1, 0)
+    BindTrigger(Ref(N(EVS_CheckBlockade)),  TRIGGER_WALL_PRESS_A, COLLIDER_Rock3Col, 1, 0)
     Return
     End
 };

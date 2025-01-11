@@ -1,4 +1,6 @@
-#define COLLIDER_Root           0x2E
+#define COLLIDER_Root           0x30
+#define COLLIDER_RockGroup1     0x2F
+#define COLLIDER_Rock1Col       0x2E
 #define COLLIDER_BluePipeGroup  0x2D
 #define COLLIDER_BluePipeTop    0x2C
 #define COLLIDER_BluePipeBody   0x2B

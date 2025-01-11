@@ -946,7 +946,7 @@ enum GameFlags {
     GF_MIM10_Defeated_JrTroopa                  = GameFlag(0x3AE),
     GF_MIM11_ItemBlock_VoltShroom               = GameFlag(0x3AF),
     GF_MIM12_HiddenPanel                        = GameFlag(0x3B0),
-    GF_Unused_MIM_15                            = GameFlag(0x3B1),
+    GF_MIM03_SpokeToOaklie                      = GameFlag(0x3B1),
     GF_Unused_MIM_16                            = GameFlag(0x3B2),
     GF_Unused_MIM_17                            = GameFlag(0x3B3),
     GF_Unused_MIM_18                            = GameFlag(0x3B4),

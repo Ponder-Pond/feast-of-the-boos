@@ -313,9 +313,27 @@ NpcData N(NpcData_DupiOaklie) = {
 };
 
 EvtScript N(EVS_NpcInteract_Oaklie) = {
-    Call(DisablePlayerInput, TRUE)
-
-    Call(DisablePlayerInput, FALSE)
+    IfEq(GF_MIM03_SpokeToOaklie, FALSE)
+        Call(DisablePlayerInput, TRUE)
+        Call(DisablePartnerAI, 0)
+        Call(SpeakToPlayer, NPC_SELF, ANIM_Oaklie_Talk, ANIM_Oaklie_Idle, 0, MSG_FotB_0028)
+        Call(SpeakToNpc, NPC_PARTNER, ANIM_WorldBow_Talk, ANIM_WorldBow_Idle, 0, NPC_Oaklie, MSG_FotB_0029)
+        Call(SpeakToNpc, NPC_PARTNER, ANIM_WorldBow_Laugh, ANIM_WorldBow_Laugh, 0, NPC_Oaklie, MSG_FotB_002A)
+        Call(SpeakToPlayer, NPC_SELF, ANIM_Oaklie_Talk, ANIM_Oaklie_Idle, 0, MSG_FotB_002B)
+        Call(PlaySoundAtNpc, NPC_PARTNER, SOUND_EMOTE_QUESTION, SOUND_SPACE_DEFAULT)
+        Call(ShowEmote, NPC_PARTNER, EMOTE_QUESTION, 0, 25, EMOTER_NPC, 0, 0, 0, 0)
+        Wait(25)
+        Call(SpeakToPlayer, NPC_SELF, ANIM_Oaklie_Talk, ANIM_Oaklie_Idle, 0, MSG_FotB_002C)
+        Set(GF_MIM03_SpokeToOaklie, TRUE)
+        Call(EnablePartnerAI)
+        Call(DisablePlayerInput, FALSE)
+    Else
+        Call(DisablePlayerInput, TRUE)
+        Call(DisablePartnerAI, 0)
+        Call(SpeakToPlayer, NPC_SELF, ANIM_Oaklie_Talk, ANIM_Oaklie_Idle, 0, MSG_FotB_002C)
+        Call(EnablePartnerAI)
+        Call(DisablePlayerInput, FALSE)
+    EndIf
     Return
     End
 };

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Map desc="Laughing Rock" background="fob_bg" textures="mim_tex">
 	<Editor>
-		<Camera pos="-311.667084,51.323151,142.792770" pitch="24.999979" yaw="149.680115"/>
-		<Camera pos="-208.000000,65536.000000,-270.000000"/>
+		<Camera pos="-321.910126,287.062592,290.586517" pitch="30.560066" yaw="51.601334"/>
+		<Camera pos="-208.119324,65536.000000,307.131226"/>
 		<Camera pos="65536.000000,0.000000,-270.000000"/>
 		<Camera pos="-208.000000,0.000000,65536.000000"/>
 	</Editor>
@@ -179,7 +179,7 @@
 		</Node>
 	</ModelTree>
 	<ColliderTree>
-		<Node name="Root" id="27">
+		<Node name="Root" id="2B">
 			<Node name="exit" id="14">
 				<Node name="exit_n" id="4">
 					<Node name="deilitn" id="0"/>
@@ -231,6 +231,12 @@
 			<Node name="GreenPipeGroup" id="26">
 				<Node name="GreenPipeBody" id="24"/>
 				<Node name="GreenPipeTop" id="25"/>
+			</Node>
+			<Node name="RockGroup1" id="28">
+				<Node name="Rock1Col" id="27"/>
+			</Node>
+			<Node name="RockGroup2" id="2A">
+				<Node name="Rock2Col" id="29"/>
 			</Node>
 		</Node>
 	</ColliderTree>
@@ -7033,8 +7039,72 @@
 	</Models>
 	<Colliders>
 		<Collider ver="0" flags="0" surface="0">
-			<MapObject name="Root" id="27"/>
+			<MapObject name="Root" id="2B"/>
 			<HitObject type="ROOT"/>
+		</Collider>
+		<Collider ver="0" flags="0" surface="0">
+			<MapObject name="RockGroup2" id="2A"/>
+			<HitObject type="GROUP"/>
+		</Collider>
+		<Collider ver="0" flags="0" surface="0">
+			<MapObject name="Rock2Col" id="29"/>
+			<HitObject type="HIT"/>
+			<HitMesh ver="0">
+				<TriangleBatch ver="0">
+					<VertexTable>
+						<Vertex xyz="-225,216,183" uv="-512,512"/>
+						<Vertex xyz="-299,-1,258" uv="512,-512"/>
+						<Vertex xyz="-298,216,262" uv="-512,-512"/>
+						<Vertex xyz="-299,-1,258" uv="512,-512"/>
+						<Vertex xyz="-225,216,183" uv="-512,512"/>
+						<Vertex xyz="-226,0,178" uv="512,512"/>
+						<Vertex xyz="-222,217,317" uv="512,-512"/>
+						<Vertex xyz="-173,0,228" uv="-512,512"/>
+						<Vertex xyz="-174,216,223" uv="512,512"/>
+						<Vertex xyz="-173,0,228" uv="-512,512"/>
+						<Vertex xyz="-222,217,317" uv="512,-512"/>
+						<Vertex xyz="-221,0,322" uv="-512,-512"/>
+					</VertexTable>
+					<TriangleList>
+						<Triangle ijk="0,1,2"/>
+						<Triangle ijk="3,4,5"/>
+						<Triangle ijk="6,7,8"/>
+						<Triangle ijk="9,10,11"/>
+					</TriangleList>
+				</TriangleBatch>
+			</HitMesh>
+		</Collider>
+		<Collider ver="0" flags="0" surface="0">
+			<MapObject name="RockGroup1" id="28"/>
+			<HitObject type="GROUP"/>
+		</Collider>
+		<Collider ver="0" flags="0" surface="0">
+			<MapObject name="Rock1Col" id="27"/>
+			<HitObject type="HIT"/>
+			<HitMesh ver="0">
+				<TriangleBatch ver="0">
+					<VertexTable>
+						<Vertex xyz="-196,216,-334" uv="-512,512"/>
+						<Vertex xyz="-135,-1,-248" uv="512,-512"/>
+						<Vertex xyz="-130,216,-248" uv="-512,-512"/>
+						<Vertex xyz="-135,-1,-248" uv="512,-512"/>
+						<Vertex xyz="-196,216,-334" uv="-512,512"/>
+						<Vertex xyz="-201,0,-333" uv="512,512"/>
+						<Vertex xyz="-82,217,-289" uv="512,-512"/>
+						<Vertex xyz="-104,0,-388" uv="-512,512"/>
+						<Vertex xyz="-108,216,-391" uv="512,512"/>
+						<Vertex xyz="-104,0,-388" uv="-512,512"/>
+						<Vertex xyz="-82,217,-289" uv="512,-512"/>
+						<Vertex xyz="-78,0,-286" uv="-512,-512"/>
+					</VertexTable>
+					<TriangleList>
+						<Triangle ijk="0,1,2"/>
+						<Triangle ijk="3,4,5"/>
+						<Triangle ijk="6,7,8"/>
+						<Triangle ijk="9,10,11"/>
+					</TriangleList>
+				</TriangleBatch>
+			</HitMesh>
 		</Collider>
 		<Collider ver="0" flags="0" surface="0">
 			<MapObject name="GreenPipeGroup" id="26"/>

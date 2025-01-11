@@ -3,6 +3,20 @@
 
 #include "world/common/entity/Chest.inc.c"
 
+EvtScript N(EVS_CheckBlockade) = {
+    IfLt(GB_StoryProgress, STORY_MOD_CUTSCENE_5)
+        Call(DisablePlayerInput, TRUE)
+        Call(ShowMessageAtScreenPos, MSG_FotB_0004, 160, 40)
+        Call(DisablePlayerInput, FALSE)
+    Else
+        Call(DisablePlayerInput, TRUE)
+        Call(ShowMessageAtScreenPos, MSG_FotB_0027, 160, 40)
+        Call(DisablePlayerInput, FALSE)
+    EndIf
+    Return
+    End
+};
+
 EvtScript N(EVS_OpenChest_BooBullyFormation) = {
     Call(DisablePlayerInput, TRUE)
     Set(GF_MIM07_Chest_BooBullyFormation, TRUE)
@@ -39,6 +53,8 @@ EvtScript N(EVS_MakeEntities) = {
     Call(AssignScript, Ref(N(EVS_OpenChest)))
     Call(MakeEntity, Ref(Entity_Signpost), 280, 0, 0, 90, MAKE_ENTITY_END)
     Call(AssignScript, Ref(N(EVS_ReadSign)))
+    BindTrigger(Ref(N(EVS_CheckBlockade)),  TRIGGER_WALL_PRESS_A, COLLIDER_Rock1Col, 1, 0)
+    BindTrigger(Ref(N(EVS_CheckBlockade)),  TRIGGER_WALL_PRESS_A, COLLIDER_Rock2Col, 1, 0)
     Return
     End
 };

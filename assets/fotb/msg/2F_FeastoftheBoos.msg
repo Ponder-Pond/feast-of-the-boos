@@ -11,12 +11,16 @@ when I left this morning...[BR]
 
 
 
+
+
 #message:2F:(FotB_0001)
 {
 [Style right]
 Let's be careful![BR]
 [Wait][End]
 }
+
+
 
 
 
@@ -34,12 +38,16 @@ is a death sentence![BR]
 
 
 
+
+
 #message:2F:(FotB_0003)
 {
 [Style Inspect]
 The gate won't move, it's jammed.[BR]
 [Wait][End]
 }
+
+
 
 
 
@@ -58,6 +66,8 @@ It sounds like snickering.[BR]
 
 
 
+
+
 #message:2F:(FotB_0005)
 {
 [Style right]
@@ -72,6 +82,8 @@ off the path?[BR]
 
 
 
+
+
 #message:2F:(FotB_0006)
 {
 [Style right]
@@ -79,6 +91,8 @@ Let's keep going, Bootler will be[BR]
 worried if we dawdle too long.[BR]
 [Wait][End]
 }
+
+
 
 
 
@@ -95,6 +109,8 @@ Hey, you![BR]
 
 
 
+
+
 #message:2F:(FotB_0008)
 {
 [Style right]
@@ -102,6 +118,8 @@ Maybe he's hard of hearing,[BR]
 let's try this...[BR]
 [Wait][End]
 }
+
+
 
 
 
@@ -117,6 +135,8 @@ let's try this...[BR]
 
 
 
+
+
 #message:2F:(FotB_000A)
 {
 [Style right]
@@ -124,6 +144,8 @@ Hey! Don't just ignore us like[BR]
 that you lout! Come back here![BR]
 [Wait][End]
 }
+
+
 
 
 
@@ -139,12 +161,16 @@ Let's follow him![BR]
 
 
 
+
+
 #message:2F:(FotB_000C)
 {
 [Style right]
 There he is![BR]
 [Wait][End]
 }
+
+
 
 
 
@@ -159,6 +185,8 @@ Hey Okey! ...Dokey? No, no..[BR]
 
 
 
+
+
 #message:2F:(FotB_000E)
 {
 [Style right]
@@ -166,6 +194,8 @@ Hey Okey! ...Dokey? No, no..[BR]
 We request your help![BR]
 [Wait][End]
 }
+
+
 
 
 
@@ -184,6 +214,8 @@ What's going on? Can you help us?[BR]
 
 
 
+
+
 #message:2F:(FotB_0010)
 {
 [Style right]
@@ -191,6 +223,8 @@ What's going on? Can you help us?[BR]
 direction?[BR]
 [Wait][End]
 }
+
+
 
 
 
@@ -206,6 +240,8 @@ it was a trap![BR]
 
 
 
+
+
 #message:2F:(FotB_0012)
 {
 [Style right]
@@ -213,6 +249,8 @@ More like an am-[Shake]BOO
 [Shake]Heh heh heh!
 [Wait][End]
 }
+
+
 
 
 
@@ -229,6 +267,8 @@ I'm not missing the party for[BR]this, I was lookout last time!![BR]
 
 
 
+
+
 #message:2F:(FotB_0014)
 {
 [Style right]
@@ -240,6 +280,8 @@ getting lost in the forest again![BR]
 
 
 
+
+
 #message:2F:(FotB_0015)
 {
 [Style right]
@@ -247,6 +289,8 @@ Party? What on earth were[BR]
 they talking about?[BR]
 [Wait][End]
 }
+
+
 
 
 
@@ -267,12 +311,16 @@ bullies at my home![BR]
 
 
 
+
+
 #message:2F:(FotB_0017)
 {
 [Style right]
 [Wave]Oooo.... ughhh.....
 [Wait][End]
 }
+
+
 
 
 
@@ -289,12 +337,16 @@ Boos a bad name![BR]
 
 
 
+
+
 #message:2F:(FotB_0019)
 {
 [Style right]
 ...Oh? From the chest?[BR]
 [Wait][End]
 }
+
+
 
 
 
@@ -310,6 +362,8 @@ out of there.[BR]
 
 
 
+
+
 #message:2F:(FotB_001B)
 {
 [Style right]
@@ -320,12 +374,16 @@ Oof... What a bunch of rude kids...[BR]
 
 
 
+
+
 #message:2F:(FotB_001C)
 {
 [Style right]
 Oaklie! Are you alright?[BR]
 [Wait][End]
 }
+
+
 
 
 
@@ -343,6 +401,8 @@ chest is difficult to breathe in.[BR]
 
 
 
+
+
 #message:2F:(FotB_001E)
 {
 [Style right]
@@ -356,6 +416,8 @@ We can't even make our way[BR]
 back to the Manor![BR]
 [Wait][End]
 }
+
+
 
 
 
@@ -379,6 +441,8 @@ trapped me inside that chest.[BR]
 
 
 
+
+
 #message:2F:(FotB_0020)
 {
 [Style right]
@@ -387,6 +451,8 @@ I feel uneasiness in the[BR]
 forest tonight...[BR]
 [Wait][End]
 }
+
+
 
 
 
@@ -400,6 +466,8 @@ know of some hidden detours[BR]
 we can make use of.[BR]
 [Wait][End]
 }
+
+
 
 
 
@@ -420,12 +488,16 @@ them for too long.[BR]
 
 
 
+
+
 #message:2F:(FotB_0023)
 {
 [Style right]
 Follow me to the clearing.[BR]
 [Wait][End]
 }
+
+
 
 
 
@@ -447,12 +519,16 @@ should arrive safely.[BR]
 
 
 
+
+
 #message:2F:(FotB_0025)
 {
 [Style right]
 Oh wonderful! Thank you Oaklie![BR]
 [Wait][End]
 }
+
+
 
 
 
@@ -464,3 +540,73 @@ Come now Mario, a fancy feast[BR]
 awaits you![BR]
 [Wait][End]
 }
+
+
+#message:2F:(FotB_0027)
+{
+[Style Inspect]
+There are noises coming from[BR]
+the rock.[BR]
+[Wait][Next]
+It sounds like snoring.[BR]
+[Wait][End]
+}
+
+
+
+#message:2F:(FotB_0028)
+{
+[Style right]
+I hear talk of a dinner party,[BR]
+were those Boos back there[BR]
+on the guest list?[BR]
+[Wait][End]
+}
+
+
+#message:2F:(FotB_0029)
+{
+[Style right]
+Oh, not at all! We don’t know[BR]
+where those bullies came from![BR]
+[Wait][End]
+}
+
+
+#message:2F:(FotB_002A)
+{
+[Style right]
+I expect my visitors to display[BR]
+more class than that! I wouldn’t[BR]
+invite such dirty ruffians to[BR]
+such a fancy dinner![BR]
+[Wait][End]
+}
+
+
+#message:2F:(FotB_002B)
+{
+[Style right]
+Ah, is that right? It sounds like[BR]
+quite a fun time every year...[BR]
+[Wait][Next]
+Companions are rare in the[BR]
+forest, usually we’re the[BR]
+dinner here...[BR]
+[Wait][End]
+}
+
+
+#message:2F:(FotB_002C)
+{
+[Style right]
+Oh! Pardon me![BR]
+[Wait][Next]
+You should move along before[BR]
+the weather gets fierce, head[BR]
+into that Pipe to reach the back[BR]
+entrance of the forest.[BR]
+[Wait][End]
+}
+
+
