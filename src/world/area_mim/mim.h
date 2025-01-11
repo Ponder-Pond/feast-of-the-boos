@@ -41,5 +41,6 @@ extern MapSettings mim_09_settings;
 extern MapSettings mim_10_settings;
 extern MapSettings mim_11_settings;
 extern MapSettings mim_12_settings;
+extern MapSettings mim_13_settings;
 
 #endif
