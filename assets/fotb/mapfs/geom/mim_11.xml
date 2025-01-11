@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Map desc="Outside Boo's Mansion" background="fob_bg" textures="mim_tex">
 	<Editor>
-		<Camera pos="-42.459030,342.223816,-53.488968" pitch="39.600029" yaw="36.800148"/>
-		<Camera pos="18.484102,65536.000000,71.317825"/>
-		<Camera pos="65536.000000,1225.969971,2043.907837"/>
-		<Camera pos="-149.856995,65.887245,65536.000000"/>
+		<Camera pos="-163.668991,50.017574,-573.736023" pitch="58.880001" yaw="179.439819"/>
+		<Camera pos="-156.041885,65536.000000,-559.379578"/>
+		<Camera pos="65536.000000,17.000000,-553.000000"/>
+		<Camera pos="-160.622177,16.830910,65536.000000"/>
 	</Editor>
 	<ModelTree>
 		<Node name="Root" id="8A">
@@ -176,7 +176,7 @@
 		</Node>
 	</ModelTree>
 	<ColliderTree>
-		<Node name="Root" id="2C">
+		<Node name="Root" id="2D">
 			<Node name="exit" id="D">
 				<Node name="exite" id="3">
 					<Node name="deilite" id="0"/>
@@ -231,6 +231,7 @@
 			<Node name="CylinderCollider" id="29"/>
 			<Node name="CylinderCollider" id="2A"/>
 			<Node name="MeshCollider" id="2B"/>
+			<Node name="WellInside" id="2C"/>
 		</Node>
 	</ColliderTree>
 	<ZoneTree>
@@ -245,7 +246,9 @@
 		</Node>
 	</ZoneTree>
 	<MarkerTree>
-		<Node name="Root" id="FFFFFFFF"/>
+		<Node name="Root" id="0">
+			<Node name="Entry6" id="FFFFFFFF"/>
+		</Node>
 	</MarkerTree>
 	<LightSets>
 		<LightSet name="Lights_None" a="0">
@@ -8674,8 +8677,60 @@
 	</Models>
 	<Colliders>
 		<Collider ver="0" flags="0" surface="0">
-			<MapObject name="Root" id="2C"/>
+			<MapObject name="Root" id="2D"/>
 			<HitObject type="ROOT"/>
+		</Collider>
+		<Collider ver="0" flags="0" surface="0">
+			<MapObject name="WellInside" id="2C"/>
+			<HitObject type="HIT"/>
+			<HitMesh ver="0">
+				<TriangleBatch ver="0">
+					<VertexTable>
+						<Vertex xyz="-153,11,-529"/>
+						<Vertex xyz="-141,11,-538"/>
+						<Vertex xyz="-161,11,-553"/>
+						<Vertex xyz="-169,11,-529"/>
+						<Vertex xyz="-161,11,-553"/>
+						<Vertex xyz="-181,11,-538"/>
+						<Vertex xyz="-169,11,-529"/>
+						<Vertex xyz="-153,11,-529"/>
+						<Vertex xyz="-161,11,-553"/>
+						<Vertex xyz="-186,11,-553"/>
+						<Vertex xyz="-181,11,-538"/>
+						<Vertex xyz="-161,11,-553"/>
+						<Vertex xyz="-181,11,-568"/>
+						<Vertex xyz="-186,11,-553"/>
+						<Vertex xyz="-161,11,-553"/>
+						<Vertex xyz="-169,11,-577"/>
+						<Vertex xyz="-181,11,-568"/>
+						<Vertex xyz="-161,11,-553"/>
+						<Vertex xyz="-153,11,-577"/>
+						<Vertex xyz="-161,11,-553"/>
+						<Vertex xyz="-141,11,-568"/>
+						<Vertex xyz="-153,11,-577"/>
+						<Vertex xyz="-169,11,-577"/>
+						<Vertex xyz="-161,11,-553"/>
+						<Vertex xyz="-136,11,-553"/>
+						<Vertex xyz="-141,11,-568"/>
+						<Vertex xyz="-161,11,-553"/>
+						<Vertex xyz="-141,11,-538"/>
+						<Vertex xyz="-136,11,-553"/>
+						<Vertex xyz="-161,11,-553"/>
+					</VertexTable>
+					<TriangleList>
+						<Triangle ijk="0,1,2"/>
+						<Triangle ijk="3,4,5"/>
+						<Triangle ijk="6,7,8"/>
+						<Triangle ijk="9,10,11"/>
+						<Triangle ijk="12,13,14"/>
+						<Triangle ijk="15,16,17"/>
+						<Triangle ijk="18,19,20"/>
+						<Triangle ijk="21,22,23"/>
+						<Triangle ijk="24,25,26"/>
+						<Triangle ijk="27,28,29"/>
+					</TriangleList>
+				</TriangleBatch>
+			</HitMesh>
 		</Collider>
 		<Collider ver="0" flags="0" surface="0">
 			<MapObject name="MeshCollider" id="2B"/>
@@ -10348,7 +10403,10 @@
 	</Zones>
 	<Markers>
 		<Marker ver="4" type="Root">
-			<MapObject name="Root" id="FFFFFFFF"/>
+			<MapObject name="Root" id="0"/>
+		</Marker>
+		<Marker ver="4" type="Position" pos="-162,11,-553" yaw="0.000000">
+			<MapObject name="Entry6" id="FFFFFFFF"/>
 		</Marker>
 	</Markers>
 	<ScriptData>

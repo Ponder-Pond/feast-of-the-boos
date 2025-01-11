@@ -1,8 +1,8 @@
-#include "mim_10.h"
+#include "mim_13.h"
 
 EntryList N(Entrances) = {
-    [mim_10_ENTRY_0]    { -385.0,   20.0,   10.0,   90.0 },
-    [mim_10_ENTRY_1]    {  385.0,    0.0,   10.0,  270.0 },
+    [mim_13_ENTRY_0]    {  GEN_ENTRY0_VEC, GEN_ENTRY0_DIR },
+    [mim_13_ENTRY_1]    {  GEN_ENTRY1_VEC, GEN_ENTRY1_DIR },
 };
 
 MapSettings N(settings) = {

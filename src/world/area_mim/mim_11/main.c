@@ -132,6 +132,15 @@ EvtScript N(EVS_Scene_ReachedMansion) = {
     End
 };
 
+EvtScript N(EVS_GotoMap_mim_13_0) = {
+    Call(GotoMap, Ref("mim_13"), mim_13_ENTRY_0)
+    Wait(100)
+    Return
+    End
+};
+
+EvtScript N(EVS_ExitPipe_mim_13_0) = EVT_EXIT_PIPE_VERTICAL(mim_13_ENTRY_0, COLLIDER_WellInside, N(EVS_GotoMap_mim_13_0));
+
 // interesting broken, unused snippet for starting next peach sequence
 EvtScript N(EVS_ExitWarp_osr_03_4) = {
     Call(FadeOutMusic, 0, 1500)
@@ -159,6 +168,7 @@ EvtScript N(EVS_BindExitTriggers) = {
     BindTrigger(Ref(N(EVS_ExitWalk_mim_07_3)), TRIGGER_FLOOR_ABOVE, COLLIDER_deiliw, 1, 0)
     BindTrigger(Ref(N(EVS_ExitWalk_mim_12_0)), TRIGGER_FLOOR_ABOVE, COLLIDER_deilie, 1, 0)
     BindTrigger(Ref(N(EVS_ExitWalk_obk_01_0)), TRIGGER_WALL_PRESS_A, COLLIDER_ttd, 1, 0)
+    BindTrigger(Ref(N(EVS_ExitPipe_mim_13_0)), TRIGGER_FLOOR_ABOVE, COLLIDER_WellInside, 1, 0)
     Return
     End
 };
@@ -222,6 +232,8 @@ EvtScript N(EVS_EnterMap) = {
         CaseEq(mim_11_ENTRY_5)
             Call(InterpPlayerYaw, 227, 0)
             Exec(N(EVS_BindExitTriggers))
+        CaseEq(mim_11_ENTRY_6)
+            EVT_ENTER_PIPE_VERTICAL(N(EVS_BindExitTriggers))
     EndSwitch
     Return
     End

@@ -558,6 +558,56 @@
         "combine": "Multiply"
     },
     {
+        "name": "mim_snowtoptif",
+        "main": {
+            "format": "CI4",
+            "hwrap": "Mirror",
+            "vwrap": "Mirror"
+        },
+        "filter": true,
+        "combine": "Multiply"
+    },
+    {
+        "name": "mim_blizztif",
+        "main": {
+            "format": "CI4",
+            "hwrap": "Repeat",
+            "vwrap": "Repeat"
+        },
+        "filter": true,
+        "combine": "Multiply"
+    },
+    {
+        "name": "mim_barakakine7tif",
+        "main": {
+            "format": "CI4",
+            "hwrap": "Repeat",
+            "vwrap": "Repeat"
+        },
+        "filter": true,
+        "combine": "Multiply"
+    },
+    {
+        "name": "mim_baratulutif",
+        "main": {
+            "format": "IA4",
+            "hwrap": "Repeat",
+            "vwrap": "Repeat"
+        },
+        "filter": true,
+        "combine": "Multiply"
+    },
+    {
+        "name": "mim_f_kusatif",
+        "main": {
+            "format": "CI4",
+            "hwrap": "Clamp",
+            "vwrap": "Clamp"
+        },
+        "filter": true,
+        "combine": "Multiply"
+    },
+    {
         "name": "mim_green_pipetif",
         "main": {
             "format": "CI4",
@@ -573,16 +623,6 @@
             "format": "CI4",
             "hwrap": "Repeat",
             "vwrap": "Repeat"
-        },
-        "filter": true,
-        "combine": "Multiply"
-    },
-    {
-        "name": "mim_snowtoptif",
-        "main": {
-            "format": "CI4",
-            "hwrap": "Mirror",
-            "vwrap": "Mirror"
         },
         "filter": true,
         "combine": "Multiply"

@@ -11193,6 +11193,17 @@ segments:
     - [auto, c, main]
     - [auto, c, npc]
     - [auto, c, gate]
+  - name: mim_13
+    dir: world/area_mim/mim_13
+    type: code
+    start: auto
+    vram_class: map
+    subsegments:
+    - [auto, c, settings]
+    - [auto, c, music]
+    - [auto, c, entity]
+    - [auto, c, main]
+    - [auto, c, npc]
   - name: obk_01
     dir: world/area_obk/obk_01
     type: code

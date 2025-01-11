@@ -1,4 +1,5 @@
-#define COLLIDER_Root           0x2C
+#define COLLIDER_Root           0x2D
+#define COLLIDER_WellInside     0x2C
 #define COLLIDER_MeshCollider   0x2B
 #define COLLIDER_CylinderCollider 0x2A
 #define COLLIDER_CylinderCollider 0x29

@@ -7,6 +7,7 @@ EntryList N(Entrances) = {
     [mim_11_ENTRY_3]    { -270.0,   35.0, -225.0,  180.0 },
     [mim_11_ENTRY_4]    {  -65.0,    0.0,  -22.0,  315.0 },
     [mim_11_ENTRY_5]    {  -56.0,    0.0,  -25.0,  227.0 },
+    [mim_11_ENTRY_6]    {  GEN_ENTRY6_VEC, GEN_ENTRY6_DIR },
 };
 
 MapSettings N(settings) = {
@@ -14,5 +15,4 @@ MapSettings N(settings) = {
     .entryList = &N(Entrances),
     .entryCount = ENTRY_COUNT(N(Entrances)),
     .background = &gBackgroundImage,
-    .tattle = { MSG_MapTattle_mim_11 },
 };

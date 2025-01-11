@@ -638,7 +638,7 @@ MapConfig osr_maps[] = {
 /// Forever Forest
 #include "area_mim/mim.h"
 MapConfig mim_maps[] = {
-    { MAP_WITH_INIT(mim_01), .bgName = "fob_bg", .songVariation = 1, .sfxReverb = 2 },
+    { MAP(mim_01), .bgName = "fob_bg", .songVariation = 1, .sfxReverb = 2 },
     { MAP(mim_02), .bgName = "obk_bg", .songVariation = 1, .sfxReverb = 2 },
     { MAP(mim_03), .bgName = "fob_bg", .songVariation = 1, .sfxReverb = 2 },
     { MAP(mim_04), .bgName = "obk_bg", .songVariation = 1, .sfxReverb = 2 },
@@ -650,6 +650,7 @@ MapConfig mim_maps[] = {
     { MAP(mim_10), .bgName = "nok_bg" },
     { MAP(mim_11), .bgName = "fob_bg", .songVariation = 1, .sfxReverb = 2 },
     { MAP(mim_12), .bgName = "arn_bg", .songVariation = 1, .sfxReverb = 2 },
+    { MAP(mim_13), .bgName = "fob_bg", .sfxReverb = 2 },
 };
 
 /// Boo's Mansion
