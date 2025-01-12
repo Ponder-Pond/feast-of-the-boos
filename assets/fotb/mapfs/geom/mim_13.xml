@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Map desc="Flower Sounds" background="fob_bg" textures="mim_tex">
 	<Editor>
-		<Camera pos="301.619751,194.442368,-215.164276" pitch="47.839909" yaw="356.879883"/>
+		<Camera pos="309.103790,54.741138,-289.216797" pitch="61.920029" yaw="356.400299"/>
 		<Camera pos="294.667999,65536.000000,-293.566132"/>
 		<Camera pos="65536.000000,40.000000,-312.000000"/>
 		<Camera pos="315.000000,40.000000,65536.000000"/>
@@ -3953,7 +3953,7 @@
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
 					<F3DEX2 cmd="D9FDFFFF,0"/>
-					<F3DEX2 cmd="D9FFFFFF,200000"/>
+					<F3DEX2 cmd="D9FFFFFF,200400"/>
 					<TriangleBatch ver="0">
 						<VertexTable>
 							<Vertex xyz="409,102,-48" rgba="58,58,72,255"/>
@@ -7610,7 +7610,7 @@
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
 					<F3DEX2 cmd="D9FDFFFF,0"/>
-					<F3DEX2 cmd="D9FFFFFF,200000"/>
+					<F3DEX2 cmd="D9FFFFFF,200400"/>
 					<TriangleBatch ver="0">
 						<VertexTable>
 							<Vertex xyz="260,37,-135" uv="12548,2048" rgba="120,102,146,255"/>
@@ -8289,7 +8289,7 @@
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
 					<F3DEX2 cmd="D9FDFFFF,0"/>
-					<F3DEX2 cmd="D9FFFFFF,200000"/>
+					<F3DEX2 cmd="D9FFFFFF,200400"/>
 					<TriangleBatch ver="0">
 						<VertexTable>
 							<Vertex xyz="-6,148,-261" uv="-3072,257" rgba="110,86,146,255"/>
@@ -9261,7 +9261,7 @@
 				<DisplayList>
 					<F3DEX2 cmd="E7000000,0"/>
 					<F3DEX2 cmd="D9FDFBFF,0"/>
-					<F3DEX2 cmd="D9FFFFFF,200000"/>
+					<F3DEX2 cmd="D9FFFFFF,200400"/>
 					<TriangleBatch ver="0">
 						<VertexTable>
 							<Vertex xyz="220,567,-319" uv="0,478" rgba="150,150,150,255"/>
@@ -9792,30 +9792,30 @@
 			<HitMesh ver="0">
 				<TriangleBatch ver="0">
 					<VertexTable>
-						<Vertex xyz="314,11,-289"/>
-						<Vertex xyz="326,11,-298"/>
-						<Vertex xyz="306,11,-313"/>
-						<Vertex xyz="298,11,-289"/>
-						<Vertex xyz="286,11,-298"/>
-						<Vertex xyz="281,11,-313"/>
-						<Vertex xyz="286,11,-298"/>
-						<Vertex xyz="306,11,-313"/>
-						<Vertex xyz="286,11,-328"/>
-						<Vertex xyz="298,11,-337"/>
-						<Vertex xyz="286,11,-328"/>
-						<Vertex xyz="306,11,-313"/>
-						<Vertex xyz="314,11,-337"/>
-						<Vertex xyz="306,11,-313"/>
-						<Vertex xyz="326,11,-328"/>
-						<Vertex xyz="314,11,-337"/>
-						<Vertex xyz="298,11,-337"/>
-						<Vertex xyz="306,11,-313"/>
-						<Vertex xyz="331,11,-313"/>
-						<Vertex xyz="326,11,-328"/>
-						<Vertex xyz="306,11,-313"/>
-						<Vertex xyz="326,11,-298"/>
-						<Vertex xyz="331,11,-313"/>
-						<Vertex xyz="306,11,-313"/>
+						<Vertex xyz="314,30,-289"/>
+						<Vertex xyz="326,30,-298"/>
+						<Vertex xyz="306,30,-313"/>
+						<Vertex xyz="298,30,-289"/>
+						<Vertex xyz="286,30,-298"/>
+						<Vertex xyz="281,30,-313"/>
+						<Vertex xyz="286,30,-298"/>
+						<Vertex xyz="306,30,-313"/>
+						<Vertex xyz="286,30,-328"/>
+						<Vertex xyz="298,30,-337"/>
+						<Vertex xyz="286,30,-328"/>
+						<Vertex xyz="306,30,-313"/>
+						<Vertex xyz="314,30,-337"/>
+						<Vertex xyz="306,30,-313"/>
+						<Vertex xyz="326,30,-328"/>
+						<Vertex xyz="314,30,-337"/>
+						<Vertex xyz="298,30,-337"/>
+						<Vertex xyz="306,30,-313"/>
+						<Vertex xyz="331,30,-313"/>
+						<Vertex xyz="326,30,-328"/>
+						<Vertex xyz="306,30,-313"/>
+						<Vertex xyz="326,30,-298"/>
+						<Vertex xyz="331,30,-313"/>
+						<Vertex xyz="306,30,-313"/>
 					</VertexTable>
 					<TriangleList>
 						<Triangle ijk="0,1,2"/>
@@ -11138,7 +11138,7 @@
 		<Marker ver="4" type="Position" pos="-301,6,-276" yaw="0.000000">
 			<MapObject name="Entry1" id="8"/>
 		</Marker>
-		<Marker ver="4" type="Position" pos="307,11,-315" yaw="0.000000">
+		<Marker ver="4" type="Position" pos="307,30,-315" yaw="0.000000">
 			<MapObject name="Entry0" id="7"/>
 		</Marker>
 		<Marker ver="4" type="Position" pos="251,90,472" yaw="0.000000">

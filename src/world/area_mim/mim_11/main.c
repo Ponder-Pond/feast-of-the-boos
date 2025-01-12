@@ -268,14 +268,15 @@ EvtScript N(EVS_Main) = {
     Call(SetModelCustomGfx, MODEL_GreenWindows, CUSTOM_GFX_NONE, ENV_TINT_REMAP)
     Call(SetModelCustomGfx, MODEL_BlueWindows, CUSTOM_GFX_NONE, ENV_TINT_REMAP)
     Exec(N(EVS_WindowColorShift))
-    Call(MakeNpcs, TRUE, Ref(N(DefaultNPCs)))
+    Call(N(SetFogAndBackgroundColor))
+    Exec(N(EVS_ManageMansionSnowfall))
+    // Call(MakeNpcs, TRUE, Ref(N(DefaultNPCs)))
     ExecWait(N(EVS_MakeEntities))
     // Exec(N(D_802430E0_BBA150))
     Exec(N(EVS_SetupFoliage))
     Exec(N(EVS_SetupMusic))
     Exec(N(EVS_EnterMap))
-    Call(N(SetFogAndBackgroundColor))
-    Exec(N(EVS_ManageMansionSnowfall))
+    Wait(1)
     Return
     End
 };

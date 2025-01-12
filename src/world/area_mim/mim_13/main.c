@@ -68,11 +68,12 @@ EvtScript N(EVS_Main) = {
     Call(SetSpriteShading, SHADING_NONE)
     EVT_SETUP_CAMERA_DEFAULT(0, 0, 0)
     // Call(MakeNpcs, TRUE, Ref(N(DefaultNPCs)))
+    Call(N(SetFogAndBackgroundColor))
+    Exec(N(EVS_ManageMansionSnowfall))
     ExecWait(N(EVS_MakeEntities))
     Exec(N(EVS_SetupMusic))
     Exec(N(EVS_EnterMap))
-    Call(N(SetFogAndBackgroundColor))
-    Exec(N(EVS_ManageMansionSnowfall))
+    Wait(1)
     Return
     End
 };
