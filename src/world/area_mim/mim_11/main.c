@@ -206,12 +206,12 @@ EvtScript N(EVS_BindExitTriggers) = {
 
 EvtScript N(EVS_EnterMap) = {
     Set(AF_MIM_01, TRUE)
-    Call(GetLoadType, LVar1)
-    IfEq(LVar1, LOAD_FROM_FILE_SELECT)
-        Exec(EnterSavePoint)
-        Exec(N(EVS_BindExitTriggers))
-        Return
-    EndIf
+    // Call(GetLoadType, LVar1)
+    // IfEq(LVar1, LOAD_FROM_FILE_SELECT)
+    //     Exec(EnterSavePoint)
+    //     Exec(N(EVS_BindExitTriggers))
+    //     Return
+    // EndIf
     Call(GetEntryID, LVar0)
     Switch(LVar0)
         CaseEq(mim_11_ENTRY_0)
