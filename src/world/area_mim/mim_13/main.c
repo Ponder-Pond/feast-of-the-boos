@@ -19,19 +19,54 @@ API_CALLABLE(N(SetFogAndBackgroundColor)) {
     return ApiStatus_DONE2;
 }
 
-EvtScript N(EVS_GotoMap_mim_11_6) = {
-    Call(GotoMap, Ref("mim_11"), mim_11_ENTRY_6)
-    Wait(100)
+EvtScript N(EVS_FocusCameraOnPlayer) = {
+    Label(0)
+        Call(GetPlayerPos, LVar0, LVar1, LVar2)
+        Call(SetCamTarget, CAM_DEFAULT, LVar0, LVar1, LVar2)
+        Wait(1)
+        Goto(0)
     Return
     End
 };
 
-EvtScript N(EVS_ExitPipe_mim_11_6) = EVT_EXIT_PIPE_VERTICAL(mim_13_ENTRY_0, COLLIDER_WellInside, N(EVS_GotoMap_mim_11_6));
+EvtScript N(EVS_EnterJumping) = {
+    Call(DisablePlayerInput, TRUE)
+    Call(DisablePlayerPhysics, TRUE)
+    Call(SetPlayerActionState, ACTION_STATE_JUMP)
+    Wait(1)
+    Call(SetPlayerJumpscale, Float(1.0))
+    Call(PlayerJump, 323, 0, -240, 20)
+    Call(DisablePlayerPhysics, FALSE)
+    Call(DisablePlayerInput, FALSE)
+    Call(SetPlayerActionState, ACTION_STATE_IDLE)
+    Return
+    End
+};
+
+EvtScript N(EVS_ExitFall_mim_11_6) = {
+    Loop(0)
+        Wait(1)
+        Call(GetPlayerPos, LVar0, LVar1, LVar2)
+        IfLt(LVar1, -30)
+            BreakLoop
+        EndIf
+    EndLoop
+    Call(DisablePlayerInput, TRUE)
+    Call(DisablePlayerPhysics, TRUE)
+    Wait(30)
+    Call(GotoMap, Ref("mim_11"), mim_11_ENTRY_6)
+    Wait(100)
+    Call(DisablePlayerInput, FALSE)
+    Call(DisablePlayerPhysics, FALSE)
+    Return
+    End
+};
+
 
 EvtScript N(EVS_ExitWalk_Cellar) = EVT_EXIT_WALK(60, mim_13_ENTRY_1, "mim_13", mim_13_ENTRY_1);
 
 EvtScript N(EVS_BindExitTriggers) = {
-    BindTrigger(Ref(N(EVS_ExitPipe_mim_11_6)), TRIGGER_FLOOR_ABOVE, COLLIDER_WellInside, 1, 0)
+    Exec(N(EVS_ExitFall_mim_11_6))
     BindTrigger(Ref(N(EVS_ExitWalk_Cellar)), TRIGGER_FLOOR_ABOVE, COLLIDER_CellarStairs, 1, 0)
     Return
     End
@@ -54,7 +89,8 @@ EvtScript N(EVS_EnterMap) = {
     Call(GetEntryID, LVar0)
     Switch(LVar0)
         CaseEq(mim_13_ENTRY_0)
-            EVT_ENTER_PIPE_VERTICAL(N(EVS_BindExitTriggers))
+            Set(LVar0, Ref(N(EVS_BindExitTriggers)))
+            Exec(N(EVS_EnterJumping))
         CaseEq(mim_13_ENTRY_1)
             Set(LVar0, Ref(N(EVS_BindExitTriggers)))
             Exec(EnterWalk)

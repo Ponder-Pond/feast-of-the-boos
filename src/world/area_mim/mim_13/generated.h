@@ -90,10 +90,10 @@
 // type: Marker:Position
 // name: Entry0
 #define GEN_ENTRY0_X 307
-#define GEN_ENTRY0_Y 30
+#define GEN_ENTRY0_Y -30
 #define GEN_ENTRY0_Z -315
 #define GEN_ENTRY0_DIR 0
-#define GEN_ENTRY0_VEC 307,30,-315
+#define GEN_ENTRY0_VEC 307,-30,-315
 
 // type: Marker:Position
 // name: Entry1

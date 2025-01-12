@@ -132,14 +132,45 @@ EvtScript N(EVS_Scene_ReachedMansion) = {
     End
 };
 
+EvtScript N(EVS_EnterJumping) = {
+    Call(DisablePlayerInput, TRUE)
+    Call(DisablePlayerPhysics, TRUE)
+    Call(SetPlayerActionState, ACTION_STATE_JUMP)
+    Wait(1)
+    Call(SetPlayerJumpscale, Float(1.0))
+    Call(PlayerJump, -62, 0, -553, 20)
+    Call(DisablePlayerPhysics, FALSE)
+    Call(DisablePlayerInput, FALSE)
+    Call(SetPlayerActionState, ACTION_STATE_IDLE)
+    Return
+    End
+};
+
+EvtScript N(EVS_ExitFall_mim_13_0) = {
+    Loop(0)
+        Wait(1)
+        Call(GetPlayerPos, LVar0, LVar1, LVar2)
+        IfLt(LVar1, -35)
+            BreakLoop
+        EndIf
+    EndLoop
+    Call(DisablePlayerInput, TRUE)
+    Call(DisablePlayerPhysics, TRUE)
+    Wait(30)
+    Call(GotoMap, Ref("mim_13"), mim_13_ENTRY_0)
+    Wait(100)
+    Call(DisablePlayerInput, FALSE)
+    Call(DisablePlayerPhysics, FALSE)
+    Return
+    End
+};
+
 EvtScript N(EVS_GotoMap_mim_13_0) = {
     Call(GotoMap, Ref("mim_13"), mim_13_ENTRY_0)
     Wait(100)
     Return
     End
 };
-
-EvtScript N(EVS_ExitPipe_mim_13_0) = EVT_EXIT_PIPE_VERTICAL(mim_13_ENTRY_0, COLLIDER_WellInside, N(EVS_GotoMap_mim_13_0));
 
 // interesting broken, unused snippet for starting next peach sequence
 EvtScript N(EVS_ExitWarp_osr_03_4) = {
@@ -168,7 +199,7 @@ EvtScript N(EVS_BindExitTriggers) = {
     BindTrigger(Ref(N(EVS_ExitWalk_mim_07_3)), TRIGGER_FLOOR_ABOVE, COLLIDER_deiliw, 1, 0)
     BindTrigger(Ref(N(EVS_ExitWalk_mim_12_0)), TRIGGER_FLOOR_ABOVE, COLLIDER_deilie, 1, 0)
     BindTrigger(Ref(N(EVS_ExitWalk_obk_01_0)), TRIGGER_WALL_PRESS_A, COLLIDER_ttd, 1, 0)
-    BindTrigger(Ref(N(EVS_ExitPipe_mim_13_0)), TRIGGER_FLOOR_ABOVE, COLLIDER_WellInside, 1, 0)
+    Exec(N(EVS_ExitFall_mim_13_0))
     Return
     End
 };
@@ -233,7 +264,8 @@ EvtScript N(EVS_EnterMap) = {
             Call(InterpPlayerYaw, 227, 0)
             Exec(N(EVS_BindExitTriggers))
         CaseEq(mim_11_ENTRY_6)
-            EVT_ENTER_PIPE_VERTICAL(N(EVS_BindExitTriggers))
+            Set(LVar0, Ref(N(EVS_BindExitTriggers)))
+            Exec(N(EVS_EnterJumping))
     EndSwitch
     Return
     End

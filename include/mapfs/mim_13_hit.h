@@ -1,5 +1,4 @@
-#define COLLIDER_Root           0x10
-#define COLLIDER_WellInside     0xF
+#define COLLIDER_Root           0xF
 #define COLLIDER_Rock           0xE
 #define COLLIDER_Walls          0xD
 #define COLLIDER_TreeStump      0xC

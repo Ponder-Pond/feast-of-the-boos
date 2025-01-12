@@ -7,8 +7,8 @@
 // type: Marker:Position
 // name: Entry6
 #define GEN_ENTRY6_X -13
-#define GEN_ENTRY6_Y 30
+#define GEN_ENTRY6_Y -35
 #define GEN_ENTRY6_Z -516
 #define GEN_ENTRY6_DIR 0
-#define GEN_ENTRY6_VEC -13,30,-516
+#define GEN_ENTRY6_VEC -13,-35,-516
 
