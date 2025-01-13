@@ -9,6 +9,11 @@
 		<Raster id="2" name="Idle3" palette="0" src="Idle3.png"/>
 		<Raster id="3" name="Idle4" palette="0" src="Idle4.png"/>
 		<Raster id="4" name="Blink" palette="0" src="Blink.png"/>
+		<Raster id="5" name="Shot1" palette="0" src="Shot1.png"/>
+		<Raster id="6" name="Shot2" palette="0" src="Shot2.png"/>
+		<Raster id="7" name="Shot3" palette="0" src="Shot3.png"/>
+		<Raster id="8" name="Shot4" palette="0" src="Shot4.png"/>
+		<Raster id="9" name="Shot5" palette="0" src="Shot5.png"/>
 	</RasterList>
 	<AnimationList>
 		<Animation name="Still">
@@ -59,6 +64,58 @@
 				<Command val="2"/>
 				<Command val="1001"/>
 				<Command val="2"/>
+				<Command val="2000"/>
+			</Component>
+		</Animation>
+		<Animation name="EggShotStart">
+			<Component name="Comp_00" xyz="0,-4,0">
+				<Command val="1000"/>
+				<Command val="6"/>
+				<Command val="1005"/>
+				<Command val="6"/>
+				<Command val="1005"/>
+				<Command val="5002"/>
+				<Command val="62"/>
+				<Command val="2"/>
+				<Command val="1005"/>
+				<Command val="5001"/>
+				<Command val="66"/>
+				<Command val="5002"/>
+				<Command val="60"/>
+				<Command val="18"/>
+				<Command val="2008"/>
+			</Component>
+		</Animation>
+		<Animation name="EggShotEnd">
+			<Component name="Comp_00" xyz="0,-4,0">
+				<Command val="1005"/>
+				<Command val="5001"/>
+				<Command val="66"/>
+				<Command val="5002"/>
+				<Command val="60"/>
+				<Command val="2"/>
+				<Command val="5002"/>
+				<Command val="62"/>
+				<Command val="2"/>
+				<Command val="1005"/>
+				<Command val="2"/>
+				<Command val="1006"/>
+				<Command val="2"/>
+				<Command val="1007"/>
+				<Command val="4"/>
+				<Command val="1008"/>
+				<Command val="2"/>
+				<Command val="1009"/>
+				<Command val="2"/>
+				<Command val="3000"/>
+				<Command val="0"/>
+				<Command val="0"/>
+				<Command val="0"/>
+				<Command val="5002"/>
+				<Command val="6E"/>
+				<Command val="2"/>
+				<Command val="1009"/>
+				<Command val="18"/>
 				<Command val="2000"/>
 			</Component>
 		</Animation>
