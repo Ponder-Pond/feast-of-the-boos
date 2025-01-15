@@ -490,7 +490,7 @@
     {
         "name": "mim_hikaritif",
         "main": {
-            "format": "IA16",
+            "format": "CI4",
             "hwrap": "Repeat",
             "vwrap": "Clamp"
         },
