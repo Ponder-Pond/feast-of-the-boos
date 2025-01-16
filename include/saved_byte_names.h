@@ -6,7 +6,7 @@ enum GameBytes {
     GB_Unused_EVT_02                        = GameByte(0x002),
     GB_Unused_EVT_03                        = GameByte(0x003),
     GB_Unused_EVT_04                        = GameByte(0x004),
-    GB_Unused_EVT_05                        = GameByte(0x005),
+    GB_GlobalTurnCount                      = GameByte(0x005),
     GB_Unused_EVT_06                        = GameByte(0x006),
     GB_Unused_EVT_07                        = GameByte(0x007),
     GB_Unused_EVT_08                        = GameByte(0x008),
