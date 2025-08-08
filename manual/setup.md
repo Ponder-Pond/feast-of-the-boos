@@ -29,7 +29,7 @@ Download and install Visual Studio Code (VSCode), a code editor that works well 
         However, you will need to adapt instructions to your editor and be confident using the command line.
     </p>
     <p>
-        For Step 4, to run the game, use <code>nix develop --profile .nix-profile --command ./run</code>.
+        For Step 4, to run the game, use <code>nix --extra-experimental-features "nix-command flakes" develop --profile .nix-profile --command ./run</code>.
     </p>
 </details>
 
@@ -50,6 +50,9 @@ Then follow the instructions to set up DX.
     <p>
         Type <code>DX_DIR=~/my-folder</code>, then run the setup script as above.
     </p>
+    <p>
+        If you are on Windows, do <b>not</b> set up DX in a Windows filesystem (`/mnt/`) because it will cause the game to build very slowly.
+    </p>
 </details>
 
 <details>
@@ -60,6 +63,17 @@ Then follow the instructions to set up DX.
     <p>
         There are a variety of tools you can use to dump a backup from your own cartridge or Virtual Console copy.
         If you do have a clean NTSC-U ROM, but it is in another format, <a href="https://hack64.net/tools/swapper.php">convert it to z64</a>.
+    </p>
+</details>
+
+<details>
+    <summary>How can I clone a mod's repository instead?</summary>
+    <p>
+        Copy the Git URL of the repository you want to clone.
+        Type <code>GIT_REPO=https://github.com/user/repo.git</code>, then run the setup script as above.
+    </p>
+    <p>
+        The script will clone the repository you specified instead of the main DX repository (`bates64/papermario-dx`).
     </p>
 </details>
 
@@ -96,6 +110,6 @@ If you run into any issues during setup, ask for help in the `#papermario-dx` ch
 
 | Previous | Next |
 |:---------|-----:|
-|[Introduction](manual/introduction.md)|[The Asset Stack](manual/assets.md)|
+|[Introduction](introduction.md)|[The Asset Stack](assets.md)|
 
 </div>

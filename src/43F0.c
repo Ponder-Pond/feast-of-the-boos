@@ -1,6 +1,6 @@
 #include "common.h"
 #include "nu/nusys.h"
-#include "gcc/string.h"
+#include <string.h>
 #include "dx/debug_menu.h"
 
 u16 heap_nextMallocID = 0;
@@ -109,7 +109,6 @@ void* _heap_malloc(HeapNode* head, u32 size) {
             break;
         }
     }
-
 
     // find out the required block size with header
     newBlockSize = size + sizeof(HeapNode);

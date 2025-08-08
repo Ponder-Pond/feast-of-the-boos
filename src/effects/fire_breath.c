@@ -76,7 +76,7 @@ EffectInstance* fire_breath_main(
     bp.unk_00 = 0;
     bp.init = fire_breath_init;
     bp.update = fire_breath_update;
-    bp.renderWorld = fire_breath_render;
+    bp.renderScene = fire_breath_render;
     bp.renderUI = NULL;
     bp.effectID = EFFECT_FIRE_BREATH;
 
@@ -239,7 +239,7 @@ void fire_breath_appendGfx(void* effect) {
     FireBreathPreset* preset = &FireBreathPresets[data->color];
 
     gDPPipeSync(gMainGfxPos++);
-    gSPSegment(gMainGfxPos++, 0x09, VIRTUAL_TO_PHYSICAL(((EffectInstance*)effect)->graphics->data));
+    gSPSegment(gMainGfxPos++, 0x09, VIRTUAL_TO_PHYSICAL(((EffectInstance*)effect)->shared->graphics));
 
     if (type == FIRE_BREATH_SMALL) {
         guTranslateF(transformMtx, data->initPos.x, data->initPos.y, data->initPos.z);
