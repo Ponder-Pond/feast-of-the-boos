@@ -23,8 +23,8 @@ enum {
 
 #define NAMESPACE mim_10
 
-extern EvtScript N(EVS_Main);
-extern EvtScript N(EVS_SetupBootlerTrigger);
-extern EvtScript N(EVS_SetupMusic);
-extern EvtScript N(EVS_MakeEntities);
-extern NpcGroupList N(DefaultNPCs);
+extern EvtScript mim_10_EVS_Main;
+extern EvtScript mim_10_EVS_SetupBootlerTrigger;
+extern EvtScript mim_10_EVS_SetupMusic;
+extern EvtScript mim_10_EVS_MakeEntities;
+extern NpcGroupList mim_10_DefaultNPCs;

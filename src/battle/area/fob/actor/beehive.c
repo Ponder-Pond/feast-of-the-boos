@@ -1597,7 +1597,7 @@ EvtScript N(EVS_Attack_Creepy) = {
             Call(SetAnimation, ACTOR_SELF, PRT_CREEPY, ANIM_InsectsDK3_CreepyMove)
             Set(LFlag0, FALSE)
             Loop(21)
-                Call(GetActionSuccessCopy, LVar1)
+                Call(GetMashActionQuality, LVar1)
                 IfEq(LVar1, 1)
                     Set(LFlag0, TRUE)
                     BreakLoop
@@ -1615,7 +1615,7 @@ EvtScript N(EVS_Attack_Creepy) = {
             Call(SetPartScale, ACTOR_SELF, PRT_CREEPY, Float(1.0), Float(1.0), Float(1.0))
             Set(LFlag0, FALSE)
             Loop(1)
-                Call(GetActionSuccessCopy, LVar1)
+                Call(GetMashActionQuality, LVar1)
                 IfEq(LVar1, 1)
                     Set(LFlag0, TRUE)
                     BreakLoop
@@ -1629,7 +1629,7 @@ EvtScript N(EVS_Attack_Creepy) = {
             Call(SetPartScale, ACTOR_SELF, PRT_CREEPY, Float(0.9), Float(1.2), Float(1.0))
             Set(LFlag0, FALSE)
             Loop(1)
-                Call(GetActionSuccessCopy, LVar1)
+                Call(GetMashActionQuality, LVar1)
                 IfEq(LVar1, 1)
                     Set(LFlag0, TRUE)
                     BreakLoop
@@ -1643,7 +1643,7 @@ EvtScript N(EVS_Attack_Creepy) = {
             Call(SetPartScale, ACTOR_SELF, PRT_CREEPY, Float(0.8), Float(1.3), Float(1.0))
             Set(LFlag0, FALSE)
             Loop(1)
-                Call(GetActionSuccessCopy, LVar1)
+                Call(GetMashActionQuality, LVar1)
                 IfEq(LVar1, 1)
                     Set(LFlag0, TRUE)
                     BreakLoop
@@ -1657,7 +1657,7 @@ EvtScript N(EVS_Attack_Creepy) = {
             Call(SetPartScale, ACTOR_SELF, PRT_CREEPY, Float(0.7), Float(1.4), Float(1.0))
             Set(LFlag0, FALSE)
             Loop(1)
-                Call(GetActionSuccessCopy, LVar1)
+                Call(GetMashActionQuality, LVar1)
                 IfEq(LVar1, 1)
                     Set(LFlag0, TRUE)
                     BreakLoop
@@ -1671,7 +1671,7 @@ EvtScript N(EVS_Attack_Creepy) = {
             Call(SetPartScale, ACTOR_SELF, PRT_CREEPY, Float(0.7), Float(1.5), Float(1.0))
             Set(LFlag0, FALSE)
             Loop(2)
-                Call(GetActionSuccessCopy, LVar1)
+                Call(GetMashActionQuality, LVar1)
                 IfEq(LVar1, 1)
                     Set(LFlag0, TRUE)
                     BreakLoop
@@ -1685,7 +1685,7 @@ EvtScript N(EVS_Attack_Creepy) = {
             Call(SetPartScale, ACTOR_SELF, PRT_CREEPY, Float(0.6), Float(1.6), Float(1.0))
             Set(LFlag0, FALSE)
             Loop(10)
-                Call(GetActionSuccessCopy, LVar1)
+                Call(GetMashActionQuality, LVar1)
                 IfEq(LVar1, 1)
                     Set(LFlag0, TRUE)
                     BreakLoop
@@ -1698,7 +1698,7 @@ EvtScript N(EVS_Attack_Creepy) = {
             EndIf
             Set(LFlag0, FALSE)
             Loop(2)
-                Call(GetActionSuccessCopy, LVar1)
+                Call(GetMashActionQuality, LVar1)
                 IfEq(LVar1, 1)
                     Set(LFlag0, TRUE)
                     BreakLoop
@@ -1718,7 +1718,7 @@ EvtScript N(EVS_Attack_Creepy) = {
             Else
                 Add(LVar9, 1)
                 IfGt(LVar9, 1)
-                    Call(func_80269470)
+                    Call(InterruptLeechActionCommand)
                     BreakLoop
                 EndIf
             EndIf
@@ -1728,12 +1728,12 @@ EvtScript N(EVS_Attack_Creepy) = {
             Call(SetAnimation, ACTOR_SELF, PRT_CREEPY, ANIM_InsectsDK3_CreepyMove)
             Call(GetPlayerHP, LVar1)
             IfEq(LVar1, 0)
-                Call(func_80269470)
+                Call(InterruptLeechActionCommand)
                 BreakLoop
             EndIf
             Set(LFlag0, FALSE)
             Loop(35)
-                Call(GetActionSuccessCopy, LVar1)
+                Call(GetMashActionQuality, LVar1)
                 IfEq(LVar1, 1)
                     Set(LFlag0, TRUE)
                     BreakLoop
@@ -1744,7 +1744,7 @@ EvtScript N(EVS_Attack_Creepy) = {
                 BreakLoop
             EndIf
         EndLoop
-        Call(func_80269470)
+        Call(InterruptLeechActionCommand)
         Call(SetPartRotation, ACTOR_SELF, PRT_CREEPY, 0, 0, 0)
         Call(SetPartDispOffset, ACTOR_SELF, PRT_CREEPY, 0, 8, 0)
         Call(SetPartScale, ACTOR_SELF, PRT_CREEPY, Float(1.0), Float(1.0), Float(1.0))
@@ -1981,7 +1981,7 @@ EvtScript N(EVS_Attack_VineEater) = {
             Call(SetAnimation, ACTOR_SELF, PRT_VINE_EATER, ANIM_InsectsDK3_VineEaterMove)
             Set(LFlag0, FALSE)
             Loop(21)
-                Call(GetActionSuccessCopy, LVar1)
+                Call(GetMashActionQuality, LVar1)
                 IfEq(LVar1, 1)
                     Set(LFlag0, TRUE)
                     BreakLoop
@@ -1999,7 +1999,7 @@ EvtScript N(EVS_Attack_VineEater) = {
             Call(SetPartScale, ACTOR_SELF, PRT_VINE_EATER, Float(1.0), Float(1.0), Float(1.0))
             Set(LFlag0, FALSE)
             Loop(1)
-                Call(GetActionSuccessCopy, LVar1)
+                Call(GetMashActionQuality, LVar1)
                 IfEq(LVar1, 1)
                     Set(LFlag0, TRUE)
                     BreakLoop
@@ -2013,7 +2013,7 @@ EvtScript N(EVS_Attack_VineEater) = {
             Call(SetPartScale, ACTOR_SELF, PRT_VINE_EATER, Float(0.9), Float(1.2), Float(1.0))
             Set(LFlag0, FALSE)
             Loop(1)
-                Call(GetActionSuccessCopy, LVar1)
+                Call(GetMashActionQuality, LVar1)
                 IfEq(LVar1, 1)
                     Set(LFlag0, TRUE)
                     BreakLoop
@@ -2027,7 +2027,7 @@ EvtScript N(EVS_Attack_VineEater) = {
             Call(SetPartScale, ACTOR_SELF, PRT_VINE_EATER, Float(0.8), Float(1.3), Float(1.0))
             Set(LFlag0, FALSE)
             Loop(1)
-                Call(GetActionSuccessCopy, LVar1)
+                Call(GetMashActionQuality, LVar1)
                 IfEq(LVar1, 1)
                     Set(LFlag0, TRUE)
                     BreakLoop
@@ -2041,7 +2041,7 @@ EvtScript N(EVS_Attack_VineEater) = {
             Call(SetPartScale, ACTOR_SELF, PRT_VINE_EATER, Float(0.7), Float(1.4), Float(1.0))
             Set(LFlag0, FALSE)
             Loop(1)
-                Call(GetActionSuccessCopy, LVar1)
+                Call(GetMashActionQuality, LVar1)
                 IfEq(LVar1, 1)
                     Set(LFlag0, TRUE)
                     BreakLoop
@@ -2055,7 +2055,7 @@ EvtScript N(EVS_Attack_VineEater) = {
             Call(SetPartScale, ACTOR_SELF, PRT_VINE_EATER, Float(0.7), Float(1.5), Float(1.0))
             Set(LFlag0, FALSE)
             Loop(2)
-                Call(GetActionSuccessCopy, LVar1)
+                Call(GetMashActionQuality, LVar1)
                 IfEq(LVar1, 1)
                     Set(LFlag0, TRUE)
                     BreakLoop
@@ -2069,7 +2069,7 @@ EvtScript N(EVS_Attack_VineEater) = {
             Call(SetPartScale, ACTOR_SELF, PRT_VINE_EATER, Float(0.6), Float(1.6), Float(1.0))
             Set(LFlag0, FALSE)
             Loop(10)
-                Call(GetActionSuccessCopy, LVar1)
+                Call(GetMashActionQuality, LVar1)
                 IfEq(LVar1, 1)
                     Set(LFlag0, TRUE)
                     BreakLoop
@@ -2082,7 +2082,7 @@ EvtScript N(EVS_Attack_VineEater) = {
             EndIf
             Set(LFlag0, FALSE)
             Loop(2)
-                Call(GetActionSuccessCopy, LVar1)
+                Call(GetMashActionQuality, LVar1)
                 IfEq(LVar1, 1)
                     Set(LFlag0, TRUE)
                     BreakLoop
@@ -2102,7 +2102,7 @@ EvtScript N(EVS_Attack_VineEater) = {
             Else
                 Add(LVar9, 1)
                 IfGt(LVar9, 1)
-                    Call(func_80269470)
+                    Call(InterruptLeechActionCommand)
                     BreakLoop
                 EndIf
             EndIf
@@ -2112,12 +2112,12 @@ EvtScript N(EVS_Attack_VineEater) = {
             Call(SetAnimation, ACTOR_SELF, PRT_VINE_EATER, ANIM_InsectsDK3_VineEaterMove)
             Call(GetPlayerHP, LVar1)
             IfEq(LVar1, 0)
-                Call(func_80269470)
+                Call(InterruptLeechActionCommand)
                 BreakLoop
             EndIf
             Set(LFlag0, FALSE)
             Loop(35)
-                Call(GetActionSuccessCopy, LVar1)
+                Call(GetMashActionQuality, LVar1)
                 IfEq(LVar1, 1)
                     Set(LFlag0, TRUE)
                     BreakLoop
@@ -2128,7 +2128,7 @@ EvtScript N(EVS_Attack_VineEater) = {
                 BreakLoop
             EndIf
         EndLoop
-        Call(func_80269470)
+        Call(InterruptLeechActionCommand)
         Call(SetPartRotation, ACTOR_SELF, PRT_VINE_EATER, 0, 0, 0)
         Call(SetPartDispOffset, ACTOR_SELF, PRT_VINE_EATER, 0, 8, 0)
         Call(SetPartScale, ACTOR_SELF, PRT_VINE_EATER, Float(1.0), Float(1.0), Float(1.0))
