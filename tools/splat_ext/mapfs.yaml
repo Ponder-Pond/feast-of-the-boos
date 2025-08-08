@@ -502,22 +502,22 @@
 # - jan_23_hit
 - mim_01_shape
 - mim_01_hit
-- mim_02_shape
-- mim_02_hit
+# - mim_02_shape
+# - mim_02_hit
 - mim_03_shape
 - mim_03_hit
-- mim_04_shape
-- mim_04_hit
-- mim_05_shape
-- mim_05_hit
-- mim_06_shape
-- mim_06_hit
+# - mim_04_shape
+# - mim_04_hit
+# - mim_05_shape
+# - mim_05_hit
+# - mim_06_shape
+# - mim_06_hit
 - mim_07_shape
 - mim_07_hit
 - mim_08_shape
 - mim_08_hit
-- mim_09_shape
-- mim_09_hit
+# - mim_09_shape
+# - mim_09_hit
 - mim_10_shape
 - mim_10_hit
 - mim_11_shape

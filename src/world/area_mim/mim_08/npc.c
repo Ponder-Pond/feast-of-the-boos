@@ -359,10 +359,10 @@ NpcData N(NpcData_FreezyFuzzy) = {
             .moveSpeedOverride = NO_OVERRIDE_MOVEMENT_SPEED,
             .wanderShape = SHAPE_CYLINDER,
             .centerPos  = { GEN_FREEZY_FUZZY_VEC },
-            .wanderSize = { 400 },
+            .wanderSize = { 40 },
             .detectShape = SHAPE_CYLINDER,
             .detectPos  = { GEN_FREEZY_FUZZY_VEC },
-            .detectSize = { 400 },
+            .detectSize = { 40 },
         }
     },
     .settings = &N(NpcSettings_FreezyFuzzy_Wander),

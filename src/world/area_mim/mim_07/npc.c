@@ -67,6 +67,7 @@ EvtScript N(EVS_NpcIdle_BooBully) = {
 };
 
 EvtScript N(EVS_NpcDefeat_BooBully) = {
+    Call(ResetCam, CAM_DEFAULT, 3)
     Call(GetBattleOutcome, LVar0)
     Switch(LVar0)
         CaseEq(OUTCOME_PLAYER_WON)

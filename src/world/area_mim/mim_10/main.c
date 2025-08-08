@@ -1,5 +1,7 @@
 #include "mim_10.h"
 
+namespace mim_10 {
+
 EvtScript N(EVS_ExitWalk_mac_02_1) = EVT_EXIT_WALK(60, mim_10_ENTRY_0, "mac_02", mac_02_ENTRY_1);
 
 EvtScript N(EVS_ExitWalk_mim_01_1) = {
@@ -41,7 +43,7 @@ EvtScript N(EVS_EnterMap) = {
     End
 };
 
-EvtScript N(EVS_Main) = {
+EvtScript EVS_Main = {
     Set(GB_WorldLocation, LOCATION_TOAD_TOWN)
     Call(SetSpriteShading, SHADING_NONE)
     EVT_SETUP_CAMERA_DEFAULT(0, 0, 0)
@@ -54,4 +56,18 @@ EvtScript N(EVS_Main) = {
     Set(GF_MAC01_RowfBadgesChosen, FALSE)
     Return
     End
+};
+
+EntryList Entrances = {
+    [mim_10_ENTRY_0]    { -385.0,   20.0,   10.0,   90.0 },
+    [mim_10_ENTRY_1]    {  385.0,    0.0,   10.0,  270.0 },
+};
+
+}; // namespace mim_10
+
+MapSettings mim_10_settings = {
+    .main = &mim_10::EVS_Main,
+    .entryList = &mim_10::Entrances,
+    .entryCount = ENTRY_COUNT(mim_10::Entrances),
+    .background = &gBackgroundImage,
 };
